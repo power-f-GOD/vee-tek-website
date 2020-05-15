@@ -1,0 +1,90 @@
+//You may append your own styles to the following CSSbut not modify it, but modify only if you need to or should
+
+html,
+body,
+#root {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5rem;
+}
+
+body {
+  position: relative;
+  overflow: auto !important;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Trebuchet MS', sans-serif !important;
+  // border: 1px solid deeppink;
+}
+
+body {
+  padding: 0 !important;
+
+  &.desktop {
+    &.custom-scroll-bar,
+    .custom-scroll-bar {
+      &::-webkit-scrollbar {
+        width: 0.75em;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #eee;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #555 !important;
+      }
+    }
+  }
+}
+
+#root {
+  height: auto;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+
+  > div {
+    width: 100%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input {
+  margin: 1em 0;
+
+  font: {
+    family: inherit;
+    size: inherit;
+  }
+}
+
+a {
+  color: blue;
+
+  &:visited {
+    color: purple;
+  }
+}
+
+hr {
+  margin: 1.25rem 0;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  border: none;
+}
+
+button,
+a {
+  font-size: 1rem !important;
+}
