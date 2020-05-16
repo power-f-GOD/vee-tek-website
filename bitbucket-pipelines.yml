@@ -40,4 +40,4 @@ pipelines:
               variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
-                ZIP_FILE: "packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz"
+                ZIP_FILE: "./packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz"
