@@ -10,7 +10,7 @@ const Header = () => {
         <Link to='/'>
           <Navbar.Brand>
             <Image src='./images/logo.png' thumbnail width='45px' />
-            <Navbar.Text className='ml-3 font-weight-bold'>Vee-Tek</Navbar.Text>
+            <Navbar.Text className='ml-3 font-weight-bold'>Vee-Tek Group</Navbar.Text>
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
