@@ -1,11 +1,9 @@
 import React from 'react';
+import {} from 'react-bootstrap';
+import Header from './Header';
 
 const Landing = () => {
-  return (
-    <div>
-      <h1>This is the Landing component!</h1>
-    </div>
-  )
-}
+  return <Header />;
+};
 
 export default Landing;
