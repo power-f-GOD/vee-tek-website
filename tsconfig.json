@@ -22,12 +22,11 @@
     "noImplicitAny": true,
     "outDir": "dist"
   },
-  "include": [
-    "src/**/*", "src/__tests__",
-  ],
   "exclude": [
-    "dist",
     "build",
     "node_modules"
+  ],
+  "include": [
+    "src"
   ]
 }
