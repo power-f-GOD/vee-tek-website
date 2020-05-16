@@ -36,7 +36,7 @@ pipelines:
           image: node:10.15.0
           deployment: staging
           script:
-            - tar --exclude='./node_modules' --exclude='./build' -czvf application-${BITBUCKET_BUILD_NUMBER}.tar.gz -C vee-tek .
+            - tar --exclude='./node_modules' --exclude='./build' -czvf application-${BITBUCKET_BUILD_NUMBER}.tar.gz -C .
             - pipe: atlassian/heroku-deploy:1.1.2
               variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
