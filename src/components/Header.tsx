@@ -5,11 +5,12 @@ import {
   Nav,
   Navbar
 } from 'react-bootstrap';
+
 import '../styles/index.min.css';
 
 const Header = () => {
   return (
-    <Navbar bg='light' expand='md' className='shadow-sm'>
+    <Navbar  expand='md' className='shadow-sm fixed-top Nav-Wrapper'>
       <Container>
         <Navbar.Brand href='#home'>
           <Image src='./images/logo.png' thumbnail width='40rem' />
