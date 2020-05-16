@@ -5,7 +5,7 @@ import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 
 const Header = () => {
   return (
-    <Navbar bg='light' expand='md' className='shadow-sm'>
+    <Navbar bg='light' expand='md' className='shadow-sm fixed-top Nav-Wrapper'>
       <Container>
         <Link to='/'>
           <Navbar.Brand>
