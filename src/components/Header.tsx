@@ -1,29 +1,36 @@
 import React from 'react';
-import {
-  Container,
-  Image,
-  Nav,
-  Navbar
-} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-import '../styles/index.min.css';
+import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 
 const Header = () => {
   return (
-    <Navbar  expand='md' className='shadow-sm fixed-top Nav-Wrapper'>
+    <Navbar bg='light' expand='md' className='shadow-sm'>
       <Container>
-        <Navbar.Brand href='#home'>
-          <Image src='./images/logo.png' thumbnail width='40rem' />
-          <Navbar.Text className='ml-3 font-weight-bold'>Vee-Tek</Navbar.Text>
-        </Navbar.Brand>
+        <Link to='/'>
+          <Navbar.Brand>
+            <Image src='./images/logo.png' thumbnail width='45px' />
+            <Navbar.Text className='ml-3 font-weight-bold'>Vee-Tek</Navbar.Text>
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
           <Nav>
-            <Nav.Link href='#companies'>Our Companies</Nav.Link>
-            <Nav.Link href='#blog'>Blog</Nav.Link>
-            <Nav.Link href='#gallery'>Gallery</Nav.Link>
-            <Nav.Link href='#contact'>Contact Us</Nav.Link>
-            <Nav.Link href='#about'>About Us</Nav.Link>
+            <Link to='/companies' className='nav-link'>
+              Our Companies
+            </Link>
+            <Link to='/blog' className='nav-link'>
+              Blog
+            </Link>
+            <Link to='/gallery' className='nav-link'>
+              Gallery
+            </Link>
+            <Link to='/contact' className='nav-link'>
+              Contact Us
+            </Link>
+            <Link to='/about' className='nav-link'>
+              About Us
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
