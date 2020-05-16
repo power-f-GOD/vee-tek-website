@@ -6,7 +6,6 @@ import Slider from "./landing_components/Slider";
 const Landing = () => {
   return (
     <div>
-      <Header/>
       <Slider/>
     </div>
   );
