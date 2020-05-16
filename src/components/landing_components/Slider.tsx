@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Carousel, Container
+  Carousel
 } from 'react-bootstrap';
 
 import '../../styles/index.min.css';
