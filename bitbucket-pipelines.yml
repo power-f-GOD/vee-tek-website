@@ -1,0 +1,44 @@
+
+pipelines:
+  default:
+    - step: 
+        name: Build Front end
+        image: node:10.15.0
+        script:
+          - npm install
+          # - npm test -- --coverage --coverageDirectory=output/coverage/jest  
+          # - tar -czvf coverage.tar.gz output/coverage/jest
+          - npm run build
+          - mkdir packaged
+          - tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build .
+        artifacts:
+          - packaged/**
+          # - coverage.tar.gz
+
+  branches:
+    '{master}':
+    - step: 
+        name: Build Front end
+        image: node:10.15.0
+        script:
+          - npm install
+          # - npm test -- --coverage --coverageDirectory=output/coverage/jest  
+          # - tar -czvf coverage.tar.gz output/coverage/jest
+          - npm run build
+          - mkdir packaged
+          - tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build .
+        artifacts:
+          - packaged/**
+          # - coverage.tar.gz
+
+    - step:
+          name: Deploy to Heroku
+          image: node:10.15.0
+          deployment: staging
+          script:
+            - tar --exclude='./node_modules' --exclude='./build' -czvf application-${BITBUCKET_BUILD_NUMBER}.tar.gz -C vee-tek .
+            - pipe: atlassian/heroku-deploy:1.1.2
+              variables:
+                HEROKU_API_KEY: $HEROKU_API_KEY
+                HEROKU_APP_NAME: $HEROKU_APP_NAME
+                ZIP_FILE: "application-${BITBUCKET_BUILD_NUMBER}.tar.gz"
