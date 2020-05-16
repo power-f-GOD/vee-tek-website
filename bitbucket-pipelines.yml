@@ -37,7 +37,7 @@ pipelines:
           deployment: staging
           script:
             - mkdir heroku
-            - tar --exclude='./build' --exclude='./heroku' --exclude='./packaged' -czvf heroku/application-${BITBUCKET_BUILD_NUMBER}.tar.gz -C .
+            - tar --exclude='./build' --exclude='./heroku' --exclude='./packaged' -czvf heroku/application-${BITBUCKET_BUILD_NUMBER}.tar.gz ./
             - pipe: atlassian/heroku-deploy:1.1.2
               variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
