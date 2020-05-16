@@ -10,7 +10,7 @@ pipelines:
           # - tar -czvf coverage.tar.gz output/coverage/jest
           - npm run build
           - mkdir packaged
-          - tar -czvf packaged/package-${BITBUCKET_BUILD_NUMBER}.tar.gz -C build .
+          - tar -czvf --exclude='./build' --exclude='./heroku_archive.tar.gz' heroku_archive.tar.gz -C .
         artifacts:
           - packaged/**
           # - coverage.tar.gz
@@ -36,6 +36,7 @@ pipelines:
           image: node:10.15.0
           deployment: staging
           script:
+            - tar -czvf application-${BITBUCKET_BUILD_NUMBER}.tar.gz -C 
             - pipe: atlassian/heroku-deploy:1.1.2
               variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
