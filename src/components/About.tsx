@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className='fade-in'>
       <h1>This is the About component!</h1>
-      <h1>About contents goes here!</h1>
+      <h1>About content goes here!</h1>
     </div>
   );
 };

@@ -17,7 +17,6 @@ import {
 const App = () => {
   return (
     <div className='App fade-in'>
-      
       <BrowserRouter>
         <Header />
         <Switch>

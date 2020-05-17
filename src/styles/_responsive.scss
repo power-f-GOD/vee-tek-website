@@ -1,0 +1,64 @@
+@media screen and (min-width: 1024px) {
+  .drawer {
+    display: none;
+  }
+
+  @media screen and (max-width: 1152px) {
+    .drawer {
+      display: flex;
+    }
+
+    .app-bar-links {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .drawer {
+    display: flex;
+  }
+
+  .app-bar-links {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  // landing page styles
+  .landing-splash-box {
+    &::before,
+    &::after {
+      width: 300vw;
+      left: -100vw;
+    }
+
+    &::before {
+      background: {
+        position: 165vw 102%, center;
+        size: 20rem, 100vw;
+      }
+    }
+  }
+
+  .minor {
+    &::after {
+      width: 230vw !important;
+      left: -65vw !important;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .drawer {
+    .search {
+      display: none;
+    }
+  }
+
+  .drawer-nav {
+    .search {
+      display: inline-flex;
+    }
+  }
+}
