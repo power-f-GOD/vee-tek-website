@@ -43,7 +43,7 @@ const Header = () => {
           <Toolbar className='nav-toolbar'>
             <Link to='/' className=''>
               <Box component='h5' className='logo font-weight-bold'>
-                <img src='images/logo.png' /> Vee-Tek Group
+                <img src='images/logo.png' alt='Vee-Tek Group logo' /> Vee-Tek Group
               </Box>
             </Link>
 
