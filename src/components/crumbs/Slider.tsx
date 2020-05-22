@@ -7,7 +7,7 @@ import '../../styles/index.min.css';
 
 const Slider = () => {
   return (
-    <div className="h-100 Slider-Wrapper">
+    <div className="h-auto Slider-Wrapper">
       <Carousel>
         <Carousel.Item >
           <img
