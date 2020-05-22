@@ -29,7 +29,7 @@ const Landing = () => {
           <Col sm={11} lg={5} md={5}>
             <Image className="Pad" src="images/biz_three.svg"/>
           </Col>
-        </Row>
+          </Row>
       </Container>
     </div>
   );
