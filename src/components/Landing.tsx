@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from "./landing_components/Slider";
+import Slider from "./crumbs/Slider";
 
 const Landing = () => {
   return (

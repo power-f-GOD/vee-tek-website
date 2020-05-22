@@ -11,7 +11,8 @@ import {
   Blog,
   Gallery,
   Contact,
-  About
+  About,
+  Footer
 } from './components';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/contact' component={Contact} />
           <Route path='/about' component={About} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );
