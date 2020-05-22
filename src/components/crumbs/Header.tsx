@@ -20,7 +20,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 
 const Header = () => {
   return (
-    <Box marginBottom='8rem'>
+    <Box marginBottom='0'>
       <AppBar position='fixed' className='mobile-width'>
         <Box className='top-nav-links-wrapper'>
           <Container>
@@ -41,11 +41,13 @@ const Header = () => {
 
         <Container>
           <Toolbar className='nav-toolbar'>
-            <Link to='/' className=''>
-              <Box component='h5' className='logo font-weight-bold'>
-                <img src='images/logo.png' alt='Vee-Tek Group logo' /> Vee-Tek Group
-              </Box>
-            </Link>
+            <Box component='h5' className='logo font-weight-bold'>
+              <Link to='/'>
+                {' '}
+                <img src='images/logo.png' alt='Vee-Tek Group logo' /> Vee-Tek
+                Group
+              </Link>
+            </Box>
 
             <Box className='nav-links-wrapper app-bar-links'>
               <NavLinks />

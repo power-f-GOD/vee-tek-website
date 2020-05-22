@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from "./landing_components/Slider";
 import {Container, Row, Col, Image} from "react-bootstrap";
 import "../styles/index.min.css"
+import Slider from "./crumbs/Slider";
 
 const Landing = () => {
   return (
