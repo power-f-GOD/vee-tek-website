@@ -14,7 +14,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
-// import LocationOnIcon from '@material-ui/icons/LocationOn';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const Contact = () => {
   return (
@@ -104,7 +104,7 @@ const Contact = () => {
             </form>
           </Col>
           <Col lg={3} className='social-media-col'>
-            <Row className='align-content-center text-center h-100 p-3 py-5'>
+            <Row className='align-content-center text-center h-100 p-4 py-5'>
               <Col xs={12}>
                 <Row>
                   <Col xs={12} className='p-0'>
@@ -116,42 +116,17 @@ const Contact = () => {
                     </Typography>
                   </Col>
                   <Col xs={12}>
-                    <Row className='flex-column justify-items-center mb-2'>
-                      <Col className='my-2'>
-                        <EmailIcon fontSize='large' />
-                      </Col>
-                      <Col className='p-0'>vee-tek@vee-tek-group.com</Col>
+                    <Row className='flex-column justify-items-center mb-3'>
+                      <Col className='my-2'><LocationOnIcon fontSize='large' /></Col>
+                      <Col className='p-0'>Commercial Plot 6, Golf Course New Market - 9th Mile Expressway, Enugu North, Enugu Nigeria.</Col> 
                     </Row>
-                    <Row className='flex-column justify-items-center mb-2'>
-                      <Col className='my-2'>
-                        <PhoneIcon fontSize='large' />
-                      </Col>
+                    <Row className='flex-column justify-items-center mb-3'>
+                      <Col className='my-2'><EmailIcon fontSize='large' /></Col>
+                      <Col className='p-0'>vee-tek@vee-tek-group.com</Col> 
+                    </Row>
+                    <Row className='flex-column justify-items-center mb-3'>
+                      <Col className='my-2'><PhoneIcon fontSize='large' /></Col>
                       <Col className='p-0 mb-4'>+2341234567890</Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </Col>
-              <Col xs={12} className='m-0 p-4'>
-                <Row>
-                  <Col xs={12} className='my-3 p-0'>
-                    <Typography component='h5' className='font-weight-bold'>
-                      Like/Follow us on Social Media:
-                    </Typography>
-                  </Col>
-                  <Col xs={12}>
-                    <Row>
-                      <Col xs={3} className='p-0'>
-                        <FacebookIcon fontSize='large' />
-                      </Col>
-                      <Col xs={3} className='p-0'>
-                        <TwitterIcon fontSize='large' />
-                      </Col>
-                      <Col xs={3} className='p-0'>
-                        <InstagramIcon fontSize='large' />
-                      </Col>
-                      <Col xs={3} className='p-0'>
-                        <YouTubeIcon fontSize='large' />
-                      </Col>
                     </Row>
                   </Col>
                 </Row>
