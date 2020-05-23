@@ -9,13 +9,8 @@ body,
   width: 100%;
   margin: 0;
   font-size: 1rem;
-  color: #333;
+  color: #444;
   line-height: 1.5rem;
-}
-
-body {
-  position: relative;
-  overflow: auto !important;
 }
 
 * {
@@ -25,8 +20,14 @@ body {
   // border: 1px solid deeppink;
 }
 
+.debugger {
+  border: 1px solid blue;
+}
+
 body {
   padding: 0 !important;
+  position: relative;
+  overflow: auto !important;
 
   &.desktop {
     &.custom-scroll-bar,
@@ -59,8 +60,8 @@ body {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 input {
@@ -73,10 +74,38 @@ input {
 }
 
 a {
-  color: blue;
+  color: $theme-color-primary;
 
   &:visited {
     color: purple;
+  }
+}
+
+button,
+a {
+  text-transform: unset !important;
+  font-size: 1rem !important;
+
+  &[class*='Primary'] {
+    min-height: 2.5rem;
+    border-radius: 0.25rem;
+    background-color: $theme-color-primary;
+    color: white;
+
+    &.major-button {
+      border-radius: 1.75rem;
+      height: 3rem;
+
+      &:hover {
+        background-color: $theme-color-primary-v4;
+      }
+    }
+
+    &:disabled,
+    &.Mui-disabled {
+      background-color: #ccc !important;
+      color: #555;
+    }
   }
 }
 
@@ -120,6 +149,57 @@ h6 {
   &:focus-within {
     a {
       text-decoration: underline;
+    }
+  }
+}
+
+.theme-color-text {
+  color: $theme-color-primary;
+}
+
+.theme-color-bg {
+  background-color: $theme-color-primary;
+}
+
+[class^='MuiFormControl'],
+div {
+  fieldset {
+    transition: 0.35s, border-width 0s;
+  }
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 0.35rem;
+  background: #f8f8f8;
+}
+
+[class^='MuiFormControl'],
+div {
+  .MuiInputBase-root {
+    &::before,
+    &::after {
+      transition: 0.3s;
+    }
+
+    &::after {
+      border-color: $theme-color-primary;
+    }
+
+    &:hover {
+      &::before {
+        border-color: grey;
+      }
+    }
+  }
+
+  .Mui-focused {
+    color: $theme-color-primary !important;
+  }
+
+  .Mui-disabled {
+    fieldset {
+      background: #ddd;
+      border: none !important;
     }
   }
 }
