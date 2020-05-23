@@ -2,60 +2,91 @@
 
 .Contact {
   position: relative;
-  padding-top: 13rem;
-  padding-bottom: 7rem;
+  padding-top: 15rem;
+  background: #ddd;
+  z-index: 1;
+  padding-bottom: 8rem;
 
   .map-wrapper,
-  &::after {
+  &::before {
     position: absolute;
-    width: 200vw;
-    top: -16rem;
-    border-radius: 0 0 50% 50%;
-    left: -50vw;
+    width: 105vw;
+    top: 0;
+    left: -2vw;
     z-index: -1;
-    height: 50rem;
+    height: 35rem;
+    transition: 0.35s;
+    animation: fromTop 0.5s ease;
   }
 
-  &::after {
-    left: calc(-50vw - 0.95rem);
-    border-radius: 0 0 50% 50%;
+  @keyframes fromTop {
+    from {
+      transform: translateY(-25%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  &::before {
     content: ' ';
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: black;
   }
 
   .map-wrapper {
-    box-shadow: 0 0 0.85rem rgba(0, 0, 0, 0.45);
+    opacity: 0.5 ;
+    box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.96);
     background: {
       image: url('/images/google-map-placeholder.png');
       position: bottom center;
     }
+
+    &:hover {
+      opacity: 0.75;
+    }
   }
 
   .title {
-    margin-bottom: 7rem;
-    color: white;
+    margin-bottom: 9rem;
+    color: #eee;
     text-shadow: 0.075rem 0.075rem 0.165rem #333;
 
     > h1 {
       font-weight: bold;
+      display: inline-block;
+    }
+
+    &:hover ~ .map-wrapper {
+      opacity: 0.75;
     }
   }
 
   .contact-form-wrapper {
     border-radius: 0.5rem;
     overflow: hidden;
-
+    max-width: 68rem;
+    margin: auto;
     box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.25) !important;
-    background-color: white;
+    animation: fromBottom 0.5s ease;
 
     .contact-form-col {
-      min-height: 30rem;
+      padding: 3.5rem;
+      background-color: white;
     }
 
     .social-media-col {
-      min-height: 30rem;
+      font-size: 0.9rem;
       color: white;
       background-color: $theme-color-primary;
+    }
+  }
+
+  @keyframes fromBottom {
+    from {
+      transform: translateY(25%);
+    }
+    to {
+      transform: translateY(0);
     }
   }
 }

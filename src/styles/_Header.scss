@@ -1,23 +1,23 @@
 @import 'constants';
 
 .MuiAppBar-root {
-  background-color: $theme-color-primary !important;
+  background-color: $theme-color-primary;
   transition: 0.5s;
   width: 100%;
   left: 0;
-  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.4);
 }
 
-.nav-background {
-  background-color: rgba(0, 65, 108, 0.99) !important;
-}
+// .nav-background {
+//   background-color: rgba(0, 65, 108, 0.99);
+// }
 
 .nav-toolbar {
   display: flex;
   visibility: visible;
   justify-content: space-between;
   align-items: center;
-  padding: 0 !important;
+  padding: 0;
 
   a {
     text-decoration: none;
@@ -129,12 +129,12 @@
     width: max-content !important;
     max-width: 22rem;
     left: -1rem;
-    background: white;
     box-shadow: 0 0.5rem 0.85rem rgba(0, 0, 0, 0.2);
     color: inherit;
+    padding: 0.25rem 0;
+    background-color: white;
     top: 110%;
-    border-radius: 0 0 0.5rem 0.5rem;
-    // overflow: hidden;
+    border-radius: 0 0 0.35rem 0.35rem;
     visibility: hidden;
     opacity: 0;
     transition: 0.3s;
@@ -150,14 +150,11 @@
       color: $theme-color-primary;
       transition: 0.3s;
       display: flex;
+      background: white;
       z-index: 50 !important;
       justify-content: space-between;
       align-items: center;
       font-size: 0.95rem !important;
-
-      &:last-child {
-        border-radius: 0 0 0.5rem 0.5rem;
-      }
 
       .sub-menu {
         left: unset;
@@ -179,6 +176,10 @@
       &:hover,
       &:focus {
         color: white;
+        padding: {
+          left: 1.4rem !important;
+          right: 0.6rem !important;
+        }
         background: $theme-color-primary;
 
         .sub-menu {
@@ -190,12 +191,15 @@
       }
     }
 
+    $border: 0.0625rem solid $theme-color-primary-faint;
     a {
       padding: 1rem;
-      border-bottom: 0.0625rem solid $theme-color-primary-faint;
+      border: {
+        top: $border;
+      }
 
       &:last-child {
-        border: none;
+        border-bottom: $border;
       }
     }
   }
