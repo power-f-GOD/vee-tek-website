@@ -3,7 +3,7 @@
 .Contact {
   position: relative;
   padding-top: 15rem;
-  background: #ddd;
+  background-color: #eee;
   z-index: 1;
   padding-bottom: 8rem;
 
@@ -14,7 +14,7 @@
     top: 0;
     left: -2vw;
     z-index: -1;
-    height: 35rem;
+    height: 37.5rem;
     transition: 0.35s;
     animation: fromTop 0.5s ease;
   }
@@ -34,7 +34,8 @@
   }
 
   .map-wrapper {
-    opacity: 0.5 ;
+    cursor: pointer;
+    opacity: 0.5;
     box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.96);
     background: {
       image: url('/images/google-map-placeholder.png');
@@ -42,51 +43,64 @@
     }
 
     &:hover {
-      opacity: 0.75;
+      opacity: 0.8;
+      box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.76);
+
+      ~ .contact-form-container {
+        .contact-form-wrapper {
+          transform: translateY(15%);
+        }
+      }
+
+      ~ .contact-page-title {
+        visibility: hidden;
+
+        > h1 {
+          opacity: 0;
+        }
+      }
     }
   }
+}
 
-  .title {
-    margin-bottom: 9rem;
-    color: #eee;
-    text-shadow: 0.075rem 0.075rem 0.165rem #333;
+.contact-page-title {
+  margin-bottom: 9rem;
+  color: #eee;
+  text-shadow: 0.075rem 0.075rem 0.165rem #333;
 
-    > h1 {
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    &:hover ~ .map-wrapper {
-      opacity: 0.75;
-    }
+  > h1 {
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.35s;
   }
+}
 
-  .contact-form-wrapper {
-    border-radius: 0.5rem;
-    overflow: hidden;
-    max-width: 68rem;
-    margin: auto;
-    box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.25) !important;
-    animation: fromBottom 0.5s ease;
+.contact-form-wrapper {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 68rem;
+  margin: auto;
+  box-shadow: 0 0.25rem 5rem rgba(0, 0, 0, 0.25) !important;
+  animation: fromBottom 0.5s ease;
+  transition: 0.35s;
+}
 
-    .contact-form-col {
-      padding: 3.5rem;
-      background-color: white;
-    }
+.contact-form-col {
+  padding: 3.5rem;
+  background-color: white;
+}
 
-    .social-media-col {
-      font-size: 0.9rem;
-      color: white;
-      background-color: $theme-color-primary;
-    }
+.contact-info-col {
+  font-size: 0.9rem;
+  color: white;
+  background-color: $theme-color-primary;
+}
+
+@keyframes fromBottom {
+  from {
+    transform: translateY(25%);
   }
-
-  @keyframes fromBottom {
-    from {
-      transform: translateY(25%);
-    }
-    to {
-      transform: translateY(0);
-    }
+  to {
+    transform: translateY(0);
   }
 }
