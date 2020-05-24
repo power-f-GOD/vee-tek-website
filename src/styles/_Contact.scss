@@ -3,7 +3,12 @@
 .Contact {
   position: relative;
   padding-top: 15rem;
-  background-color: #eee;
+  background: {
+    size: 30rem;
+    position: center;
+    color: #eee;
+    image: url('/images/pattern-bg.png');
+  };
   z-index: 1;
   padding-bottom: 8rem;
 
@@ -14,7 +19,7 @@
     top: 0;
     left: -2vw;
     z-index: -1;
-    height: 37.5rem;
+    height: 38.5rem;
     transition: 0.35s;
     animation: fromTop 0.5s ease;
   }
@@ -44,11 +49,10 @@
 
     &:hover {
       opacity: 0.8;
-      box-shadow: 0 0.15rem 0.85rem rgba(0, 0, 0, 0.76);
 
       ~ .contact-form-container {
         .contact-form-wrapper {
-          transform: translateY(15%);
+          transform: translateY(7.5rem);
         }
       }
 
