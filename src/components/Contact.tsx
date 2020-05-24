@@ -54,6 +54,7 @@ const Contact = () => {
                     required
                     id='standard-basic'
                     label='Email'
+                    type='email'
                     autoComplete='username'
                     fullWidth
                   />
