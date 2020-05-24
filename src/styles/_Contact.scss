@@ -4,22 +4,21 @@
   position: relative;
   padding-top: 15rem;
   background: {
-    size: 30rem;
-    position: center;
+    position: bottom;
     color: #eee;
     image: url('/images/pattern-bg.png');
-  };
+  }
   z-index: 1;
   padding-bottom: 8rem;
 
   .map-wrapper,
   &::before {
     position: absolute;
-    width: 105vw;
+    width: 110vw;
     top: 0;
-    left: -2vw;
+    left: -4vw;
     z-index: -1;
-    height: 38.5rem;
+    height: 37rem;
     transition: 0.35s;
     animation: fromTop 0.5s ease;
   }
@@ -48,7 +47,7 @@
     }
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.85;
 
       ~ .contact-form-container {
         .contact-form-wrapper {
@@ -82,9 +81,10 @@
 .contact-form-wrapper {
   border-radius: 0.5rem;
   overflow: hidden;
-  max-width: 68rem;
+  max-width: 62rem;
   margin: auto;
-  box-shadow: 0 0.25rem 5rem rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 0.25rem 5rem rgba(0, 0, 0, 0.15),
+    0 0.25rem 5rem rgba(0, 0, 0, 0.25) !important;
   animation: fromBottom 0.5s ease;
   transition: 0.35s;
 }
@@ -97,7 +97,7 @@
 .contact-info-col {
   font-size: 0.9rem;
   color: white;
-  background-color: $theme-color-primary;
+  background-color: $theme-color-primary-v4;
 }
 
 @keyframes fromBottom {

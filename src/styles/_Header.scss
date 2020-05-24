@@ -1,16 +1,12 @@
 @import 'constants';
 
 .MuiAppBar-root {
-  background-color: $theme-color-primary;
+  background-color: $theme-color-primary-v4;
   transition: 0.5s;
   width: 100%;
   left: 0;
   box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.4);
 }
-
-// .nav-background {
-//   background-color: rgba(0, 65, 108, 0.99);
-// }
 
 .nav-toolbar {
   display: flex;
@@ -24,15 +20,22 @@
   }
 }
 
-.top-nav-links-wrapper {
+.top-nav-box {
   padding: 0.25rem 0;
-  background: white;
-  color: $theme-color-primary;
+  background: $theme-color-primary-v3;
+  color: $theme-color-primary-v8;
   font-size: 0.85rem;
+
+  span:first-of-type {
+    display: inline-block;
+    margin-right: 0.25rem;
+    padding-right: 0.75rem;
+    border-right: 1px solid $theme-color-primary-v5;
+  }
 
   .social-media-links-wrapper {
     display: inline-flex;
-    flex-grow: 0.15;
+    flex-grow: 0.25;
     justify-content: space-between;
   }
 
@@ -52,17 +55,24 @@
   opacity: 0.15;
   transition: 0.35s;
   display: none;
-  // visibility: hidden;
+}
+
+.nav-link-wrapper {
+  position: relative;
+  width: auto;
+  flex-basis: unset;
 }
 
 .nav-link {
   box-shadow: none;
-  display: inline-flex;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
   margin: 0 1rem;
   padding: 1.5rem 0.5rem;
   color: $theme-color-primary-v9 !important;
-  background: unset;
   z-index: 2;
   text-transform: capitalize !important;
   transition: 0.35s;
@@ -79,7 +89,7 @@
     bottom: calc(20% + 0.25em);
     left: -1rem;
     z-index: -1;
-    background-color: $theme-color-primary-v6;
+    background-color: $theme-color-primary-v5;
     transition: 0.3s;
   }
 
@@ -91,19 +101,19 @@
 
   &:hover,
   &:focus {
-    color: white !important;
+    color: #fff !important;
 
     &::before {
       width: calc(100% - 1em);
       left: 0.5rem;
-      background-color: white;
+      background-color: $theme-color-primary-v7 !important;
     }
 
     .nav-icon {
       opacity: unset;
     }
 
-    .nav-link-menu {
+    + .nav-menu {
       top: 100%;
       opacity: 1;
       visibility: visible;
@@ -125,85 +135,86 @@
       opacity: 0.85;
     }
   }
+}
 
-  .nav-link-menu {
-    text-align: left;
-    position: absolute;
-    width: max-content !important;
-    max-width: 22rem;
-    left: -1rem;
-    box-shadow: 0 0.5rem 0.85rem rgba(0, 0, 0, 0.2);
-    color: inherit;
-    padding: 0.25rem 0;
-    background-color: white;
-    top: 110%;
-    border-radius: 0 0 0.35rem 0.35rem;
+.nav-menu {
+  text-align: left;
+  position: absolute;
+  width: max-content;
+  max-width: 22rem;
+  left: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  color: inherit;
+  padding: 0.25rem 0;
+  background-color: $theme-color-primary-v7;
+  top: 110%;
+  border-radius: 0 0 0.35rem 0.35rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+
+  &:focus-within,
+  &:hover {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  a {
+    color: $theme-color-primary-v3;
+    transition: 0.3s;
+    display: flex;
+    background: $theme-color-primary-v9;
+    z-index: 50 !important;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem !important;
+
+    &:hover,
+    &:focus {
+      color: $theme-color-primary-v9;
+      padding: {
+        left: 1.4rem !important;
+        right: 0.6rem !important;
+      }
+      background: $theme-color-primary-v4 !important;
+
+      + .sub-menu {
+        opacity: 1;
+        left: 100%;
+        visibility: visible;
+      }
+    }
+  }
+
+  .sub-menu {
+    display: flex;
+    justify-content: space-between;
+    left: unset;
+    top: 0;
     visibility: hidden;
     opacity: 0;
-    transition: 0.3s;
+    left: 110%;
+    z-index: 6;
 
-    &:focus-within {
-      top: 100%;
+    &:focus-within,
+    &:hover {
+      top: 0;
+      left: 100%;
       opacity: 1;
       visibility: visible;
     }
+  }
 
-    > a {
-      position: relative;
-      color: $theme-color-primary;
-      transition: 0.3s;
-      display: flex;
-      background: white;
-      z-index: 50 !important;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem !important;
-
-      .sub-menu {
-        left: unset;
-        top: 0;
-        // display: none;
-        visibility: hidden;
-        opacity: 0;
-        left: 110%;
-        z-index: 1;
-
-        &:focus-within {
-          top: 0;
-          left: 100% !important;
-          opacity: 1 !important;
-          visibility: visible !important;
-        }
-      }
-
-      &:hover,
-      &:focus {
-        color: white;
-        padding: {
-          left: 1.4rem !important;
-          right: 0.6rem !important;
-        }
-        background: $theme-color-primary;
-
-        .sub-menu {
-          // display: flex;
-          opacity: 1;
-          left: 100%;
-          visibility: visible;
-        }
-      }
+  $border: 0.0625rem solid $theme-color-primary-faint;
+  a {
+    padding: 1rem;
+    border: {
+      top: $border;
     }
 
-    $border: 0.0625rem solid $theme-color-primary-faint;
-    a {
-      padding: 1rem;
-      border: {
-        top: $border;
-      }
-
-      &:last-child {
-        border-bottom: $border;
-      }
+    &:last-child {
+      border-bottom: $border;
     }
   }
 }
@@ -219,24 +230,86 @@
     padding: 2rem 0;
   }
 
+  .nav-link-wrapper {
+    width: 100%;
+  }
+
   .nav-link {
+    width: 100%;
     padding: 0.85rem;
     margin: 0 0.5rem;
     margin-top: 0.5rem;
 
-    &:hover,
-    &:focus {
-      border-bottom-color: transparent;
-      &::before {
-        max-width: 50%;
+    &:focus,
+    &:hover {
+      + .nav-menu {
+        top: calc(100% + 0.5rem);
+      }
+    }
+  }
+
+  .nav-menu {
+    left: 15%;
+    width: calc(85% - 1rem);
+    max-width: 85%;
+    top: 130%;
+    z-index: 5;
+
+    &:focus-within,
+    &:hover {
+      top: calc(100% + 0.5rem);
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        + .sub-menu {
+          left: 15%;
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    width: 85%;
+    left: 30%;
+    top: 70%;
+
+    &:focus-within,
+    &:hover {
+      top: 70%;
+      left: 15%;
+    }
+  }
+
+  .top-nav-box {
+    display: none;
+    margin: 4rem 0;
+    padding: 0.5rem 0;
+  }
+
+  .top-nav-wrapper {
+    flex-direction: column;
+    > div {
+      margin: 0.5rem 0;
+
+      span {
+        margin: 0.5rem 0;
+        border: none;
+      }
+
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
       }
     }
   }
 
   .MuiDrawer-paper {
-    width: 60%;
+    width: 80%;
     overflow-x: hidden;
-    background: $theme-color-primary;
-    max-width: 300px;
+    background: $theme-color-primary-v4;
+    max-width: 22rem;
   }
 }

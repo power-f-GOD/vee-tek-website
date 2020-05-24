@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 import AppBar from '@material-ui/core/AppBar';
-import Container from '@material-ui/core/Container';
 import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Grid from '@material-ui/core/Grid';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -22,22 +24,7 @@ const Header = () => {
   return (
     <Box marginBottom='0'>
       <AppBar position='fixed' className='mobile-width'>
-        <Box className='top-nav-links-wrapper'>
-          <Container>
-            <Grid container justify='space-between' alignItems='center'>
-              <Grid item>
-                <EmailIcon /> vee-tek@vee-tek-group.com | <PhoneIcon />{' '}
-                +2341234567890
-              </Grid>
-              <Grid item className='social-media-links-wrapper'>
-                <FacebookIcon />
-                <TwitterIcon />
-                <InstagramIcon />
-                <YouTubeIcon />
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
+        <TopNavLinks />
 
         <Container>
           <Toolbar className='nav-toolbar'>
@@ -55,6 +42,7 @@ const Header = () => {
 
             <TemporaryDrawer>
               <NavLinks />
+              <TopNavLinks />
             </TemporaryDrawer>
           </Toolbar>
         </Container>
@@ -63,53 +51,93 @@ const Header = () => {
   );
 };
 
+function TopNavLinks() {
+  return (
+    <Box className='top-nav-box'>
+      <Container>
+        <Row className='top-nav-wrapper'>
+          <Col>
+            <span>
+              <EmailIcon /> vee-tek@vee-tek-group.com
+            </span>{' '}
+            <span>
+              <PhoneIcon /> +2341234567890
+            </span>
+          </Col>
+          <Col className='social-media-links-wrapper d-flex justify-content-between'>
+            <FacebookIcon />
+            <TwitterIcon />
+            <InstagramIcon />
+            <YouTubeIcon />
+          </Col>
+        </Row>
+      </Container>
+    </Box>
+  );
+}
+
 function NavLinks() {
   return (
-    <>
-      <NavLink to='/about' className='nav-link'>
-        About Us <ExpandMoreIcon />
-        <Grid container className='nav-link-menu' direction='column'>
+    <Row className='m-0'>
+      <Col className='nav-link-wrapper p-0 d-flex'>
+        <NavLink to='/about' className='nav-link'>
+          About Us <ExpandMoreIcon />
+        </NavLink>
+
+        <Row className='nav-menu flex-column m-0'>
           <Link to='#!'>Who We Are?</Link>
           <Link to='#!'>Our People</Link>
           <Link to='#!'>Certificates (Quality Assurance)</Link>
           <Link to='#!'>Sustainability Strategy</Link>
-        </Grid>
-      </NavLink>
-      <NavLink to='/companies' className='nav-link'>
-        Our Companies <ExpandMoreIcon />
-        <Grid container className='nav-link-menu' direction='column'>
-          <Link to='#!' className='nav-link-sub-menu'>
-            Switch-gears Engineering and Manufacturing{' '}
-            <ArrowForwardIosIcon fontSize='inherit' />
-            <Grid
-              container
-              className='nav-link-menu sub-menu'
-              direction='column'>
+        </Row>
+      </Col>
+
+      <Col className='nav-link-wrapper p-0 d-flex'>
+        <NavLink to='/companies' className='nav-link'>
+          <span>Our Companies</span> <ExpandMoreIcon />
+        </NavLink>
+
+        <Row className='nav-menu flex-column m-0'>
+          <Col className='p-0'>
+            <Link to='#!' className='nav-menu-link'>
+              Switch-gears Engineering and Manufacturing{' '}
+              <ArrowForwardIosIcon fontSize='inherit' />
+            </Link>
+
+            <Row className='nav-menu sub-menu flex-column m-0'>
               <Link to='#!'>Our Projects</Link>
               <Link to='#!'>Our Products</Link>
-            </Grid>
-          </Link>
-          <Link to='#!'>
-            Pipes and Fittings <ArrowForwardIosIcon fontSize='inherit' />
-            <Grid
-              container
-              className='nav-link-menu sub-menu'
-              direction='column'>
+            </Row>
+          </Col>
+
+          <Col className='p-0'>
+            <Link to='#!' className='nav-menu-link'>
+              Pipes and Fittings <ArrowForwardIosIcon fontSize='inherit' />
+            </Link>
+
+            <Row className='nav-menu sub-menu flex-column m-0'>
               <Link to='#!'>Our Products</Link>
-            </Grid>
-          </Link>
-        </Grid>
-      </NavLink>
-      <NavLink to='/blog' className='nav-link'>
-        News and Events
-      </NavLink>
-      <NavLink to='/gallery' className='nav-link'>
-        Gallery
-      </NavLink>
-      <NavLink to='/contact' className='nav-link'>
-        Contact Us
-      </NavLink>
-    </>
+            </Row>
+          </Col>
+        </Row>
+      </Col>
+
+      <Col className='nav-link-wrapper p-0 d-flex'>
+        <NavLink to='/blog' className='nav-link'>
+          News and Events
+        </NavLink>
+      </Col>
+      <Col className='nav-link-wrapper p-0 d-flex'>
+        <NavLink to='/gallery' className='nav-link'>
+          Gallery
+        </NavLink>
+      </Col>
+      <Col className='nav-link-wrapper p-0 d-flex'>
+        <NavLink to='/contact' className='nav-link'>
+          Contact Us
+        </NavLink>
+      </Col>
+    </Row>
   );
 }
 

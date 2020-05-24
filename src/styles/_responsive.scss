@@ -3,7 +3,7 @@
     display: none;
   }
 
-  @media screen and (max-width: 1152px) {
+  @media screen and (max-width: 1216px) {
     .drawer {
       display: flex;
     }
@@ -34,49 +34,20 @@
 }
 
 @media screen and (max-width: 767px) {
-  // landing page styles
-  .landing-splash-box {
-    &::before,
-    &::after {
-      width: 300vw;
-      left: -100vw;
-    }
-
-    &::before {
-      background: {
-        position: 165vw 102%, center;
-        size: 20rem, 100vw;
-      }
-    }
+  .top-nav-box {
+    display: none;
   }
-
-  .minor {
-    &::after {
-      width: 230vw !important;
-      left: -65vw !important;
+  
+  .drawer-nav {
+    .top-nav-box {
+      display: flex;
     }
   }
 }
 
 @media screen and (max-width: 599px) {
-  .top-nav-links-wrapper {
-    display: none;
-  }
-
   .logo {
     padding: 0.5rem 0;
-  }
-
-  .drawer {
-    .search {
-      display: none;
-    }
-  }
-
-  .drawer-nav {
-    .search {
-      display: inline-flex;
-    }
   }
 
   //contact us page responsive styles
