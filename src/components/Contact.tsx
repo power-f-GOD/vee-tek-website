@@ -13,10 +13,24 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const Contact = () => {
+  const map = `
+        <iframe
+          src='https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3964.554635487151!2d7.477195814266395!3d6.451175375790902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sCommercial%20Plot%206%2C%20Golf%20Course%20New%20Market%20-%209th%20Mile%20Expressway%2C%20Enugu%20North%2C%20Enugu%20Nigeria.!5e0!3m2!1sen!2sng!4v1590742094581!5m2!1sen!2sng'
+          id='the-map'
+          frameborder='0'
+          style='border:0; width: 100%; height: 100%;'
+          importance='high'
+          allowfullscreen=''
+          aria-hidden='false'
+          tabindex='0'></iframe>`;
+
   return (
-    <Container fluid className='Contact'>
-      <Row className='map-wrapper'></Row>
-      
+    <Container fluid className='Contact px-0'>
+      <Container
+        fluid
+        className='map-wrapper justify-content-center p-0'
+        dangerouslySetInnerHTML={{ __html: map }}></Container>
+
       <Container className='contact-page-title text-center fade-in'>
         <Typography component='h1' variant='h3'>
           CONTACT US
@@ -25,7 +39,9 @@ const Contact = () => {
 
       <Container fluid='sm' className='contact-form-container'>
         <Row className='contact-form-wrapper'>
-          <Col lg={9} className='contact-form-col'>
+          <Col
+            lg={9}
+            className='contact-form-col d-flex flex-column justify-content-center'>
             <Typography
               component='h2'
               variant='h4'
@@ -40,7 +56,7 @@ const Contact = () => {
 
             <form className='contact-form'>
               <Row>
-                <Col md={6} className='my-2'>
+                <Col sm={6} className='my-2'>
                   <TextField
                     required
                     id='name'
@@ -49,10 +65,10 @@ const Contact = () => {
                     fullWidth
                   />
                 </Col>
-                <Col md={6} className='my-2'>
+                <Col sm={6} className='my-2'>
                   <TextField
                     required
-                    id='standard-basic'
+                    id='email'
                     label='Email'
                     type='email'
                     autoComplete='username'
@@ -61,8 +77,9 @@ const Contact = () => {
                 </Col>
               </Row>
               <Row>
-                <Col md={6} className='my-2'>
+                <Col sm={6} className='my-2'>
                   <TextField
+                    required
                     type='tel'
                     id='phone'
                     label='Phone'
@@ -70,7 +87,7 @@ const Contact = () => {
                     fullWidth
                   />
                 </Col>
-                <Col md={6} className='my-2'>
+                <Col sm={6} className='my-2'>
                   <TextField
                     id='standard-basic'
                     label='Company'
@@ -92,7 +109,7 @@ const Contact = () => {
                     fullWidth
                   />
                 </Col>
-                <Col md={6} className='my-2 mt-5'>
+                <Col md={6} sm={7} className='my-2 mt-5'>
                   <Button
                     className='major-button'
                     variant='contained'
