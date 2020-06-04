@@ -15,6 +15,13 @@
 }
 
 @media screen and (max-width: 1023px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 100%;
+  }
+
   .drawer {
     display: flex;
   }
@@ -34,23 +41,46 @@
 }
 
 @media screen and (max-width: 767px) {
+  .logo {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
   .top-nav-box {
     display: none;
   }
-  
+
   .drawer-nav {
     .top-nav-box {
       display: flex;
     }
   }
+
+  .Contact {
+    padding-top: 13.5rem;
+
+    .map-wrapper,
+    &::before {
+      height: 36rem;
+    }
+  }
+
+  .contact-page-title {
+    margin-bottom: 10rem;
+  }
 }
 
 @media screen and (max-width: 599px) {
-  .logo {
-    padding: 0.5rem 0;
+  //contact us page responsive styles
+  .Contact {
+    padding-top: 13rem;
+
+    .map-wrapper,
+    &::before {
+      height: 35rem;
+    }
   }
 
-  //contact us page responsive styles
   .contact-page-title {
     > h1 {
       font-size: 2.25rem;
@@ -63,6 +93,10 @@
 
   .contact-form-container {
     padding: 0;
+  }
+
+  .contact-form-wrapper {
+    border-radius: 0;
   }
 
   .contact-form-col {

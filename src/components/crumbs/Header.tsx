@@ -27,7 +27,7 @@ const Header = () => {
         <TopNavLinks />
 
         <Container>
-          <Toolbar className='nav-toolbar'>
+          <Toolbar className='nav-toolbar d-flex flex-wrap'>
             <Box component='h5' className='logo font-weight-bold'>
               <Link to='/'>
                 {' '}
