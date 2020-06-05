@@ -111,8 +111,8 @@ const Contact = () => {
                 </Col>
                 <Col md={6} sm={7} className='my-2 mt-5'>
                   <Button
-                    className='major-button'
-                    variant='contained'
+                    className='major-button outlined'
+                    variant='outlined'
                     color='primary'
                     id='submit-message'
                     fullWidth>
