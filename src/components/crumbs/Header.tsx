@@ -12,7 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+// import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import EmailIcon from '@material-ui/icons/Email';
@@ -101,23 +101,24 @@ function NavLinks() {
           <Col className='p-0'>
             <Link to='#!' className='nav-menu-link'>
               Switch-gears Engineering and Manufacturing{' '}
-              <ArrowForwardIosIcon fontSize='inherit' />
+              {/* <ArrowForwardIosIcon fontSize='inherit' /> */}
             </Link>
 
-            <Row className='nav-menu sub-menu flex-column m-0'>
+            {/* <Row className='nav-menu sub-menu flex-column m-0'>
               <Link to='#!'>Our Projects</Link>
               <Link to='#!'>Our Products</Link>
-            </Row>
+            </Row> */}
           </Col>
 
           <Col className='p-0'>
             <Link to='#!' className='nav-menu-link'>
-              Pipes and Fittings <ArrowForwardIosIcon fontSize='inherit' />
+              Pipes and Fittings 
+              {/* <ArrowForwardIosIcon fontSize='inherit' /> */}
             </Link>
 
-            <Row className='nav-menu sub-menu flex-column m-0'>
+            {/* <Row className='nav-menu sub-menu flex-column m-0'>
               <Link to='#!'>Our Products</Link>
-            </Row>
+            </Row> */}
           </Col>
         </Row>
       </Col>

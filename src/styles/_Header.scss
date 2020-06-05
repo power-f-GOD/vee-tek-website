@@ -1,7 +1,7 @@
 @import 'constants';
 
 .MuiAppBar-root {
-  background-color: $theme-color-primary-v4;
+  background-color: $theme-primary-v4;
   transition: 0.5s;
   width: 100%;
   left: 0;
@@ -22,15 +22,15 @@
 
 .top-nav-box {
   padding: 0.25rem 0;
-  background: $theme-color-primary-v3;
-  color: $theme-color-primary-v8;
+  background: $theme-primary-v3;
+  color: $theme-primary-v8;
   font-size: 0.85rem;
 
   span:first-of-type {
     display: inline-block;
     margin-right: 0.25rem;
     padding-right: 0.75rem;
-    border-right: 1px solid $theme-color-primary-v5;
+    border-right: 1px solid $theme-primary-v5;
   }
 
   .social-media-links-wrapper {
@@ -72,10 +72,10 @@
   height: 100%;
   margin: 0 1rem;
   padding: 1.5rem 0.5rem;
-  color: $theme-color-primary-v9 !important;
+  color: $theme-primary-v9 !important;
   z-index: 2;
   text-transform: capitalize !important;
-  transition: 0.35s;
+  transition: 0.3s;
   position: relative;
 
   &::before,
@@ -89,14 +89,17 @@
     bottom: calc(20% + 0.25em);
     left: -1rem;
     z-index: -1;
-    background-color: $theme-color-primary-v5;
-    transition: 0.3s;
+    background-color: $theme-primary-v5;
+    transition: 0.25s;
   }
 
   &::before {
-    left: 50%;
+    width: 100%;
+    left: 0.5rem;
     bottom: 0em;
-    height: 2px;
+    height: 0.125rem;
+    transform: scale(0);
+    border-bottom: 0.125rem solid white;
   }
 
   &:hover,
@@ -105,9 +108,8 @@
 
     &::before {
       width: calc(100% - 1em);
-      // left: 0.5rem;
-      transform: translateX(-50%);
-      background-color: $theme-color-primary-v7 !important;
+      transform: scale(1);
+      border-bottom-color: $theme-primary-v7 !important;
     }
 
     .nav-icon {
@@ -115,7 +117,6 @@
     }
 
     + .nav-menu {
-      // top: 100%;
       transform: translateY(0);
       opacity: 1;
       visibility: visible;
@@ -126,12 +127,9 @@
     color: white !important;
 
     &::before {
-      left: 0.5rem;
-      transform: translateX(0);
-      max-width: 100%;
-      height: 0.125rem;
+      transform: scale(1);
       width: calc(100% - 1rem) !important;
-      background: #fff;
+      border-bottom-color: #fff;
     }
 
     .nav-icon {
@@ -149,27 +147,26 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   color: inherit;
   padding: 0.25rem 0;
-  background-color: $theme-color-primary-v7;
+  background-color: $theme-primary-v7;
   top: 100%;
   transform: translateY(10%);
   border-radius: 0 0 0.35rem 0.35rem;
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.25s;
 
   &:focus-within,
   &:hover {
-    // top: 100%;
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
 
   a {
-    color: $theme-color-primary-v3;
+    color: $theme-primary-v3;
     transition: 0.3s;
     display: flex;
-    background: $theme-color-primary-v9;
+    background: $theme-primary-v9;
     z-index: 50 !important;
     justify-content: space-between;
     align-items: center;
@@ -177,16 +174,15 @@
 
     &:hover,
     &:focus {
-      color: $theme-color-primary-v9;
+      color: $theme-primary-v9;
       padding: {
         left: 1.4rem !important;
         right: 0.6rem !important;
       }
-      background: $theme-color-primary-v4 !important;
+      background: $theme-primary-v4 !important;
 
       + .sub-menu {
         opacity: 1;
-        // left: 100%;
         transform: translateX(0);
         visibility: visible;
       }
@@ -205,15 +201,13 @@
 
     &:focus-within,
     &:hover {
-      // top: 0;
-      // left: 100%;
       transform: translateX(0);
       opacity: 1;
       visibility: visible;
     }
   }
 
-  $border: 0.0625rem solid $theme-color-primary-faint;
+  $border: 0.0625rem solid $theme-primary-faint;
   a {
     padding: 1rem;
     border: {
@@ -250,7 +244,6 @@
     &:focus,
     &:hover {
       + .nav-menu {
-        // top: calc(100% + 0.5rem);
         transform: translateY(0);
       }
     }
@@ -260,14 +253,12 @@
     left: 15%;
     width: calc(85% - 1rem);
     max-width: 85%;
-    // top: 130%;
     top: calc(100% + 0.5rem);
     transform: translateY(0.75rem);
     z-index: 5;
 
     &:focus-within,
     &:hover {
-      // top: calc(100% + 0.5rem);
       transform: translateY(0);
     }
 
@@ -275,7 +266,6 @@
       &:hover,
       &:focus {
         + .sub-menu {
-          // left: 15%;
           transform: translateX(0);
         }
       }
@@ -284,14 +274,11 @@
 
   .sub-menu {
     width: 85%;
-    // left: 30%;
     transform: translateX(15%);
     top: 65%;
 
     &:focus-within,
     &:hover {
-      // top: 70%;
-      // left: 15%;
       transform: translateX(0);
     }
   }
@@ -323,7 +310,7 @@
   .MuiDrawer-paper {
     width: 75%;
     overflow-x: hidden;
-    background: $theme-color-primary-v4;
+    background: $theme-primary-v4;
     max-width: 22rem;
   }
 }
