@@ -1,20 +1,52 @@
-.Slider-Wrapper{
+@import "constants";
+
+.Slider-Wrapper {
   height: 100% !important;
   max-height: 100% !important;
 }
-.Slide-Item{
+.Slide-Item {
   height: 100vh !important;
   max-height: 100vh !important;
   object-fit: cover;
 }
-.Pad{
+.Pad {
   padding: 2rem;
 }
 
-.Divider{
-  height: 1.5rem;
+.Divider {
+  height: 3rem;
 }
 
-.Text{
+.Text {
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.Circle {
+  border-radius: 50%;
+  background-color: $theme-color-primary-v6;
+  height: 80px;
+  width: 80px;
+}
+
+.Service-Card {
+  padding: 10px;
+  background-color: $white;
+  border-radius: 0.7rem;
+  transition: ease-in-out .3s;
+  height: 400px;
+
+  -webkit-box-shadow: 0px 0px 17px 4px rgba(232, 218, 190, 1);
+  -moz-box-shadow: 0px 0px 17px 4px rgba(232, 218, 190, 1);
+  box-shadow: 0px 0px 17px 4px rgba(232, 218, 190, 1);
+}
+
+.Service-Card:hover {
+  transform: scale(1.01);
+  -webkit-box-shadow: 0px 0px 17px 15px rgba(222, 214, 199, 1);
+  -moz-box-shadow: 0px 0px 17px 15px rgba(222, 214, 199, 1);
+  box-shadow: 0px 0px 17px 15px rgba(222, 214, 199, 1);
+}
+
+.Service-Card-Text {
+  text-align: center;
 }

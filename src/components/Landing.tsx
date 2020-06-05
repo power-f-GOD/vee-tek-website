@@ -1,36 +1,76 @@
-import React from 'react';
-import {Container, Row, Col, Image} from "react-bootstrap";
-import "../styles/index.min.css"
+import React from "react";
+import "../styles/index.min.css";
 import Slider from "./crumbs/Slider";
+import { Row, Container, Col, Image } from "react-bootstrap";
 
 const Landing = () => {
   return (
     <div>
-      <Slider/>
-      <div className="Divider"/>
-      <Container  className="Pad">
-        <Row>
-          <Col className="Text">
-            <h1 className="text-left font-weight-bolder"> Our Business</h1>
-            <div className="Divider"/>
-
-            <p className=" text-left">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent libero massa, bibendum ut mollis a,
-              scelerisque ut urna. Proin tincidunt lacus at libero porttitor, et pretium lectus ullamcorper. Mauris
-              hendrerit orci sed urna placerat viverra. Suspendisse efficitur sed ipsum eget ullamcorper. Nam quis
-              interdum orci. Praesent vel finibus erat. Nam ullamcorper nulla mauris, molestie lacinia est posuere nec.
-              Praesent dolor neque, hendrerit ut suscipit at, aliquet vel tellus. In faucibus ultrices luctus.
-              Suspendisse
-              eu lacinia dui. Mauris ultrices tellus ut sodales egestas. Mauris efficitur sem eget lorem gravida dictum
-              non at purus. Nunc id magna at est dapibus volutpat. Quisque massa orci, ultrices sit amet mollis eu,
-              pharetra in ex.
-            </p>
+      <Slider />
+      <div className="Divider" />
+      <Container className="fluid">
+        <Row className="justify-content-center">
+          <Col sm={12} md={4} className="pb-1">
+            <div className="Service-Card p-4 pt-5 pb-5">
+              <div className="w-100 d-flex justify-content-center">
+                <div className="Circle d-flex justify-content-center align-items-center">
+                  <Image src="images/electric.png" />
+                </div>
+              </div>
+              <div className="d-block mt-2 pt-3 w-auto Service-Card-Text">
+                <h5 className="font-weight-bold mb-2">
+                  Eletrification Projects
+                </h5>
+                <p className="p-1">
+                  At Veetek we undertake in Electrification Projects for our
+                  clients, serving both rural and Urban area, to increase access
+                  to electricity services for households, public educational
+                  institutions.
+                </p>
+              </div>
+            </div>
           </Col>
-          <Col sm={11} lg={5} md={5}>
-            <Image className="Pad" src="images/biz_three.svg"/>
+          <Col sm={12} md={4} className="pb-1">
+            <div className="Service-Card p-4 pt-5 pb-5">
+              <div className="w-100 d-flex justify-content-center">
+                <div className="Circle d-flex justify-content-center align-items-center">
+                  <Image src="images/injection.png" />
+                </div>
+              </div>
+              <div className="d-block mt-2 pt-3 w-auto Service-Card-Text">
+                <h5 className="font-weight-bold mb-2">
+                  Injection substation Building
+                </h5>
+                <p className="p-1">
+                  We build and commission injection substation of various
+                  capacities, to suite varying needs.
+                </p>
+              </div>
+            </div>
           </Col>
-          </Row>
+          <Col sm={12} md={4} className="pb-1">
+            <div className="Service-Card p-4 pt-5 pb-5">
+              <div className="w-100 d-flex justify-content-center">
+                <div className="Circle d-flex justify-content-center align-items-center">
+                  <Image src="images/home.png" />
+                </div>
+              </div>
+              <div className="d-block mt-2 pt-3 w-auto Service-Card-Text">
+                <h5 className="font-weight-bold mb-2">
+                  House Installation Services
+                </h5>
+                <p className="p-1">
+                  We undertake in house installation projects for Residential
+                  homes, Factories and Industries, Churches and different
+                  institutions with varying power needs.
+                </p>
+              </div>
+            </div>
+          </Col>
+        </Row>
       </Container>
+
+      <div className="Divider" />
     </div>
   );
 };
