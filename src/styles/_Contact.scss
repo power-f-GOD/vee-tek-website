@@ -48,8 +48,24 @@
       // position: bottom center;
     }
 
+    // this is for to fix issue with hover on non-desktop [mobile] devices
+    &::before {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      content: ' ';
+      background-color: transparent;
+    }
+
     &:hover {
       opacity: 0.85;
+
+      &::before {
+        display: none;
+      }
 
       ~ .contact-form-container {
         .contact-form-wrapper {
