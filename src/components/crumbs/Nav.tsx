@@ -20,6 +20,8 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PhoneIcon from '@material-ui/icons/Phone';
 
+import { NavContext } from '../../App';
+
 const Nav = () => {
   return (
     <Box marginBottom='0'>
@@ -79,7 +81,7 @@ function TopNavLinks() {
 function NavLinks() {
   const preventRedirect = (e: any) => e.preventDefault();
 
-  return (
+  const indexNavLinks = (
     <Row className='m-0'>
       <Col className='nav-link-wrapper p-0 d-flex'>
         <NavLink to='/about' onClick={preventRedirect} className='nav-link'>
@@ -105,22 +107,13 @@ function NavLinks() {
               Switch-gears Engineering and Manufacturing{' '}
               {/* <ArrowForwardIosIcon fontSize='inherit' /> */}
             </Link>
-
-            {/* <Row className='nav-menu sub-menu flex-column m-0'>
-              <Link to='#!'>Our Projects</Link>
-              <Link to='#!'>Our Products</Link>
-            </Row> */}
           </Col>
 
           <Col className='p-0'>
             <Link to='/companies/pipes-and-fittings' className='nav-menu-link'>
-              Pipes and Fittings 
+              Pipes and Fittings
               {/* <ArrowForwardIosIcon fontSize='inherit' /> */}
             </Link>
-
-            {/* <Row className='nav-menu sub-menu flex-column m-0'>
-              <Link to='#!'>Our Products</Link>
-            </Row> */}
           </Col>
         </Row>
       </Col>
@@ -141,6 +134,48 @@ function NavLinks() {
         </NavLink>
       </Col>
     </Row>
+  );
+
+  return (
+    <NavContext.Consumer>
+      {(pathname: string) => {
+        const [index, gears, pipes] = [
+          '/',
+          '/companies/switch-gears',
+          '/companies/pipes-and-fittings'
+        ];
+        const forIndex = pathname === index;
+        const forGears = new RegExp(gears).test(pathname);
+        const forPipes = new RegExp(pipes).test(pathname);
+
+        return (
+          <>
+            {forIndex && indexNavLinks}
+            {(forGears || forPipes) && (
+              <Row className='m-0'>
+                <Col className='nav-link-wrapper p-0 d-flex'>
+                  <NavLink to={`${forGears ? gears : pipes}/products`} className='nav-link'>
+                    Products
+                  </NavLink>
+                </Col>
+                <Col className='nav-link-wrapper p-0 d-flex'>
+                  <NavLink to={`${forGears ? gears : pipes}/services`} className='nav-link'>
+                    Services
+                  </NavLink>
+                </Col>
+                {forGears && (
+                  <Col className='nav-link-wrapper p-0 d-flex'>
+                    <NavLink to={`${gears}/portfolio`} className='nav-link'>
+                      Portfolio
+                    </NavLink>
+                  </Col>
+                )}
+              </Row>
+            )}
+          </>
+        );
+      }}
+    </NavContext.Consumer>
   );
 }
 
