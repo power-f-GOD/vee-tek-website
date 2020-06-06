@@ -1,5 +1,5 @@
 $theme-primary-faint: rgba(157, 113, 65, 0.25);
-$theme-secondary-faint: rgba(96, 96, 96, 0.25);
+$theme-secondary-faint: rgba(120, 120, 120, 0.25);
 
 // the -v5's are the actual colors. Colors above them are the darker variants while those below lighter
 
@@ -51,10 +51,10 @@ $theme-primary-v9: rgb(
 
 // theme secondary
 
-$theme-secondary: rgb(96, 96, 96); //supposed gold color
-$sec-r: 96;
-$sec-g: 96;
-$sec-b: 96;
+$theme-secondary: rgb(120, 120, 120); //supposed gold color
+$sec-r: 120;
+$sec-g: 120;
+$sec-b: 120;
 $theme-secondary-v1: rgb(
   $sec-r - (24 * 4),
   $sec-g - (24 * 4),
