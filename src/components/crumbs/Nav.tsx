@@ -20,7 +20,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PhoneIcon from '@material-ui/icons/Phone';
 
-const Header = () => {
+const Nav = () => {
   return (
     <Box marginBottom='0'>
       <AppBar position='fixed' className='mobile-width'>
@@ -31,7 +31,7 @@ const Header = () => {
             <Box component='h5' className='logo font-weight-bold'>
               <Link to='/'>
                 {' '}
-                <img src='images/logo.png' alt='Vee-Tek Group logo' /> Vee-Tek
+                <img src='/images/logo.png' alt='Vee-Tek Group logo' /> Vee-Tek
                 Group
               </Link>
             </Box>
@@ -77,29 +77,31 @@ function TopNavLinks() {
 }
 
 function NavLinks() {
+  const preventRedirect = (e: any) => e.preventDefault();
+
   return (
     <Row className='m-0'>
       <Col className='nav-link-wrapper p-0 d-flex'>
-        <NavLink to='/about' className='nav-link'>
+        <NavLink to='/about' onClick={preventRedirect} className='nav-link'>
           About Us <ExpandMoreIcon />
         </NavLink>
 
         <Row className='nav-menu flex-column m-0'>
-          <Link to='#!'>Who We Are?</Link>
-          <Link to='#!'>Our People</Link>
-          <Link to='#!'>Certificates (Quality Assurance)</Link>
-          <Link to='#!'>Sustainability Strategy</Link>
+          <Link to='/about/who-we-are'>Who We Are?</Link>
+          <Link to='/about/our-people'>Our People</Link>
+          <Link to='/about/certificates'>Certificates (Quality Assurance)</Link>
+          <Link to='/about/sustainability'>Sustainability Strategy</Link>
         </Row>
       </Col>
 
       <Col className='nav-link-wrapper p-0 d-flex'>
-        <NavLink to='/companies' className='nav-link'>
+        <NavLink to='/companies' onClick={preventRedirect} className='nav-link'>
           <span>Our Companies</span> <ExpandMoreIcon />
         </NavLink>
 
         <Row className='nav-menu flex-column m-0'>
           <Col className='p-0'>
-            <Link to='#!' className='nav-menu-link'>
+            <Link to='/companies/switch-gears' className='nav-menu-link'>
               Switch-gears Engineering and Manufacturing{' '}
               {/* <ArrowForwardIosIcon fontSize='inherit' /> */}
             </Link>
@@ -111,7 +113,7 @@ function NavLinks() {
           </Col>
 
           <Col className='p-0'>
-            <Link to='#!' className='nav-menu-link'>
+            <Link to='/companies/pipes-and-fittings' className='nav-menu-link'>
               Pipes and Fittings 
               {/* <ArrowForwardIosIcon fontSize='inherit' /> */}
             </Link>
@@ -124,7 +126,7 @@ function NavLinks() {
       </Col>
 
       <Col className='nav-link-wrapper p-0 d-flex'>
-        <NavLink to='/blog' className='nav-link'>
+        <NavLink to='/events' className='nav-link'>
           News and Events
         </NavLink>
       </Col>
@@ -180,4 +182,4 @@ function TemporaryDrawer(props: any) {
   );
 }
 
-export default Header;
+export default Nav;
