@@ -1,0 +1,92 @@
+@import 'constants';
+
+body.companies {
+  &.desktop {
+    &.custom-scroll-bar,
+    .custom-scroll-bar {
+
+      &::-webkit-scrollbar-thumb {
+        background: $theme-secondary !important;
+      }
+    }
+  }
+
+  .MuiAppBar-root {
+    background-color: $theme-secondary-v3;
+  }
+
+  .top-nav-box {
+    background: $theme-secondary-v2;
+    color: $theme-secondary-v8;
+
+    span:first-of-type {
+      border-right: 1px solid $theme-secondary-v5;
+    }
+  }
+
+  .nav-link {
+    color: $theme-secondary-v9 !important;
+
+    &::before,
+    &::after {
+      background-color: $theme-secondary-v5;
+    }
+
+    &::before {
+      border-bottom: 0.125rem solid white;
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff !important;
+
+      &::before {
+        border-bottom-color: $theme-secondary-v7 !important;
+      }
+    }
+  }
+
+  .nav-menu {
+    background-color: $theme-secondary-v7;
+
+    a {
+      color: $theme-secondary-v3;
+      background: $theme-secondary-v9;
+
+      &:hover,
+      &:focus {
+        color: $theme-secondary-v9;
+        background: $theme-secondary-v3 !important;
+      }
+    }
+
+    $border: 0.0625rem solid $theme-secondary-faint;
+    a {
+      border: {
+        top: $border;
+      }
+
+      &:last-child {
+        border-bottom: $border;
+      }
+    }
+  }
+
+  .MuiDrawer-paper {
+    background: $theme-secondary-v4;
+  }
+
+  .Footer-Wrapper-One {
+    background-color: $theme-secondary-v5;
+  }
+  
+  .Footer-Wrapper-Two {
+    background-color: $theme-secondary-v4;
+  }
+
+  .logo {
+    &:focus-within {
+      border: 1px solid $theme-secondary-v8;
+    }
+  }
+}

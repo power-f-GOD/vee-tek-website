@@ -1,4 +1,5 @@
 $theme-primary-faint: rgba(157, 113, 65, 0.25);
+$theme-secondary-faint: rgba(96, 96, 96, 0.25);
 
 // the -v5's are the actual colors. Colors above them are the darker variants while those below lighter
 
@@ -46,6 +47,54 @@ $theme-primary-v9: rgb(
   $prim-r + (24 * 4),
   $prim-g + (24 * 4),
   $prim-b + (24 * 4)
+);
+
+// theme secondary
+
+$theme-secondary: rgb(96, 96, 96); //supposed gold color
+$sec-r: 96;
+$sec-g: 96;
+$sec-b: 96;
+$theme-secondary-v1: rgb(
+  $sec-r - (24 * 4),
+  $sec-g - (24 * 4),
+  $sec-b - (24 * 4)
+);
+$theme-secondary-v2: rgb(
+  $sec-r - (24 * 3),
+  $sec-g - (24 * 3),
+  $sec-b - (24 * 3)
+);
+$theme-secondary-v3: rgb(
+  $sec-r - (24 * 2),
+  $sec-g - (24 * 2),
+  $sec-b - (24 * 2)
+);
+$theme-secondary-v4: rgb(
+  $sec-r - (24 * 1),
+  $sec-g - (24 * 1),
+  $sec-b - (24 * 1)
+);
+$theme-secondary-v5: rgb($sec-r, $sec-g, $sec-b);
+$theme-secondary-v6: rgb(
+  $sec-r + (24 * 1),
+  $sec-g + (24 * 1),
+  $sec-b + (24 * 1)
+);
+$theme-secondary-v7: rgb(
+  $sec-r + (24 * 2),
+  $sec-g + (24 * 2),
+  $sec-b + (24 * 2)
+);
+$theme-secondary-v8: rgb(
+  $sec-r + (24 * 3),
+  $sec-g + (24 * 3),
+  $sec-b + (24 * 3)
+);
+$theme-secondary-v9: rgb(
+  $sec-r + (24 * 4),
+  $sec-g + (24 * 4),
+  $sec-b + (24 * 4)
 );
 
 $success: rgb(27, 136, 27);
