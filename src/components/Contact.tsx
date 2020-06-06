@@ -29,7 +29,8 @@ const Contact = () => {
       <Container
         fluid
         className='map-wrapper justify-content-center p-0'
-        dangerouslySetInnerHTML={{ __html: map }}></Container>
+        dangerouslySetInnerHTML={{ __html: map }}
+      />
 
       <Container className='contact-page-title text-center fade-in'>
         <Typography component='h1' variant='h3'>
