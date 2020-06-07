@@ -31,6 +31,18 @@
   }
 }
 
+@media screen and (min-width: 992px) {
+  body.companies {
+    .drawer {
+      display: none;
+    }
+
+    .app-bar-links {
+      display: flex;
+    }
+  }
+}
+
 @media screen and (max-width: 991px) {
   .contact-info-col {
     padding: {
@@ -42,7 +54,7 @@
 
 @media screen and (max-width: 767px) {
   .logo {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .top-nav-box {

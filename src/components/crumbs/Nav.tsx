@@ -154,12 +154,16 @@ function NavLinks() {
             {(forGears || forPipes) && (
               <Row className='m-0'>
                 <Col className='nav-link-wrapper p-0 d-flex'>
-                  <NavLink to={`${forGears ? gears : pipes}/products`} className='nav-link'>
+                  <NavLink
+                    to={`${forGears ? gears : pipes}/products`}
+                    className='nav-link'>
                     Products
                   </NavLink>
                 </Col>
                 <Col className='nav-link-wrapper p-0 d-flex'>
-                  <NavLink to={`${forGears ? gears : pipes}/services`} className='nav-link'>
+                  <NavLink
+                    to={`${forGears ? gears : pipes}/services`}
+                    className='nav-link'>
                     Services
                   </NavLink>
                 </Col>
@@ -170,6 +174,17 @@ function NavLinks() {
                     </NavLink>
                   </Col>
                 )}
+                <Col className='nav-link-wrapper p-0 d-flex'>
+                  {forGears ? (
+                    <NavLink to={`${gears}/inquiry`} className='nav-link button'>
+                      Make an Inquiry
+                    </NavLink>
+                  ) : (
+                    <NavLink to={`${pipes}/order`} className='nav-link button'>
+                      Make an Order
+                    </NavLink>
+                  )}
+                </Col>
               </Row>
             )}
           </>
