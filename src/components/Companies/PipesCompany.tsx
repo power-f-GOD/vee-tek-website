@@ -7,9 +7,10 @@ import _404 from '../_404';
 
 const PipesCompany = () => {
   const main = '/companies/pipes-and-fittings';
-  const [products, services] = [
+  const [products, services, order] = [
     `${main}/products`,
     `${main}/services`,
+    `${main}/order`
   ];
   const consumer = 'pipes-and-fittings';
 
@@ -24,6 +25,7 @@ const PipesCompany = () => {
         path={services}
         render={(props: any) => <Services {...props} consumer={consumer} />}
       />
+      <Route path={order} component={Order} />
       <Route component={_404} />
     </Switch>
   );
@@ -31,9 +33,18 @@ const PipesCompany = () => {
 
 function Main() {
   return (
-    <div className='fade-in my-5 py-5 container'>
+    <div className='fade-in my-5 py-5'>
       <h1>This is the PipesCompany's Main component!</h1>
       <h1>PipesCompany's Main content goes here!</h1>
+    </div>
+  );
+}
+
+function Order() {
+  return (
+    <div className='fade-in my-5 py-5'>
+      <h1>This is the PipesCompany's Order component!</h1>
+      <h1>PipesCompany's Order content goes here!</h1>
     </div>
   );
 }

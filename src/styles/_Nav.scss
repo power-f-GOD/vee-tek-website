@@ -49,6 +49,10 @@
   display: flex;
   visibility: visible;
   min-height: inherit;
+  // flex-grow: 0.75;
+  align-self: center;
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .nav-icon {
@@ -61,6 +65,7 @@
 .nav-link-wrapper {
   position: relative;
   width: auto;
+  display: flex;
   flex-basis: unset;
 }
 
@@ -139,17 +144,21 @@
   }
 
   &.button {
-    background-color: rgb(36, 130, 133);
+    background-color: #000;
     color: white;
-    // font-weight: 500;
     display: inline-flex;
     justify-content: center;
     height: 2.75rem;
     margin-left: 2rem;
-    border: 0.125rem solid white;
+    border: 0.1rem solid transparent;
     padding: 1.25rem 1rem;
+    min-width: 6rem;
     border-radius: 2rem !important;
     align-self: center;
+
+    .short-desc {
+      display: none;
+    }
 
     &:last-child {
       margin-right: 0.15rem;
@@ -160,12 +169,9 @@
       content: unset;
     }
 
-    &:hover {
-      background-color: rgb(16, 100, 103);
-    }
-
-    &.active {
+    &.active, &:hover {
       background-color: transparent;
+      border-color: white;
     }
   }
 }
@@ -252,6 +258,12 @@
   }
 }
 
+.drawer {
+  justify-content: flex-end;
+  min-width: 3rem;
+  margin-left: 1rem;
+}
+
 .drawer-nav {
   a {
     text-decoration: none;
@@ -265,6 +277,7 @@
 
   .nav-link-wrapper {
     width: 100%;
+    display: flex !important;
   }
 
   .nav-link {
@@ -275,7 +288,7 @@
 
     &.button {
       &:last-child {
-        margin: 3rem 1rem;
+        margin: 3rem 1rem !important;
       }
     }
 
