@@ -8,7 +8,11 @@
       display: flex;
     }
 
-    .app-bar-links {
+    // .app-bar-links {
+    //   display: none;
+    // }
+
+    .nav-link-wrapper {
       display: none;
     }
   }
@@ -26,8 +30,28 @@
     display: flex;
   }
 
-  .app-bar-links {
+  // .app-bar-links {
+  //   display: none;
+  // }
+
+  .nav-link-wrapper {
     display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body.companies {
+    .drawer {
+      display: none;
+    }
+
+    // .app-bar-links {
+    //   display: flex;
+    // }
+
+    .nav-link-wrapper {
+      display: flex;
+    }
   }
 }
 
@@ -38,11 +62,39 @@
       right: 2.5rem;
     }
   }
+
+  body.companies {
+    .nav-link-wrapper {
+      &:last-child {
+        display: flex;
+      }
+
+      @media screen and (max-width: 480px) {
+        .long-desc {
+          display: none;
+        }
+
+        .short-desc {
+          display: initial;
+        }
+        
+        .nav-link.button {
+          margin: 0;
+        }
+      }
+
+      @media screen and (max-width: 410px) {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
   .logo {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .top-nav-box {

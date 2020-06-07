@@ -35,13 +35,13 @@
 
   &::before {
     content: ' ';
-    background-color: black;
+    background-color: $theme-primary-v2;
   }
 
   .map-wrapper {
     cursor: pointer;
     opacity: 0.5;
-    box-shadow: 0 0.15rem 0.35rem rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0.15rem 0.35rem rgba(0, 0, 0, 0.5);
     background: {
       color: #eee;
       image: url('/images/google-map-placeholder.png');

@@ -5,7 +5,7 @@
   transition: 0.5s;
   width: 100%;
   left: 0;
-  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.35);
 }
 
 .nav-toolbar {
@@ -49,6 +49,10 @@
   display: flex;
   visibility: visible;
   min-height: inherit;
+  // flex-grow: 0.75;
+  align-self: center;
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .nav-icon {
@@ -61,6 +65,7 @@
 .nav-link-wrapper {
   position: relative;
   width: auto;
+  display: flex;
   flex-basis: unset;
 }
 
@@ -73,7 +78,7 @@
   height: 100%;
   margin: 0 1rem;
   padding: 1.5rem 0.5rem;
-  color: $theme-primary-v9 !important;
+  color: $theme-primary-v9;
   z-index: 2;
   text-transform: capitalize !important;
   transition: 0.3s;
@@ -135,6 +140,38 @@
 
     .nav-icon {
       opacity: 0.85;
+    }
+  }
+
+  &.button {
+    background-color: #000;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    height: 2.75rem;
+    margin-left: 2rem;
+    border: 0.1rem solid transparent;
+    padding: 1.25rem 1rem;
+    min-width: 6rem;
+    border-radius: 2rem !important;
+    align-self: center;
+
+    .short-desc {
+      display: none;
+    }
+
+    &:last-child {
+      margin-right: 0.15rem;
+    }
+
+    &::before,
+    &::after {
+      content: unset;
+    }
+
+    &.active, &:hover {
+      background-color: transparent;
+      border-color: white;
     }
   }
 }
@@ -221,6 +258,12 @@
   }
 }
 
+.drawer {
+  justify-content: flex-end;
+  min-width: 3rem;
+  margin-left: 1rem;
+}
+
 .drawer-nav {
   a {
     text-decoration: none;
@@ -234,6 +277,7 @@
 
   .nav-link-wrapper {
     width: 100%;
+    display: flex !important;
   }
 
   .nav-link {
@@ -241,6 +285,12 @@
     padding: 0.85rem;
     margin: 0 0.5rem;
     margin-top: 0.5rem;
+
+    &.button {
+      &:last-child {
+        margin: 3rem 1rem !important;
+      }
+    }
 
     &:focus,
     &:hover {
