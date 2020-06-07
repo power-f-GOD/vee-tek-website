@@ -7,10 +7,11 @@ import _404 from '../_404';
 
 const GearsCompany = () => {
   const main = '/companies/switch-gears';
-  const [products, services, portfolio] = [
+  const [products, services, portfolio, inquiry] = [
     `${main}/products`,
     `${main}/services`,
-    `${main}/portfolio`
+    `${main}/portfolio`,
+    `${main}/inquiry`
   ];
   const consumer = 'switch-gears';
 
@@ -28,6 +29,7 @@ const GearsCompany = () => {
         render={(props: any) => <Services {...props} consumer={consumer} />}
       />
       <Route path={portfolio} exact component={Portfolio} />
+      <Route path={inquiry} exact component={Inquiry} />
       <Route component={_404} />
     </Switch>
   );
@@ -44,9 +46,18 @@ function Main() {
 
 function Portfolio() {
   return (
-    <div className='fade-in my-5 py-5 container'>
+    <div className='fade-in my-5 py-5'>
       <h1>This is the GearsCompany's Portfolio component!</h1>
       <h1>GearsCompany's Portfolio content goes here!</h1>
+    </div>
+  );
+}
+
+function Inquiry() {
+  return (
+    <div className='fade-in my-5 py-5'>
+      <h1>This is the GearsCompany's Inquiry component!</h1>
+      <h1>GearsCompany's Inquiry content goes here!</h1>
     </div>
   );
 }

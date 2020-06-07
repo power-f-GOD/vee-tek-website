@@ -83,7 +83,7 @@ function NavLinks() {
 
   const indexNavLinks = (
     <Row className='m-0'>
-      <Col className='nav-link-wrapper p-0 d-flex'>
+      <Col className='nav-link-wrapper p-0'>
         <NavLink to='/about' onClick={preventRedirect} className='nav-link'>
           About Us <ExpandMoreIcon />
         </NavLink>
@@ -96,7 +96,7 @@ function NavLinks() {
         </Row>
       </Col>
 
-      <Col className='nav-link-wrapper p-0 d-flex'>
+      <Col className='nav-link-wrapper p-0'>
         <NavLink to='/companies' onClick={preventRedirect} className='nav-link'>
           <span>Our Companies</span> <ExpandMoreIcon />
         </NavLink>
@@ -118,17 +118,17 @@ function NavLinks() {
         </Row>
       </Col>
 
-      <Col className='nav-link-wrapper p-0 d-flex'>
+      <Col className='nav-link-wrapper p-0'>
         <NavLink to='/events' className='nav-link'>
           News and Events
         </NavLink>
       </Col>
-      <Col className='nav-link-wrapper p-0 d-flex'>
+      <Col className='nav-link-wrapper p-0'>
         <NavLink to='/gallery' className='nav-link'>
           Gallery
         </NavLink>
       </Col>
-      <Col className='nav-link-wrapper p-0 d-flex'>
+      <Col className='nav-link-wrapper p-0'>
         <NavLink to='/contact' className='nav-link'>
           Contact Us
         </NavLink>
@@ -153,14 +153,14 @@ function NavLinks() {
             {forIndex && indexNavLinks}
             {(forGears || forPipes) && (
               <Row className='m-0'>
-                <Col className='nav-link-wrapper p-0 d-flex'>
+                <Col className='nav-link-wrapper p-0'>
                   <NavLink
                     to={`${forGears ? gears : pipes}/products`}
                     className='nav-link'>
                     Products
                   </NavLink>
                 </Col>
-                <Col className='nav-link-wrapper p-0 d-flex'>
+                <Col className='nav-link-wrapper p-0'>
                   <NavLink
                     to={`${forGears ? gears : pipes}/services`}
                     className='nav-link'>
@@ -168,20 +168,24 @@ function NavLinks() {
                   </NavLink>
                 </Col>
                 {forGears && (
-                  <Col className='nav-link-wrapper p-0 d-flex'>
+                  <Col className='nav-link-wrapper p-0'>
                     <NavLink to={`${gears}/portfolio`} className='nav-link'>
                       Portfolio
                     </NavLink>
                   </Col>
                 )}
-                <Col className='nav-link-wrapper p-0 d-flex'>
+                <Col className='nav-link-wrapper p-0'>
                   {forGears ? (
-                    <NavLink to={`${gears}/inquiry`} className='nav-link button'>
-                      Make an Inquiry
+                    <NavLink
+                      to={`${gears}/inquiry`}
+                      className='nav-link button'>
+                      <span className='long-desc'>Make an Inquiry</span>
+                      <span className='short-desc'>Inquire</span>
                     </NavLink>
                   ) : (
                     <NavLink to={`${pipes}/order`} className='nav-link button'>
-                      Make an Order
+                      <span className='long-desc'>Make an Order</span>
+                      <span className='short-desc'>Order</span>
                     </NavLink>
                   )}
                 </Col>
