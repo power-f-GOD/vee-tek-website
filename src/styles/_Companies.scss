@@ -1,6 +1,8 @@
 @import 'constants';
 
 body.companies {
+  background-color: white;
+  /*
   &.desktop {
     &.custom-scroll-bar,
     .custom-scroll-bar {
@@ -93,5 +95,5 @@ body.companies {
     img {
       filter: grayscale(100%);
     }
-  }
+  }*/
 }
