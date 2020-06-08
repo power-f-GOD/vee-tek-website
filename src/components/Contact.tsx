@@ -15,7 +15,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 const Contact = () => {
   const map = `
         <iframe
-          src='https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3964.554635487151!2d7.477195814266395!3d6.451175375790902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sCommercial%20Plot%206%2C%20Golf%20Course%20New%20Market%20-%209th%20Mile%20Expressway%2C%20Enugu%20North%2C%20Enugu%20Nigeria.!5e0!3m2!1sen!2sng!4v1590742094581!5m2!1sen!2sng'
+          src="https://maps.google.com/maps?q=6%C2%B027'42.3%22N%207%C2%B028'33.1%22E&t=&z=15&ie=UTF8&iwloc=&output=embed"
           class='google-map'
           frameborder='0'
           style='border:0; width: 100%; height: 100%;'
