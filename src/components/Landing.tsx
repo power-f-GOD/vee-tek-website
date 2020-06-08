@@ -54,6 +54,7 @@ const Landing = () => {
               image={item.image}
               title={item.title}
               desc={item.desc}
+              key={key}
             />
           ))}
         </Row>
