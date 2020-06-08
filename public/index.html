@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <script>
-      let rippleTimeout;
-      function loadAnimScript() { const img=this;const wrapper=img.parentNode;img.className='_logo-img _animate'; rippleTimeout=setTimeout(function(){img.className='_logo-img _ripple';},2500);window.addEventListener('load', function () {clearTimeout(rippleTimeout);img.className = '_logo-img';setTimeout(function () {wrapper.className = '_loader _hide';}, 700);});}
-    </script>
+      let rippleTimeout;function loadAnimScript(){const img=this;const wrapper=img.parentNode;img.className='_logo-img _animate';rippleTimeout=setTimeout(function(){img.className='_logo-img _ripple';},2500);window.addEventListener('load',function(){setTimeout(function(){clearTimeout(rippleTimeout);img.className='_logo-img';setTimeout(function(){wrapper.className='_loader _hide';},700);},1100)});}   </script>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
