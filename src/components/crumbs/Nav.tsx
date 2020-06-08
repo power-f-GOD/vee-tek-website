@@ -33,7 +33,7 @@ const Nav = () => {
             <Box component='h5' className='logo font-weight-bold'>
               <Link to='/'>
                 {' '}
-                <img src='/images/logo.png' alt='Vee-Tek Group logo' /> Vee-Tek
+                <img src='/images/logo-64.png' alt='Vee-Tek Group logo' /> Vee-Tek
                 Group
               </Link>
             </Box>
