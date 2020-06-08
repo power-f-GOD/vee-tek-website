@@ -30,6 +30,10 @@ body {
   overflow: auto !important;
 
   &.desktop {
+    [class*=PrivateSwipeArea] {
+      display: none;
+    }
+    
     &.custom-scroll-bar,
     .custom-scroll-bar {
       &::-webkit-scrollbar {
