@@ -3,7 +3,7 @@ import { Col, Image } from "react-bootstrap";
 import "../../styles/index.min.css";
 
 const ServiceCard = (props: { image: string; title: string; desc: string }) => (
-  <Col sm={12} md={4} className="mb-5">
+  <Col sm={12} md={6} lg={4} className="mb-5">
     <div className="Service-Card p-4 pt-5 pb-5">
       <div className="w-100 d-flex justify-content-center">
         <div className="Circle d-flex justify-content-center align-items-center">
