@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
+
+import GearProduct from "./GearsCompany/Products";
 
 const Products = ({ consumer }: any) => {
-  const forGears = consumer === 'switch-gears';
+  const forGears = consumer === "switch-gears";
 
-  return (
-    <div className='fade-in my-5 py-5'>
-      <h1>
-        This is the Products component for{' '}
-        {forGears ? 'GearsCompany' : 'PipesCompany'}!
-      </h1>
-      <h1>
-        {forGears
-          ? "GearsCompany's Products content goes here."
-          : "PipesCompany's Products content goes here."}
-      </h1>
+  return forGears ? (
+    // <div className="fade-in ">
+      <GearProduct />
+    // </div>
+  ) : (
+    <div className="fade-in my-5 py-5">
+      <h1>This is the Services component for PipesCompany</h1>
+      <h1>PipesCompany's Services content goes here.</h1>
     </div>
   );
 };

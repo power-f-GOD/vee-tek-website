@@ -1,6 +1,5 @@
-import GearService from "./GearsCompany/Services";
-
 import React from "react";
+import GearService from "./GearsCompany/Services";
 
 const Services = ({ consumer }: any) => {
   const forGears = consumer === "switch-gears";
