@@ -6,11 +6,7 @@ const Products = () => {
   return (
     <div className="Main-Wrapper">
       {Gear.products.map((item, _) => (
-        <ProductTile 
-          image={item.key}
-          product={item.product}
-          desc={item.desc}
-        />
+        <ProductTile image={item.key} product={item.product} desc={item.desc} />
       ))}
     </div>
   );

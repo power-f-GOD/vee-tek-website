@@ -1,5 +1,6 @@
 import React from "react";
 import GearService from "./GearsCompany/Services";
+import PipeService from "./PipesCompany/Services";
 
 const Services = ({ consumer }: any) => {
   const forGears = consumer === "switch-gears";
@@ -9,9 +10,8 @@ const Services = ({ consumer }: any) => {
       <GearService />
     </div>
   ) : (
-    <div className="fade-in my-5 py-5">
-      <h1>This is the Services component for PipesCompany</h1>
-      <h1>PipesCompany's Services content goes here.</h1>
+    <div className="fade-in py-5">
+      <PipeService />
     </div>
   );
 };
