@@ -1,4 +1,4 @@
-import GearServices from "./GearServices";
-import GearProducts from "./GearProducts";
+import Pipe from "./Pipes";
+import Gear from "./Gear";
 
-export { GearServices, GearProducts };
+export { Pipe, Gear };

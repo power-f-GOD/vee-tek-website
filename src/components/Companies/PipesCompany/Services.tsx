@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Row } from "react-bootstrap";
 import ServiceCard from "../../crumbs/ServiceCard";
-import { Gear } from "../../../constants";
+import { Pipe } from "../../../constants";
 
 const Services = () => {
   return (
@@ -10,7 +10,7 @@ const Services = () => {
       <Container className="fluid pt-5">
         <h2 className="mb-4 font-weight-bold">Our Services</h2>
         <Row className="justify-content-center">
-          {Gear.services.map((item, key) => (
+          {Pipe.services.map((item, key) => (
             <ServiceCard
               image={item.image}
               title={item.title}
