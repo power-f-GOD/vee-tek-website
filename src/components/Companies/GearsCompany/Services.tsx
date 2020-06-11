@@ -7,7 +7,7 @@ import { GearServices } from "../../../constants";
 const Services = () => {
   return (
     <div className="container">
-      <Container className="fluid">
+      <Container className="fluid pt-5">
         <h2 className="mb-4 font-weight-bold">Our Services</h2>
         <Row className="justify-content-center">
           {GearServices.map((item, key) => (

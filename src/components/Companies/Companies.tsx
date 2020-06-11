@@ -20,7 +20,7 @@ const Companies = (props: any) => {
   }, [pathname, callSetNavState]);
 
   return (
-    <div className="fade-in my-5 py-5">
+    <div className="fade-in pt-5 mt-2">
       <Switch>
         <Route path="/companies/switch-gears" component={GearsCompany} />
         <Route path="/companies/pipes-and-fittings" component={PipesCompany} />
