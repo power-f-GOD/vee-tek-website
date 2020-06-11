@@ -1,3 +1,4 @@
 import GearServices from "./GearServices";
+import GearProducts from "./GearProducts";
 
-export { GearServices };
+export { GearServices, GearProducts };
