@@ -1,0 +1,15 @@
+.Portfolio {
+  header {
+    height: 10rem;
+    position: relative;
+
+    > * {
+      z-index: 1;
+    }
+
+    &::before {
+      @include before-or-after();
+      background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+    }
+  }
+}
