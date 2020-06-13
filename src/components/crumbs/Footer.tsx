@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 
 const Footer = () => {
   return (
-    <div className='fade-in'>
+    <footer className='fade-in'>
       <div className='Footer-Wrapper-One text-white'>
         <Container className='text-left p-4'>
           <h3 className='font-weight-bold'> Follow Us</h3>
@@ -24,7 +24,7 @@ const Footer = () => {
       <div className='Footer-Wrapper-Two'>
         <Container>© 2020 Vee-Tek Group</Container>
       </div>
-    </div>
+    </footer>
   );
 };
 

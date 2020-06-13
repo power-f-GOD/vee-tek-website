@@ -1,3 +1,13 @@
+@mixin before-or-after() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
 $theme-primary-faint: rgba(157, 113, 65, 0.25);
 $theme-secondary-faint: rgba(120, 120, 120, 0.25);
 
@@ -101,4 +111,3 @@ $success: rgb(27, 136, 27);
 $error: rgb(245, 34, 34);
 $info: rgb(0, 124, 246);
 $white: #fff;
-

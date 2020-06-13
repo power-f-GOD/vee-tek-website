@@ -10,7 +10,7 @@ body,
   margin: 0;
   font-size: 1.025rem;
   color: #444;
-  line-height: 1.5rem;
+  line-height: 1.8rem;
 }
 
 * {
@@ -30,10 +30,10 @@ body {
   overflow: auto !important;
 
   &.desktop {
-    [class*=PrivateSwipeArea] {
+    [class*='PrivateSwipeArea'] {
       display: none;
     }
-    
+
     &.custom-scroll-bar,
     .custom-scroll-bar {
       &::-webkit-scrollbar {
