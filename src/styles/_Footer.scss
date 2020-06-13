@@ -2,7 +2,8 @@
 
 .Footer-Wrapper-One {
   height: 10rem;
-  background-color: $theme-primary-v5;
+  // background-color: $theme-primary-v5;
+  background: linear-gradient(to left, $theme-primary-v6, $theme-primary-v4);
 }
 
 .Footer-Wrapper-Two {
@@ -10,7 +11,8 @@
   color: #ffffff;
   text-align: left;
   font-size: 0.8rem;
-  background-color: $theme-primary-v4;
+  // background-color: $theme-primary-v4;
+  background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
 }
 
 .Footer-Image {
