@@ -10,7 +10,7 @@ body,
   margin: 0;
   font-size: 1.025rem;
   color: #444;
-  line-height: 1.5rem;
+  line-height: 1.8rem;
 }
 
 * {
@@ -30,10 +30,10 @@ body {
   overflow: auto !important;
 
   &.desktop {
-    [class*=PrivateSwipeArea] {
+    [class*='PrivateSwipeArea'] {
       display: none;
     }
-    
+
     &.custom-scroll-bar,
     .custom-scroll-bar {
       &::-webkit-scrollbar {
@@ -78,7 +78,7 @@ input {
 }
 
 a {
-  color: $theme-primary-v8;
+  color: $theme-primary-v6;
 
   &:visited {
     color: $theme-primary-v9;
@@ -89,10 +89,11 @@ button,
 a {
   text-transform: unset !important;
   font-size: 1rem;
+  transition: 0.3s;
 
   &[class*='Primary'] {
     $bg: $theme-primary-v4;
-    $bg-hovered: $theme-primary-v3;
+    $bg-hovered: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
 
     min-height: 2.5rem;
     border-radius: 0.25rem;
@@ -113,12 +114,28 @@ a {
 
     &.outlined {
       border: 1px solid $bg;
-      background-color: transparent;
+      background: transparent;
       color: $theme-primary-v4;
+      position: relative;
+      overflow: hidden;
+
+      > * {
+        z-index: 1;
+      }
+
+      &::before {
+        @include before-or-after();
+        opacity: 0;
+        background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+        transition: 0.3s;
+      }
 
       &:hover {
-        background-color: $bg;
         color: white;
+
+        &::before {
+          opacity: 1;
+        }
       }
     }
 

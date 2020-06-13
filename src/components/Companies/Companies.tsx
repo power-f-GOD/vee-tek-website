@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import GearsCompany from "./GearsCompany";
+import GearsCompany from "./GearsCompany/GearsCompany";
 import PipesCompany from "./PipesCompany";
 import _404 from "../_404";
 
