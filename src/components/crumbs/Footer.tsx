@@ -13,7 +13,6 @@ const Footer = () => {
       <div className='Footer-Wrapper-One text-white'>
         <Container className='text-left p-4'>
           <h3 className='font-weight-bold'> Follow Us</h3>
-          <p className='mt-1'>Know what we are doing at every time</p>
           <Grid item className='social-media-links-wrapper mt-2'>
             <FacebookIcon className='pr-2' />
             <TwitterIcon className='pr-2' />
@@ -23,7 +22,7 @@ const Footer = () => {
         </Container>
       </div>
       <div className='Footer-Wrapper-Two'>
-        <Container>© 2020 VeeTek Group</Container>
+        <Container>© 2020 Vee-Tek Group</Container>
       </div>
     </div>
   );

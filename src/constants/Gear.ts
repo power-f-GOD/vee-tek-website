@@ -1,36 +1,21 @@
 const products = [
   {
     key: "one",
-    product: "Eletrification Projects",
+    product: "Pronutec",
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididuntut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-        deserunt mollit anim id est laborum.`,
+        sed do eiusmod tempor incididuntut `,
   },
   {
     key: "two",
-    product: "Injection substation Building",
+    product: "Telergon",
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididuntut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-      deserunt mollit anim id est laborum.`,
+      sed do eiusmod tempor incididuntut.`,
   },
   {
     key: "three",
-    product: "House Installation Services",
+    product: "TBC",
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididuntut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-      deserunt mollit anim id est laborum.`,
+      sed do eiusmod tempor incididuntut.`,
   },
 ];
 
@@ -38,7 +23,7 @@ const services = [
   {
     image: "/images/electric.png",
     title: "Eletrification Projects",
-    desc: `At Veetek we undertake in Electrification Projects for our
+    desc: `At Vee-tek we undertake in Electrification Projects for our
     clients, serving both rural and Urban area, to increase access
     to electricity services for households, public educational
     institutions.`,

@@ -27,9 +27,8 @@ const ProductCard = (props: {
     <div className="Product-Card ">
       <div className={"Product-Image-" + props.image}> </div>
       <div className="p-4">
-        <h5>
-          {props.product}
-        </h5>
+        <h5>{props.product}</h5>
+        <p className="Product-Desc">{props.desc}</p>
       </div>
     </div>
   </Col>
