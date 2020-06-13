@@ -2,16 +2,6 @@
 
 @import 'constants';
 
-@mixin before-or-after() {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-  height: 100%;
-  width: 100%;
-  z-index: 0;
-}
-
 html,
 body,
 #root {
@@ -20,7 +10,7 @@ body,
   margin: 0;
   font-size: 1.025rem;
   color: #444;
-  line-height: 1.5rem;
+  line-height: 1.8rem;
 }
 
 * {
