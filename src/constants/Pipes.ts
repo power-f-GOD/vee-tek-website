@@ -38,7 +38,7 @@ const services = [
   {
     image: "/images/electric.png",
     title: "Eletrification Projects",
-    desc: `At Veetek we undertake in Electrification Projects for our
+    desc: `At Vee-tek we undertake in Electrification Projects for our
     clients, serving both rural and Urban area, to increase access
     to electricity services for households, public educational
     institutions.`,

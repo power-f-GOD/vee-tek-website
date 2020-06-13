@@ -49,20 +49,42 @@ $products: (
 //   transform: scale(1.01);
 //   box-shadow: 0px 0px 17px 15px rgba(0, 0, 0, 0.09);
 // }
+
+.Product-Desc{
+  visibility: hidden;
+  line-height: 1.5rem;
+  color: white;
+  font-size: 0.8rem;
+  transition: all .5s;
+}
+
+.Product-Card:hover .Product-Desc{
+  line-height: 1.2rem;
+  visibility: visible;
+  text-overflow: ellipsis;
+  color: grey;
+
+}
+
 @each $i, $image in $products {
   .Product-Image-#{$i} {
     // padding: 10px;
     height: 70%;
-    background: url($image);
+    background-image: url($image);
     background-position: center;
     object-fit: cover;
     border-radius: 1rem 1rem 0rem 0rem;
 
-    transition: .5s;
+    transition: all 0.5s;
   }
   .Product-Image-#{$i}:hover {
     // padding: 10px;
-    transform:  scale(1.03);
+    transform: scale(1.03);
+    background-position: center;
     object-fit: cover;
+  }
+
+  .Product-Card:hover .Product-Image-#{$i} {
+    height: 60%;
   }
 }
