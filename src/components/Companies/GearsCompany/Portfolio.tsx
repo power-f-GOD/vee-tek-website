@@ -49,6 +49,8 @@ const Portfolio = () => {
   );
 };
 
+//to do: Add onerror style for images
+
 function Work(props: any) {
   const { data } = props;
   const { header, description, imgUrl }: Data = data;
