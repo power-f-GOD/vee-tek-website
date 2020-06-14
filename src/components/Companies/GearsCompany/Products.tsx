@@ -13,6 +13,7 @@ const Products = () => {
             image={item.key}
             product={item.product}
             desc={item.desc}
+            key={_}
           />
         ))}
       </Row>

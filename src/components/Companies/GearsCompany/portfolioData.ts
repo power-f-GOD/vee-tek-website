@@ -90,7 +90,7 @@ function getData(): Data[] {
       header: 'ENUGU STATE GOVT.',
       description:
         'Building, Supply,Installation and Commissioning of MV Multiple Changeover/Distribution Panels',
-      imgUrl: ''
+      imgUrl: 'enugu_logo.jpg'
     },
     {
       header: 'NATIONAL INST. FOR NIG. LANG., ABA',
@@ -126,7 +126,7 @@ function getData(): Data[] {
       header: 'ENUGU STATE GOVT.',
       description:
         'Building,Supply,Installation and Commissioning of MV Distribution Panel for Power Reticulation of the Coal City Gardens Estate.',
-      imgUrl: ''
+      imgUrl: 'enugu_logo.jpg'
     },
     {
       header: 'NEWS ENG. COY. NIG. LTD',
