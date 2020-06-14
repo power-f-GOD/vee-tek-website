@@ -16,15 +16,15 @@
   .header-image {
     height: 0;
     position: absolute;
-    filter: drop-shadow(0.75rem 1.15rem 0 $theme-primary-v4);
+    filter: drop-shadow(0.75rem 1.15rem 0 $theme-primary-v8);
 
     @mixin for-both {
       @include before-or-after();
       top: -5rem;
       left: -5vw;
       width: 110vw;
-      height: 37rem;
-      clip-path: polygon(0 0, 100% 0, 100% 45%, 55% 45%, 40% 100%, 0 100%);
+      height: 35.5rem;
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 56.5% 45%, 40% 100%, 0 100%);
       background: linear-gradient(
         to left,
         $theme-primary-v5,
@@ -77,11 +77,7 @@
     min-height: 15rem;
     padding: 13rem 0 5rem 0;
     position: static;
-    margin-bottom: 10rem;
-
-    .page-title {
-      font-weight: bold;
-    }
+    margin-bottom: 15rem;
 
     .intro-text {
       width: 19rem;
@@ -91,7 +87,7 @@
       right: 0;
       color: #333;
       box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.35);
-      line-height: 2rem;
+      line-height: 2.15rem;
       border-radius: 1.25rem;
       background: linear-gradient(to left, #111, #000);
       color: white;
@@ -125,9 +121,82 @@
     border-radius: 0;
     margin: 6rem 0;
     position: relative;
+    display: none;
 
     &::before {
       @include separator-circle();
+    }
+  }
+
+  .work {
+    position: relative;
+    transition: 5s;
+
+    &::before {
+      $size: 1.25rem;
+
+      @include separator-circle();
+      height: $size;
+      width: $size;
+      // top: -1rem;
+      top: 100%;
+      z-index: 2;
+      left: calc(50% - #{$size / 2} - 0.025rem);
+      border-color: transparent;
+      transition: 0.5s;
+    }
+
+    &.animate-children {
+      &::before {
+        top: -1rem;
+      }
+
+      &:nth-child(odd) {
+        .work-image-wrapper {
+          .work-image {
+            opacity: 1;
+            transform: translateX(0);
+            transition: 0.75s;
+          }
+        }
+
+        .work-desc-wrapper {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      &:nth-child(even) {
+        .work-image-wrapper {
+          .work-image {
+            opacity: 1;
+            transform: translateX(0);
+            transition: 0.75s;
+          }
+        }
+
+        .work-desc-container {
+          .work-desc-wrapper {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+
+  .work:nth-child(odd) {
+    .work-image-wrapper {
+      .work-image {
+        opacity: 0;
+        transform: translateX(-300%);
+      }
+    }
+
+    .work-desc-wrapper {
+      padding-right: 0 !important;
+      opacity: 0;
+      transform: translateX(80%);
     }
   }
 
@@ -136,6 +205,11 @@
       order: 1;
       text-align: left;
       border-right: none;
+
+      .work-image {
+        opacity: 0;
+        transform: translateX(300%);
+      }
     }
 
     .work-desc-container {
@@ -143,30 +217,10 @@
       border-right: 0.125rem solid $theme-primary-v8;
 
       .work-desc-wrapper {
+        opacity: 0;
+        transform: translateX(-80%);
         padding-left: 0 !important;
       }
-    }
-  }
-
-  .work {
-    position: relative;
-
-    &::before {
-      $size: 1.25rem;
-
-      @include separator-circle();
-      height: $size;
-      width: $size;
-      top: -1rem;
-      z-index: 2;
-      left: calc(50% - #{$size / 2} - 0.025rem);
-      border-color: transparent;
-    }
-  }
-
-  .work:nth-child(odd) {
-    .work-desc-wrapper {
-      padding-right: 0 !important;
     }
   }
 
@@ -177,8 +231,28 @@
 
   .work-image {
     height: auto;
+    display: inline-block;
     width: 10rem;
     max-width: 100%;
+    transition: 0.75s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  }
+
+  .no-image-placeholder {
+    $size: 10rem;
+
+    display: none;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: white;
+    background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+  }
+
+  .work-desc-wrapper {
+    transition: 1.15s;
   }
 
   .work-desc-header {
