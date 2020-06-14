@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "react-bootstrap";
+import { Col, Carousel, Image } from "react-bootstrap";
 import "../../styles/index.min.css";
 
 // const Stuff = (props: { image: string; product: string; desc: string }) => (
@@ -19,13 +19,22 @@ import "../../styles/index.min.css";
 // );
 
 const ProductCard = (props: {
-  image: string;
+  images: string[];
   product: string;
   desc: string;
 }) => (
   <Col sm={12} md={4} lg={3} className="mb-4">
     <div className="Product-Card ">
-      <div className={"Product-Image-" + props.image}> </div>
+      {/* <div className={"Product-Image-" + props.image}> </div> */}
+      <div className="Product-Image-Carousel">
+        <Carousel className="h-100" indicators={false} nextIcon={null} prevIcon={null}>
+          {props.images.map((v, i) => (
+            <Carousel.Item className="h-100">
+              <Image src={v} className="Product-Carousel-Item" />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
       <div className="p-4">
         <h5>{props.product}</h5>
         <p className="Product-Desc">{props.desc}</p>

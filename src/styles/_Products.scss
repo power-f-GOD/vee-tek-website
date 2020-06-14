@@ -50,20 +50,39 @@ $products: (
 //   box-shadow: 0px 0px 17px 15px rgba(0, 0, 0, 0.09);
 // }
 
-.Product-Desc{
+.Product-Desc {
   visibility: hidden;
   line-height: 1.5rem;
   color: white;
   font-size: 0.8rem;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.Product-Card:hover .Product-Desc{
+.Product-Card:hover .Product-Desc {
   line-height: 1.2rem;
   visibility: visible;
   text-overflow: ellipsis;
   color: grey;
+}
+.Product-Image-Carousel {
+  // padding: 10px;
+  height: 70%;
+  // background-image: url($image);
+  // background-position: center;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0rem 0rem;
+  overflow: hidden;
 
+  transition: all 0.5s;
+}
+
+.Product-Card:hover .Product-Image-Carousel {
+  height: 60%;
+}
+
+.Product-Carousel-Item {
+  object-fit: cover;
+  height: inherit !important;
 }
 
 @each $i, $image in $products {
@@ -87,4 +106,9 @@ $products: (
   .Product-Card:hover .Product-Image-#{$i} {
     height: 60%;
   }
+}
+
+
+.carousel-inner{
+  height: 100%;
 }
