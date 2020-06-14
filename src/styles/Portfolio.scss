@@ -1,0 +1,193 @@
+@import 'constants';
+
+.debugger {
+  border: 1px solid blue;
+  border: none;
+
+  * {
+    border: 1px solid blue;
+    border: none;
+  }
+}
+
+.Portfolio {
+  position: relative;
+
+  .header-image {
+    height: 0;
+    position: absolute;
+    filter: drop-shadow(0.75rem 1.15rem 0 $theme-primary-v4);
+
+    @mixin for-both {
+      @include before-or-after();
+      top: -5rem;
+      left: -5vw;
+      width: 110vw;
+      height: 37rem;
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 55% 45%, 40% 100%, 0 100%);
+      background: linear-gradient(
+        to left,
+        $theme-primary-v5,
+        $theme-primary-v3
+      );
+    }
+
+    &::before,
+    &::after {
+      @include for-both();
+    }
+
+    &::before {
+      background: {
+        image: url('/images/switch-gears.jpg');
+        size: auto;
+        position: bottom left;
+      }
+      animation: swapBg 15s infinite ease;
+    }
+
+    @keyframes swapBg {
+      0%,
+      30% {
+        background-image: url('/images/switch-gears.jpg');
+      }
+      33%,
+      63% {
+        background-image: url('/images/switch-gears-2.jpg');
+      }
+      66%,
+      97% {
+        background-image: url('/images/switch-gears-3.jpg');
+      }
+    }
+
+    &::after {
+      z-index: 1;
+      background: rgba(109, 65, 17, 0.55);
+    }
+  }
+
+  .header-wrapper {
+    position: static !important;
+    border: 1px solid blue;
+  }
+
+  header {
+    color: white;
+    min-height: 15rem;
+    padding: 13rem 0 5rem 0;
+    position: static;
+    margin-bottom: 10rem;
+
+    .page-title {
+      font-weight: bold;
+    }
+
+    .intro-text {
+      width: 19rem;
+      display: inline-block;
+      position: absolute;
+      top: -4rem;
+      right: 0;
+      color: #333;
+      box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.35);
+      line-height: 2rem;
+      border-radius: 1.25rem;
+      background: linear-gradient(to left, #111, #000);
+      color: white;
+      padding: 2.5rem;
+
+      .quote {
+        font-family: serif !important;
+        font-style: italic;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  @mixin separator-circle() {
+    $size: 2.5rem;
+
+    @include before-or-after();
+    height: $size;
+    width: $size;
+    background: $theme-primary-v8;
+    border: 0.5rem solid white;
+    border-radius: 50%;
+    top: calc(-100% - 0.95rem);
+    left: calc(50% - #{$size / 2} - 0.05rem);
+  }
+
+  .separator {
+    background: linear-gradient(to left, $theme-primary-v8, $theme-primary-v3);
+    height: 0.165rem;
+    width: 100%;
+    border-radius: 0;
+    margin: 6rem 0;
+    position: relative;
+
+    &::before {
+      @include separator-circle();
+    }
+  }
+
+  .work:nth-child(even) {
+    .work-image-wrapper {
+      order: 1;
+      text-align: left;
+      border-right: none;
+    }
+
+    .work-desc-container {
+      text-align: right;
+      border-right: 0.125rem solid $theme-primary-v8;
+
+      .work-desc-wrapper {
+        padding-left: 0 !important;
+      }
+    }
+  }
+
+  .work {
+    position: relative;
+
+    &::before {
+      $size: 1.25rem;
+
+      @include separator-circle();
+      height: $size;
+      width: $size;
+      top: -1rem;
+      z-index: 2;
+      left: calc(50% - #{$size / 2} - 0.025rem);
+      border-color: transparent;
+    }
+  }
+
+  .work:nth-child(odd) {
+    .work-desc-wrapper {
+      padding-right: 0 !important;
+    }
+  }
+
+  .work-image-wrapper {
+    text-align: right;
+    border-right: 0.125rem solid $theme-primary-v8;
+  }
+
+  .work-image {
+    height: auto;
+    width: 10rem;
+    max-width: 100%;
+  }
+
+  .work-desc-header {
+    font-size: 2.15rem;
+    font-weight: bold;
+    color: $theme-primary-v3;
+  }
+
+  .work-desc {
+    font-size: 1.15rem;
+  }
+}

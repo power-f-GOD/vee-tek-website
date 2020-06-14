@@ -19,36 +19,43 @@ import EmailIcon from '@material-ui/icons/Email';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PhoneIcon from '@material-ui/icons/Phone';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
+import { userDeviceIsMobile } from '../..';
 import { NavContext } from '../../App';
 
 const Nav = () => {
   return (
     <Box marginBottom='0'>
-      <AppBar position='fixed' className='mobile-width'>
-        <TopNavLinks />
+      <ElevationScroll>
+        <AppBar position='fixed' className={userDeviceIsMobile ? 'mobile-width' : ''}>
+          <TopNavLinks />
 
-        <Container>
-          <Toolbar className='nav-toolbar d-flex flex-wrap'>
-            <Box component='h5' className='logo font-weight-bold'>
-              <Link to='/'>
-                {' '}
-                <img src='/images/logo-64.png' alt='Vee-Tek Group logo' /> Vee-Tek
-                Group
-              </Link>
-            </Box>
+          <Container>
+            <Toolbar className='nav-toolbar d-flex flex-wrap'>
+              <Box component='h5' className='logo font-weight-bold'>
+                <Link to='/'>
+                  {' '}
+                  <img
+                    src='/images/logo-64.png'
+                    alt='Vee-Tek Group logo'
+                  />{' '}
+                  Vee-Tek Group
+                </Link>
+              </Box>
 
-            <Box className='nav-links-wrapper app-bar-links'>
-              <NavLinks />
-            </Box>
+              <Box className='nav-links-wrapper app-bar-links'>
+                <NavLinks />
+              </Box>
 
-            <TemporaryDrawer>
-              <NavLinks />
-              <TopNavLinks />
-            </TemporaryDrawer>
-          </Toolbar>
-        </Container>
-      </AppBar>
+              <TemporaryDrawer>
+                <NavLinks />
+                <TopNavLinks />
+              </TemporaryDrawer>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </ElevationScroll>
     </Box>
   );
 };
@@ -234,6 +241,22 @@ function TemporaryDrawer(props: any) {
       </SwipeableDrawer>
     </Box>
   );
+}
+
+function ElevationScroll(props: {
+  children: React.ReactElement;
+}) {
+  const { children } = props;
+  
+  let trigger = useScrollTrigger({
+    disableHysteresis: false,
+    threshold: 5,
+    target: document.body
+  });
+
+  return React.cloneElement(children, {
+    className: trigger ? userDeviceIsMobile ? 'mobile-width hide-mini-nav' : 'hide-mini-nav' : 'mobile-width'
+  });
 }
 
 export default Nav;

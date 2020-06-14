@@ -1,9 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Products from './Products';
-import Services from './Services';
-import _404 from '../_404';
+import Products from '../Products';
+import Services from '../Services';
+import _404 from '../../_404';
+import Portfolio from './Portfolio';
 
 const GearsCompany = () => {
   const main = '/companies/switch-gears';
@@ -40,15 +41,6 @@ function Main() {
     <div className='fade-in my-5 py-5 container'>
       <h1>This is the GearsCompany's Main component!</h1>
       <h1>GearsCompany's Main content goes here!</h1>
-    </div>
-  );
-}
-
-function Portfolio() {
-  return (
-    <div className='fade-in my-5 py-5'>
-      <h1>This is the GearsCompany's Portfolio component!</h1>
-      <h1>GearsCompany's Portfolio content goes here!</h1>
     </div>
   );
 }
