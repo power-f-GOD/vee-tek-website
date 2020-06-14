@@ -10,7 +10,7 @@ const Products = () => {
       <Row>
         {Gear.products.map((item, _) => (
           <ProductTile
-            image={item.key}
+            images={item.images}
             product={item.product}
             desc={item.desc}
           />
