@@ -77,7 +77,7 @@
         .short-desc {
           display: initial;
         }
-        
+
         .nav-link.button {
           margin: 0;
         }
@@ -88,6 +88,29 @@
           display: none;
         }
       }
+    }
+  }
+
+  //Portfolio page style(s)
+  .Portfolio {
+    .work-image-wrapper {
+      padding: 2rem;
+    }
+
+    .work-desc-wrapper {
+      padding: 2rem;
+    }
+
+    .work-desc-header {
+      font-size: 1.75rem;
+    }
+
+    .work-image {
+      width: 8rem;
+    }
+
+    .no-image-placeholder {
+      height: 8rem;
     }
   }
 }
@@ -118,6 +141,83 @@
 
   .contact-page-title {
     margin-bottom: 10rem;
+  }
+
+  // Portfolio page styles
+
+  .Portfolio {
+    .header-image {
+      filter: drop-shadow(0 0.75rem 0 $theme-primary-v8);
+
+      &::before,
+      &::after {
+        height: 34rem;
+        clip-path: unset;
+      }
+    }
+
+    header {
+      > div {
+        padding: 0;
+        margin-top: 10rem;
+        margin-bottom: 6rem;
+        text-align: center;
+
+        &:nth-child(2) {
+          text-align: center;
+          margin-bottom: 0;
+        }
+      }
+
+      .intro-text {
+        width: 100%;
+        max-width: 28rem;
+        display: inline-block;
+        padding: 2rem;
+      }
+    }
+
+    .work {
+      display: block !important;
+
+      &::before {
+        left: calc(100% - (1.25rem / 2) - 0.025rem);
+      }
+
+      &::after {
+        left: calc(100% - (0.125rem / 2) - 0.025rem);
+      }
+    }
+
+    .work-image-wrapper {
+      text-align: center !important;
+    }
+
+    .work-image {
+      width: 7rem;
+    }
+
+    .no-image-placeholder {
+      height: 7rem;
+      font-size: 3rem;
+    }
+
+    .work-desc-wrapper {
+      text-align: center;
+      padding: 1.5rem;
+      padding: {
+        left: 0.5rem !important;
+        right: 1.5rem !important;
+      }
+    }
+
+    .work-desc-header {
+      font-size: 1.75rem;
+    }
+
+    .work-desc {
+      font-size: unset;
+    }
   }
 }
 
@@ -159,6 +259,17 @@
     padding: {
       left: 1rem;
       right: 1rem;
+    }
+  }
+
+  //Portfolio page style(s)
+  .Portfolio {
+    .page-title {
+      font-size: 2.5rem;
+    }
+
+    .work-desc-header {
+      font-size: 1.5rem;
     }
   }
 }
