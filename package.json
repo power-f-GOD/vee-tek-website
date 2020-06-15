@@ -11,9 +11,11 @@
     "@material-ui/icons": "^4.9.1",
     "@types/material-ui": "^0.21.7",
     "@types/react-router-dom": "^5.1.5",
+    "autoprefixer": "^9.8.0",
     "bootstrap": "^4.5.0",
-    "react-bootstrap": "^1.0.1",
+    "postcss-cli": "^7.1.1",
     "react": "^16.9.0",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1"
@@ -37,21 +39,24 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "node-sass -w --output-style=compressed src/styles/index.scss src/styles/index.min.css"
+    "sass": "node-sass -w --output-style=compressed src/styles/index.scss src/styles/index.min.css",
+    "autoprefix": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -o src/styles/prefixed.min.css",
+    "autoprefix:r": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -o src/styles/index.min.css",
+    "autoprefix:w": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -w -o src/styles/prefixed.min.css"
   },
   "eslintConfig": {
     "extends": "vee-tek-website"
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
+      ">0.01%",
       "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "last 1 opera version"
     ]
   },
   "style": "src/styles/index.min.css"
