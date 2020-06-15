@@ -255,7 +255,7 @@ function ElevationScroll(props: {
   });
 
   return React.cloneElement(children, {
-    className: trigger ? userDeviceIsMobile ? 'mobile-width hide-mini-nav' : 'hide-mini-nav' : 'mobile-width'
+    className: trigger && window.innerWidth > 767 ? userDeviceIsMobile ? 'mobile-width hide-mini-nav' : 'hide-mini-nav' : 'mobile-width'
   });
 }
 

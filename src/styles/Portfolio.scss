@@ -16,7 +16,7 @@
   .header-image {
     height: 0;
     position: absolute;
-    filter: drop-shadow(0.75rem 1.15rem 0 $theme-primary-v8);
+    filter: drop-shadow(0.65rem 1.15rem 0 $theme-primary-v4);
 
     @mixin for-both {
       @include before-or-after();
@@ -63,33 +63,45 @@
 
     &::after {
       z-index: 1;
-      background: rgba(109, 65, 17, 0.55);
+      background: rgba(109, 65, 17, 0.45);
     }
   }
 
   .header-wrapper {
     position: static !important;
-    border: 1px solid blue;
+    // border: 1px solid blue;
   }
 
   header {
     color: white;
     min-height: 15rem;
-    padding: 13rem 0 5rem 0;
-    position: static;
-    margin-bottom: 15rem;
+    padding: 0;
+    margin-bottom: 0rem;
+    // border: 2px solid orange;
+
+    > div {
+      margin: {
+        top: 12rem;
+        bottom: 0;
+      }
+
+      &:nth-child(2) {
+        text-align: right;
+      }
+    }
 
     .intro-text {
       width: 19rem;
       display: inline-block;
-      position: absolute;
+      // position: absolute;
+      text-align: left;
       top: -4rem;
       right: 0;
       color: #333;
       box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.35);
       line-height: 2.15rem;
       border-radius: 1.25rem;
-      background: linear-gradient(to left, #111, #000);
+      background: linear-gradient(to left, #202020, #000);
       color: white;
       padding: 2.5rem;
 
@@ -130,7 +142,7 @@
 
   .work {
     position: relative;
-    transition: 5s;
+    // border: 2px solid red;
 
     &::before {
       $size: 1.25rem;
@@ -144,6 +156,14 @@
       left: calc(50% - #{$size / 2} - 0.025rem);
       border-color: transparent;
       transition: 0.5s;
+    }
+
+    &::after {
+      @include before-or-after();
+
+      width: 0.125rem;
+      left: calc(50% - #{0.125rem / 2} - 0.025rem);
+      background: $theme-primary-v8;
     }
 
     &.animate-children {
@@ -194,7 +214,7 @@
     }
 
     .work-desc-wrapper {
-      padding-right: 0 !important;
+      padding-right: 0.5rem;
       opacity: 0;
       transform: translateX(80%);
     }
@@ -204,7 +224,6 @@
     .work-image-wrapper {
       order: 1;
       text-align: left;
-      border-right: none;
 
       .work-image {
         opacity: 0;
@@ -214,19 +233,18 @@
 
     .work-desc-container {
       text-align: right;
-      border-right: 0.125rem solid $theme-primary-v8;
 
       .work-desc-wrapper {
         opacity: 0;
         transform: translateX(-80%);
-        padding-left: 0 !important;
+        padding-left: 0.5rem;
       }
     }
   }
 
   .work-image-wrapper {
     text-align: right;
-    border-right: 0.125rem solid $theme-primary-v8;
+    padding: 3.5rem;
   }
 
   .work-image {
@@ -253,6 +271,7 @@
 
   .work-desc-wrapper {
     transition: 1.15s;
+    padding: 3.5rem;
   }
 
   .work-desc-header {

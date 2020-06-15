@@ -16,16 +16,16 @@ export interface Data {
 
 const Portfolio = () => {
   return (
-    <Container fluid className='Portfolio'>
+    <Container fluid className='Portfolio debugger'>
       <Container fluid className='header-image'></Container>
-      <Container>
+      <Container className='p-0'>
         <Row as='header' className='mx-0'>
-          <Col md={7}>
+          <Col md={7} className=''>
             <Typography component='h3' variant='h3' className='page-title'>
               Our Portfolio
             </Typography>
           </Col>
-          <Col md={5}>
+          <Col md={5} className=''>
             <Col className='intro-text'>
               <Col as='span' className='quote'>
                 "
@@ -97,8 +97,8 @@ function Work(props: any) {
   return (
     <section
       ref={_work}
-      className='work d-flex mx-0 my-3 debugger w-100 align-content-center'>
-      <Col md={6} className='work-image-wrapper p-5'>
+      className='work row d-flex mx-0 my-3 debugger w-100 align-content-center'>
+      <Col md={6} className='work-image-wrapper'>
         <img
           src={`/images/portfolio/${imgUrl}`}
           alt={imgAlt}
@@ -108,7 +108,7 @@ function Work(props: any) {
         <Col as='span' className='no-image-placeholder work-image' />
       </Col>
       <Col md={6} className='work-desc-container align-self-center h-100 p-0'>
-        <Col className='work-desc-wrapper p-5'>
+        <Col className='work-desc-wrapper'>
           <Typography
             component='h3'
             variant='h3'
