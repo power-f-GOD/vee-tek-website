@@ -20,10 +20,24 @@ const Portfolio = () => {
       <Container fluid className='header-image'></Container>
       <Container className='p-0'>
         <Row as='header' className='mx-0'>
-          <Col md={7} className=''>
+          <Col md={7} className='d-block'>
             <Typography component='h3' variant='h3' className='page-title'>
               Our Portfolio
             </Typography>
+            <Col className='rider-texts-wrapper p-0 d-inline-block'>
+              <Col as='p' className='rider-text'>
+                <span>"Some nice rider text beneath!"</span>
+                <br />- Scott
+              </Col>
+              <Col as='p' className='rider-text'>
+                <span>"Another nice rider text beneath!"</span>
+                <br />- Smith
+              </Col>
+              <Col as='p' className='rider-text'>
+                <span>"And a third nice rider text beneath!"</span>
+                <br />- Jane
+              </Col>
+            </Col>
           </Col>
           <Col md={5} className=''>
             <Col className='intro-text'>
@@ -80,9 +94,9 @@ function Work(props: any) {
 
         if (top < windowHeight + 200) {
           if (top < threshold) {
-            work.classList.add('animate-children');
+            work.classList.add('animate');
           } else if (top >= threshold) {
-            work.classList.remove('animate-children');
+            work.classList.remove('animate');
           }
         }
       };
