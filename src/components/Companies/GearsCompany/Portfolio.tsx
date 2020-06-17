@@ -1,10 +1,13 @@
-import React, { useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import portfolioData from './portfolioData';
 
@@ -14,7 +17,30 @@ export interface Data {
   imgUrl: string;
 }
 
+const limit = 5;
+const numOfWorks = portfolioData.length;
+
 const Portfolio = () => {
+  const [numOfWorksToShow, setNumOfWorksToShow] = useState<number>(limit);
+
+  const handleShowMoreClick = useCallback(
+    (e: any) => {
+      if (numOfWorksToShow < numOfWorks) {
+        setNumOfWorksToShow((prevNum) => prevNum + limit);
+      }
+    },
+    [numOfWorksToShow]
+  );
+
+  const handleShowLessClick = useCallback(
+    (e: any) => {
+      if (numOfWorksToShow > limit) {
+        setNumOfWorksToShow((prevNum) => prevNum - limit);
+      }
+    },
+    [numOfWorksToShow]
+  );
+
   return (
     <Container fluid className='Portfolio debugger'>
       <Container fluid className='header-image'></Container>
@@ -56,9 +82,36 @@ const Portfolio = () => {
         <br />
         <hr className='separator' />
         <Row as='main' className='mx-0 mb-5'>
-          {portfolioData.map((data, key: number) => (
+          {portfolioData.slice(0, numOfWorksToShow).map((data, key: number) => (
             <Work data={data} key={key} />
           ))}
+
+          <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
+            <Container className='d-inline-block w-auto'>
+              {numOfWorksToShow < numOfWorks && (
+                <Button
+                  className='load-more-button contained my-3 mx-2'
+                  variant='contained'
+                  color='primary'
+                  onClick={handleShowMoreClick}>
+                  Show More <ExpandMoreIcon className='ml-2' />
+                </Button>
+              )}
+              {numOfWorksToShow > limit && (
+                <Button
+                  className='load-more-button outlined my-3 mx-2'
+                  variant='contained'
+                  color='primary'
+                  onClick={handleShowLessClick}>
+                  Show Less <ExpandLessIcon className='ml-2' />
+                </Button>
+              )}
+            </Container>
+            <Container className='d-inline-block w-auto'>
+              {numOfWorksToShow > numOfWorks ? numOfWorks : numOfWorksToShow} of{' '}
+              {numOfWorks}
+            </Container>
+          </Row>
         </Row>
       </Container>
     </Container>
@@ -67,7 +120,6 @@ const Portfolio = () => {
 
 function Work(props: any) {
   const _work = useRef() as any;
-  const work = _work.current;
   const { data } = props;
   const { header, description, imgUrl }: Data = data;
   const imgAlt = header + ' logo';
@@ -85,11 +137,12 @@ function Work(props: any) {
   );
 
   useEffect(() => {
+    const work = _work.current;
     const windowHeight = window.innerHeight;
     const threshold = windowHeight * 0.8;
 
     if (work) {
-      const animateChildren = () => {
+      const animate = () => {
         const { top } = work.getBoundingClientRect();
 
         if (top < windowHeight + 200) {
@@ -101,12 +154,12 @@ function Work(props: any) {
         }
       };
 
-      document.body.addEventListener('scroll', animateChildren);
+      document.body.addEventListener('scroll', animate);
 
       // call function initiallly in case element passes threshold on page load
-      animateChildren();
+      animate();
     }
-  }, [work]);
+  }, [_work]);
 
   return (
     <section

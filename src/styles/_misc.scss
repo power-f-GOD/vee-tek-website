@@ -96,6 +96,7 @@ a {
     $bg-hovered: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
 
     min-height: 2.5rem;
+    font-size: inherit !important;
     border-radius: 0.25rem;
 
     &.major-button {
@@ -103,19 +104,10 @@ a {
       height: 3rem;
     }
 
-    &.contained {
-      background-color: $bg;
-      color: white;
-
-      &:hover {
-        background-color: $bg-hovered;
-      }
-    }
-
-    &.outlined {
+    @mixin variant($opacity1, $opacity2, $color1, $color2) {
       border: 1px solid $bg;
       background: transparent;
-      color: $theme-primary-v4;
+      color: $color1;
       position: relative;
       overflow: hidden;
 
@@ -125,18 +117,30 @@ a {
 
       &::before {
         @include before-or-after();
-        opacity: 0;
-        background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+        opacity: $opacity1;
+        background: linear-gradient(
+          to left,
+          $theme-primary-v5,
+          $theme-primary-v3
+        );
         transition: 0.3s;
       }
 
       &:hover {
-        color: white;
+        color: $color2;
 
         &::before {
-          opacity: 1;
+          opacity: $opacity2;
         }
       }
+    }
+
+    &.outlined {
+      @include variant(0, 1, $theme-primary-v4, #fff);
+    }
+
+    &.contained {
+      @include variant(1, 0, #fff, $theme-primary-v4);
     }
 
     &:disabled,
