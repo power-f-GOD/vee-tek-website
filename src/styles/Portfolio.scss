@@ -205,6 +205,7 @@
     position: relative;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
+    min-height: 16rem;
     transform: translateY(3rem);
     opacity: 0;
     transition: 0.75s;
@@ -215,11 +216,12 @@
       @include separator-circle();
       height: $size;
       width: $size;
-      top: 100%;
+      top: -0.75rem;
+      transform: translateY(1200%);
       z-index: 2;
       left: calc(50% - #{$size / 2} - 0.025rem);
       border-color: transparent;
-      transition: 0.5s;
+      transition: 0.55s;
     }
 
     &::after {
@@ -235,7 +237,7 @@
       transform: translateY(0);
 
       &::before {
-        top: -0.75rem;
+        transform: translateY(0);
       }
     }
   }
@@ -284,7 +286,7 @@
   }
 
   .work-desc-header {
-    font-size: 2.15rem;
+    font-size: 2rem;
     font-weight: bold;
     color: $theme-primary-v3;
   }
