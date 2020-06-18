@@ -10,7 +10,6 @@ import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
-import portfolioData from './portfolioData';
 import {
   switchgearServices,
   engineeringServices,
