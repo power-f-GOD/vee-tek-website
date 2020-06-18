@@ -4,24 +4,32 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
-import portfolioData from './portfolioData';
+import {
+  switchgearServices,
+  engineeringServices,
+  numOfWorks,
+  numOfSwitchgears
+} from './portfolioDataV2';
 
 export interface Data {
   header: string;
   description: string;
   imgUrl: string;
+  year?: string;
+  type?: 'switch-gear' | 'engineering' | '';
 }
 
 const limit = 5;
-const numOfWorks = portfolioData.length;
 
 const Portfolio = () => {
   const [numOfWorksToShow, setNumOfWorksToShow] = useState<number>(limit);
+  const canShowEngineering = numOfWorksToShow > numOfSwitchgears;
 
   const handleShowMoreClick = useCallback(
     (e: any) => {
@@ -47,7 +55,7 @@ const Portfolio = () => {
       <Container className='p-0'>
         <Row as='header' className='mx-0'>
           <Col md={7} className='d-block'>
-            <Typography component='h3' variant='h3' className='page-title'>
+            <Typography component='h1' variant='h3' className='page-title'>
               Our Portfolio
             </Typography>
             <Col className='rider-texts-wrapper p-0 d-inline-block'>
@@ -79,15 +87,39 @@ const Portfolio = () => {
             </Col>
           </Col>
         </Row>
-        <br />
-        <hr className='separator' />
+
         <Row as='main' className='mx-0 mb-5'>
-          {portfolioData.slice(0, numOfWorksToShow).map((data, key: number) => (
-            <Work data={data} key={key} />
-          ))}
+          <Box
+            component='h2'
+            className='projects-header d-block w-100'
+            fontWeight='bold'
+            margin='6rem 0'
+            fontSize='2.25rem'>
+            Switchgear Projects Executed
+          </Box>
+          {switchgearServices
+            .slice(0, numOfWorksToShow)
+            .map((data, key: number) => (
+              <Work data={data} key={key} />
+            ))}
+
+          {canShowEngineering && (
+            <Box
+              component='h2'
+              className='projects-header d-block w-100'
+              fontWeight='bold'
+              margin='7rem 0 6rem 0'
+              fontSize='2.25rem'>
+              Engineering Projects Executed
+            </Box>
+          )}
+          {canShowEngineering &&
+            engineeringServices
+              .slice(0, numOfWorksToShow - numOfSwitchgears)
+              .map((data, key: number) => <Work data={data} key={key} />)}
 
           <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
-            <Container className='d-inline-block w-auto'>
+            <Box textAlign='center' className='d-inline-block w-auto'>
               {numOfWorksToShow < numOfWorks && (
                 <Button
                   className='load-more-button contained my-3 mx-2'
@@ -106,8 +138,9 @@ const Portfolio = () => {
                   Show Less <ExpandLessIcon className='ml-2' />
                 </Button>
               )}
-            </Container>
-            <Container className='d-inline-block w-auto'>
+            </Box>
+
+            <Container className='d-inline-block w-auto mt-3'>
               {numOfWorksToShow > numOfWorks ? numOfWorks : numOfWorksToShow} of{' '}
               {numOfWorks}
             </Container>
@@ -121,7 +154,7 @@ const Portfolio = () => {
 function Work(props: any) {
   const _work = useRef() as any;
   const { data } = props;
-  const { header, description, imgUrl }: Data = data;
+  const { header, description, imgUrl, year }: Data = data;
   const imgAlt = header + ' logo';
 
   const hideImageElementOnError = useCallback(
@@ -148,8 +181,9 @@ function Work(props: any) {
         if (top < windowHeight + 200) {
           if (top < threshold) {
             work.classList.add('animate');
-          } else if (top >= threshold) {
-            work.classList.remove('animate');
+
+            //remove scroll eventlistener after animation for performance reasons
+            document.body.removeEventListener('scroll', animate);
           }
         }
       };
@@ -164,7 +198,10 @@ function Work(props: any) {
   return (
     <section
       ref={_work}
-      className='work row d-flex mx-0 my-3 debugger w-100 align-content-center'>
+      className='work row d-flex mx-0 my-4 debugger w-100 align-content-center'>
+      <Col as='span' className='work-date'>
+        {year}
+      </Col>
       <Col md={6} className='work-image-wrapper'>
         <img
           src={`/images/portfolio/${imgUrl}`}
