@@ -423,7 +423,7 @@ export const switchgearServices = sortedDataByYear.filter((service: Data) => ser
 export const engineeringServices = sortedDataByYear.filter((service: Data) => service.type! === 'engineering');
 
 export const numOfWorks = sortedDataByYear.length;
-export const numOfSwitchgears = switchgearServices.length;
-export const numOfEngineering = engineeringServices.length;
+export const numOfSwitchgearWorks = switchgearServices.length;
+export const numOfEngineeringWorks = engineeringServices.length;
 
 export default sortedDataByYear;

@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -13,8 +14,8 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import {
   switchgearServices,
   engineeringServices,
-  numOfWorks,
-  numOfSwitchgears
+  numOfSwitchgearWorks,
+  numOfEngineeringWorks
 } from './portfolioDataV2';
 
 export interface Data {
@@ -27,27 +28,79 @@ export interface Data {
 
 const limit = 5;
 
+export const transform = (el: any, val: string) => {
+  el.style.WebkitTransform = val;
+  el.style.MozTransform = val;
+  el.style.OTransform = val;
+  el.style.transform = val;
+};
+
 const Portfolio = () => {
-  const [numOfWorksToShow, setNumOfWorksToShow] = useState<number>(limit);
-  const canShowEngineering = numOfWorksToShow > numOfSwitchgears;
+  const [_switchgearLink, _engineeringLink, _tabIndicator] = [
+    useRef<any>(),
+    useRef<any>(),
+    useRef<any>()
+  ];
+  const [numOfSwitchgearWorksToShow, setNumOfSwitchgearWorksToShow] = useState<
+    number
+  >(limit);
+  const [
+    numOfEngineeringWorksToShow,
+    setNumOfEngineeringWorksToShow
+  ] = useState<number>(limit);
+  const [activeProject, setActiveProject] = useState<string>('switchgear');
 
-  const handleShowMoreClick = useCallback(
-    (e: any) => {
-      if (numOfWorksToShow < numOfWorks) {
-        setNumOfWorksToShow((prevNum) => prevNum + limit);
-      }
+  let switchgearLink = _switchgearLink.current as HTMLAnchorElement;
+  let engineeringLink = _engineeringLink.current as HTMLAnchorElement;
+  let tabIndicator = _tabIndicator.current as HTMLSpanElement;
+
+  const handleProjectsLinkClick = useCallback(
+    (project: string) => (e: any) => {
+      e.preventDefault();
+      setActiveProject(project);
     },
-    [numOfWorksToShow]
+    []
   );
 
-  const handleShowLessClick = useCallback(
-    (e: any) => {
-      if (numOfWorksToShow > limit) {
-        setNumOfWorksToShow((prevNum) => prevNum - limit);
+  const handleShowMoreClick = useCallback(() => {
+    if (activeProject === 'switchgear') {
+      if (numOfSwitchgearWorksToShow < numOfSwitchgearWorks) {
+        setNumOfSwitchgearWorksToShow((prevNum) => prevNum + limit);
       }
-    },
-    [numOfWorksToShow]
-  );
+    } else {
+      if (numOfEngineeringWorksToShow < numOfEngineeringWorks) {
+        setNumOfEngineeringWorksToShow((prevNum) => prevNum + limit);
+      }
+    }
+  }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
+
+  const handleShowLessClick = useCallback(() => {
+    if (activeProject === 'switchgear') {
+      if (numOfSwitchgearWorksToShow > limit) {
+        setNumOfSwitchgearWorksToShow((prevNum) => prevNum - limit);
+      }
+    } else {
+      if (numOfEngineeringWorksToShow > limit) {
+        setNumOfEngineeringWorksToShow((prevNum) => prevNum - limit);
+      }
+    }
+  }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
+
+  useEffect(() => {
+    if (tabIndicator) {
+      //using px values here for width as offsetWidth will always be relative to the element fontSize and padding which, in CSS, is already set in rem
+      if (activeProject === 'switchgear') {
+        tabIndicator.style.width = switchgearLink.offsetWidth + 'px';
+        transform(tabIndicator, 'translateX(0)');
+      } else {
+        tabIndicator.style.width = engineeringLink.offsetWidth + 'px';
+        transform(
+          tabIndicator,
+          `translateX(${switchgearLink.offsetWidth + 1}px)`
+        );
+      }
+    }
+  }, [activeProject, tabIndicator, switchgearLink, engineeringLink]);
 
   return (
     <Container fluid className='Portfolio debugger'>
@@ -88,48 +141,71 @@ const Portfolio = () => {
           </Col>
         </Row>
 
-        <Row as='main' className='mx-0 mb-5'>
-          <Box
-            component='h2'
-            className='projects-header d-block w-100'
-            fontWeight='bold'
-            margin='6rem 0'
-            fontSize='2.25rem'>
-            Switchgear Projects Executed
+        <Row className='justify-content-center mx-0 mt-5'>
+          <Box className='projects-links-container'>
+            <span className='tab-indicator' ref={_tabIndicator}></span>
+            <NavLink
+              to='#'
+              className='projects-link'
+              isActive={() => activeProject === 'switchgear'}
+              onClick={handleProjectsLinkClick('switchgear')}
+              ref={_switchgearLink}>
+              Switchgear
+            </NavLink>
+            <NavLink
+              to='#'
+              className='projects-link'
+              isActive={() => activeProject === 'engineering'}
+              onClick={handleProjectsLinkClick('engineering')}
+              ref={_engineeringLink}>
+              Engineering
+            </NavLink>
           </Box>
-          {switchgearServices
-            .slice(0, numOfWorksToShow)
-            .map((data, key: number) => (
-              <Work data={data} key={key} />
-            ))}
+        </Row>
 
-          {canShowEngineering && (
-            <Box
-              component='h2'
-              className='projects-header d-block w-100'
-              fontWeight='bold'
-              margin='7rem 0 6rem 0'
-              fontSize='2.25rem'>
-              Engineering Projects Executed
+        <Row as='main' className='mx-0 mb-5'>
+          {activeProject === 'switchgear' && (
+            <Box component='section' className='fade-in'>
+              <Box
+                component='h2'
+                className='projects-header d-block w-100'
+                fontWeight='bold'
+                margin='6rem 0'
+                fontSize='2.25rem'>
+                Switchgear Projects Executed
+              </Box>
+              {switchgearServices
+                .slice(0, numOfSwitchgearWorksToShow)
+                .map((data: Data, key: number) => (
+                  <Work data={data} key={key} />
+                ))}
             </Box>
           )}
-          {canShowEngineering &&
-            engineeringServices
-              .slice(0, numOfWorksToShow - numOfSwitchgears)
-              .map((data, key: number) => <Work data={data} key={key} />)}
+
+          {activeProject === 'engineering' && (
+            <Box component='section' className='fade-in w-100'>
+              <Box
+                component='h2'
+                className='projects-header d-block w-100'
+                fontWeight='bold'
+                margin='6rem 0'
+                fontSize='2.25rem'>
+                Engineering Projects Executed
+              </Box>
+              {engineeringServices
+                .slice(0, numOfEngineeringWorksToShow)
+                .map((data: Data, key: number) => (
+                  <Work data={data} key={key} />
+                ))}
+            </Box>
+          )}
 
           <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
             <Box textAlign='center' className='d-inline-block w-auto'>
-              {numOfWorksToShow < numOfWorks && (
-                <Button
-                  className='load-more-button contained my-3 mx-2'
-                  variant='contained'
-                  color='primary'
-                  onClick={handleShowMoreClick}>
-                  Show More <ExpandMoreIcon className='ml-2' />
-                </Button>
-              )}
-              {numOfWorksToShow > limit && (
+              {((activeProject === 'switchgear' &&
+                numOfSwitchgearWorksToShow > limit) ||
+                (activeProject === 'engineering' &&
+                  numOfEngineeringWorksToShow > limit)) && (
                 <Button
                   className='load-more-button outlined my-3 mx-2'
                   variant='contained'
@@ -138,11 +214,34 @@ const Portfolio = () => {
                   Show Less <ExpandLessIcon className='ml-2' />
                 </Button>
               )}
+              {((activeProject === 'switchgear' &&
+                numOfSwitchgearWorksToShow < numOfSwitchgearWorks) ||
+                (activeProject === 'engineering' &&
+                  numOfEngineeringWorksToShow < numOfEngineeringWorks)) && (
+                <Button
+                  className='load-more-button contained my-3 mx-2'
+                  variant='contained'
+                  color='primary'
+                  onClick={handleShowMoreClick}>
+                  Show More <ExpandMoreIcon className='ml-2' />
+                </Button>
+              )}
             </Box>
 
             <Container className='d-inline-block w-auto mt-3'>
-              {numOfWorksToShow > numOfWorks ? numOfWorks : numOfWorksToShow} of{' '}
-              {numOfWorks}
+              {activeProject === 'switchgear'
+                ? `${
+                    numOfSwitchgearWorksToShow > numOfSwitchgearWorks
+                      ? numOfSwitchgearWorks
+                      : numOfSwitchgearWorksToShow
+                  } of
+              ${numOfSwitchgearWorks}`
+                : `${
+                    numOfEngineeringWorksToShow > numOfEngineeringWorks
+                      ? numOfEngineeringWorks
+                      : numOfEngineeringWorksToShow
+                  } of
+              ${numOfEngineeringWorks}`}
             </Container>
           </Row>
         </Row>

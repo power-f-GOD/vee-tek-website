@@ -8,10 +8,6 @@
       display: flex;
     }
 
-    // .app-bar-links {
-    //   display: none;
-    // }
-
     .nav-link-wrapper {
       display: none;
     }
@@ -30,10 +26,6 @@
     display: flex;
   }
 
-  // .app-bar-links {
-  //   display: none;
-  // }
-
   .nav-link-wrapper {
     display: none;
   }
@@ -44,10 +36,6 @@
     .drawer {
       display: none;
     }
-
-    // .app-bar-links {
-    //   display: flex;
-    // }
 
     .nav-link-wrapper {
       display: flex;
@@ -223,11 +211,6 @@
 
     .work-desc-wrapper {
       text-align: center;
-      // padding: 1.5rem;
-      // padding: {
-      //   left: 0.5rem !important;
-      //   right: 1.5rem !important;
-      // }
     }
 
     .work-desc-header {
@@ -285,6 +268,12 @@
   .Portfolio {
     .page-title {
       font-size: 2.5rem;
+    }
+
+    .projects-link {
+      font-size: 1rem;
+      border-bottom: 0.125rem solid $theme-primary-v4;
+      padding: 0.5rem 0.75rem;
     }
 
     .work-desc-header {
