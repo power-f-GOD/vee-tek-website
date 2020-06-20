@@ -16,7 +16,8 @@
   .header-image {
     height: 0;
     position: absolute;
-    filter: drop-shadow(0.65rem 1.15rem 0 $theme-primary-v4);
+    // filter: drop-shadow(0.65rem 1.15rem 0 $theme-primary-v7);
+    filter: drop-shadow(0.65rem 1.15rem 0 transparent);
 
     @mixin for-both {
       @include before-or-after();
@@ -82,7 +83,7 @@
 
       &:nth-child(2) {
         text-align: right;
-        margin-top: 14.5rem;
+        margin-top: 14rem;
       }
     }
 
@@ -102,7 +103,7 @@
     }
 
     .rider-text {
-      background-color: rgba(109, 65, 17, 0.75);
+      background-color: rgba(109, 65, 17, 0.65);
       padding: 1rem;
       font-size: 1.15rem;
       width: 100%;
@@ -149,7 +150,6 @@
     .intro-text {
       width: 19rem;
       display: inline-block;
-      // position: absolute;
       text-align: left;
       top: -4rem;
       right: 0;
@@ -157,7 +157,7 @@
       box-shadow: 0 0.5rem 1.75rem rgba(0, 0, 0, 0.35);
       line-height: 2.15rem;
       border-radius: 1.25rem;
-      background: linear-gradient(to left, #202020, #000);
+      background: linear-gradient(to bottom, $theme-primary-v5, $theme-primary-v3);
       color: white;
       padding: 2.5rem;
 
@@ -166,6 +166,37 @@
         font-style: italic;
         font-size: 3rem;
       }
+    }
+  }
+
+  .projects-links-container {
+    display: inline-block;
+    position: relative;
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .tab-indicator {
+      @include before-or-after();
+
+      border-radius: 0.25rem 0.25rem 0 0;
+      transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      background: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+    }
+  }
+
+  .projects-link {
+    font-size: 1.25rem;
+    border-bottom: 0.125rem solid $theme-primary-v4;
+    padding: 0.75rem 1rem;
+    display: inline-block;
+    text-decoration: none;
+    color: $theme-primary-v3;
+    
+    &.active {
+      color: white;
     }
   }
 
