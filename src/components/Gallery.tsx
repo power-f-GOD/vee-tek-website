@@ -1,6 +1,17 @@
 import React from 'react';
 
-const Gallery = () => {
+const Gallery = (props: any) => {
+  const { callSetNavState, location } = props;
+  const { pathname } = location;
+
+  React.useEffect(() => {
+    callSetNavState(pathname);
+
+    return () => {
+      callSetNavState('/');
+    };
+  }, [pathname, callSetNavState]);
+
   return (
     <div className='fade-in my-5 py-5'>
       <h1>This is the Gallery component!</h1>

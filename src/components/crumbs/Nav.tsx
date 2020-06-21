@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
@@ -20,18 +20,26 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import PhoneIcon from '@material-ui/icons/Phone';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 
 import { userDeviceIsMobile } from '../..';
 import { NavContext } from '../../App';
 
+export interface BreadCrumbsData {
+  href: string;
+  title: string;
+}
+
 const Nav = () => {
   return (
-    <Box marginBottom='0'>
+    <Box component='nav' marginBottom='0'>
       <ElevationScroll>
-        <AppBar position='fixed' className={userDeviceIsMobile ? 'mobile-width' : ''}>
+        <AppBar
+          position='fixed'
+          className={userDeviceIsMobile ? 'mobile-width' : ''}>
           <TopNavLinks />
 
-          <Container>
+          <Container className='nav-toolbar-container'>
             <Toolbar className='nav-toolbar d-flex flex-wrap'>
               <Box component='h5' className='logo font-weight-bold'>
                 <NavLink to='/' exact>
@@ -54,6 +62,8 @@ const Nav = () => {
               </TemporaryDrawer>
             </Toolbar>
           </Container>
+
+          <BreadCrumbs />
         </AppBar>
       </ElevationScroll>
     </Box>
@@ -127,7 +137,7 @@ function NavLinks() {
 
       <Col className='nav-link-wrapper p-0'>
         <NavLink to='/events' className='nav-link'>
-          News and Events
+          News
         </NavLink>
       </Col>
       <Col className='nav-link-wrapper p-0'>
@@ -146,12 +156,11 @@ function NavLinks() {
   return (
     <NavContext.Consumer>
       {(pathname: string) => {
-        const [index, gears, pipes] = [
-          '/',
+        const [gears, pipes] = [
           '/companies/switch-gears',
           '/companies/pipes-and-fittings'
         ];
-        const forIndex = pathname === index;
+        const forIndex = !new RegExp(`${gears}|${pipes}`).test(pathname);
         const forGears = new RegExp(gears).test(pathname);
         const forPipes = new RegExp(pipes).test(pathname);
 
@@ -243,19 +252,72 @@ function TemporaryDrawer(props: any) {
   );
 }
 
-function ElevationScroll(props: {
-  children: React.ReactElement;
-}) {
+function BreadCrumbs() {
+  const navState = useContext(NavContext);
+  // const { links, current } = props;
+  let history = '';
+  const links: BreadCrumbsData[] = navState.split('/').map((link) => {
+    let title = '';
+
+    switch (true) {
+      case /switch/.test(link):
+        title = 'Switchgears Company';
+        break;
+      case /pipes/.test(link):
+        title = 'Pipes Company';
+        break;
+      default:
+        title = link
+          .split('-')
+          .map((word) =>
+            word && !/^(and|in|of|with)$/.test(word)
+              ? word[0].toUpperCase() + word.slice(1)
+              : word
+          )
+          .join(' ');
+    }
+    history += history.slice(-1) === '/' ? link : '/' + link;
+
+    return { href: history, title: link === '' ? 'Vee-Tek Group' : title };
+  });
+
+  return (
+    <Box
+      component='section'
+      className={`breadcrumbs-wrapper ${navState === '/' ? 'hide' : ''}`}>
+      <Breadcrumbs aria-label='breadcrumb'>
+        {links
+          .slice(0, -1)
+          .filter((link) => !/^(\/companies|\/about)$/.test(link.href))
+          .map(({ href, title }: BreadCrumbsData, key: number) => (
+            <Link to={href} key={key}>
+              {title}
+            </Link>
+          ))}
+        <Box component='span' className='current'>
+          {links.slice(-1)[0].title}
+        </Box>
+      </Breadcrumbs>
+    </Box>
+  );
+}
+
+function ElevationScroll(props: { children: React.ReactElement }) {
   const { children } = props;
-  
+
   let trigger = useScrollTrigger({
     disableHysteresis: false,
     threshold: 5,
-    target: document.body
+    target: window
   });
 
   return React.cloneElement(children, {
-    className: trigger && window.innerWidth > 767 ? userDeviceIsMobile ? 'mobile-width hide-mini-nav' : 'hide-mini-nav' : 'mobile-width'
+    className:
+      trigger && window.innerWidth > 767
+        ? userDeviceIsMobile
+          ? 'mobile-width hide-mini-nav'
+          : 'hide-mini-nav'
+        : 'mobile-width'
   });
 }
 

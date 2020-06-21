@@ -34,10 +34,30 @@ const App = () => {
               <Companies {...props} callSetNavState={callSetNavState} />
             )}
           />
-          <Route path='/events' component={Events} />
-          <Route path='/gallery' component={Gallery} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/about' component={About} />
+          <Route
+            path='/events'
+            render={(props: any) => (
+              <Events {...props} callSetNavState={callSetNavState} />
+            )}
+          />
+          <Route
+            path='/gallery'
+            render={(props: any) => (
+              <Gallery {...props} callSetNavState={callSetNavState} />
+            )}
+          />
+          <Route
+            path='/contact'
+            render={(props: any) => (
+              <Contact {...props} callSetNavState={callSetNavState} />
+            )}
+          />
+          <Route
+            path='/about'
+            render={(props: any) => (
+              <About {...props} callSetNavState={callSetNavState} />
+            )}
+          />
           <Route component={_404} />
         </Switch>
 
