@@ -12,7 +12,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
-const Contact = () => {
+const Contact = (props: any) => {
   const map = `
         <iframe
           src="https://maps.google.com/maps?q=6%C2%B027'42.3%22N%207%C2%B028'33.1%22E&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -23,6 +23,17 @@ const Contact = () => {
           allowfullscreen=''
           aria-hidden='false'
           tabindex='0'></iframe>`;
+
+  const { callSetNavState, location } = props;
+  const { pathname } = location;
+
+  React.useEffect(() => {
+    callSetNavState(pathname);
+
+    return () => {
+      callSetNavState('/');
+    };
+  }, [pathname, callSetNavState]);
 
   return (
     <Container fluid className='Contact px-0'>
@@ -51,8 +62,8 @@ const Contact = () => {
             </Typography>
 
             <Typography component='h6' className='font-italic small mb-3'>
-              We look forward to getting your feedback or mail about any of our
-              projects, products or services.
+              We look forward to getting feedback or enquiries on any of our
+              projects, products and services.
             </Typography>
 
             <form className='contact-form'>

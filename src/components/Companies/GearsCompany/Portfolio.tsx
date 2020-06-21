@@ -22,8 +22,8 @@ export interface Data {
   header: string;
   description: string;
   imgUrl: string;
-  year?: string;
-  type?: 'switch-gear' | 'engineering' | '';
+  year: string;
+  type: 'switch-gear' | 'engineering' | '';
 }
 
 const limit = 5;
@@ -108,9 +108,9 @@ const Portfolio = () => {
       <Container className='p-0'>
         <Row as='header' className='mx-0'>
           <Col md={7} className='d-block'>
-            <Typography component='h1' variant='h3' className='page-title'>
+            <Box component='h1' className='page-title'>
               Our Portfolio
-            </Typography>
+            </Box>
             <Col className='rider-texts-wrapper p-0 d-inline-block'>
               <Col as='p' className='rider-text'>
                 <span>"Some nice rider text beneath!"</span>
@@ -174,11 +174,13 @@ const Portfolio = () => {
                 fontSize='2.25rem'>
                 Switchgear Projects Executed
               </Box>
-              {switchgearServices
-                .slice(0, numOfSwitchgearWorksToShow)
-                .map((data: Data, key: number) => (
-                  <Work data={data} key={key} />
-                ))}
+              {switchgearServices.map((data: Data, key: number) => (
+                <Work
+                  data={data}
+                  key={key}
+                  show={key < numOfSwitchgearWorksToShow}
+                />
+              ))}
             </Box>
           )}
 
@@ -192,16 +194,21 @@ const Portfolio = () => {
                 fontSize='2.25rem'>
                 Engineering Projects Executed
               </Box>
-              {engineeringServices
-                .slice(0, numOfEngineeringWorksToShow)
-                .map((data: Data, key: number) => (
-                  <Work data={data} key={key} />
-                ))}
+              {engineeringServices.map((data: Data, key: number) => (
+                <Work
+                  data={data}
+                  key={key}
+                  show={key < numOfEngineeringWorksToShow}
+                />
+              ))}
             </Box>
           )}
 
           <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
-            <Box textAlign='center' className='d-inline-block w-auto'>
+            <Box
+              textAlign='center'
+              className='d-inline-block w-auto'
+              marginTop='4rem'>
               {((activeProject === 'switchgear' &&
                 numOfSwitchgearWorksToShow > limit) ||
                 (activeProject === 'engineering' &&
@@ -252,10 +259,10 @@ const Portfolio = () => {
 
 function Work(props: any) {
   const _work = useRef() as any;
-  const { data } = props;
+  const { data, show } = props;
   const { header, description, imgUrl, year }: Data = data;
   const imgAlt = header + ' logo';
-
+  
   const hideImageElementOnError = useCallback(
     (e: any) => {
       const img = e.target;
@@ -275,14 +282,16 @@ function Work(props: any) {
 
     if (work) {
       const animate = () => {
-        const { top } = work.getBoundingClientRect();
+        if (show) {
+          const { top } = work.getBoundingClientRect();
 
-        if (top < windowHeight + 200) {
-          if (top < threshold) {
-            work.classList.add('animate');
+          if (show && top < windowHeight + 200) {
+            if (top < threshold) {
+              work.classList.add('animate');
 
-            //remove scroll eventlistener after animation for performance reasons
-            document.body.removeEventListener('scroll', animate);
+              //remove scroll eventlistener after animation for performance reasons
+              document.body.removeEventListener('scroll', animate);
+            }
           }
         }
       };
@@ -292,12 +301,14 @@ function Work(props: any) {
       // call function initiallly in case element passes threshold on page load
       animate();
     }
-  }, [_work]);
+  }, [_work, show]);
 
   return (
     <section
       ref={_work}
-      className='work row d-flex mx-0 my-4 debugger w-100 align-content-center'>
+      className={`work row ${
+        show ? 'd-flex' : 'd-none'
+      } mx-0 my-4 debugger w-100 align-content-center`}>
       <Col as='span' className='work-date'>
         {year}
       </Col>

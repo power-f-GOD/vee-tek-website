@@ -29,7 +29,7 @@ const ProductCard = (props: {
       <div className="Product-Image-Carousel">
         <Carousel className="h-100" indicators={false} nextIcon={null} prevIcon={null}>
           {props.images.map((v, i) => (
-            <Carousel.Item className="h-100">
+            <Carousel.Item className="h-100" key={v}>
               <Image src={v} className="Product-Carousel-Item" />
             </Carousel.Item>
           ))}

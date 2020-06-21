@@ -24,6 +24,16 @@ $top-nav-box-height: 2.25rem;
       bottom: 1.15rem;
     }
   }
+
+  .breadcrumbs-wrapper {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.nav-toolbar-container {
+  position: relative;
+  z-index: 2;
 }
 
 .nav-toolbar {
@@ -42,7 +52,7 @@ $top-nav-box-height: 2.25rem;
   height: $top-nav-box-height;
   padding: 0.25rem 0;
   background: $theme-primary-v3;
-  color: #eee;//$theme-primary-v8;
+  color: #eee; //$theme-primary-v8;
   display: flex;
   align-content: center;
   font-size: 0.85rem;
@@ -102,6 +112,7 @@ $top-nav-box-height: 2.25rem;
   align-items: center;
   height: 100%;
   margin: 0 1rem;
+  font-size: 0.95rem;
   padding: 1.5rem 0.25rem;
   // color: $theme-primary-v9;
   color: #eee;
@@ -119,7 +130,7 @@ $top-nav-box-height: 2.25rem;
     height: calc(60% - 0.5em);
     right: 0;
     bottom: calc(20% + 0.25em);
-    left: -1rem;
+    left: -1em;
     z-index: -1;
     background-color: $theme-primary-v5;
     transition: 0.25s;
@@ -127,7 +138,7 @@ $top-nav-box-height: 2.25rem;
 
   &::before {
     width: 100%;
-    left: 0.5rem;
+    left: 0.25em;
     bottom: 0em;
     height: 0.125rem;
     transform: scale(0);
@@ -141,7 +152,7 @@ $top-nav-box-height: 2.25rem;
     // color: $theme-primary-v9 !important;
 
     &::before {
-      width: calc(100% - 1em);
+      width: calc(100% - 0.5em);
       transform: scale(1);
       border-bottom-color: $theme-primary-v7 !important;
       // border-bottom-color: #eee !important;
@@ -164,7 +175,7 @@ $top-nav-box-height: 2.25rem;
 
     &::before {
       transform: scale(1);
-      width: calc(100% - 1rem) !important;
+      width: calc(100% - 0.5em) !important;
       // border-bottom-color: #fff;
       border-bottom-color: $theme-primary-v8;
     }
@@ -200,12 +211,14 @@ $top-nav-box-height: 2.25rem;
       content: unset;
     }
 
-    &.active, &:hover {
+    &.active,
+    &:hover {
       background-color: transparent;
       border-color: $theme-primary-v8;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: white;
     }
   }
@@ -293,6 +306,40 @@ $top-nav-box-height: 2.25rem;
   }
 }
 
+.breadcrumbs-wrapper {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border-radius: 0 0 0 0.75rem;
+  background: #fff;
+  opacity: 0.6;
+  padding: 0.5rem 0.75rem;
+  min-width: 50vw;
+  max-width: 90vw;
+  font-size: 0.85em !important;
+  transition: 0.3s;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.2);
+  z-index: -1;
+
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  a {
+    color: $theme-primary-v4;
+    font-size: 0.9rem;
+  }
+
+  .current {
+    font-weight: bold;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .drawer {
   justify-content: flex-end;
   min-width: 3rem;
@@ -329,7 +376,7 @@ $top-nav-box-height: 2.25rem;
       .long-desc {
         display: initial;
       }
-      
+
       .short-desc {
         display: none;
       }

@@ -26,8 +26,6 @@ body,
 
 body {
   padding: 0 !important;
-  position: relative;
-  overflow: auto !important;
 
   &.desktop {
     [class*='PrivateSwipeArea'] {
