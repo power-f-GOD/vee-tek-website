@@ -34,14 +34,14 @@ const Nav = () => {
           <Container>
             <Toolbar className='nav-toolbar d-flex flex-wrap'>
               <Box component='h5' className='logo font-weight-bold'>
-                <Link to='/'>
+                <NavLink to='/' exact>
                   {' '}
                   <img
                     src='/images/logo-64.png'
                     alt='Vee-Tek Group logo'
                   />{' '}
                   Vee-Tek Group
-                </Link>
+                </NavLink>
               </Box>
 
               <Box className='nav-links-wrapper app-bar-links'>
