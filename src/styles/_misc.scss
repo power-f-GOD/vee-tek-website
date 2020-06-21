@@ -191,8 +191,12 @@ h6 {
   }
 
   a {
-    color: white;
+    color: #eee;
     font-size: inherit;
+
+    &.active {
+      color: $theme-primary-v9;
+    }
   }
 
   &:focus-within {
