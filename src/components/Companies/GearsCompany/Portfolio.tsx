@@ -262,7 +262,7 @@ function Work(props: any) {
   const { data, show } = props;
   const { header, description, imgUrl, year }: Data = data;
   const imgAlt = header + ' logo';
-  
+
   const hideImageElementOnError = useCallback(
     (e: any) => {
       const img = e.target;
@@ -285,18 +285,18 @@ function Work(props: any) {
         if (show) {
           const { top } = work.getBoundingClientRect();
 
-          if (show && top < windowHeight + 200) {
+          if (top < windowHeight + 200) {
             if (top < threshold) {
               work.classList.add('animate');
 
               //remove scroll eventlistener after animation for performance reasons
-              document.body.removeEventListener('scroll', animate);
+              window.removeEventListener('scroll', animate);
             }
           }
         }
       };
 
-      document.body.addEventListener('scroll', animate);
+      window.addEventListener('scroll', animate);
 
       // call function initiallly in case element passes threshold on page load
       animate();

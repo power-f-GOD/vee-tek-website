@@ -261,7 +261,7 @@ function BreadCrumbs() {
 
     switch (true) {
       case /switch/.test(link):
-        title = 'Switchgear Company';
+        title = 'Switchgears Company';
         break;
       case /pipes/.test(link):
         title = 'Pipes Company';
