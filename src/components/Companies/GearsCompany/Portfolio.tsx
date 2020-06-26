@@ -16,7 +16,6 @@ import {
   numOfSwitchgearWorks,
   numOfEngineeringWorks
 } from './portfolioDataV2';
-import GoUpFAB from '../../crumbs/GoUpFAB';
 
 export interface Data {
   header: string;
@@ -73,18 +72,6 @@ const Portfolio = () => {
       }
     }
   }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
-
-  // const handleShowLessClick = useCallback(() => {
-  //   if (activeProject === 'switchgear') {
-  //     if (numOfSwitchgearWorksToShow > limit) {
-  //       setNumOfSwitchgearWorksToShow((prevNum) => prevNum - limit);
-  //     }
-  //   } else {
-  //     if (numOfEngineeringWorksToShow > limit) {
-  //       setNumOfEngineeringWorksToShow((prevNum) => prevNum - limit);
-  //     }
-  //   }
-  // }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
 
   useEffect(() => {
     if (tabIndicator) {
@@ -210,18 +197,6 @@ const Portfolio = () => {
                 textAlign='center'
                 className='d-inline-block w-auto'
                 marginTop='4rem'>
-                {/* {((activeProject === 'switchgear' &&
-                numOfSwitchgearWorksToShow > limit) ||
-                (activeProject === 'engineering' &&
-                  numOfEngineeringWorksToShow > limit)) && (
-                <Button
-                  className='load-more-button outlined my-3 mx-2'
-                  variant='contained'
-                  color='primary'
-                  onClick={handleShowLessClick}>
-                  Show Less <ExpandLessIcon className='ml-2' />
-                </Button>
-              )} */}
                 {((activeProject === 'switchgear' &&
                   numOfSwitchgearWorksToShow < numOfSwitchgearWorks) ||
                   (activeProject === 'engineering' &&
@@ -255,8 +230,8 @@ const Portfolio = () => {
           </Row>
         </Container>
       </Container>
+
       
-      <GoUpFAB />
     </>
   );
 };
