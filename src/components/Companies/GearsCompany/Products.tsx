@@ -6,7 +6,7 @@ import { Row, Container } from "react-bootstrap";
 const Products = () => {
   return (
     <Container>
-    <div className="Main-Wrapper">
+    <div className="Main-Wrapper mt-4">
       <Row>
         {Gear.products.map((item, _) => (
           <ProductTile

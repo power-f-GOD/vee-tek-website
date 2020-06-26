@@ -1,14 +1,24 @@
 import React from "react";
-import { Gear } from "../../../constants";
+import { Pipes } from "../../../constants";
 import ProductTile from "../../crumbs/ProductTile";
+import { Container, Row} from "react-bootstrap";
 
 const Products = () => {
   return (
-    <div className="Main-Wrapper">
-      {Gear.products.map((item, _) => (
-        <ProductTile images={item.images} product={item.product} desc={item.desc} key={_} />
-      ))}
+    <Container>
+    <div className="Main-Wrapper mt-4">
+      <Row>
+        {Pipes.products.map((item, _) => (
+          <ProductTile
+            images={item.images}
+            product={item.product}
+            desc={item.desc}
+            key={_}
+          />
+        ))}
+      </Row>
     </div>
+    </Container>
   );
 };
 
