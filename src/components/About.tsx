@@ -1,4 +1,8 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import WhoWeAre from '../components/About/WhoWeAre';
+import _404 from './_404';
 
 const About = (props: any) => {
   const { callSetNavState, location } = props;
@@ -13,9 +17,11 @@ const About = (props: any) => {
   }, [pathname, callSetNavState]);
 
   return (
-    <div className='fade-in my-5 py-5'>
-      <h1>This is the About component!</h1>
-      <h1>About content goes here!</h1>
+    <div className='fade-in '>
+      <Switch>
+        <Route path="/about/who-we-are" component={WhoWeAre} />
+        <Route component={_404} />
+      </Switch>
     </div>
   );
 };
