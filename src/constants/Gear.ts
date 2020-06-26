@@ -27,7 +27,7 @@ const services = [
   {
     image: "/images/electric.png",
     title: "Eletrification Projects",
-    desc: `At Vee-tek we undertake in Electrification Projects for our
+    desc: `At Vee-Tek we undertake in Electrification Projects for our
     clients, serving both rural and Urban area, to increase access
     to electricity services for households, public educational
     institutions.`,
@@ -55,10 +55,22 @@ const services = [
   },
   {
     image: "/images/power.png",
-    title: "Factory Installation",
-    desc: `We conceive, design and construct major control systems,
-    for a lot of Factories and manufacturing concerns across the country.`,
+    title: "High Voltage Panel Maintainance and Rehab.",
+    desc: `We undertake high voltage panel maintenance.`,
   },
+  {
+    image: "/images/building.png",
+    title: "Electrical Infrastructure Bulding",
+    desc: `We build and commission Electrical Infrastructural 
+    services, to meet different needs.`
+  },
+  {
+    image: "/images/factory.png",
+    title: "Factory Installation",
+    desc: `We conceive, design and construct major control 
+    systems, for a lot of Factories and manufacturing concerns 
+    across the country..`
+  }
 ];
 
 export default { products, services };

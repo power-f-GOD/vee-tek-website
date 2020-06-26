@@ -23,14 +23,14 @@ const ProductCard = (props: {
   product: string;
   desc: string;
 }) => (
-  <Col sm={12} md={4} lg={3} className="mb-4">
+  <Col sm={6} xs={12} md={4} lg={3} className="mb-4">
     <div className="Product-Card ">
       {/* <div className={"Product-Image-" + props.image}> </div> */}
       <div className="Product-Image-Carousel">
         <Carousel className="h-100" indicators={false} nextIcon={null} prevIcon={null}>
           {props.images.map((v, i) => (
-            <Carousel.Item className="h-100" key={v}>
-              <Image src={v} className="Product-Carousel-Item" />
+            <Carousel.Item className="h-100 w-100" key={v}>
+              <Image src={v} className="Product-Carousel-Item w-100" />
             </Carousel.Item>
           ))}
         </Carousel>
