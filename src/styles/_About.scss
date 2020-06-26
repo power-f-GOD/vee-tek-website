@@ -1,5 +1,21 @@
-.react-parallax-bgimage{
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: cover;
+.react-parallax-bgimage {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+.Client-Image {
+  object-fit: cover;
+  border-radius: 100%;
+  background-position: center;
+  height: 100px;
+  width: 100px;
+  filter: grayscale(1);
+  background-image: url("/images/portfolio/enugu_logo.jpg");
+  transition: all .5s ease-in-out;
+}
+
+.Client-Image:hover {
+  filter: none;
+  transform: scale(1.1);
 }
