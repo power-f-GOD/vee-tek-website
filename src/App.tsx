@@ -12,6 +12,7 @@ import {
   Footer,
   _404
 } from './components';
+import GoUpFAB from './components/crumbs/GoUpFAB';
 
 export const NavContext = createContext('/');
 
@@ -62,6 +63,7 @@ const App = () => {
         </Switch>
 
         <Footer />
+        <GoUpFAB />
       </BrowserRouter>
     </div>
   );

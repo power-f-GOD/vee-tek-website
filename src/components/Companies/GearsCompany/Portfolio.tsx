@@ -9,7 +9,6 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import {
   switchgearServices,
@@ -74,18 +73,6 @@ const Portfolio = () => {
     }
   }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
 
-  const handleShowLessClick = useCallback(() => {
-    if (activeProject === 'switchgear') {
-      if (numOfSwitchgearWorksToShow > limit) {
-        setNumOfSwitchgearWorksToShow((prevNum) => prevNum - limit);
-      }
-    } else {
-      if (numOfEngineeringWorksToShow > limit) {
-        setNumOfEngineeringWorksToShow((prevNum) => prevNum - limit);
-      }
-    }
-  }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
-
   useEffect(() => {
     if (tabIndicator) {
       //using px values here for width as offsetWidth will always be relative to the element fontSize and padding which, in CSS, is already set in rem
@@ -103,157 +90,149 @@ const Portfolio = () => {
   }, [activeProject, tabIndicator, switchgearLink, engineeringLink]);
 
   return (
-    <Container fluid className='Portfolio debugger'>
-      <Container fluid className='header-image'></Container>
-      <Container className='p-0'>
-        <Row as='header' className='mx-0'>
-          <Col md={7} className='d-block'>
-            <Box component='h1' className='page-title'>
-              Our Portfolio
-            </Box>
-            <Col className='rider-texts-wrapper p-0 d-inline-block'>
-              <Col as='p' className='rider-text'>
-                <span>"Some nice rider text beneath!"</span>
-                <br />- Scott
-              </Col>
-              <Col as='p' className='rider-text'>
-                <span>"Another nice rider text beneath!"</span>
-                <br />- Smith
-              </Col>
-              <Col as='p' className='rider-text'>
-                <span>"And a third nice rider text beneath!"</span>
-                <br />- Jane
+    <>
+      <Container fluid className='Portfolio debugger'>
+        <Container fluid className='header-image'></Container>
+        <Container className='p-0'>
+          <Row as='header' className='mx-0'>
+            <Col md={7} className='d-block'>
+              <Box component='h1' className='page-title'>
+                Our Portfolio
+              </Box>
+              <Col className='rider-texts-wrapper p-0 d-inline-block'>
+                <Col as='p' className='rider-text'>
+                  <span>"Some nice rider text beneath!"</span>
+                  <br />- Scott
+                </Col>
+                <Col as='p' className='rider-text'>
+                  <span>"Another nice rider text beneath!"</span>
+                  <br />- Smith
+                </Col>
+                <Col as='p' className='rider-text'>
+                  <span>"And a third nice rider text beneath!"</span>
+                  <br />- Jane
+                </Col>
               </Col>
             </Col>
-          </Col>
-          <Col md={5} className=''>
-            <Col className='intro-text'>
-              <Col as='span' className='quote'>
-                "
+            <Col md={5} className=''>
+              <Col className='intro-text'>
+                <Col as='span' className='quote'>
+                  "
+                </Col>
+                Over the years, we have mastered the Switch-gear which is
+                evident in some of the works we have executed.
+                <br />
+                <br />
+                Below are some of our clients and various works executed for
+                them...
               </Col>
-              Over the years, we have mastered the Switch-gear which is evident
-              in some of the works we have executed.
-              <br />
-              <br />
-              Below are some of our clients and various works executed for
-              them...
             </Col>
-          </Col>
-        </Row>
-
-        <Row className='justify-content-center mx-0 mt-5'>
-          <Box className='projects-links-container'>
-            <span className='tab-indicator' ref={_tabIndicator}></span>
-            <NavLink
-              to='#'
-              className='projects-link'
-              isActive={() => activeProject === 'switchgear'}
-              onClick={handleProjectsLinkClick('switchgear')}
-              ref={_switchgearLink}>
-              Switchgear
-            </NavLink>
-            <NavLink
-              to='#'
-              className='projects-link'
-              isActive={() => activeProject === 'engineering'}
-              onClick={handleProjectsLinkClick('engineering')}
-              ref={_engineeringLink}>
-              Engineering
-            </NavLink>
-          </Box>
-        </Row>
-
-        <Row as='main' className='mx-0 mb-5'>
-          {activeProject === 'switchgear' && (
-            <Box component='section' className='fade-in'>
-              <Box
-                component='h2'
-                className='projects-header d-block w-100'
-                fontWeight='bold'
-                margin='6rem 0'
-                fontSize='2.25rem'>
-                Switchgear Projects Executed
-              </Box>
-              {switchgearServices.map((data: Data, key: number) => (
-                <Work
-                  data={data}
-                  key={key}
-                  show={key < numOfSwitchgearWorksToShow}
-                />
-              ))}
-            </Box>
-          )}
-
-          {activeProject === 'engineering' && (
-            <Box component='section' className='fade-in w-100'>
-              <Box
-                component='h2'
-                className='projects-header d-block w-100'
-                fontWeight='bold'
-                margin='6rem 0'
-                fontSize='2.25rem'>
-                Engineering Projects Executed
-              </Box>
-              {engineeringServices.map((data: Data, key: number) => (
-                <Work
-                  data={data}
-                  key={key}
-                  show={key < numOfEngineeringWorksToShow}
-                />
-              ))}
-            </Box>
-          )}
-
-          <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
-            <Box
-              textAlign='center'
-              className='d-inline-block w-auto'
-              marginTop='4rem'>
-              {((activeProject === 'switchgear' &&
-                numOfSwitchgearWorksToShow > limit) ||
-                (activeProject === 'engineering' &&
-                  numOfEngineeringWorksToShow > limit)) && (
-                <Button
-                  className='load-more-button outlined my-3 mx-2'
-                  variant='contained'
-                  color='primary'
-                  onClick={handleShowLessClick}>
-                  Show Less <ExpandLessIcon className='ml-2' />
-                </Button>
-              )}
-              {((activeProject === 'switchgear' &&
-                numOfSwitchgearWorksToShow < numOfSwitchgearWorks) ||
-                (activeProject === 'engineering' &&
-                  numOfEngineeringWorksToShow < numOfEngineeringWorks)) && (
-                <Button
-                  className='load-more-button contained my-3 mx-2'
-                  variant='contained'
-                  color='primary'
-                  onClick={handleShowMoreClick}>
-                  Show More <ExpandMoreIcon className='ml-2' />
-                </Button>
-              )}
-            </Box>
-
-            <Container className='d-inline-block w-auto mt-3'>
-              {activeProject === 'switchgear'
-                ? `${
-                    numOfSwitchgearWorksToShow > numOfSwitchgearWorks
-                      ? numOfSwitchgearWorks
-                      : numOfSwitchgearWorksToShow
-                  } of
-              ${numOfSwitchgearWorks}`
-                : `${
-                    numOfEngineeringWorksToShow > numOfEngineeringWorks
-                      ? numOfEngineeringWorks
-                      : numOfEngineeringWorksToShow
-                  } of
-              ${numOfEngineeringWorks}`}
-            </Container>
           </Row>
-        </Row>
+
+          <Row className='justify-content-center mx-0 mt-5'>
+            <Box className='projects-links-container'>
+              <span className='tab-indicator' ref={_tabIndicator}></span>
+              <NavLink
+                to='#'
+                className='projects-link'
+                isActive={() => activeProject === 'switchgear'}
+                onClick={handleProjectsLinkClick('switchgear')}
+                ref={_switchgearLink}>
+                Switchgear
+              </NavLink>
+              <NavLink
+                to='#'
+                className='projects-link'
+                isActive={() => activeProject === 'engineering'}
+                onClick={handleProjectsLinkClick('engineering')}
+                ref={_engineeringLink}>
+                Engineering
+              </NavLink>
+            </Box>
+          </Row>
+
+          <Row as='main' className='mx-0 mb-5'>
+            {activeProject === 'switchgear' && (
+              <Box component='section' className='fade-in'>
+                <Box
+                  component='h2'
+                  className='projects-header d-block w-100'
+                  fontWeight='bold'
+                  margin='6rem 0'
+                  fontSize='2.25rem'>
+                  Switchgear Projects Executed
+                </Box>
+                {switchgearServices.map((data: Data, key: number) => (
+                  <Work
+                    data={data}
+                    key={key}
+                    show={key < numOfSwitchgearWorksToShow}
+                  />
+                ))}
+              </Box>
+            )}
+
+            {activeProject === 'engineering' && (
+              <Box component='section' className='fade-in w-100'>
+                <Box
+                  component='h2'
+                  className='projects-header d-block w-100'
+                  fontWeight='bold'
+                  margin='6rem 0'
+                  fontSize='2.25rem'>
+                  Engineering Projects Executed
+                </Box>
+                {engineeringServices.map((data: Data, key: number) => (
+                  <Work
+                    data={data}
+                    key={key}
+                    show={key < numOfEngineeringWorksToShow}
+                  />
+                ))}
+              </Box>
+            )}
+
+            <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
+              <Box
+                textAlign='center'
+                className='d-inline-block w-auto'
+                marginTop='4rem'>
+                {((activeProject === 'switchgear' &&
+                  numOfSwitchgearWorksToShow < numOfSwitchgearWorks) ||
+                  (activeProject === 'engineering' &&
+                    numOfEngineeringWorksToShow < numOfEngineeringWorks)) && (
+                  <Button
+                    className='load-more-button contained my-3 mx-2'
+                    variant='contained'
+                    color='primary'
+                    onClick={handleShowMoreClick}>
+                    Show More <ExpandMoreIcon className='ml-2' />
+                  </Button>
+                )}
+              </Box>
+
+              <Container className='d-inline-block w-auto mt-3'>
+                {activeProject === 'switchgear'
+                  ? `${
+                      numOfSwitchgearWorksToShow > numOfSwitchgearWorks
+                        ? numOfSwitchgearWorks
+                        : numOfSwitchgearWorksToShow
+                    } of
+              ${numOfSwitchgearWorks}`
+                  : `${
+                      numOfEngineeringWorksToShow > numOfEngineeringWorks
+                        ? numOfEngineeringWorks
+                        : numOfEngineeringWorksToShow
+                    } of
+              ${numOfEngineeringWorks}`}
+              </Container>
+            </Row>
+          </Row>
+        </Container>
       </Container>
-    </Container>
+
+      
+    </>
   );
 };
 
