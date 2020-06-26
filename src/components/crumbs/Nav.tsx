@@ -176,13 +176,14 @@ function NavLinks() {
                     Products
                   </NavLink>
                 </Col>
+                {forGears && (
                 <Col className='nav-link-wrapper p-0'>
                   <NavLink
-                    to={`${forGears ? gears : pipes}/services`}
+                    to={`${gears}/services`}
                     className='nav-link'>
                     Services
                   </NavLink>
-                </Col>
+                </Col>)}
                 {forGears && (
                   <Col className='nav-link-wrapper p-0'>
                     <NavLink to={`${gears}/portfolio`} className='nav-link'>

@@ -1,4 +1,4 @@
-import Pipe from "./Pipes";
+import Pipes from "./Pipes";
 import Gear from "./Gear";
 
-export { Pipe, Gear };
+export { Pipes, Gear };
