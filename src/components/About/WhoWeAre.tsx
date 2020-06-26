@@ -56,6 +56,19 @@ const WhoWeAre = () => (
         </p>
       </Container>
     </Parallax>
+    <Container className="pb-5">
+      <h1>Our Clients</h1>
+      <div className="d-flex flex-wrap p-4 justify-content-center">
+        <div className="Client-Image m-2"></div>
+        <div className="Client-Image m-2"></div>
+        <div className="Client-Image m-2"></div>
+        <div className="Client-Image m-2"></div>
+        <div className="Client-Image m-2"></div>
+        <div className="Client-Image m-2"></div>
+        <div className="Client-Image m-2"></div>
+        <div className="Client-Image m-2"></div>
+      </div>
+    </Container>
   </div>
 );
 export default WhoWeAre;
