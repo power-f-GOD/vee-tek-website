@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
+import { interval } from '../utils/timers';
+
 interface GoUpFABProps {
   anchor?: HTMLDivElement | Window;
   threshold?: number;
@@ -16,21 +18,17 @@ const GoUpFAB = (props: GoUpFABProps) => {
 
   const handleFABClick = () => {
     if (isWindow) {
-      let scroller = setInterval(() => {
-        if (anchor.scrollY <= 0) {
-          clearInterval(scroller);
-        } else {
-          anchor.scrollTo(0, anchor.scrollY - 100);
-        }
-      }, 16);
+      interval(
+        () => anchor.scrollTo(0, anchor.scrollY - 200),
+        16,
+        () => window.scrollY <= 0
+      );
     } else {
-      let scroller = setInterval(() => {
-        if (anchor.scrollTop <= 0) {
-          clearInterval(scroller);
-        } else {
-          anchor.scrollTop -= 100;
-        }
-      }, 16);
+      interval(
+        () => (anchor.scrollTop -= 200),
+        16,
+        () => window.scrollY <= 0
+      );
     }
   };
 
@@ -40,8 +38,8 @@ const GoUpFAB = (props: GoUpFABProps) => {
 
   return (
     <Button
-      className={`go-up-fab ${showFAB ? '' : 'hide'} outlined`}
-      variant='outlined'
+      className={`go-up-fab ${showFAB ? '' : 'hide'} contained`}
+      variant='contained'
       color='primary'
       onClick={handleFABClick}>
       <ExpandLessIcon />

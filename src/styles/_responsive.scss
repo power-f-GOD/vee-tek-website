@@ -108,6 +108,7 @@
     font-size: 1.15rem;
   }
 
+  //Nav styles
   .top-nav-box {
     display: none;
   }
@@ -118,21 +119,54 @@
     }
   }
 
+  .hide-mini-nav {
+    transform: unset;
+  
+    .breadcrumbs-wrapper {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  //contact us page responsive styles
   .Contact {
-    padding-top: 13.5rem;
+    padding-top: 13rem;
 
     .map-wrapper,
     &::before {
-      height: 36rem;
+      height: 34rem;
     }
   }
 
   .contact-page-title {
-    margin-bottom: 10rem;
+    margin-bottom: 9.75rem;
+
+    > h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  .contact-form-container {
+    padding: 0;
+  }
+
+  .contact-form-wrapper {
+    border-radius: 0;
+  }
+
+  .contact-form-col {
+    padding: 3.5rem 2.5rem;
+    background-color: white;
+  }
+
+  .contact-info-col {
+    padding: {
+      left: 5rem;
+      right: 5rem;
+    }
   }
 
   // Portfolio page styles
-
   .Portfolio {
     .header-image {
       filter: drop-shadow(0 0.75rem 0 $theme-primary-v8);
@@ -228,36 +262,12 @@
 
 @media screen and (max-width: 599px) {
   //contact us page responsive styles
-  .Contact {
-    padding-top: 13rem;
-
-    .map-wrapper,
-    &::before {
-      height: 35rem;
-    }
-  }
-
-  .contact-page-title {
-    > h1 {
-      font-size: 2.25rem;
-    }
-  }
-
   .contact-form-header {
     font-size: 1.5rem;
   }
 
-  .contact-form-container {
-    padding: 0;
-  }
-
-  .contact-form-wrapper {
-    border-radius: 0;
-  }
-
   .contact-form-col {
     padding: 3.5rem 2rem;
-    background-color: white;
   }
 
   .contact-info-col {

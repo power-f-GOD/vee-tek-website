@@ -20,10 +20,6 @@ body,
   // border: 1px solid deeppink;
 }
 
-.debugger {
-  border: 1px solid blue;
-}
-
 body {
   padding: 0 !important;
 
@@ -151,23 +147,27 @@ button.go-up-fab {
   min-width: unset;
   align-content: center;
   right: 1rem;
-  color: #111 !important;
-  background-color: transparent !important;
+  z-index: 100;
   border-radius: $size;
-  border: 0.125rem solid #111 !important;
+  border-width: 0.125rem !important;
   transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
   &.hide {
     transform: translateX($size + 2rem);
   }
 
-  &::before {
-    background: linear-gradient(to right, #000, #333) !important;
-  }
+  &.contained {
+    @include variant(
+      $bg: transparent,
+      $c1: white,
+      $c2: #000,
+      $gbg1: #333,
+      $gbg2: #000
+    );
 
-  &:hover {
-    border-width: 0 !important;
-    color: white !important;
+    &:hover {
+      border-color: #000;
+    }
   }
 
   [class*='Icon'] {

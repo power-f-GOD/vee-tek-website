@@ -121,7 +121,7 @@ const Contact = (props: any) => {
                     fullWidth
                   />
                 </Col>
-                <Col md={6} sm={7} className='my-2 mt-5'>
+                <Col md={5} sm={7} className='my-2 mt-5'>
                   <Button
                     className='major-button outlined'
                     variant='outlined'
