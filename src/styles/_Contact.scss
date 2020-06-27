@@ -2,7 +2,7 @@
 
 .Contact {
   position: relative;
-  padding-top: 15rem;
+  padding-top: 16.5rem;
   background: {
     position: bottom;
     color: #eee;
@@ -19,7 +19,8 @@
     left: 0;
     right: 0;
     z-index: -1;
-    height: 37rem;
+    height: 40rem;
+    max-height: 100vh;
     transition: 0.5s;
     animation: fromTop 0.75s ease;
   }
@@ -43,9 +44,10 @@
     opacity: 0.5;
     box-shadow: 0 0.15rem 0.35rem rgba(0, 0, 0, 0.5);
     background: {
-      color: #eee;
+      color: $theme-primary-v5;
       image: url('/images/google-map-placeholder.png');
-      // position: bottom center;
+      size: 55rem;
+      position: bottom center;
     }
 
     // this is for to fix issue with hover on non-desktop [mobile] devices
@@ -68,9 +70,7 @@
       }
 
       ~ .contact-form-container {
-        .contact-form-wrapper {
-          transform: translateY(8.5rem);
-        }
+        transform: translateY(8.5rem);
       }
 
       ~ .contact-page-title {
@@ -85,7 +85,7 @@
 }
 
 .contact-page-title {
-  margin-bottom: 9rem;
+  margin-bottom: 10rem;
   color: #eee;
   text-shadow: 0.075rem 0.075rem 0.165rem #333;
 
@@ -96,6 +96,11 @@
   }
 }
 
+.contact-form-container {
+  animation: fromBottom 0.75s ease;
+  transition: 0.5s;
+}
+
 .contact-form-wrapper {
   border-radius: 0.5rem;
   overflow: hidden;
@@ -103,8 +108,6 @@
   margin: auto;
   box-shadow: 0 0.25rem 5rem rgba(0, 0, 0, 0.15),
     0 0.25rem 5rem rgba(0, 0, 0, 0.25) !important;
-  animation: fromBottom 0.75s ease;
-  transition: 0.5s;
 }
 
 .contact-form-col {
@@ -116,7 +119,11 @@
   font-size: 0.9rem;
   color: white;
   background-color: $theme-primary-v4;
-  background-image: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+  background-image: linear-gradient(
+    to left,
+    $theme-primary-v5,
+    $theme-primary-v3
+  );
 }
 
 @keyframes fromBottom {

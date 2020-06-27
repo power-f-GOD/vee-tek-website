@@ -5,7 +5,7 @@ import {
   Nav,
   Landing,
   Companies,
-  Events,
+  News,
   Gallery,
   Contact,
   About,
@@ -36,9 +36,9 @@ const App = () => {
             )}
           />
           <Route
-            path='/events'
+            path='/news'
             render={(props: any) => (
-              <Events {...props} callSetNavState={callSetNavState} />
+              <News {...props} callSetNavState={callSetNavState} />
             )}
           />
           <Route

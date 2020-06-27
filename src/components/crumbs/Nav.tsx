@@ -106,7 +106,7 @@ function NavLinks() {
         </NavLink>
 
         <Row className='nav-menu flex-column m-0'>
-          <Link to='/about/who-we-are'>Who We Are?</Link>
+          <Link to='/about/who-we-are'>Who We Are</Link>
           <Link to='/about/our-people'>Our People</Link>
           <Link to='/about/certificates'>Certificates (Quality Assurance)</Link>
           <Link to='/about/sustainability'>Sustainability Strategy</Link>
@@ -136,9 +136,29 @@ function NavLinks() {
       </Col>
 
       <Col className='nav-link-wrapper p-0'>
-        <NavLink to='/events' className='nav-link'>
-          News
+        <NavLink to='/news' onClick={preventRedirect} className='nav-link'>
+          <span>News</span> <ExpandMoreIcon />
         </NavLink>
+
+        <Row className='nav-menu flex-column m-0'>
+          <Col className='p-0'>
+            <Link to='/news/company-news' className='nav-menu-link'>
+              Company News
+            </Link>
+          </Col>
+
+          <Col className='p-0'>
+            <Link to='/news/industry-news' className='nav-menu-link'>
+              Industry News
+            </Link>
+          </Col>
+
+          <Col className='p-0'>
+            <Link to='/news/educational-packs' className='nav-menu-link'>
+              Educational Packs
+            </Link>
+          </Col>
+        </Row>
       </Col>
       <Col className='nav-link-wrapper p-0'>
         <NavLink to='/gallery' className='nav-link'>
@@ -177,13 +197,12 @@ function NavLinks() {
                   </NavLink>
                 </Col>
                 {forGears && (
-                <Col className='nav-link-wrapper p-0'>
-                  <NavLink
-                    to={`${gears}/services`}
-                    className='nav-link'>
-                    Services
-                  </NavLink>
-                </Col>)}
+                  <Col className='nav-link-wrapper p-0'>
+                    <NavLink to={`${gears}/services`} className='nav-link'>
+                      Services
+                    </NavLink>
+                  </Col>
+                )}
                 {forGears && (
                   <Col className='nav-link-wrapper p-0'>
                     <NavLink to={`${gears}/portfolio`} className='nav-link'>
@@ -271,7 +290,7 @@ function BreadCrumbs() {
         title = link
           .split('-')
           .map((word) =>
-            word && !/^(and|in|of|with)$/.test(word)
+            word && !/^(and|on|in|of|with)$/.test(word)
               ? word[0].toUpperCase() + word.slice(1)
               : word
           )
@@ -289,7 +308,7 @@ function BreadCrumbs() {
       <Breadcrumbs aria-label='breadcrumb'>
         {links
           .slice(0, -1)
-          .filter((link) => !/^(\/companies|\/about)$/.test(link.href))
+          .filter((link) => !/^(\/companies|\/about|\/news)$/.test(link.href))
           .map(({ href, title }: BreadCrumbsData, key: number) => (
             <Link to={href} key={key}>
               {title}
@@ -313,12 +332,11 @@ function ElevationScroll(props: { children: React.ReactElement }) {
   });
 
   return React.cloneElement(children, {
-    className:
-      trigger && window.innerWidth > 767
-        ? userDeviceIsMobile
-          ? 'mobile-width hide-mini-nav'
-          : 'hide-mini-nav'
-        : 'mobile-width'
+    className: trigger
+      ? userDeviceIsMobile
+        ? 'mobile-width hide-mini-nav'
+        : 'hide-mini-nav'
+      : 'mobile-width'
   });
 }
 

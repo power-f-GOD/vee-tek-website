@@ -102,6 +102,13 @@ $top-nav-box-height: 2.25rem;
   width: auto;
   display: flex;
   flex-basis: unset;
+
+  &:hover {
+    .nav-link::before {
+      width: calc(100% - 0.5em);
+      transform: scale(1);
+    }
+  }
 }
 
 .nav-link {
@@ -142,7 +149,7 @@ $top-nav-box-height: 2.25rem;
     bottom: 0em;
     height: 0.125rem;
     transform: scale(0);
-    border-bottom: 0.125rem solid white;
+    border-bottom: 0.1875rem solid $theme-primary-v7;
     // border-bottom: 0.125rem solid $theme-primary-v8;
   }
 
@@ -154,7 +161,7 @@ $top-nav-box-height: 2.25rem;
     &::before {
       width: calc(100% - 0.5em);
       transform: scale(1);
-      border-bottom-color: $theme-primary-v7 !important;
+      // border-bottom-color: $theme-primary-v7 !important;
       // border-bottom-color: #eee !important;
     }
 
@@ -229,17 +236,18 @@ $top-nav-box-height: 2.25rem;
   position: absolute;
   width: max-content;
   max-width: 22rem;
+  min-width: 15rem;
   left: 0;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   color: inherit;
   padding: 0.25rem 0;
   background-color: $theme-primary-v7;
   top: 100%;
-  transform: translateY(10%);
+  transform: translateY(1.5rem);
   border-radius: 0 0 0.35rem 0.35rem;
   visibility: hidden;
   opacity: 0;
-  transition: 0.25s;
+  transition: 0.35s;
 
   &:focus-within,
   &:hover {
@@ -249,10 +257,10 @@ $top-nav-box-height: 2.25rem;
   }
 
   a {
-    color: $theme-primary-v3;
+    color: white;
     transition: 0.3s;
     display: flex;
-    background: $theme-primary-v9;
+    background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
     z-index: 50 !important;
     justify-content: space-between;
     align-items: center;
@@ -265,7 +273,7 @@ $top-nav-box-height: 2.25rem;
         left: 1.4rem !important;
         right: 0.6rem !important;
       }
-      background: $theme-primary-v4 !important;
+      background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3) !important;
 
       + .sub-menu {
         opacity: 1;
@@ -312,8 +320,8 @@ $top-nav-box-height: 2.25rem;
   right: 0;
   border-radius: 0 0 0 0.75rem;
   background: #fff;
-  opacity: 0.6;
-  padding: 0.5rem 0.75rem;
+  opacity: 0.55;
+  padding: 0.25rem 0.65rem;
   min-width: 50vw;
   max-width: 90vw;
   font-size: 0.85em !important;
@@ -336,7 +344,7 @@ $top-nav-box-height: 2.25rem;
   }
 
   &:hover {
-    opacity: 1;
+    opacity: 0.85;
   }
 }
 
@@ -360,6 +368,14 @@ $top-nav-box-height: 2.25rem;
   .nav-link-wrapper {
     width: 100%;
     display: flex !important;
+
+    &:hover {
+      .nav-link::before {
+        transform: scale(1);
+        width: calc(100% - 1em);
+        left: 0.5rem;
+      }
+    }
   }
 
   .nav-link {
@@ -384,6 +400,11 @@ $top-nav-box-height: 2.25rem;
 
     &:focus,
     &:hover {
+      &::before {
+        width: calc(100% - 1em);
+        left: 0.5rem;
+      }
+
       + .nav-menu {
         transform: translateY(0);
       }
@@ -393,6 +414,7 @@ $top-nav-box-height: 2.25rem;
   .nav-menu {
     left: 15%;
     width: calc(85% - 1rem);
+    min-width: unset;
     max-width: 85%;
     top: calc(100% + 0.5rem);
     transform: translateY(0.75rem);
@@ -426,13 +448,14 @@ $top-nav-box-height: 2.25rem;
 
   .top-nav-box {
     display: none;
-    margin: 4rem 0;
+    margin: 8rem 0 3rem 0;
     padding: 0.5rem 0;
   }
 
   .top-nav-wrapper {
     flex-direction: column;
     background: $theme-primary-v3;
+    padding-bottom: 1rem;
 
     > div {
       margin: 0.5rem 0;
