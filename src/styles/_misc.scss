@@ -149,7 +149,6 @@ button.go-up-fab {
   right: 1rem;
   z-index: 100;
   border-radius: $size;
-  border-width: 0.125rem !important;
   transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
   &.hide {
@@ -158,20 +157,51 @@ button.go-up-fab {
 
   &.contained {
     @include variant(
-      $bg: transparent,
+      $bg: #000,
       $c1: white,
       $c2: #000,
       $gbg1: #333,
       $gbg2: #000
     );
+    border: none;
 
     &:hover {
-      border-color: #000;
+      border: 0.125rem solid #000;
     }
   }
 
   [class*='Icon'] {
     font-size: 2.25rem;
+  }
+}
+
+.FooterNavigator {
+  // @include debugger();
+
+  .navigator-link {
+    display: block;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.75rem;
+    border: 0.125rem solid transparent;
+    border-radius: 0.5rem;
+
+    &:hover,
+    &:focus {
+      border-color: #777;
+    }
+
+    > * {
+      display: flex;
+      align-items: center;
+
+      &:last-child {
+        color: $theme-primary-v5;
+        font-size: 2rem;
+        margin-top: 0.5rem;
+      }
+    }
   }
 }
 

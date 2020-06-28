@@ -25,7 +25,7 @@ export interface Data {
   type: 'switch-gear' | 'engineering' | '';
 }
 
-const limit = 5;
+const chunk = 8;
 
 export const transform = (el: any, val: string) => {
   el.style.WebkitTransform = val;
@@ -42,11 +42,11 @@ const Portfolio = () => {
   ];
   const [numOfSwitchgearWorksToShow, setNumOfSwitchgearWorksToShow] = useState<
     number
-  >(limit);
+  >(chunk);
   const [
     numOfEngineeringWorksToShow,
     setNumOfEngineeringWorksToShow
-  ] = useState<number>(limit);
+  ] = useState<number>(chunk);
   const [activeProject, setActiveProject] = useState<string>('switchgear');
 
   let switchgearLink = _switchgearLink.current as HTMLAnchorElement;
@@ -64,11 +64,11 @@ const Portfolio = () => {
   const handleShowMoreClick = useCallback(() => {
     if (activeProject === 'switchgear') {
       if (numOfSwitchgearWorksToShow < numOfSwitchgearWorks) {
-        setNumOfSwitchgearWorksToShow((prevNum) => prevNum + limit);
+        setNumOfSwitchgearWorksToShow((prevNum) => prevNum + chunk);
       }
     } else {
       if (numOfEngineeringWorksToShow < numOfEngineeringWorks) {
-        setNumOfEngineeringWorksToShow((prevNum) => prevNum + limit);
+        setNumOfEngineeringWorksToShow((prevNum) => prevNum + chunk);
       }
     }
   }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
@@ -90,149 +90,145 @@ const Portfolio = () => {
   }, [activeProject, tabIndicator, switchgearLink, engineeringLink]);
 
   return (
-    <>
-      <Container fluid className='Portfolio debugger'>
-        <Container fluid className='header-image'></Container>
-        <Container className='p-0'>
-          <Row as='header' className='mx-0'>
-            <Col md={7} className='d-block'>
-              <Box component='h1' className='page-title'>
-                Our Portfolio
-              </Box>
-              <Col className='rider-texts-wrapper p-0 d-inline-block'>
-                <Col as='p' className='rider-text'>
-                  <span>"Some nice rider text beneath!"</span>
-                  <br />- Scott
-                </Col>
-                <Col as='p' className='rider-text'>
-                  <span>"Another nice rider text beneath!"</span>
-                  <br />- Smith
-                </Col>
-                <Col as='p' className='rider-text'>
-                  <span>"And a third nice rider text beneath!"</span>
-                  <br />- Jane
-                </Col>
-              </Col>
-            </Col>
-            <Col md={5} className=''>
-              <Col className='intro-text'>
-                <Col as='span' className='quote'>
-                  "
-                </Col>
-                Over the years, we have mastered the Switch-gear which is
-                evident in some of the works we have executed.
-                <br />
-                <br />
-                Below are some of our clients and various works executed for
-                them...
-              </Col>
-            </Col>
-          </Row>
-
-          <Row className='justify-content-center mx-0 mt-5'>
-            <Box className='projects-links-container'>
-              <span className='tab-indicator' ref={_tabIndicator}></span>
-              <NavLink
-                to='#'
-                className='projects-link'
-                isActive={() => activeProject === 'switchgear'}
-                onClick={handleProjectsLinkClick('switchgear')}
-                ref={_switchgearLink}>
-                Switchgear
-              </NavLink>
-              <NavLink
-                to='#'
-                className='projects-link'
-                isActive={() => activeProject === 'engineering'}
-                onClick={handleProjectsLinkClick('engineering')}
-                ref={_engineeringLink}>
-                Engineering
-              </NavLink>
+    <Container fluid className='Portfolio debugger'>
+      <Container fluid className='header-image'></Container>
+      <Container className='p-0'>
+        <Row as='header' className='mx-0'>
+          <Col md={7} className='d-block'>
+            <Box component='h1' className='page-title'>
+              Our Portfolio
             </Box>
-          </Row>
+            <Col className='rider-texts-wrapper p-0 d-inline-block'>
+              <Col as='p' className='rider-text'>
+                <span>"Some nice rider text beneath!"</span>
+                <br />- Scott
+              </Col>
+              <Col as='p' className='rider-text'>
+                <span>"Another nice rider text beneath!"</span>
+                <br />- Smith
+              </Col>
+              <Col as='p' className='rider-text'>
+                <span>"And a third nice rider text beneath!"</span>
+                <br />- Jane
+              </Col>
+            </Col>
+          </Col>
+          <Col md={5} className=''>
+            <Col className='intro-text'>
+              <Col as='span' className='quote'>
+                "
+              </Col>
+              Over the years, we have mastered the Switch-gear which is evident
+              in some of the works we have executed.
+              <br />
+              <br />
+              Below are some of our clients and various works executed for
+              them...
+            </Col>
+          </Col>
+        </Row>
 
-          <Row as='main' className='mx-0 mb-5'>
-            {activeProject === 'switchgear' && (
-              <Box component='section' className='fade-in'>
-                <Box
-                  component='h2'
-                  className='projects-header d-block w-100'
-                  fontWeight='bold'
-                  margin='6rem 0'
-                  fontSize='2.25rem'>
-                  Switchgear Projects Executed
-                </Box>
-                {switchgearServices.map((data: Data, key: number) => (
-                  <Work
-                    data={data}
-                    key={key}
-                    show={key < numOfSwitchgearWorksToShow}
-                  />
-                ))}
-              </Box>
-            )}
+        <Row className='justify-content-center mx-0 mt-5'>
+          <Box className='projects-links-container'>
+            <span className='tab-indicator' ref={_tabIndicator}></span>
+            <NavLink
+              to='#'
+              className='projects-link'
+              isActive={() => activeProject === 'switchgear'}
+              onClick={handleProjectsLinkClick('switchgear')}
+              ref={_switchgearLink}>
+              Switchgear
+            </NavLink>
+            <NavLink
+              to='#'
+              className='projects-link'
+              isActive={() => activeProject === 'engineering'}
+              onClick={handleProjectsLinkClick('engineering')}
+              ref={_engineeringLink}>
+              Engineering
+            </NavLink>
+          </Box>
+        </Row>
 
-            {activeProject === 'engineering' && (
-              <Box component='section' className='fade-in w-100'>
-                <Box
-                  component='h2'
-                  className='projects-header d-block w-100'
-                  fontWeight='bold'
-                  margin='6rem 0'
-                  fontSize='2.25rem'>
-                  Engineering Projects Executed
-                </Box>
-                {engineeringServices.map((data: Data, key: number) => (
-                  <Work
-                    data={data}
-                    key={key}
-                    show={key < numOfEngineeringWorksToShow}
-                  />
-                ))}
-              </Box>
-            )}
-
-            <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
+        <Row as='main' className='mx-0 mb-5'>
+          {activeProject === 'switchgear' && (
+            <Box component='section' className='fade-in'>
               <Box
-                textAlign='center'
-                className='d-inline-block w-auto'
-                marginTop='4rem'>
-                {((activeProject === 'switchgear' &&
-                  numOfSwitchgearWorksToShow < numOfSwitchgearWorks) ||
-                  (activeProject === 'engineering' &&
-                    numOfEngineeringWorksToShow < numOfEngineeringWorks)) && (
-                  <Button
-                    className='load-more-button contained my-3 mx-2'
-                    variant='contained'
-                    color='primary'
-                    onClick={handleShowMoreClick}>
-                    Show More <ExpandMoreIcon className='ml-2' />
-                  </Button>
-                )}
+                component='h2'
+                className='projects-header d-block w-100'
+                fontWeight='bold'
+                margin='6rem 0'
+                fontSize='2.25rem'>
+                Switchgear Projects Executed
               </Box>
+              {switchgearServices.map((data: Data, key: number) => (
+                <Work
+                  data={data}
+                  key={key}
+                  show={key < numOfSwitchgearWorksToShow}
+                />
+              ))}
+            </Box>
+          )}
 
-              <Container className='d-inline-block w-auto mt-3'>
-                {activeProject === 'switchgear'
-                  ? `${
-                      numOfSwitchgearWorksToShow > numOfSwitchgearWorks
-                        ? numOfSwitchgearWorks
-                        : numOfSwitchgearWorksToShow
-                    } of
+          {activeProject === 'engineering' && (
+            <Box component='section' className='fade-in w-100'>
+              <Box
+                component='h2'
+                className='projects-header d-block w-100'
+                fontWeight='bold'
+                margin='6rem 0'
+                fontSize='2.25rem'>
+                Engineering Projects Executed
+              </Box>
+              {engineeringServices.map((data: Data, key: number) => (
+                <Work
+                  data={data}
+                  key={key}
+                  show={key < numOfEngineeringWorksToShow}
+                />
+              ))}
+            </Box>
+          )}
+
+          <Row className='mx-0 my-5 w-100 d-flex flex-column justify-content-center'>
+            <Box
+              textAlign='center'
+              className='d-inline-block w-auto'
+              marginTop='6rem'>
+              {((activeProject === 'switchgear' &&
+                numOfSwitchgearWorksToShow < numOfSwitchgearWorks) ||
+                (activeProject === 'engineering' &&
+                  numOfEngineeringWorksToShow < numOfEngineeringWorks)) && (
+                <Button
+                  className='load-more-button contained my-3 mx-2'
+                  variant='contained'
+                  color='primary'
+                  onClick={handleShowMoreClick}>
+                  Show More <ExpandMoreIcon className='ml-2' />
+                </Button>
+              )}
+            </Box>
+
+            <Container className='d-inline-block w-auto mt-3'>
+              {activeProject === 'switchgear'
+                ? `${
+                    numOfSwitchgearWorksToShow > numOfSwitchgearWorks
+                      ? numOfSwitchgearWorks
+                      : numOfSwitchgearWorksToShow
+                  } of
               ${numOfSwitchgearWorks}`
-                  : `${
-                      numOfEngineeringWorksToShow > numOfEngineeringWorks
-                        ? numOfEngineeringWorks
-                        : numOfEngineeringWorksToShow
-                    } of
+                : `${
+                    numOfEngineeringWorksToShow > numOfEngineeringWorks
+                      ? numOfEngineeringWorks
+                      : numOfEngineeringWorksToShow
+                  } of
               ${numOfEngineeringWorks}`}
-              </Container>
-            </Row>
+            </Container>
           </Row>
-        </Container>
+        </Row>
       </Container>
-
-      
-    </>
+    </Container>
   );
 };
 
@@ -256,21 +252,18 @@ function Work(props: any) {
 
   useEffect(() => {
     const work = _work.current;
-    const windowHeight = window.innerHeight;
-    const threshold = windowHeight * 0.8;
+    const threshold = window.innerHeight + 100;
 
     if (work) {
       const animate = () => {
         if (show) {
           const { top } = work.getBoundingClientRect();
 
-          if (top < windowHeight + 200) {
-            if (top < threshold) {
-              work.classList.add('animate');
+          if (top < threshold) {
+            work.classList.add('animate');
 
-              //remove scroll eventlistener after animation for performance reasons
-              window.removeEventListener('scroll', animate);
-            }
+            //remove scroll eventlistener after animation for performance reasons
+            window.removeEventListener('scroll', animate);
           }
         }
       };
