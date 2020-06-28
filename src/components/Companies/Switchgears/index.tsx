@@ -1,11 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Products from '../Products';
-import Services from '../Services';
-import _404 from '../../_404';
+import Main from './Main';
+import Products from './Products';
+import Services from './Services';
 import Portfolio from './Portfolio';
+import Inquiry from './Inquiry';
 import FooterNavigator, { Page } from '../../crumbs/FooterNavigator';
+import _404 from '../../_404';
 
 const main = '/companies/switch-gears';
 const [products, services, portfolio, inquiry] = [
@@ -14,8 +16,12 @@ const [products, services, portfolio, inquiry] = [
   `${main}/portfolio`,
   `${main}/inquiry`
 ];
-const consumer = 'switch-gears';
 const pagesData: Page[] = [
+  {
+    pathname: '/about/sustainability-strategy',
+    name: 'About Us',
+    notRelative: true
+  },
   {
     pathname: main,
     name: 'Overview'
@@ -35,24 +41,21 @@ const pagesData: Page[] = [
   {
     pathname: inquiry,
     name: 'Make an Inquiry'
+  },
+  {
+    pathname: '/companies/pipes-and-fittings',
+    name: 'Pipes Company',
+    notRelative: true
   }
 ];
 
-const GearsCompany = () => {
+const Switchgears = () => {
   return (
     <>
       <Switch>
         <Route path={main} exact component={Main} />
-        <Route
-          path={products}
-          exact
-          render={(props: any) => <Products {...props} consumer={consumer} />}
-        />
-        <Route
-          path={services}
-          exact
-          render={(props: any) => <Services {...props} consumer={consumer} />}
-        />
+        <Route path={products} exact component={Products} />
+        <Route path={services} exact component={Services} />
         <Route path={portfolio} exact component={Portfolio} />
         <Route path={inquiry} exact component={Inquiry} />
         <Route component={_404} />
@@ -63,22 +66,4 @@ const GearsCompany = () => {
   );
 };
 
-function Main() {
-  return (
-    <div className='fade-in my-5 py-5 container'>
-      <h1>This is the GearsCompany's Main component!</h1>
-      <h1>GearsCompany's Main content goes here!</h1>
-    </div>
-  );
-}
-
-function Inquiry() {
-  return (
-    <div className='fade-in my-5 py-5 container'>
-      <h1>This is the GearsCompany's Inquiry component!</h1>
-      <h1>GearsCompany's Inquiry content goes here!</h1>
-    </div>
-  );
-}
-
-export default GearsCompany;
+export default Switchgears;

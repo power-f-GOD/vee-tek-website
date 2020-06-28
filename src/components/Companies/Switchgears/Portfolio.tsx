@@ -15,7 +15,7 @@ import {
   engineeringServices,
   numOfSwitchgearWorks,
   numOfEngineeringWorks
-} from './portfolioDataV2';
+} from './portfolioData';
 
 export interface Data {
   header: string;

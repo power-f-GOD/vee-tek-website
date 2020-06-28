@@ -3,8 +3,6 @@ import {
   Carousel
 } from 'react-bootstrap';
 
-import '../../styles/index.min.css';
-
 const Slider = () => {
   return (
     <div className="h-auto Slider-Wrapper">

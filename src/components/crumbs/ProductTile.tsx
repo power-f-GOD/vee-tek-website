@@ -1,6 +1,5 @@
 import React from "react";
 import { Col, Carousel, Image } from "react-bootstrap";
-import "../../styles/index.min.css";
 
 // const Stuff = (props: { image: string; product: string; desc: string }) => (
 //   <div className={"Product-Wrapper-" + props.image + "  align-middle"}>

@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import {
   Nav,
-  Landing,
+  Home,
   Companies,
   News,
   Gallery,
@@ -28,7 +28,7 @@ const App = () => {
         </NavContext.Provider>
 
         <Switch>
-          <Route path={['/', '/index', '/home']} exact component={Landing} />
+          <Route path={['/', '/index', '/home']} exact component={Home} />
           <Route
             path='/companies'
             render={(props: any) => (
