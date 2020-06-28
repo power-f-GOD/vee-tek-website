@@ -1,8 +1,9 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-import WhoWeAre from '../components/About/WhoWeAre';
-import _404 from './_404';
+import WhoWeAre from "../components/About/WhoWeAre";
+import OurPeople from "../components/About/OurPeople";
+import _404 from "./_404";
 
 const About = (props: any) => {
   const { callSetNavState, location } = props;
@@ -12,14 +13,16 @@ const About = (props: any) => {
     callSetNavState(pathname);
 
     return () => {
-      callSetNavState('/');
+      callSetNavState("/");
     };
   }, [pathname, callSetNavState]);
 
   return (
-    <div className='fade-in '>
+    <div className="fade-in ">
       <Switch>
         <Route path="/about/who-we-are" component={WhoWeAre} />
+        <Route path="/about/our-people" component={OurPeople} />
+
         <Route component={_404} />
       </Switch>
     </div>
