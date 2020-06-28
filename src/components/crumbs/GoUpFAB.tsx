@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
-import { interval } from '../utils/timers';
+import { interval } from '../../utils/timers';
 
 interface GoUpFABProps {
   anchor?: HTMLDivElement | Window;

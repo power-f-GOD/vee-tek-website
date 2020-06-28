@@ -1,7 +1,7 @@
 const _requestAnimationFrame = _requestAnimationFrameWrapper();
 // const _cancelAnimationFrame = _cancelAnimationFrameWrapper();
 
-const delay = (timeout: number, clearCallback?: Function): Promise<any> => {
+function delay(timeout: number, clearCallback?: Function): Promise<number> {
   if (isNaN(timeout))
     throw Error(
       "'delay' expects a time [number] in milliseconds as parameter."
@@ -20,13 +20,13 @@ const delay = (timeout: number, clearCallback?: Function): Promise<any> => {
       else resolve(id);
     }
   });
-};
+}
 
-const interval = (
+function interval(
   callback: Function,
   _interval: number,
   clearCallback?: Function
-) => {
+): Promise<number> {
   if (isNaN(_interval))
     throw Error(
       "'interval' expects a time [number] in milliseconds as parameter."
@@ -51,7 +51,7 @@ const interval = (
       }
     }
   });
-};
+}
 
 function _requestAnimationFrameWrapper() {
   let previousTime = 0;

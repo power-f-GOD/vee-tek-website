@@ -1,7 +1,8 @@
 import React from "react";
-import "../styles/index.min.css";
+
 import Slider from "./crumbs/Slider";
-const Landing = () => {
+
+const Home = () => {
   return (
     <div>
       <Slider />
@@ -12,4 +13,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Home;

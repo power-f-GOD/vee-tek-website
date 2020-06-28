@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { StylesProvider } from '@material-ui/core/styles';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.min.css';
 
 import App from './App';
 
