@@ -45,7 +45,7 @@ const Nav = () => {
                 <NavLink to='/' exact>
                   {' '}
                   <img
-                    src='/images/logo-64.png'
+                    src='/images/logos/logo-64.png'
                     alt='Vee-Tek Group logo'
                   />{' '}
                   Vee-Tek Group

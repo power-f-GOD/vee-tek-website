@@ -16,8 +16,8 @@
   .header-image {
     height: 0;
     position: absolute;
-    // filter: drop-shadow(0.65rem 1.15rem 0 $theme-primary-v7);
-    filter: drop-shadow(0.65rem 1.15rem 0 transparent);
+    filter: drop-shadow(0.65rem 1.15rem 0 $theme-primary-v7);
+    // filter: drop-shadow(0.65rem 1.15rem 0 transparent);
 
     @mixin for-both {
       @include before-or-after();
@@ -218,6 +218,10 @@
     &.active {
       color: white;
     }
+
+    &:focus {
+      text-decoration: underline;
+    }
   }
 
   .projects-header {
@@ -253,9 +257,9 @@
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     min-height: 16rem;
-    transform: translateY(4rem);
+    transform: translateY(15rem);
     opacity: 0;
-    transition: 0.85s;
+    transition: 1s;
     padding-bottom: 1rem;
 
     > * {

@@ -103,7 +103,8 @@ $top-nav-box-height: 2.25rem;
   display: flex;
   flex-basis: unset;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     .nav-link::before {
       width: calc(100% - 0.5em);
       transform: scale(1);
@@ -273,7 +274,11 @@ $top-nav-box-height: 2.25rem;
         left: 1.4rem !important;
         right: 0.6rem !important;
       }
-      background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3) !important;
+      background: linear-gradient(
+        to left,
+        $theme-primary-v5,
+        $theme-primary-v3
+      ) !important;
 
       + .sub-menu {
         opacity: 1;
@@ -317,12 +322,12 @@ $top-nav-box-height: 2.25rem;
 .breadcrumbs-wrapper {
   position: absolute;
   top: 100%;
-  right: 0;
-  border-radius: 0 0 0 0.75rem;
+  right: calc(50vw - 12.5rem);
+  border-radius: 0 0 0.75rem 0.75rem;
   background: #fff;
   opacity: 0.55;
   padding: 0.25rem 0.65rem;
-  min-width: 50vw;
+  min-width: 20rem;
   max-width: 90vw;
   font-size: 0.85em !important;
   transition: 0.3s;
@@ -337,14 +342,20 @@ $top-nav-box-height: 2.25rem;
   a {
     color: $theme-primary-v4;
     font-size: 0.9rem;
+
+    &:focus {
+      text-decoration: underline;
+    }
   }
 
   .current {
     font-weight: bold;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     opacity: 0.85;
+    visibility: visible !important;
   }
 }
 
@@ -407,6 +418,13 @@ $top-nav-box-height: 2.25rem;
 
       + .nav-menu {
         transform: translateY(0);
+      }
+    }
+
+    &.active {
+      &::before {
+        left: 0.5rem;
+        width: calc(100% - 1em) !important;
       }
     }
   }

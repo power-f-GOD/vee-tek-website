@@ -121,11 +121,16 @@
 
   .hide-mini-nav {
     transform: unset;
-  
+
     .breadcrumbs-wrapper {
       visibility: hidden;
       opacity: 0;
     }
+  }
+
+  .breadcrumbs-wrapper {
+    right: 5vw;
+    min-width: 50vw;
   }
 
   //contact us page responsive styles
