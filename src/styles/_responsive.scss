@@ -2,16 +2,6 @@
   .drawer {
     display: none;
   }
-
-  @media screen and (max-width: 1216px) {
-    .drawer {
-      display: flex;
-    }
-
-    .nav-link-wrapper {
-      display: none;
-    }
-  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -300,6 +290,24 @@
 
     .work-desc-header {
       font-size: 1.5rem;
+    }
+  }
+
+  //FooterNavigator styles
+  .FooterNavigator {
+    .navigator-link {
+      padding: 0.5rem;
+
+      [class*=Icon] {
+        font-size: 1.1rem;
+      }
+  
+      > * {
+        &:last-child {
+          font-size: 1.25rem;
+          margin-top: 0.25rem;
+        }
+      }
     }
   }
 }

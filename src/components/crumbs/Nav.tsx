@@ -214,13 +214,15 @@ function NavLinks() {
                   {forGears ? (
                     <NavLink
                       to={`${gears}/inquiry`}
-                      className='nav-link button'>
+                      className='nav-link button contained'>
                       <span className='long-desc'>Make an Inquiry</span>
                       <span className='short-desc'>Inquire</span>
                     </NavLink>
                   ) : (
-                    <NavLink to={`${pipes}/order`} className='nav-link button'>
-                      <span className='long-desc'>Make an Order</span>
+                    <NavLink
+                      to={`${pipes}/order`}
+                      className='nav-link button contained'>
+                      <span className='long-desc'>Place an Order</span>
                       <span className='short-desc'>Order</span>
                     </NavLink>
                   )}

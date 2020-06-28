@@ -17,6 +17,10 @@ const [products, services, portfolio, inquiry] = [
 const consumer = 'switch-gears';
 const pagesData: Page[] = [
   {
+    pathname: main,
+    name: 'Overview'
+  },
+  {
     pathname: products,
     name: 'Our Products'
   },
@@ -70,7 +74,7 @@ function Main() {
 
 function Inquiry() {
   return (
-    <div className='fade-in my-5 py-5'>
+    <div className='fade-in my-5 py-5 container'>
       <h1>This is the GearsCompany's Inquiry component!</h1>
       <h1>GearsCompany's Inquiry content goes here!</h1>
     </div>
