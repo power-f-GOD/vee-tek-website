@@ -5,13 +5,14 @@ import {
   Nav,
   Landing,
   Companies,
-  Events,
+  News,
   Gallery,
   Contact,
   About,
   Footer,
   _404
 } from './components';
+import GoUpFAB from './components/crumbs/GoUpFAB';
 
 export const NavContext = createContext('/');
 
@@ -35,9 +36,9 @@ const App = () => {
             )}
           />
           <Route
-            path='/events'
+            path='/news'
             render={(props: any) => (
-              <Events {...props} callSetNavState={callSetNavState} />
+              <News {...props} callSetNavState={callSetNavState} />
             )}
           />
           <Route
@@ -62,6 +63,7 @@ const App = () => {
         </Switch>
 
         <Footer />
+        <GoUpFAB />
       </BrowserRouter>
     </div>
   );

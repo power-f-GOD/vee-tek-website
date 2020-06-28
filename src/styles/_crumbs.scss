@@ -1,0 +1,92 @@
+@import 'constants';
+
+button.go-up-fab {
+  $size: 3.5rem;
+
+  width: $size;
+  height: $size;
+  position: fixed !important;
+  bottom: 1rem;
+  display: inline-flex;
+  min-width: unset;
+  align-content: center;
+  right: 1rem;
+  z-index: 100;
+  border-radius: $size;
+  transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+  &.hide {
+    transform: translateX($size + 2rem);
+  }
+
+  &.contained {
+    @include variant(
+      $bg: #000,
+      $c1: white,
+      $c2: #000,
+      $gbg1: #333,
+      $gbg2: #000
+    );
+    border: none;
+
+    &:hover {
+      border: 0.125rem solid #000;
+    }
+  }
+
+  [class*='Icon'] {
+    font-size: 2.25rem;
+  }
+}
+
+.Footer-Wrapper-One {
+  height: 10rem;
+  // background-color: $theme-primary-v5;
+  background: linear-gradient(to left, $theme-primary-v6, $theme-primary-v4);
+}
+
+.Footer-Wrapper-Two {
+  padding: 1.5rem 0 1rem 0;
+  color: #ffffff;
+  text-align: left;
+  font-size: 0.8rem;
+  // background-color: $theme-primary-v4;
+  background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+}
+
+.Footer-Image {
+  height: 100px;
+}
+
+.FooterNavigator {
+  .navigator-link {
+    display: inline-block;
+    max-width: calc(50vw - 1.25rem);
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.75rem;
+    border: 0.125rem solid transparent;
+    border-radius: 0.5rem;
+
+    &:hover,
+    &:focus {
+      border-color: #777;
+    }
+
+    .page-name.for-next {
+      text-align: right;
+    }
+
+    > * {
+      display: flex;
+      align-items: center;
+
+      &:last-child {
+        color: $theme-primary-v5;
+        font-size: 2rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

@@ -9,7 +9,6 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import {
   switchgearServices,
@@ -26,7 +25,7 @@ export interface Data {
   type: 'switch-gear' | 'engineering' | '';
 }
 
-const limit = 5;
+const chunk = 8;
 
 export const transform = (el: any, val: string) => {
   el.style.WebkitTransform = val;
@@ -43,11 +42,11 @@ const Portfolio = () => {
   ];
   const [numOfSwitchgearWorksToShow, setNumOfSwitchgearWorksToShow] = useState<
     number
-  >(limit);
+  >(chunk);
   const [
     numOfEngineeringWorksToShow,
     setNumOfEngineeringWorksToShow
-  ] = useState<number>(limit);
+  ] = useState<number>(chunk);
   const [activeProject, setActiveProject] = useState<string>('switchgear');
 
   let switchgearLink = _switchgearLink.current as HTMLAnchorElement;
@@ -65,23 +64,11 @@ const Portfolio = () => {
   const handleShowMoreClick = useCallback(() => {
     if (activeProject === 'switchgear') {
       if (numOfSwitchgearWorksToShow < numOfSwitchgearWorks) {
-        setNumOfSwitchgearWorksToShow((prevNum) => prevNum + limit);
+        setNumOfSwitchgearWorksToShow((prevNum) => prevNum + chunk);
       }
     } else {
       if (numOfEngineeringWorksToShow < numOfEngineeringWorks) {
-        setNumOfEngineeringWorksToShow((prevNum) => prevNum + limit);
-      }
-    }
-  }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
-
-  const handleShowLessClick = useCallback(() => {
-    if (activeProject === 'switchgear') {
-      if (numOfSwitchgearWorksToShow > limit) {
-        setNumOfSwitchgearWorksToShow((prevNum) => prevNum - limit);
-      }
-    } else {
-      if (numOfEngineeringWorksToShow > limit) {
-        setNumOfEngineeringWorksToShow((prevNum) => prevNum - limit);
+        setNumOfEngineeringWorksToShow((prevNum) => prevNum + chunk);
       }
     }
   }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
@@ -208,19 +195,7 @@ const Portfolio = () => {
             <Box
               textAlign='center'
               className='d-inline-block w-auto'
-              marginTop='4rem'>
-              {((activeProject === 'switchgear' &&
-                numOfSwitchgearWorksToShow > limit) ||
-                (activeProject === 'engineering' &&
-                  numOfEngineeringWorksToShow > limit)) && (
-                <Button
-                  className='load-more-button outlined my-3 mx-2'
-                  variant='contained'
-                  color='primary'
-                  onClick={handleShowLessClick}>
-                  Show Less <ExpandLessIcon className='ml-2' />
-                </Button>
-              )}
+              marginTop='6rem'>
               {((activeProject === 'switchgear' &&
                 numOfSwitchgearWorksToShow < numOfSwitchgearWorks) ||
                 (activeProject === 'engineering' &&
@@ -277,21 +252,18 @@ function Work(props: any) {
 
   useEffect(() => {
     const work = _work.current;
-    const windowHeight = window.innerHeight;
-    const threshold = windowHeight * 0.8;
+    const threshold = window.innerHeight + 100;
 
     if (work) {
       const animate = () => {
         if (show) {
           const { top } = work.getBoundingClientRect();
 
-          if (top < windowHeight + 200) {
-            if (top < threshold) {
-              work.classList.add('animate');
+          if (top < threshold) {
+            work.classList.add('animate');
 
-              //remove scroll eventlistener after animation for performance reasons
-              window.removeEventListener('scroll', animate);
-            }
+            //remove scroll eventlistener after animation for performance reasons
+            window.removeEventListener('scroll', animate);
           }
         }
       };
