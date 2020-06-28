@@ -64,7 +64,7 @@ const FooterNavigator = (props: Data) => {
                 </Box>
                 <ArrowForwardIosIcon />
               </Box>
-              <Box className='page-name'>{pages[current + 1].name}</Box>
+              <Box className='page-name for-next'>{pages[current + 1].name}</Box>
             </Link>
           )}
         </Box>
