@@ -90,7 +90,7 @@ const Portfolio = () => {
   }, [activeProject, tabIndicator, switchgearLink, engineeringLink]);
 
   return (
-    <Container fluid className='Portfolio debugger'>
+    <Container as='main' fluid className='Portfolio fade-in pt-5'>
       <Container fluid className='header-image'></Container>
       <Container className='p-0'>
         <Row as='header' className='mx-0'>

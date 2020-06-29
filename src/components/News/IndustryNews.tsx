@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Container from 'react-bootstrap/Container';
+
 const IndustryNews = () => {
   return (
-    <div className='fade-in my-5 py-5 container'>
-      <h1>This is the IndustryNews component.</h1>
+    <Container as='main' className='fade-in my-5 py-5'>
+      <h1 className='mt-3'>This is the IndustryNews component.</h1>
       <h4>IndustryNews component content goes here!</h4>
-    </div>
+    </Container>
   );
 };
 

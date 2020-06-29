@@ -6,7 +6,7 @@ import us from "./ourPeopleData";
 import { Parallax } from "react-parallax";
 
 const OurPeople = () => (
-  <div className='fade-in'>
+  <Container as='main' fluid className='fade-in'>
     <Parallax bgImage="/images/three.jpg" bgImageAlt="one" strength={100}>
       <div style={{ height: "500px" }} className="pt-5 text-center d-flex justify-content-center align-items-center">
         <h1 className="mt-5 text-white font-weight-bold"> Meet Us </h1>
@@ -24,6 +24,6 @@ const OurPeople = () => (
         ))}
       </Row>
     </Container>
-  </div>
+  </Container>
 );
 export default OurPeople;

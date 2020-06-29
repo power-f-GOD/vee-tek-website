@@ -24,19 +24,19 @@ const Contact = (props: any) => {
           aria-hidden='false'
           tabindex='0'></iframe>`;
 
-  const { callSetNavState, location } = props;
+  const { setNavState, location } = props;
   const { pathname } = location;
 
   React.useEffect(() => {
-    callSetNavState(pathname);
+    setNavState(pathname);
 
     return () => {
-      callSetNavState('/');
+      setNavState('/');
     };
-  }, [pathname, callSetNavState]);
+  }, [pathname, setNavState]);
 
   return (
-    <Container fluid className='Contact px-0'>
+    <Container fluid className='Contact fade-in px-0'>
       <Container
         fluid
         className='map-wrapper justify-content-center p-0'
