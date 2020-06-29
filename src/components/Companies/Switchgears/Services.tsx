@@ -2,7 +2,7 @@ import React from "react";
 
 import { Col, Image, Container, Row } from "react-bootstrap";
 
-import servicesData from './servicesData';
+import servicesData from '../../../constants/switchgearsServicesData';
 
 const Services = () => {
   return (

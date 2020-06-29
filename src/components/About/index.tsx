@@ -31,6 +31,11 @@ const pagesData: Page[] = [
   {
     pathname: sustainabilityStrategy,
     name: 'Sustainability Strategy'
+  },
+  {
+    pathname: '/companies/switch-gears',
+    name: 'Our Companies',
+    notRelative: true
   }
 ];
 
@@ -52,7 +57,10 @@ const About = (props: any) => {
         <Route path={whoWeAre} component={WhoWeAre} />
         <Route path={ourPeople} component={OurPeople} />
         <Route path={certificates} component={Certificates} />
-        <Route path={sustainabilityStrategy} component={SustainabilityStrategy} />
+        <Route
+          path={sustainabilityStrategy}
+          component={SustainabilityStrategy}
+        />
         <Route component={_404} />
       </Switch>
 
