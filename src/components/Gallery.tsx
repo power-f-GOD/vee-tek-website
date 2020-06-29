@@ -16,7 +16,7 @@ const Gallery = (props: any) => {
 
   return (
     <Container className='fade-in my-5 py-5'>
-      <h1 className='mt-3'>This is the Gallery component!</h1>
+      <h1 className='mt-5'>This is the Gallery component!</h1>
       <h1>Gallery content goes here!</h1>
     </Container>
   );

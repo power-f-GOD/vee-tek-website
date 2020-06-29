@@ -3,7 +3,7 @@ import { Parallax } from "react-parallax";
 import { Container } from "react-bootstrap";
 
 const WhoWeAre = () => (
-  <Container as='main' fluid className='fade-in'>
+  <Container as='main' fluid className='fade-in p-0'>
     <Parallax
       bgImage="/images/who_we_are_one.jpg"
       bgImageAlt="one"

@@ -3,7 +3,7 @@ import React from 'react';
 import { Row, Container } from 'react-bootstrap';
 
 import ProductTile from '../../crumbs/ProductTile';
-import productsData from './productsData';
+import productsData from '../../../constants/switchgearsProductsData';
 
 const Products = () => {
   return (

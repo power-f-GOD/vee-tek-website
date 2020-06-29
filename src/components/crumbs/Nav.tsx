@@ -114,7 +114,7 @@ function NavLinks() {
           <Link to='/about/who-we-are'>Who We Are</Link>
           <Link to='/about/our-people'>Our People</Link>
           <Link to='/about/certificates'>Certificates (Quality Assurance)</Link>
-          <Link to='/about/sustainability'>Sustainability Strategy</Link>
+          <Link to='/about/sustainability-strategy'>Sustainability Strategy</Link>
         </Row>
       </Col>
 

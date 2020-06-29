@@ -1,4 +1,4 @@
-import { Data } from './Portfolio';
+import { Data } from '../components/Companies/Switchgears/Portfolio';
 
 function getData(): Data[] {
   return [
