@@ -6,7 +6,7 @@ import servicesData from './servicesData';
 
 const Services = () => {
   return (
-    <div className="container">
+    <Container as='main' className="fade-in mt-5">
       <Container className="fluid pt-5">
         <h2 className="mb-4 font-weight-bold">Our Services</h2>
         <Row className="justify-content-center">
@@ -20,7 +20,7 @@ const Services = () => {
           ))}
         </Row>
       </Container>
-    </div>
+    </Container>
   );
 };
 

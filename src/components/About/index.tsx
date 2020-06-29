@@ -31,25 +31,20 @@ const pagesData: Page[] = [
   {
     pathname: sustainabilityStrategy,
     name: 'Sustainability Strategy'
-  },
-  {
-    pathname: '/companies/switch-gears',
-    name: 'Our Companies',
-    notRelative: true
   }
 ];
 
 const About = (props: any) => {
-  const { callSetNavState, location } = props;
+  const { setNavState, location } = props;
   const { pathname } = location;
 
   React.useEffect(() => {
-    callSetNavState(pathname);
+    setNavState(pathname);
 
     return () => {
-      callSetNavState('/');
+      setNavState('/');
     };
-  }, [pathname, callSetNavState]);
+  }, [pathname, setNavState]);
 
   return (
     <>

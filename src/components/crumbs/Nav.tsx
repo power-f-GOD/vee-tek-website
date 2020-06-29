@@ -42,7 +42,12 @@ const Nav = () => {
           <Container className='nav-toolbar-container'>
             <Toolbar className='nav-toolbar d-flex flex-wrap'>
               <Box component='h5' className='logo font-weight-bold'>
-                <NavLink to='/' exact>
+                <NavLink
+                  to='/'
+                  exact
+                  isActive={(_, location) =>
+                    /^\/(.+-gears|.+-fittings)?$/.test(location.pathname)
+                  }>
                   {' '}
                   <img
                     src='/images/logos/logo-64.png'
@@ -304,22 +309,23 @@ function BreadCrumbs() {
   });
 
   return (
-    <Box
-      component='section'
-      className={`breadcrumbs-wrapper ${navState === '/' ? 'hide' : ''}`}>
-      <Breadcrumbs aria-label='breadcrumb'>
-        {links
-          .slice(0, -1)
-          .filter((link) => !/^(\/companies|\/about|\/news)$/.test(link.href))
-          .map(({ href, title }: BreadCrumbsData, key: number) => (
-            <Link to={href} key={key}>
-              {title}
-            </Link>
-          ))}
-        <Box component='span' className='current'>
-          {links.slice(-1)[0].title}
-        </Box>
-      </Breadcrumbs>
+    <Box component='section' className='breadcrumbs-wrapper'>
+      <Box
+        className={`breadcrumbs-container ${navState === '/' ? 'hide' : ''}`}>
+        <Breadcrumbs aria-label='breadcrumb'>
+          {links
+            .slice(0, -1)
+            .filter((link) => !/^(\/companies|\/about|\/news)$/.test(link.href))
+            .map(({ href, title }: BreadCrumbsData, key: number) => (
+              <Link to={href} key={key}>
+                {title}
+              </Link>
+            ))}
+          <Box component='span' className='current'>
+            {links.slice(-1)[0].title}
+          </Box>
+        </Breadcrumbs>
+      </Box>
     </Box>
   );
 }

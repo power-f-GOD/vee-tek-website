@@ -41,8 +41,8 @@ const FooterNavigator = (props: Data) => {
   }, [pathname, pages]);
 
   return (
-    <Container className={`FooterNavigator ${is404 ? 'd-none' : ''}`}>
-      <Row className='mx-0 justify-content-between mb-5'>
+    <Container as='nav' className={`FooterNavigator ${is404 ? 'd-none' : ''}`}>
+      <Row className='mx-0 justify-content-between my-5'>
         <Box component='section' className='d-inline-block'>
           {currentIndex > 0 && (
             <Link

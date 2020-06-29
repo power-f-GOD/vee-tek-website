@@ -15,11 +15,6 @@ const [companyNews, industryNews, educationalPacks] = [
 ];
 const pagesData: Page[] = [
   {
-    pathname: '/companies/pipes-and-fittings/order',
-    name: 'Our Companies',
-    notRelative: true
-  },
-  {
     pathname: companyNews,
     name: 'Company News'
   },
@@ -34,16 +29,16 @@ const pagesData: Page[] = [
 ];
 
 const News = (props: any) => {
-  const { callSetNavState, location } = props;
+  const { setNavState, location } = props;
   const { pathname } = location;
 
   React.useEffect(() => {
-    callSetNavState(pathname);
+    setNavState(pathname);
 
     return () => {
-      callSetNavState('/');
+      setNavState('/');
     };
-  }, [pathname, callSetNavState]);
+  }, [pathname, setNavState]);
 
   return (
     <>

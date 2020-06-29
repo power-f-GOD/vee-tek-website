@@ -18,11 +18,6 @@ const [products, services, portfolio, inquiry] = [
 ];
 const pagesData: Page[] = [
   {
-    pathname: '/about/sustainability-strategy',
-    name: 'About Us',
-    notRelative: true
-  },
-  {
     pathname: main,
     name: 'Overview'
   },
@@ -41,11 +36,6 @@ const pagesData: Page[] = [
   {
     pathname: inquiry,
     name: 'Make an Inquiry'
-  },
-  {
-    pathname: '/companies/pipes-and-fittings',
-    name: 'Pipes Company',
-    notRelative: true
   }
 ];
 

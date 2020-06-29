@@ -7,7 +7,7 @@ import productsData from './productsData';
 
 const Products = () => {
   return (
-    <Container>
+    <Container as='main' className='fade-in mt-5'>
       <div className='Main-Wrapper mt-4'>
         <Row>
           {productsData.map((item, _) => (
