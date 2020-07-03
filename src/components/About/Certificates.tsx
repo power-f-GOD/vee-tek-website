@@ -21,13 +21,13 @@ const Certificates = () => {
           <Col lg={6} sm={12}>
             <Image
               src="/images/document.jpg"
-              className="Certificate img-thumbnail Certificate-One"
+              className="Certificate img-thumbnail mb-2 Certificate-One"
             />
           </Col>
           <Col lg={6} sm={12}>
             <Image
               src="/images/document.jpg"
-              className="Certificate img-thumbnail Certificate-One"
+              className="Certificate img-thumbnail mb-2 Certificate-One"
             />
           </Col>
         </Row>
