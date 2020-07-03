@@ -24,6 +24,6 @@ const OurPeople = () => (
         ))}
       </Row>
     </Container>
-  </div>
+    </div>
 );
 export default OurPeople;

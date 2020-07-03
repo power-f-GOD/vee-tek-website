@@ -4,7 +4,7 @@ import Slider from "./crumbs/Slider";
 
 const Home = () => {
   return (
-    <div>
+    <div className='fade-in'>
       <Slider />
       <div className="Divider" />
 

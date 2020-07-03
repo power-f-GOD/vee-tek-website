@@ -40,16 +40,16 @@ const pagesData: Page[] = [
 ];
 
 const About = (props: any) => {
-  const { callSetNavState, location } = props;
+  const { setNavState, location } = props;
   const { pathname } = location;
 
   React.useEffect(() => {
-    callSetNavState(pathname);
+    setNavState(pathname);
 
     return () => {
-      callSetNavState('/');
+      setNavState('/');
     };
-  }, [pathname, callSetNavState]);
+  }, [pathname, setNavState]);
 
   return (
     <>
@@ -57,7 +57,10 @@ const About = (props: any) => {
         <Route path={whoWeAre} component={WhoWeAre} />
         <Route path={ourPeople} component={OurPeople} />
         <Route path={certificates} component={Certificates} />
-        <Route path={sustainabilityStrategy} component={SustainabilityStrategy} />
+        <Route
+          path={sustainabilityStrategy}
+          component={SustainabilityStrategy}
+        />
         <Route component={_404} />
       </Switch>
 

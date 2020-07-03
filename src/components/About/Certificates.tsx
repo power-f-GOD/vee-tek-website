@@ -2,6 +2,7 @@ import React from "react";
 import { Parallax } from "react-parallax";
 import { Container, Row, Col } from "react-bootstrap";
 
+
 const Certificates = () => {
   return (
     <div className="fade-in">

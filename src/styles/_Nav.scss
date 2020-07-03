@@ -25,7 +25,7 @@ $top-nav-box-height: 2.25rem;
     }
   }
 
-  .breadcrumbs-wrapper {
+  .breadcrumbs-container {
     visibility: hidden;
     opacity: 0;
   }
@@ -339,17 +339,21 @@ $top-nav-box-height: 2.25rem;
 .breadcrumbs-wrapper {
   position: absolute;
   top: 100%;
-  right: calc(50vw - 12.5rem);
+  height: 0;
+  width: 90vw;
+  right: 5vw;
+  text-align: center;
+}
+
+.breadcrumbs-container {
+  display: inline-block;
   border-radius: 0 0 0.75rem 0.75rem;
   background: #fff;
   opacity: 0.55;
   padding: 0.25rem 0.65rem;
-  min-width: 20rem;
-  max-width: 90vw;
   font-size: 0.85em !important;
-  transition: 0.3s;
+  transition: 0.4s;
   box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.2);
-  z-index: -1;
 
   &.hide {
     visibility: hidden;

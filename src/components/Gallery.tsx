@@ -1,22 +1,24 @@
 import React from 'react';
 
+import Container from 'react-bootstrap/Container';
+
 const Gallery = (props: any) => {
-  const { callSetNavState, location } = props;
+  const { setNavState, location } = props;
   const { pathname } = location;
 
   React.useEffect(() => {
-    callSetNavState(pathname);
+    setNavState(pathname);
 
     return () => {
-      callSetNavState('/');
+      setNavState('/');
     };
-  }, [pathname, callSetNavState]);
+  }, [pathname, setNavState]);
 
   return (
-    <div className='fade-in my-5 py-5 container'>
-      <h1>This is the Gallery component!</h1>
+    <Container className='fade-in my-5 py-5'>
+      <h1 className='mt-5'>This is the Gallery component!</h1>
       <h1>Gallery content goes here!</h1>
-    </div>
+    </Container>
   );
 };
 

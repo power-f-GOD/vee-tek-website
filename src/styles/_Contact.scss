@@ -1,6 +1,6 @@
 @import 'constants';
 
-.Contact {
+.Contact, .Inquiry {
   position: relative;
   padding-top: 16.5rem;
   background: {
@@ -82,6 +82,10 @@
       }
     }
   }
+}
+
+.Inquiry .map-wrapper {
+  background-image: url('/images/google-map-placeholder-inquiry.png');
 }
 
 .contact-page-title {

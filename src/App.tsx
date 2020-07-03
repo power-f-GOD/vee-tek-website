@@ -17,8 +17,8 @@ import GoUpFAB from './components/crumbs/GoUpFAB';
 export const NavContext = createContext('/');
 
 const App = () => {
-  const [navState, setNavState] = useState('/');
-  const callSetNavState = (val: string) => setNavState(val);
+  const [navState, _setNavState] = useState('/');
+  const setNavState = (val: string) => _setNavState(val);
 
   return (
     <div className='App fade-in'>
@@ -32,31 +32,31 @@ const App = () => {
           <Route
             path='/companies'
             render={(props: any) => (
-              <Companies {...props} callSetNavState={callSetNavState} />
+              <Companies {...props} setNavState={setNavState} />
             )}
           />
           <Route
             path='/news'
             render={(props: any) => (
-              <News {...props} callSetNavState={callSetNavState} />
+              <News {...props} setNavState={setNavState} />
             )}
           />
           <Route
             path='/gallery'
             render={(props: any) => (
-              <Gallery {...props} callSetNavState={callSetNavState} />
+              <Gallery {...props} setNavState={setNavState} />
             )}
           />
           <Route
             path='/contact'
             render={(props: any) => (
-              <Contact {...props} callSetNavState={callSetNavState} />
+              <Contact {...props} setNavState={setNavState} />
             )}
           />
           <Route
             path='/about'
             render={(props: any) => (
-              <About {...props} callSetNavState={callSetNavState} />
+              <About {...props} setNavState={setNavState} />
             )}
           />
           <Route component={_404} />
