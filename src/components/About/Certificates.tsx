@@ -1,7 +1,6 @@
 import React from "react";
 import { Parallax } from "react-parallax";
-import { Container, Row, Col } from "react-bootstrap";
-
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 const Certificates = () => {
   return (
@@ -20,10 +19,16 @@ const Certificates = () => {
       <Container className="mb-5">
         <Row>
           <Col lg={6} sm={12}>
-            <div className="Certificate Certificate-One"></div>
+            <Image
+              src="/images/document.jpg"
+              className="Certificate img-thumbnail Certificate-One"
+            />
           </Col>
           <Col lg={6} sm={12}>
-            <div className="Certificate Certificate-Two"></div>
+            <Image
+              src="/images/document.jpg"
+              className="Certificate img-thumbnail Certificate-One"
+            />
           </Col>
         </Row>
       </Container>
