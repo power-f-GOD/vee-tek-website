@@ -1,13 +1,33 @@
-import React from 'react';
+import React from "react";
+import { Parallax } from "react-parallax";
+import { Container, Row, Col } from "react-bootstrap";
 
-import Container from 'react-bootstrap/Container';
 
 const Certificates = () => {
   return (
-    <Container as='main' className='fade-in my-5 py-5'>
-      <h1 className='mt-5'>This is the Certificates component.</h1>
-      <h4>Certificates component content goes here!</h4>
-    </Container>
+    <div className="fade-in">
+      <Parallax bgImage="/images/three.jpg" bgImageAlt="one" strength={100}>
+        <div
+          style={{ height: "500px" }}
+          className="pt-5 text-center d-flex justify-content-center align-items-center"
+        >
+          <h1 className="mt-5 text-white font-weight-bold">
+            {" "}
+            Our Certificates{" "}
+          </h1>
+        </div>
+      </Parallax>
+      <Container className="mb-5">
+        <Row>
+          <Col lg={6} sm={12}>
+            <div className="Certificate Certificate-One"></div>
+          </Col>
+          <Col lg={6} sm={12}>
+            <div className="Certificate Certificate-Two"></div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
