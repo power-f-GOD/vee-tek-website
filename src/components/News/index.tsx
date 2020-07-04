@@ -60,10 +60,13 @@ const News = (props: any) => {
 };
 
 export function Main(props: any) {
+  const _props = {...props};
   const pageTitle = props.pageTitle;
 
+  delete _props.pageTitle;
+
   return (
-    <Col className='Main' {...props}>
+    <Col className='Main' {..._props}>
       <Row as='h1' className='page-title'>
         {pageTitle}
       </Row>
@@ -122,8 +125,8 @@ function RecentPosts(props: any) {
       </Row>
       {Array(5)
         .fill('')
-        .map(() => (
-          <AsidePost />
+        .map((_, id) => (
+          <AsidePost key={id} />
         ))}
     </Col>
   );
@@ -137,8 +140,8 @@ function Archive(props: any) {
       </Row>
       {Array(5)
         .fill('')
-        .map(() => (
-          <AsidePost />
+        .map((_, id) => (
+          <AsidePost key={id} />
         ))}
     </Col>
   );
