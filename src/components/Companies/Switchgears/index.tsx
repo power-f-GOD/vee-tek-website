@@ -50,6 +50,10 @@ const pagesData: Page[] = [
 ];
 
 const Switchgears = () => {
+  React.useEffect(() => () => {
+    window.scrollTo(0, 0);
+  });
+  
   return (
     <>
       <Switch>

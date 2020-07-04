@@ -19,6 +19,11 @@ const [companyNews, industryNews, educationalPacks] = [
 ];
 const pagesData: Page[] = [
   {
+    pathname: '/companies/pipes-and-fittings/order',
+    name: 'Pipes Company',
+    notRelative: true
+  },
+  {
     pathname: companyNews,
     name: 'Company News'
   },
@@ -60,7 +65,7 @@ const News = (props: any) => {
 };
 
 export function Main(props: any) {
-  const _props = {...props};
+  const _props = { ...props };
   const pageTitle = props.pageTitle;
 
   delete _props.pageTitle;
