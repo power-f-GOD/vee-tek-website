@@ -1,12 +1,16 @@
 import React from 'react';
 
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import { Main, Aside } from './';
 
 const CompanyNews = () => {
   return (
-    <Container as='main' className='fade-in my-5 py-5'>
-      <h1 className='mt-5'>This is the CompanyNews component.</h1>
-      <h4>CompanyNews component content goes here!</h4>
+    <Container className='CompanyNews fade-in px-0'>
+      <Row className='mx-0'>
+        <Main as='main' lg={9} pageTitle='Company News' />
+        <Aside as='aside' lg={3} />
+      </Row>
     </Container>
   );
 };

@@ -1,0 +1,133 @@
+@import 'constants';
+
+.News {
+  margin-top: 9rem;
+  // @include debugger();
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .Main {
+    padding: 1rem;
+    padding-right: 1.75rem;
+    position: unset;
+
+    .row {
+      margin: 0;
+    }
+
+    .page-title {
+      margin: 3rem 0 10rem 0;
+      color: white;
+      text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+
+      &::before,
+      &::after {
+        @include before-or-after-v2(
+          $w: 100vw,
+          $h: 23rem,
+          $bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2)
+        );
+        background-color: $theme-primary-v4;
+        clip-path: polygon(
+          0 0,
+          calc(50vw + 19rem) 0,
+          calc(50vw - 1rem) 30rem,
+          0 30rem
+        );
+      }
+
+      &::after {
+        opacity: 0.65;
+      }
+
+      &::before {
+        background: {
+          color: $theme-primary-v4;
+          image: url('/images/switch-gears-3.jpg');
+        }
+      }
+    }
+  }
+
+  .NewsPost {
+    padding: 2.5rem 0;
+    border-bottom: 0.0625rem solid rgba(219, 175, 127, 0.35);
+
+    .image-container {
+      padding: 0;
+    }
+
+    .text-container {
+      padding: {
+        left: 1.35rem;
+        right: 0;
+      }
+    }
+
+    .author {
+      padding: 0.075rem 0.65rem;
+      border-radius: 1rem;
+      margin: 0.5rem 0 0.25rem 0;
+      color: #777;
+      font-size: 0.9rem;
+      background: #eee;
+    }
+
+    .link {
+      padding: 0.25rem 0.75rem;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+
+      &::before {
+        @include before-or-after-v2($br: 0.3rem, $h: 0.125rem, $b: 0);
+        top: unset;
+      }
+
+      &:hover,
+      &:focus {
+        color: white;
+
+        &::before {
+          background: $theme-primary-v3;
+
+          height: 100%;
+        }
+      }
+    }
+
+    img {
+      border-radius: 0.5rem;
+    }
+  }
+
+  .Aside {
+    margin-top: 2rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0.25rem 0;
+      border-bottom: 0.125rem solid #333;
+    }
+  }
+
+  .AsidePost {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.25rem 0;
+    border-bottom: 0.0625rem solid rgba(219, 175, 127, 0.5);
+  }
+}
