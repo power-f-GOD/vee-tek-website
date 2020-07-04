@@ -32,6 +32,7 @@ const Contact = (props: any) => {
 
     return () => {
       setNavState('/');
+      window.scrollTo(0, 0);
     };
   }, [pathname, setNavState]);
 

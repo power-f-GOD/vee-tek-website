@@ -4,7 +4,7 @@ $top-nav-box-height: 2.25rem;
 
 .MuiAppBar-root {
   background-color: $theme-primary-v4;
-  background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+  background: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
   transition: 0.3s;
   width: 100%;
   left: 0;
@@ -51,7 +51,7 @@ $top-nav-box-height: 2.25rem;
 .top-nav-box {
   height: $top-nav-box-height;
   padding: 0.25rem 0;
-  background: $theme-primary-v3;
+  background: $theme-primary-v2;
   color: #eee; //$theme-primary-v8;
   display: flex;
   align-content: center;
@@ -140,7 +140,7 @@ $top-nav-box-height: 2.25rem;
     bottom: calc(20% + 0.25em);
     left: -1em;
     z-index: -1;
-    background-color: $theme-primary-v5;
+    background-color: $theme-primary-v4;
     transition: 0.25s;
   }
 
@@ -278,7 +278,7 @@ $top-nav-box-height: 2.25rem;
     color: white;
     transition: 0.3s;
     display: flex;
-    background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+    background: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
     z-index: 50 !important;
     justify-content: space-between;
     align-items: center;
@@ -293,8 +293,8 @@ $top-nav-box-height: 2.25rem;
       }
       background: linear-gradient(
         to left,
-        $theme-primary-v5,
-        $theme-primary-v3
+        $theme-primary-v4,
+        $theme-primary-v2
       ) !important;
 
       + .sub-menu {
@@ -492,9 +492,9 @@ $top-nav-box-height: 2.25rem;
   }
 
   .top-nav-wrapper {
-    flex-direction: column;
-    background: $theme-primary-v3;
-    padding-bottom: 1rem;
+    display: block;
+    background: $theme-primary-v2;
+    padding: 0.25rem 0 1rem 0;
 
     > div {
       margin: 0.5rem 0;
@@ -515,7 +515,7 @@ $top-nav-box-height: 2.25rem;
   .MuiDrawer-paper {
     width: 75%;
     overflow-x: hidden;
-    background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+    background: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
     max-width: 22rem;
   }
 }

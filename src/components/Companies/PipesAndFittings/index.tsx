@@ -35,6 +35,10 @@ const pagesData: Page[] = [
 ];
 
 const PipesAndFittings = () => {
+  React.useEffect(() => () => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <Switch>

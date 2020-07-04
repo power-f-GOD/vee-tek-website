@@ -6,7 +6,7 @@
   .header-image {
     height: 0;
     position: absolute;
-    filter: drop-shadow(0.65rem 1.15rem 0 $theme-primary-v7);
+    filter: drop-shadow(0.65rem 1.15rem 0 $theme-primary-v4);
     // filter: drop-shadow(0.65rem 1.15rem 0 transparent);
 
     @mixin for-both {
@@ -25,8 +25,8 @@
       );
       background: linear-gradient(
         to left,
-        $theme-primary-v5,
-        $theme-primary-v3
+        $theme-primary-v4,
+        $theme-primary-v2
       );
     }
 
@@ -63,8 +63,8 @@
       z-index: 1;
       background: linear-gradient(
         to left,
-        $theme-primary-v5,
-        $theme-primary-v3
+        $theme-primary-v4,
+        $theme-primary-v2
       );
       opacity: 0.6;
     }
@@ -161,8 +161,8 @@
       border-radius: 1.25rem;
       background: linear-gradient(
         to left,
-        $theme-primary-v5,
-        $theme-primary-v3
+        $theme-primary-v4,
+        $theme-primary-v2
       );
       color: white;
       padding: 2.5rem;
@@ -191,8 +191,8 @@
       transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
       background: linear-gradient(
         to left,
-        $theme-primary-v5,
-        $theme-primary-v3
+        $theme-primary-v4,
+        $theme-primary-v2
       );
     }
   }
@@ -203,7 +203,7 @@
     padding: 0.75rem 1rem;
     display: inline-block;
     text-decoration: none;
-    color: $theme-primary-v3;
+    color: $theme-primary-v2;
 
     &.active {
       color: white;
@@ -216,7 +216,7 @@
 
   .projects-header {
     position: relative;
-    color: $theme-primary-v3;
+    color: $theme-primary-v2;
 
     &::before {
       @include before-or-after();
@@ -330,7 +330,7 @@
     align-items: center;
     font-size: 4rem;
     color: white;
-    background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+    background: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
   }
 
   .work-desc-wrapper {
@@ -340,7 +340,7 @@
   .work-desc-header {
     font-size: 2rem;
     font-weight: bold;
-    color: $theme-primary-v3;
+    color: $theme-primary-v2;
   }
 
   .work-desc {
