@@ -41,7 +41,7 @@
 
   .map-wrapper {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.3;
     box-shadow: 0 0.15rem 0.35rem rgba(0, 0, 0, 0.5);
     background: {
       color: $theme-primary-v5;
@@ -106,12 +106,12 @@
 }
 
 .contact-form-wrapper {
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   overflow: hidden;
   max-width: 62rem;
   margin: auto;
-  box-shadow: 0 0.25rem 5rem rgba(0, 0, 0, 0.15),
-    0 0.25rem 5rem rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 0.25rem 7.5rem rgba(0, 0, 0, 0.15),
+    0 0.25rem 10rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .contact-form-col {
