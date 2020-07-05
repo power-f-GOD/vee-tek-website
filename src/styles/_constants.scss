@@ -1,22 +1,24 @@
-$theme-primary-faint: rgba(157, 113, 65, 0.5);
+$theme-primary-faint: rgba(175, 120, 63, 0.45);
 $theme-secondary-faint: rgba(120, 120, 120, 0.25);
 
 // the -v5's are the actual/main/primary colors. Colors above them are the darker variants while those below lighter variants
 
-// $primary-v1: rgb(61, 17, 0);
-// $primary-v2: rgb(85, 41, 0);
-// $primary-v3: rgb(109, 65, 17);
-// $primary-v4: rgb(133, 89, 41);
-// $primary-v5: rgb(157, 113, 65);
-// $primary-v6: rgb(181, 137, 89);
-// $primary-v7: rgb(205, 161, 113);
-// $primary-v8: rgb(229, 185, 137);
-// $primary-v9: rgb(253, 209, 161);
+// The following commented reference olors need to be updated as (slight) change has been made to actual colors
 
-$theme-primary: rgb(157, 113, 65); //supposed gold color
-$prim-r: 157;
-$prim-g: 113;
-$prim-b: 65;
+// $primary-v1: rgb(75, 20, 0);
+// $primary-v2: rgb(100, 45, 0);
+// $primary-v3: rgb(125, 70, 13);
+// $primary-v4: rgb(150, 95, 38);
+// $primary-v5: rgb(175, 120, 63);
+// $primary-v6: rgb(200, 145, 88);
+// $primary-v7: rgb(225, 170, 113);
+// $primary-v8: rgb(250, 195, 138);
+// $primary-v9: rgb(255, 220, 163);
+
+$theme-primary: rgb(175, 120, 63); //supposed gold color
+$prim-r: 175;
+$prim-g: 120;
+$prim-b: 63;
 $theme-primary-v1: rgb(
   $prim-r - (25 * 4),
   $prim-g - (25 * 4),
