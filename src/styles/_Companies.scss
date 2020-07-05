@@ -2,11 +2,10 @@
 
 body.companies {
   background-color: white;
-  /*
+
   &.desktop {
     &.custom-scroll-bar,
     .custom-scroll-bar {
-
       &::-webkit-scrollbar-thumb {
         background: $theme-secondary !important;
       }
@@ -14,7 +13,11 @@ body.companies {
   }
 
   .MuiAppBar-root {
-    background-color: $theme-secondary-v2;
+    background: linear-gradient(
+      to left,
+      $theme-secondary-v3,
+      $theme-secondary-v1
+    );
   }
 
   .top-nav-box {
@@ -23,6 +26,33 @@ body.companies {
 
     span:first-of-type {
       border-right: 1px solid $theme-secondary-v5;
+    }
+  }
+
+  .Overview {
+    header {
+      $h: 100vh;
+      $mh: 40rem;
+
+      position: relative;
+      height: $h;
+      max-height: $mh;
+      text-align: center;
+      color: white;
+
+      &::before {
+        @include before-or-after-v2($zi: 0, $bg: $theme-secondary-v1, $o: 0.35);
+      }
+
+      &::after {
+        @include before-or-after-v2($zi: -1, $bg: $theme-secondary-v2);
+        background: {
+          position: center;
+          size: auto 40rem;
+          image: url('/images/pvc-pipes-2.jpg');
+        }
+        filter: grayscale(1);
+      }
     }
   }
 
@@ -45,6 +75,10 @@ body.companies {
       &::before {
         border-bottom-color: $theme-secondary-v4 !important;
       }
+    }
+
+    &.active {
+      border-color: $theme-secondary-v8;
     }
   }
 
@@ -75,16 +109,110 @@ body.companies {
     }
   }
 
+  @import 'constants';
+
+  .Contact,
+  .Inquiry {
+    &::before {
+      content: ' ';
+      background-color: $theme-secondary-v2;
+    }
+
+    .map-wrapper {
+      background-color: $theme-secondary-v4;
+    }
+  }
+
+  .contact-info-col {
+    background-color: $theme-secondary-v3;
+    background-image: linear-gradient(
+      to left,
+      $theme-secondary-v3,
+      $theme-secondary-v1
+    );
+  }
+
   .MuiDrawer-paper {
-    background: $theme-secondary-v2;
+    background: linear-gradient(
+      to left,
+      $theme-secondary-v4,
+      $theme-secondary-v2
+    );
+  }
+
+  .FooterNavigator {
+    .navigator-link {
+      color: $theme-secondary-v4;
+
+      &:hover,
+      &:focus {
+        border-color: $theme-secondary-v5;
+      }
+
+      > * {
+        &:last-child {
+          color: $theme-secondary-v2;
+        }
+      }
+    }
   }
 
   .Footer-Wrapper-One {
-    background-color: $theme-secondary-v4;
+    background: linear-gradient(
+      to left,
+      $theme-secondary-v4,
+      $theme-secondary-v2
+    );
   }
-  
+
   .Footer-Wrapper-Two {
-    background-color: $theme-secondary-v3;
+    background: linear-gradient(
+      to left,
+      $theme-secondary-v3,
+      $theme-secondary-v1
+    );
+  }
+
+  button,
+  a {
+    &[class*='Primary'] {
+      $bg: $theme-secondary-v4;
+      $bg-hovered: linear-gradient(
+        to left,
+        $theme-secondary-v3,
+        $theme-secondary-v1
+      );
+
+      &.outlined {
+        @include variant(
+          $bg,
+          0,
+          1,
+          $theme-secondary-v3,
+          #fff,
+          $gbg1: $theme-secondary-v3,
+          $gbg2: $theme-secondary-v1
+        );
+      }
+
+      &.contained {
+        @include variant(
+          $bg,
+          1,
+          0,
+          #fff,
+          $theme-secondary-v3,
+          $gbg1: $theme-secondary-v3,
+          $gbg2: $theme-secondary-v1
+        );
+      }
+    }
+  }
+
+  .breadcrumbs-container {
+    a {
+      color: $theme-secondary-v4;
+    }
   }
 
   .logo {
@@ -93,7 +221,11 @@ body.companies {
     }
 
     img {
-      filter: grayscale(100%);
+      filter: grayscale(200%) contrast(1.25);
     }
-  }*/
+  }
+
+  .theme-color-text {
+    color: $theme-secondary-v3;
+  }
 }

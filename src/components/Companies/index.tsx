@@ -11,7 +11,8 @@ const Companies = (props: any) => {
 
   useEffect(() => {
     setNavState(pathname);
-    document.body.classList.add('companies');
+    //lassnames used in the corresponding SCSS file
+    // document.body.classList.add('companies');
 
     return () => {
       setNavState('/');

@@ -45,9 +45,10 @@ const Nav = () => {
                 <NavLink
                   to='/'
                   exact
-                  isActive={(_, location) =>
-                    /^\/(.+-gears|.+-fittings)?$/.test(location.pathname)
-                  }>
+                  // isActive={(_, location) =>
+                  //   /^\/(.+-gears|.+-fittings)?$/.test(location.pathname)
+                  // }
+                  >
                   {' '}
                   <img
                     src='/images/logos/logo-64.png'

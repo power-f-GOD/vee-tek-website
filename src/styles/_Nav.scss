@@ -162,7 +162,7 @@ $top-nav-box-height: 2.25rem;
     &::before {
       width: calc(100% - 0.5em);
       transform: scale(1);
-      // border-bottom-color: $theme-primary-v7 !important;
+      border-bottom-color: $theme-primary-v7 !important;
       // border-bottom-color: #eee !important;
     }
 
@@ -265,7 +265,7 @@ $top-nav-box-height: 2.25rem;
   border-radius: 0 0 0.35rem 0.35rem;
   visibility: hidden;
   opacity: 0;
-  transition: 0.35s;
+  transition: 0.4s;
 
   &:focus-within,
   &:hover {
