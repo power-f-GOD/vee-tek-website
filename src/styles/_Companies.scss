@@ -3,7 +3,7 @@
 body.companies {
   background-color: white;
 
-  &.desktop {
+ /* &.desktop {
     &.custom-scroll-bar,
     .custom-scroll-bar {
       &::-webkit-scrollbar-thumb {
@@ -27,7 +27,7 @@ body.companies {
     span:first-of-type {
       border-right: 1px solid $theme-secondary-v5;
     }
-  }
+  }*/
 
   .Overview {
     header {
@@ -41,21 +41,20 @@ body.companies {
       color: white;
 
       &::before {
-        @include before-or-after-v2($zi: 0, $bg: $theme-secondary-v1, $o: 0.35);
+        @include before-or-after-v2($zi: 0, $bg: $theme-primary-v1, $o: 0.35);
       }
 
       &::after {
         @include before-or-after-v2($zi: -1, $bg: $theme-secondary-v2);
         background: {
           position: center;
-          size: auto 40rem;
+          size: cover;
           image: url('/images/pvc-pipes-2.jpg');
         }
-        filter: grayscale(1);
       }
     }
   }
-
+/*
   .nav-link {
     color: $theme-secondary-v9 !important;
 
@@ -108,8 +107,6 @@ body.companies {
       }
     }
   }
-
-  @import 'constants';
 
   .Contact,
   .Inquiry {
@@ -202,8 +199,8 @@ body.companies {
           0,
           #fff,
           $theme-secondary-v3,
-          $gbg1: $theme-secondary-v3,
-          $gbg2: $theme-secondary-v1
+          $gbg1: $theme-primary-v4,
+          $gbg2: $theme-primary-v2
         );
       }
     }
@@ -227,5 +224,5 @@ body.companies {
 
   .theme-color-text {
     color: $theme-secondary-v3;
-  }
+  }*/
 }

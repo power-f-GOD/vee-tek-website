@@ -16,7 +16,7 @@ const Companies = (props: any) => {
 
     return () => {
       setNavState('/');
-      document.body.classList.remove('companies');
+      // document.body.classList.remove('companies');
     };
   }, [pathname, setNavState]);
 
