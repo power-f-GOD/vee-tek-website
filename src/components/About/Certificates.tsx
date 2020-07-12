@@ -12,21 +12,23 @@ const Certificates = () => {
         >
           <h1 className="mt-5 text-white font-weight-bold">
             {" "}
-            Our Certificates{" "}
+            Quality Assurance{" "}
           </h1>
         </div>
       </Parallax>
       <Container className="mb-5">
-        <Row>
+        <p className="m-3">
+          Every product we make passes through a rigorous test of quality
+          certification before leaving the factory. This process guarantees
+          client’s absolute satisfaction. As a result, Vee-Tek products and
+          services compare excellently well with international standards at a
+          very reasonable budget and with the added advantage of customization
+          to individual clients’ particular needs.
+        </p>
+        <Row className="justify-content-center mt-4">
           <Col lg={6} sm={12}>
             <Image
-              src="/images/document.jpg"
-              className="Certificate img-thumbnail mb-2 Certificate-One"
-            />
-          </Col>
-          <Col lg={6} sm={12}>
-            <Image
-              src="/images/document.jpg"
+              src="/images/cert.jpg"
               className="Certificate img-thumbnail mb-2 Certificate-One"
             />
           </Col>

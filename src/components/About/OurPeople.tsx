@@ -6,24 +6,51 @@ import us from "./ourPeopleData";
 import { Parallax } from "react-parallax";
 
 const OurPeople = () => (
-  <div className='fade-in'>
-    <Parallax bgImage="/images/three.jpg" bgImageAlt="one" strength={200}>
-      <div style={{ height: "500px" }} className="pt-5 text-center d-flex justify-content-center align-items-center">
+  <div className="fade-in">
+    <Parallax bgImage="/images/team/group.jpg" bgImageAlt="one" strength={100}>
+      <div
+        style={{ height: "500px" }}
+        className="pt-5 text-center d-flex justify-content-center align-items-center"
+      >
         <h1 className="mt-5 text-white font-weight-bold"> Meet Us </h1>
       </div>
     </Parallax>
+    <Container>
+      {" "}
+      <p>
+        Across our two companies, our engineering team is made up of competent
+        engineers with no less than 30 years ‘hands on’ experience in electrical
+        engineering. The technical team comprises of engineers, electricians,
+        fabricators, welders, operators, mechanics, fitters, surveyor, and more.
+        Our plastic production team comprises of experienced electrical,
+        mechanical and chemical engineers, a pull of maintenance technicians and
+        machine operators. We are also committed to training interns to build
+        Nigeria’s talent and capacity for the future.
+      </p>{" "}
+    </Container>
+
     <Container className="mb-5">
       <Row className="mt-md-5 mb-5">
         {us.main.map((item, key) => (
-          <PersonCard image={item.image} title={item.title} name={item.name} key={key} />
+          <PersonCard
+            image={item.image}
+            title={item.title}
+            name={item.name}
+            key={key}
+          />
         ))}
       </Row>
       <Row className="mt-md-5">
         {us.others.map((item, key) => (
-          <PersonCard image={item.image} title={item.title} name={item.name} key={key} />
+          <PersonCard
+            image={item.image}
+            title={item.title}
+            name={item.name}
+            key={key}
+          />
         ))}
       </Row>
     </Container>
-    </div>
+  </div>
 );
 export default OurPeople;
