@@ -46,11 +46,19 @@ const Nav = () => {
                 <NavLink
                   to="/"
                   exact
+<<<<<<< HEAD
                   isActive={(_, location) =>
                     /^\/(.+-gears|.+-fittings)?$/.test(location.pathname)
                   }
                 >
                   {" "}
+=======
+                  // isActive={(_, location) =>
+                  //   /^\/(.+-gears|.+-fittings)?$/.test(location.pathname)
+                  // }
+                  >
+                  {' '}
+>>>>>>> 91199fdd31afd0a05dc160d04a6c522182f48811
                   <img
                     src="/images/logos/logo-64.png"
                     alt="Vee-Tek Group logo"

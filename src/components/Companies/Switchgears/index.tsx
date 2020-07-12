@@ -44,6 +44,14 @@ const pagesData: Page[] = [
 ];
 
 const Switchgears = () => {
+  React.useEffect(() => {
+    document.body.classList.remove('companies');
+
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  });
+
   return (
     <>
       <Switch>

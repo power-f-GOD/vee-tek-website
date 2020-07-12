@@ -9,7 +9,7 @@ body,
   width: 100%;
   margin: 0;
   font-size: 1.025rem;
-  color: #444;
+  color: #111;
   line-height: 1.8rem;
 }
 
@@ -72,8 +72,12 @@ input {
 }
 
 a {
-  color: $theme-primary-v6;
+  color: $theme-primary-v4;
 
+  &:hover, &:focus {
+    color: $theme-primary-v2;
+    text-decoration: underline;
+  }
   // &:visited {
   //   color: $theme-primary-v9;
   // }
@@ -87,7 +91,7 @@ a {
 
   &[class*='Primary'] {
     $bg: $theme-primary-v4;
-    $bg-hovered: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+    $bg-hovered: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
 
     min-height: 2.5rem;
     font-size: inherit !important;
@@ -99,11 +103,11 @@ a {
     }
 
     &.outlined {
-      @include variant($bg, 0, 1, $theme-primary-v4, #fff);
+      @include variant($bg, 0, 1, $theme-primary-v3, #fff);
     }
 
     &.contained {
-      @include variant($bg, 1, 0, #fff, $theme-primary-v4);
+      @include variant($bg, 1, 0, #fff, $theme-primary-v3);
     }
 
     &:disabled,
@@ -129,6 +133,11 @@ h4,
 h5,
 h6 {
   margin: 0;
+  // font-size: 1rem;
+
+  a {
+    font-size: inherit;
+  }
 }
 
 button,
@@ -168,7 +177,7 @@ a {
 }
 
 .theme-color-text {
-  color: $theme-primary;
+  color: $theme-primary-v4;
 }
 .theme-color-text-lightest {
   color: $theme-primary-v9;
