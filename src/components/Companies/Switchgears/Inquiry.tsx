@@ -146,13 +146,13 @@ const Inquiry = () => {
                   <Col className='my-2'>
                     <EmailIcon fontSize='large' />
                   </Col>
-                  <Col className='p-0'>vee-tek@vee-tek-group.com</Col>
+                  <Col className='p-0'>projectmanager@vee-tekgroup.com</Col>
                 </Row>
                 <Row className='flex-column justify-items-center'>
                   <Col className='my-2'>
                     <PhoneIcon fontSize='large' />
                   </Col>
-                  <Col className='p-0 mb-4'>+2341234567890</Col>
+                  <Col className='p-0 mb-4'>+234(0)8033244062</Col>
                 </Row>
               </Col>
             </Row>

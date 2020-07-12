@@ -46,19 +46,11 @@ const Nav = () => {
                 <NavLink
                   to="/"
                   exact
-<<<<<<< HEAD
-                  isActive={(_, location) =>
-                    /^\/(.+-gears|.+-fittings)?$/.test(location.pathname)
-                  }
-                >
-                  {" "}
-=======
                   // isActive={(_, location) =>
                   //   /^\/(.+-gears|.+-fittings)?$/.test(location.pathname)
                   // }
-                  >
-                  {' '}
->>>>>>> 91199fdd31afd0a05dc160d04a6c522182f48811
+                >
+                  {" "}
                   <img
                     src="/images/logos/logo-64.png"
                     alt="Vee-Tek Group logo"
@@ -92,10 +84,13 @@ function TopNavLinks() {
         <Row className="top-nav-wrapper">
           <Col>
             <span>
-              <EmailIcon /> vee-tek@vee-tek-group.com
+              <EmailIcon /> info@vee-tekgroup.com
+            </span>{" "}
+            <span className="mr-4">
+               <PhoneIcon /> +234(0)9032663166 (Plastics)
             </span>{" "}
             <span>
-              <PhoneIcon /> +2341234567890
+               <PhoneIcon /> +234(0)8033244062 (Electricals)
             </span>
           </Col>
           <Col className="social-media-links-wrapper d-flex justify-content-between">
@@ -153,29 +148,9 @@ function NavLinks() {
       </Col>
 
       <Col className="nav-link-wrapper p-0">
-        <NavLink to="/news" onClick={preventRedirect} className="nav-link">
-          <span>News</span> <ExpandMoreIcon />
+        <NavLink to="/news" className="nav-link">
+          News
         </NavLink>
-
-        <Row className="nav-menu flex-column m-0">
-          <Col className="p-0">
-            <Link to="/news/company-news" className="nav-menu-link">
-              Company News
-            </Link>
-          </Col>
-
-          <Col className="p-0">
-            <Link to="/news/industry-news" className="nav-menu-link">
-              Industry News
-            </Link>
-          </Col>
-
-          <Col className="p-0">
-            <Link to="/news/educational-packs" className="nav-menu-link">
-              Educational Packs
-            </Link>
-          </Col>
-        </Row>
       </Col>
       <Col className="nav-link-wrapper p-0">
         <NavLink to="/gallery" className="nav-link">

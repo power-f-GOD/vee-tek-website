@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
       <div className='Footer-Wrapper-One text-white'>
         <Container className='text-left p-4'>
-          <h3 className='font-weight-bold'> Follow Us</h3>
+          <h3 className='font-weight-bold'> Reach Us</h3>
           <Row className='social-media-links-wrapper mt-2 mx-0'>
             <FacebookIcon className='pr-2' />
             <TwitterIcon className='pr-2' />
