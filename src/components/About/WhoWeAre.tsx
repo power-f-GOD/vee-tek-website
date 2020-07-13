@@ -45,14 +45,11 @@ const WhoWeAre = () => (
       <h1>We've Served</h1>
       <p>We are proud to have served the following and more.</p>
       <div className="d-flex flex-wrap p-4 justify-content-center">
-        <div className="Client-Image m-2"></div>
-        <div className="Client-Image m-2"></div>
-        <div className="Client-Image m-2"></div>
-        <div className="Client-Image m-2"></div>
-        <div className="Client-Image m-2"></div>
-        <div className="Client-Image m-2"></div>
-        <div className="Client-Image m-2"></div>
-        <div className="Client-Image m-2"></div>
+        <div className="Client-Image-enugu m-2"></div>
+        <div className="Client-Image-nbp m-2"></div>
+        <div className="Client-Image-ndphc m-2"></div>
+        <div className="Client-Image-nlng m-2"></div>
+        <div className="Client-Image-shell m-2"></div>
       </div>
     </Container>
   </Container>
