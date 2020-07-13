@@ -151,13 +151,20 @@ const Order = () => {
                   <Col className="my-2">
                     <EmailIcon fontSize="large" />
                   </Col>
-                  <Col className="p-0">info@vee-tekgroup.com</Col>
+                  <Col className="p-0">
+                    <a
+                      href="mailto:info@vee-tekgroup.com"
+                      className="text-reset"
+                    >
+                      info@vee-tekgroup.com
+                    </a>
+                  </Col>
                 </Row>
                 <Row className="flex-column justify-items-center">
                   <Col className="my-2">
                     <PhoneIcon fontSize="large" />
                   </Col>
-                  <Col className="p-0 mb-4">+234(0)7030489434</Col>
+                  <Col className="p-0 mb-4"><a href="tel:+234(0)7030489434" className="text-reset">+234(0)7030489434</a></Col>
                 </Row>
               </Col>
             </Row>
