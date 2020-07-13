@@ -128,7 +128,7 @@ $top-nav-box-height: 2.25rem;
   text-transform: capitalize !important;
   transition: 0.3s;
   position: relative;
-
+ 
   &::before,
   &::after {
     position: absolute;
@@ -202,7 +202,7 @@ $top-nav-box-height: 2.25rem;
     margin-left: 2rem;
     padding: 1.25rem 1rem;
     min-width: 6rem;
-    border-radius: 2rem !important;
+    border-radius: 0.45rem !important;
     align-self: center;
 
     &.contained {
@@ -493,7 +493,8 @@ $top-nav-box-height: 2.25rem;
 
   .top-nav-wrapper {
     display: block;
-    background: $theme-primary-v2;
+    background: #eee;
+    color: $theme-primary-v3;
     padding: 0.25rem 0 1rem 0;
 
     > div {

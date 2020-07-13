@@ -187,6 +187,18 @@ a {
   background-color: $theme-primary;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 [class^='MuiFormControl'],
 div {
   fieldset {

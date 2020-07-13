@@ -3,33 +3,26 @@
 body.companies {
   background-color: white;
 
- /* &.desktop {
-    &.custom-scroll-bar,
-    .custom-scroll-bar {
-      &::-webkit-scrollbar-thumb {
-        background: $theme-secondary !important;
+  .Overview {
+    // @include debugger();
+
+    [class*='col'],
+    [class~='container'] {
+      padding: {
+        left: 1.5rem;
+        right: 1.5rem;
       }
     }
-  }
 
-  .MuiAppBar-root {
-    background: linear-gradient(
-      to left,
-      $theme-secondary-v3,
-      $theme-secondary-v1
-    );
-  }
-
-  .top-nav-box {
-    background: $theme-secondary-v1;
-    color: $theme-secondary-v8;
-
-    span:first-of-type {
-      border-right: 1px solid $theme-secondary-v5;
+    .row {
+      margin: 0;
     }
-  }*/
 
-  .Overview {
+    .col,
+    .container {
+      padding: 0 !important;
+    }
+
     header {
       $h: 100vh;
       $mh: 40rem;
@@ -53,176 +46,64 @@ body.companies {
         }
       }
     }
-  }
-/*
-  .nav-link {
-    color: $theme-secondary-v9 !important;
 
-    &::before,
-    &::after {
-      background-color: $theme-secondary-v4;
-    }
+    section {
+      padding: {
+        top: 5rem !important;
+        bottom: 5rem !important;
+      };
+      margin: {
+        top: 4rem !important;
+        bottom: 4rem !important;
+      }
 
-    &::before {
-      border-bottom: 0.125rem solid white;
-    }
-
-    &:hover,
-    &:focus {
-      color: #fff !important;
-
-      &::before {
-        border-bottom-color: $theme-secondary-v4 !important;
+      img {
+        border-radius: 50%;
+        margin-bottom: 1rem;
       }
     }
 
-    &.active {
-      border-color: $theme-secondary-v8;
-    }
-  }
-
-  .nav-menu {
-    // box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    background-color: $theme-secondary-v4;
-
-    a {
-      color: $theme-secondary-v9;
-      background: $theme-secondary-v2;
-
-      &:hover,
-      &:focus {
-        color: $theme-secondary-v2;
-        background: $theme-secondary-v9 !important;
-      }
-    }
-
-    $border: 0.0625rem solid $theme-secondary-faint;
-    a {
-      border: {
-        top: $border;
-      }
-
-      &:last-child {
-        border-bottom: $border;
-      }
-    }
-  }
-
-  .Contact,
-  .Inquiry {
-    &::before {
-      content: ' ';
-      background-color: $theme-secondary-v2;
-    }
-
-    .map-wrapper {
-      background-color: $theme-secondary-v4;
-    }
-  }
-
-  .contact-info-col {
-    background-color: $theme-secondary-v3;
-    background-image: linear-gradient(
-      to left,
-      $theme-secondary-v3,
-      $theme-secondary-v1
-    );
-  }
-
-  .MuiDrawer-paper {
-    background: linear-gradient(
-      to left,
-      $theme-secondary-v4,
-      $theme-secondary-v2
-    );
-  }
-
-  .FooterNavigator {
-    .navigator-link {
-      color: $theme-secondary-v4;
-
-      &:hover,
-      &:focus {
-        border-color: $theme-secondary-v5;
-      }
-
-      > * {
-        &:last-child {
-          color: $theme-secondary-v2;
+    .heading-container {
+      h2 {
+        color: $theme-primary-v3;
+        font-size: 6rem;
+        line-height: 5rem;
+        margin: {
+          left: -0.5rem;
+          right: 1rem;
         }
       }
+
+      span {
+        color: $theme-primary-v3;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
     }
-  }
 
-  .Footer-Wrapper-One {
-    background: linear-gradient(
-      to left,
-      $theme-secondary-v4,
-      $theme-secondary-v2
-    );
-  }
+    .sub-section-heading {
+      font-size: 1.25rem;
+    }
 
-  .Footer-Wrapper-Two {
-    background: linear-gradient(
-      to left,
-      $theme-secondary-v3,
-      $theme-secondary-v1
-    );
-  }
+    .section-with-bg {
+      // @include debugger();
+      background: {
+        color: $theme-primary-v2;
+        position: center;
+        size: cover;
+        image: url('/images/pvc-pipes-2.jpg');
+      }
+      color: white;
 
-  button,
-  a {
-    &[class*='Primary'] {
-      $bg: $theme-secondary-v4;
-      $bg-hovered: linear-gradient(
-        to left,
-        $theme-secondary-v3,
-        $theme-secondary-v1
-      );
-
-      &.outlined {
-        @include variant(
-          $bg,
-          0,
-          1,
-          $theme-secondary-v3,
-          #fff,
-          $gbg1: $theme-secondary-v3,
-          $gbg2: $theme-secondary-v1
-        );
+      .heading-container {
+        h2 {
+          color: white;
+        }
       }
 
-      &.contained {
-        @include variant(
-          $bg,
-          1,
-          0,
-          #fff,
-          $theme-secondary-v3,
-          $gbg1: $theme-primary-v4,
-          $gbg2: $theme-primary-v2
-        );
+      p {
+        font-size: 0.95rem;
       }
     }
   }
-
-  .breadcrumbs-container {
-    a {
-      color: $theme-secondary-v4;
-    }
-  }
-
-  .logo {
-    &:focus-within {
-      border: 1px solid $theme-secondary-v8;
-    }
-
-    img {
-      filter: grayscale(200%) contrast(1.25);
-    }
-  }
-
-  .theme-color-text {
-    color: $theme-secondary-v3;
-  }*/
 }

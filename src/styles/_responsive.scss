@@ -331,6 +331,19 @@
     }
   }
 
+  //Companies style(s)
+  .Overview {
+    .last-section {
+      * {
+        text-align: left !important;
+      }
+
+      .order-1 {
+        order: unset;
+      }
+    }
+  }
+
   //FooterNavigator styles
   .FooterNavigator {
     .navigator-link {
