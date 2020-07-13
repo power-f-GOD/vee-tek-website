@@ -91,13 +91,13 @@ function TopNavLinks() {
             </span>{" "}
             <span className="mr-4">
               <PhoneIcon className="mr-1"/>
-              <a href="+234(0)9032663166" className="text-reset small">
+              <a href="tel:+234(0)9032663166" className="text-reset small">
                 +234(0)9032663166 (Plastics)
               </a>
             </span>{" "}
             <span>
               <PhoneIcon className="mr-1"/>
-              <a href="+234(0)8033244062" className="text-reset small">
+              <a href="tel:+234(0)8033244062" className="text-reset small">
                 {" "}
                 234(0)8033244062 (Electricals)
               </a>
