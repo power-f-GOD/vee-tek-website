@@ -84,13 +84,23 @@ function TopNavLinks() {
         <Row className="top-nav-wrapper">
           <Col>
             <span>
-              <EmailIcon /> info@vee-tekgroup.com
+              <EmailIcon className="mr-1"/>
+              <a href="mailto:info@vee-tekgroup.com" className="text-reset small">
+                info@vee-tekgroup.com
+              </a>
             </span>{" "}
             <span className="mr-4">
-               <PhoneIcon /> +234(0)9032663166 (Plastics)
+              <PhoneIcon className="mr-1"/>
+              <a href="+234(0)9032663166" className="text-reset small">
+                +234(0)9032663166 (Plastics)
+              </a>
             </span>{" "}
             <span>
-               <PhoneIcon /> +234(0)8033244062 (Electricals)
+              <PhoneIcon className="mr-1"/>
+              <a href="+234(0)8033244062" className="text-reset small">
+                {" "}
+                234(0)8033244062 (Electricals)
+              </a>
             </span>
           </Col>
           <Col className="social-media-links-wrapper d-flex justify-content-between">

@@ -164,14 +164,29 @@ const Contact = (props: any) => {
                   <Col className="my-2">
                     <EmailIcon fontSize="large" />
                   </Col>
-                  <Col className="p-0">info@vee-tekgroup.com</Col>
+                  <Col className="p-0">
+                    <a
+                      href="mailto:info@vee-tekgroup.com"
+                      className="text-reset"
+                    >
+                      info@vee-tekgroup.com
+                    </a>
+                  </Col>
                 </Row>
                 <Row className="flex-column justify-items-center">
                   <Col className="my-2">
                     <PhoneIcon fontSize="large" />
                   </Col>
-                  <Col className="p-0 mb-4">+234(0)9032663166 (Plastic)</Col>
-                  <Col className="p-0 mb-4">+234(0)8033244062 (Electrical)</Col>
+                  <Col className="p-0 mb-4">
+                    <a href="tel:+234(0)9032663166" className="text-reset">
+                      +234(0)9032663166 (Plastic)
+                    </a>
+                  </Col>
+                  <Col className="p-0 mb-4">
+                    <a href="tel:+234(0)8033244062" className="text-reset ">
+                      +234(0)8033244062 (Electrical)
+                    </a>
+                  </Col>
                 </Row>
               </Col>
             </Row>
