@@ -36,6 +36,37 @@ const Contact = (props: any) => {
     };
   }, [pathname, setNavState]);
 
+  const [nameRef, phoneRef, emailRef, companyRef, messageRef] = [
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+  ];
+
+  const sendEmail = () => {
+    if (nameRef && phoneRef && emailRef && messageRef && companyRef)
+      if (
+        nameRef.current &&
+        phoneRef.current &&
+        emailRef.current &&
+        messageRef.current &&
+        companyRef.current
+      ) {
+        const message = `Name:  ${nameRef.current.value} \n 
+        Phone Number: ${phoneRef.current.value} \n 
+        Email:  ${emailRef.current.value} \n
+        ${
+          companyRef.current.value ? "Company: " + companyRef.current.value : ""
+        } \n
+        Message: \n ${messageRef.current.value}`;
+        console.log(message);
+        window.open(
+          `mailto:info@vee-tekgroup.com?subject=VeeTek%20Contact&body=${message}`
+        );
+      }
+  };
+
   return (
     <Container fluid className="Contact fade-in px-0">
       <Container
@@ -69,13 +100,14 @@ const Contact = (props: any) => {
               projects, products and services.
             </Typography>
 
-            <form className="contact-form">
+            <form className="contact-form" autoComplete="on" onSubmit={sendEmail}>
               <Row>
                 <Col sm={6} className="my-2">
                   <TextField
                     required
                     id="name"
                     label="Name"
+                    inputRef={nameRef}
                     autoComplete="name"
                     fullWidth
                   />
@@ -85,6 +117,7 @@ const Contact = (props: any) => {
                     required
                     id="email"
                     label="Email"
+                    inputRef={emailRef}
                     type="email"
                     autoComplete="username"
                     fullWidth
@@ -97,6 +130,7 @@ const Contact = (props: any) => {
                     required
                     type="tel"
                     id="phone"
+                    inputRef={phoneRef}
                     label="Phone"
                     autoComplete="tel"
                     fullWidth
@@ -106,6 +140,7 @@ const Contact = (props: any) => {
                   <TextField
                     id="standard-basic"
                     label="Company"
+                    inputRef={companyRef}
                     autoComplete="organization"
                     fullWidth
                   />
@@ -119,6 +154,7 @@ const Contact = (props: any) => {
                     rows={4}
                     rowsMax={10}
                     id="message"
+                    inputRef={messageRef}
                     label="Message"
                     autoComplete="on"
                     fullWidth
@@ -130,6 +166,7 @@ const Contact = (props: any) => {
                     variant="outlined"
                     color="primary"
                     id="submit-message"
+                    type="submit"
                     fullWidth
                   >
                     Send <SendIcon className="ml-2" />

@@ -23,6 +23,40 @@ const Inquiry = () => {
       aria-hidden='false'
       tabindex='0'></iframe>`;
 
+  const [nameRef, phoneRef, emailRef, companyRef, messageRef] = [
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+  ];
+
+  const sendEmail = () => {
+    if (nameRef && phoneRef && emailRef && messageRef && companyRef)
+      if (
+        nameRef.current &&
+        phoneRef.current &&
+        emailRef.current &&
+        messageRef.current &&
+        companyRef.current
+      ) {
+        const message = `Name:  ${nameRef.current.value} \n 
+            Phone Number: ${phoneRef.current.value} \n 
+            Email:  ${emailRef.current.value} \n
+            ${
+              companyRef.current.value
+                ? "Company: " + companyRef.current.value
+                : ""
+            } \n
+            Message: \n ${messageRef.current.value}`;
+        console.log(message);
+        window.open(
+          `mailto:projectmanager@vee-tekgroup.com
+          ?subject=VeeTek%20Contact&body=${message}`
+        );
+      }
+  };
+
   return (
     <Container as="main" fluid className="Inquiry fade-in px-0">
       <Container
@@ -56,13 +90,14 @@ const Inquiry = () => {
               about as regards our products or services.
             </Typography>
 
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={sendEmail}>
               <Row>
                 <Col sm={6} className="my-2">
                   <TextField
                     required
                     id="name"
                     label="Name"
+                    inputRef={nameRef}
                     autoComplete="name"
                     fullWidth
                   />
@@ -71,6 +106,7 @@ const Inquiry = () => {
                   <TextField
                     required
                     id="email"
+                    inputRef={emailRef}
                     label="Email"
                     type="email"
                     autoComplete="username"
@@ -84,6 +120,7 @@ const Inquiry = () => {
                     required
                     type="tel"
                     id="phone"
+                    inputRef={phoneRef}
                     label="Phone"
                     autoComplete="tel"
                     fullWidth
@@ -93,6 +130,7 @@ const Inquiry = () => {
                   <TextField
                     id="standard-basic"
                     label="Company"
+                    inputRef={companyRef}
                     autoComplete="organization"
                     fullWidth
                   />
@@ -106,6 +144,7 @@ const Inquiry = () => {
                     rows={4}
                     rowsMax={10}
                     id="message"
+                    inputRef={messageRef}
                     label="Message"
                     autoComplete="on"
                     fullWidth
@@ -116,6 +155,7 @@ const Inquiry = () => {
                     className="major-button outlined"
                     variant="outlined"
                     color="primary"
+                    type="submit"
                     id="submit-message"
                     fullWidth
                   >

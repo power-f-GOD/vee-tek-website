@@ -23,6 +23,40 @@ const Order = () => {
       aria-hidden='false'
       tabindex='0'></iframe>`;
 
+  const [nameRef, phoneRef, emailRef, companyRef, messageRef] = [
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+    React.useRef<HTMLInputElement>(),
+  ];
+
+  const sendEmail = () => {
+    if (nameRef && phoneRef && emailRef && messageRef && companyRef)
+      if (
+        nameRef.current &&
+        phoneRef.current &&
+        emailRef.current &&
+        messageRef.current &&
+        companyRef.current
+      ) {
+        const message = `Name:  ${nameRef.current.value} \n 
+                Phone Number: ${phoneRef.current.value} \n 
+                Email:  ${emailRef.current.value} \n
+                ${
+                  companyRef.current.value
+                    ? "Company: " + companyRef.current.value
+                    : ""
+                } \n
+                Message: \n ${messageRef.current.value}`;
+        console.log(message);
+        window.open(
+          `mailto:projectmanager@vee-tekgroup.com
+              ?subject=VeeTek%20Contact&body=${message}`
+        );
+      }
+  };
+
   return (
     <Container as="main" fluid className="Inquiry fade-in px-0">
       <Container
@@ -56,12 +90,13 @@ const Order = () => {
               about as regards our products or services.
             </Typography>
 
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={sendEmail}>
               <Row>
                 <Col sm={6} className="my-2">
                   <TextField
                     required
                     id="name"
+                    inputRef={nameRef}
                     label="Name"
                     autoComplete="name"
                     fullWidth
@@ -72,6 +107,7 @@ const Order = () => {
                     required
                     id="email"
                     label="Email"
+                    inputRef={emailRef}
                     type="email"
                     autoComplete="username"
                     fullWidth
@@ -85,6 +121,7 @@ const Order = () => {
                     type="tel"
                     id="phone"
                     label="Phone"
+                    inputRef={phoneRef}
                     autoComplete="tel"
                     fullWidth
                   />
@@ -93,6 +130,7 @@ const Order = () => {
                   <TextField
                     id="standard-basic"
                     label="Company"
+                    inputRef={companyRef}
                     autoComplete="organization"
                     fullWidth
                   />
@@ -106,6 +144,7 @@ const Order = () => {
                     rows={4}
                     rowsMax={10}
                     id="message"
+                    inputRef={messageRef}
                     label="Message"
                     autoComplete="on"
                     fullWidth
@@ -116,6 +155,7 @@ const Order = () => {
                     className="major-button outlined"
                     variant="outlined"
                     color="primary"
+                    type="submit"
                     id="submit-message"
                     fullWidth
                   >
@@ -164,7 +204,11 @@ const Order = () => {
                   <Col className="my-2">
                     <PhoneIcon fontSize="large" />
                   </Col>
-                  <Col className="p-0 mb-4"><a href="tel:+234(0)7030489434" className="text-reset">+234(0)7030489434</a></Col>
+                  <Col className="p-0 mb-4">
+                    <a href="tel:+234(0)7030489434" className="text-reset">
+                      +234(0)7030489434
+                    </a>
+                  </Col>
                 </Row>
               </Col>
             </Row>
