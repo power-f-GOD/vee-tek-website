@@ -24,6 +24,7 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 
 import { userDeviceIsMobile } from "../..";
 import { NavContext } from "../../App";
+import { Tooltip } from "@material-ui/core";
 
 export interface BreadCrumbsData {
   href: string;
@@ -84,19 +85,22 @@ function TopNavLinks() {
         <Row className="top-nav-wrapper">
           <Col>
             <span>
-              <EmailIcon className="mr-1"/>
-              <a href="mailto:info@vee-tekgroup.com" className="text-reset small">
+              <EmailIcon className="mr-1" />
+              <a
+                href="mailto:info@vee-tekgroup.com"
+                className="text-reset small"
+              >
                 info@vee-tekgroup.com
               </a>
             </span>{" "}
             <span className="mr-4">
-              <PhoneIcon className="mr-1"/>
+              <PhoneIcon className="mr-1" />
               <a href="tel:+234(0)9032663166" className="text-reset small">
                 +234(0)9032663166 (Plastics)
               </a>
             </span>{" "}
             <span>
-              <PhoneIcon className="mr-1"/>
+              <PhoneIcon className="mr-1" />
               <a href="tel:+234(0)8033244062" className="text-reset small">
                 {" "}
                 234(0)8033244062 (Electricals)
@@ -104,10 +108,43 @@ function TopNavLinks() {
             </span>
           </Col>
           <Col className="social-media-links-wrapper d-flex justify-content-between">
-            <FacebookIcon />
-            <TwitterIcon />
-            <InstagramIcon />
-            <YouTubeIcon />
+            <Tooltip title="Facebook">
+              <a
+                href="https://web.facebook.com/veetekgroup"
+                className="text-reset" rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FacebookIcon />
+              </a>
+            </Tooltip>
+            <Tooltip title="Twitter">
+              <a
+                href="https://twitter.com/veetekgroup"
+                target="_blank" rel="noopener noreferrer"
+                className="text-reset"
+              >
+                {" "}
+                <TwitterIcon />{" "}
+              </a>
+            </Tooltip>
+            <Tooltip title="Instagram">
+              <a
+                href="https://instagram.com/veetekgroup"
+                target="_blank" rel="noopener noreferrer"
+                className="text-reset"
+              >
+                <InstagramIcon />
+              </a>
+            </Tooltip>
+            <Tooltip title="Youtube">
+              <a
+                href="https://youtube.com/veetekgroup"
+                target="_blank" rel="noopener noreferrer"
+                className="text-reset"
+              >
+                <YouTubeIcon />
+              </a>
+            </Tooltip>
           </Col>
         </Row>
       </Container>
