@@ -1,11 +1,12 @@
 import React from "react";
 import { Parallax } from "react-parallax";
 import { Container } from "react-bootstrap";
+import { Tooltip } from "@material-ui/core";
 
 const WhoWeAre = () => (
   <Container as="main" fluid className="fade-in p-0">
     <Parallax
-      bgImage="/images/who_we_are_one.jpg"
+      bgImage="/images/switch-gears-2.jpg"
       bgImageAlt="one"
       strength={100}
     >
@@ -34,7 +35,7 @@ const WhoWeAre = () => (
       </Container>
     </Parallax>
     <Parallax
-      bgImage="/images/who_we_are_two.jpg"
+      bgImage="/images/switch-gears.jpg"
       bgStyle={{ height: "700px !important", objectFit: "cover" }}
       bgImageAlt="the dog"
       strength={200}
@@ -45,11 +46,17 @@ const WhoWeAre = () => (
       <h1>We've Served</h1>
       <p>We are proud to have served the following and more.</p>
       <div className="d-flex flex-wrap p-4 justify-content-center">
-        <div className="Client-Image-enugu m-2"></div>
-        <div className="Client-Image-nbp m-2"></div>
-        <div className="Client-Image-ndphc m-2"></div>
-        <div className="Client-Image-nlng m-2"></div>
-        <div className="Client-Image-shell m-2"></div>
+        {[
+          { title: "Enugu State Government", image: "enugu" },
+          { title: "Nigerian Breweries", image: "nbp" },
+          { title: "Niger Delta Power Holding Company", image: "ndphc" },
+          { title: "NNigeria LNG", image: "nlng" },
+          { title: "Shell Petroleum Development Company", image: "shell" },
+        ].map((client, _) => (
+          <Tooltip title={client.title} key={_}>
+            <div className={"m-2 Client-Image-" + client.image}></div>
+          </Tooltip>
+        ))}
       </div>
     </Container>
   </Container>

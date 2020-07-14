@@ -6,7 +6,7 @@ import { Parallax } from "react-parallax";
 const SustainabilityStrategy = () => {
   return (
     <div className="fade-in">
-      <Parallax bgImage="/images/three.jpg" bgImageAlt="one" strength={200}>
+      <Parallax bgImage="/images/strategy.jpg" bgImageAlt="one" strength={200}>
         <div
           style={{ height: "500px" }}
           className="pt-5 text-center d-flex justify-content-center align-items-center"
