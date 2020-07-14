@@ -5,7 +5,7 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 const Certificates = () => {
   return (
     <div className="fade-in">
-      <Parallax bgImage="/images/three.jpg" bgImageAlt="one" strength={100}>
+      <Parallax bgImage="/images/assurance.jpg" bgImageAlt="one" strength={100}>
         <div
           style={{ height: "500px" }}
           className="pt-5 text-center d-flex justify-content-center align-items-center"

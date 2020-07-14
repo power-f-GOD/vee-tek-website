@@ -7,8 +7,10 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIcon from "@material-ui/icons/Phone";
+import { Tooltip } from "@material-ui/core";
 
 const Footer = () => {
+  const thisYear = new Date().getFullYear();
   return (
     <footer>
       <div className="Footer-Wrapper-One text-white">
@@ -53,17 +55,54 @@ const Footer = () => {
             <Col xs={12} sm={6} className=" mb-0 mb-xs-5 ">
               <h3 className="font-weight-bold"> Follow Us</h3>
               <Row className="social-media-links-wrapper mt-2 mx-0">
-                <FacebookIcon className="pr-2" />
-                <TwitterIcon className="pr-2" />
-                <InstagramIcon className="pr-2" />
-                <YouTubeIcon className="pr-2" />
+                <Tooltip title="Facebook">
+                  <a
+                    href="https://facebook.com/veetekgroup"
+                    className="text-reset"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <FacebookIcon className="pr-2" />{" "}
+                  </a>
+                </Tooltip>
+                <Tooltip title="Twitter">
+                  <a
+                    href="https://twitter.com/veetekgroup"
+                    className="text-reset"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <TwitterIcon className="pr-2" />
+                  </a>
+                </Tooltip>
+
+                <Tooltip title="Instagram">
+                  <a
+                    href="https://instagram.com/veetekgroup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-reset"
+                  >
+                    <InstagramIcon className="pr-2" />{" "}
+                  </a>
+                </Tooltip>
+                <Tooltip title="Youtube">
+                  <a
+                    href="https://youtube.com/veetekgroup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-reset"
+                  >
+                    <YouTubeIcon className="pr-2" />
+                  </a>
+                </Tooltip>
               </Row>
             </Col>
           </Row>
         </Container>
       </div>
       <div className="Footer-Wrapper-Two">
-        <Container>© 2020 Vee-Tek Group</Container>
+        <Container>© {thisYear} Vee-Tek Group</Container>
       </div>
     </footer>
   );
