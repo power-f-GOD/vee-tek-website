@@ -51,7 +51,7 @@ body.companies {
       padding: {
         top: 5rem !important;
         bottom: 5rem !important;
-      };
+      }
       margin: {
         top: 4rem !important;
         bottom: 4rem !important;
@@ -85,7 +85,100 @@ body.companies {
       font-size: 1.25rem;
     }
 
+    @mixin revealer($delay) {
+      animation: circle-reveal 15s infinite forwards;
+      animation-delay: $delay;
+    }
+
+    .animated-cirle {
+      $size: 15rem;
+
+      height: $size;
+      width: $size;
+      display: inline-flex;
+      box-shadow: -1rem 1rem 0 $theme-primary-v9;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(
+        to left,
+        $theme-primary-v4,
+        $theme-primary-v2
+      );
+      border-radius: 50%;
+      animation: rotateSideWays 14s infinite;
+
+      [class*='text'] {
+        font-size: 2rem;
+        font-weight: bold;
+        position: absolute;
+        text-align: center;
+        color: white;
+        opacity: 0;
+      }
+
+      .text-1 {
+        @include revealer(0s);
+      }
+
+      .text-2 {
+        @include revealer(5s);
+      }
+
+      .text-3 {
+        @include revealer(10s);
+      }
+    }
+
+    @keyframes rotateSideWays {
+      0% {
+        transform: translate(0, 0) scale(1);
+        box-shadow: -0rem 0rem 0 2rem $theme-primary-v9;
+      }
+      25% {
+        transform: translate(1rem, 3rem);
+        box-shadow: -3rem -4rem 0 $theme-primary-v9;
+      }
+      40% {
+        transform: translate(2rem, 2rem) scale(1.1);
+        box-shadow: -4rem -1rem 0 $theme-primary-v9;
+      }
+      70% {
+        transform: translate(-1rem, 1rem);
+        box-shadow: 2rem -1rem 0 $theme-primary-v9;
+      }
+      90% {
+        transform: translate(-2rem, 2rem) scale(1.05);
+        box-shadow: 2rem -4rem 0 $theme-primary-v9;
+      }
+      100% {
+        transform: translate(0, 0) scale(1);
+        box-shadow: -0rem 0rem 0 2rem $theme-primary-v9;
+      }
+    }
+
+    @keyframes circle-reveal {
+      0%, 3% {
+        opacity: 0;
+        transform: translateY(-10rem);
+      }
+      5%,
+      30% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      32%,
+      100% {
+        opacity: 0;
+        transform: translateY(10rem);
+      }
+    }
+
     .section-with-bg {
+      margin: {
+        top: 0;
+        bottom: 0;
+      }
       // @include debugger();
       background: {
         color: $theme-primary-v2;

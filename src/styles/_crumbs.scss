@@ -39,17 +39,45 @@ button.go-up-fab {
   }
 }
 
+footer {
+  font-size: 1rem;
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  [class*=Icon] {
+    font-size: 1.75rem !important;
+  }
+
+  .social-media-links-wrapper {
+    margin-top: 1rem;
+
+    [class*=Icon] {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .contact-info-container {
+    span {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+  }
+}
+
 .Footer-Wrapper-One {
-  height: 10rem;
+  height: auto;
+  padding: 2rem 0rem;
   // background-color: $theme-primary-v5;
   background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
 }
 
 .Footer-Wrapper-Two {
-  padding: 1.5rem 0 1rem 0;
+  padding: 0.75rem 0;
   color: #ffffff;
   text-align: left;
-  font-size: 0.8rem;
   // background-color: $theme-primary-v4;
   background: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
 }
