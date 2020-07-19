@@ -1,108 +1,96 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Row, Col } from "react-bootstrap";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import EmailIcon from "@material-ui/icons/Email";
-import PhoneIcon from "@material-ui/icons/Phone";
-import { Tooltip } from "@material-ui/core";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const Footer = () => {
   const thisYear = new Date().getFullYear();
+
   return (
     <footer>
-      <div className="Footer-Wrapper-One text-white">
-        <Container className="text-left p-4">
-          <Row>
-            <Col xs={12} sm={6} className="mb-4">
-              <h3 className="font-weight-bold mb-2"> Reach Us</h3>
-              <div>
+      <div className='Footer-Wrapper-One text-white'>
+        <Container className='text-left'>
+          <Row className='m-0'>
+            <Col sm={6} className='social-media-links-wrapper p-0 mt-4 mb-5'>
+              <Col xs={12} as='h4' className='font-weight-bold p-0 mb-4'>
+                Follow Us:
+              </Col>
+              <Tooltip title='Facebook'>
                 <a
-                  href="mailto:info@vee-tekgroup.com"
-                  className="text-reset font-weight-light small"
-                >
-                  <EmailIcon className="mr-2 small" />
-                  info@vee-tekgroup.com
+                  href='https://facebook.com/veetekgroup'
+                  rel='noopener noreferrer'
+                  target='_blank'>
+                  <FacebookIcon />{' '}
                 </a>
-              </div>{" "}
-              <div>
+              </Tooltip>
+              <Tooltip title='Twitter'>
                 <a
-                  href="tel:+234(0)9032663166"
-                  className="text-reset font-weight-light small"
-                >
-                  <PhoneIcon className="mr-2 small" />
-                  +234(0)9032663166 (Plastics)
+                  href='https://twitter.com/veetekgroup'
+                  rel='noopener noreferrer'
+                  target='_blank'>
+                  <TwitterIcon />
                 </a>
-              </div>{" "}
-              <div className="mb-3">
-                <a
-                  href="tel:+234(0)8033244062"
-                  className="text-reset font-weight-light small"
-                >
-                  <PhoneIcon className="mr-2 small" />
-                  +234(0)8033244062 (Electricals)
-                </a>
-              </div>{" "}
-              <div>
-                <span className="small">For other inquiries call </span>
-                <a className="text-reset small" href="tel:+234(0)7030489434">
-                  +234(0)7030489434
-                </a>
-              </div>
-            </Col>
-            <Col xs={12} sm={6} className=" mb-0 mb-xs-5 ">
-              <h3 className="font-weight-bold"> Follow Us</h3>
-              <Row className="social-media-links-wrapper mt-2 mx-0">
-                <Tooltip title="Facebook">
-                  <a
-                    href="https://facebook.com/veetekgroup"
-                    className="text-reset"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <FacebookIcon className="pr-2" />{" "}
-                  </a>
-                </Tooltip>
-                <Tooltip title="Twitter">
-                  <a
-                    href="https://twitter.com/veetekgroup"
-                    className="text-reset"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <TwitterIcon className="pr-2" />
-                  </a>
-                </Tooltip>
+              </Tooltip>
 
-                <Tooltip title="Instagram">
-                  <a
-                    href="https://instagram.com/veetekgroup"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-reset"
-                  >
-                    <InstagramIcon className="pr-2" />{" "}
-                  </a>
-                </Tooltip>
-                <Tooltip title="Youtube">
-                  <a
-                    href="https://youtube.com/veetekgroup"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-reset"
-                  >
-                    <YouTubeIcon className="pr-2" />
-                  </a>
-                </Tooltip>
-              </Row>
+              <Tooltip title='Instagram'>
+                <a
+                  href='https://instagram.com/veetekgroup'
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  <InstagramIcon />{' '}
+                </a>
+              </Tooltip>
+              <Tooltip title='Youtube'>
+                <a
+                  href='https://youtube.com/veetekgroup'
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  <YouTubeIcon />
+                </a>
+              </Tooltip>
+            </Col>
+            <Col sm={6} className='contact-info-container p-0 my-4'>
+              <Col xs={12} as='h4' className='font-weight-bold p-0 mb-4'>
+                Contact Us:
+              </Col>
+              <a href='mailto:info@vee-tekgroup.com'>
+                <EmailIcon className='mr-2' />
+                info@vee-tekgroup.com
+              </a>
+              <br />
+              <a href='tel:+234(0)9032663166'>
+                <PhoneIcon className='mr-2' />
+                +234(0)9032663166 (Plastics)
+              </a>
+              <br />
+              <a href='tel:+234(0)8033244062'>
+                <PhoneIcon className='mr-2' />
+                +234(0)8033244062 (Electricals)
+              </a>
+              <br />
+
+              <span className='small mb-1 mt-5'>
+                For other inquiries call:{' '}
+              </span>
+              <br />
+              <a href='tel:+234(0)7030489434'>
+                <PhoneIcon className='mr-2' /> +234(0)7030489434
+              </a>
             </Col>
           </Row>
         </Container>
       </div>
-      <div className="Footer-Wrapper-Two">
-        <Container>© {thisYear} Vee-Tek Group</Container>
+      <div className='Footer-Wrapper-Two'>
+        <Container>&copy; {thisYear} Vee-Tek Group</Container>
       </div>
     </footer>
   );

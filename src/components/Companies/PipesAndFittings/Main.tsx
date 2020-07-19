@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 
 import Box from '@material-ui/core/Box';
 
-let lorem =
+export const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorum optio quo non suscipit accusantium ipsa excepturi totam! Libero repudiandae nemo similique, aspernatur reiciendis harum sunt distinctio quia dolore quas.';
 
 const Main = () => {
@@ -37,8 +37,13 @@ const Main = () => {
               {lorem} {lorem}
             </Col>
           </Col>
-          <Col md={4} className='my-5'>
-            <img src='/images/pipes-fittings.png' alt='Pipes and fittings' />
+          <Col md={4} className='my-5 text-center'>
+            {/* <img src='/images/pipes-fittings.png' alt='Pipes and fittings' /> */}
+            <Col className='animated-cirle'>
+              <Col className='text-1'>Durability!</Col>
+              <Col className='text-2'>Reliability!</Col>
+              <Col className='text-3'>Quality!</Col>
+            </Col>
           </Col>
         </Row>
       </Container>

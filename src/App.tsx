@@ -62,7 +62,7 @@ const App = () => {
           <Route component={_404} />
         </Switch>
 
-        <Footer />
+        {navState !== '/' && <Footer />}
         <GoUpFAB />
       </BrowserRouter>
     </div>

@@ -37,6 +37,21 @@
   }
 }
 
+.slide-in-top {
+  animation: slideInTop 0.75s ease;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+
 .slide-out-left {
   animation: slideOutLeft 0.75s forwards ease;
 }
@@ -71,4 +86,88 @@
   animation: slideIn 0.5s ease;
 }
 
+@keyframes backgroundSlideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  5%, 50% {
+    transform: translateX(0);
+  }
+  55%, 100% {
+    transform: translateX(-100%);
+  }
+}
 
+// home page animations
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotateZ(0);
+  }
+  5%,
+  50% {
+    transform: rotateZ(720deg);
+  }
+  55%,
+  100% {
+    transform: rotateZ(1440deg);
+  }
+}
+
+@keyframes swapZIndex {
+  0%,
+  50% {
+    z-index: 2;
+  }
+
+  51%,
+  100% {
+    z-index: 3;
+  }
+}
+
+@keyframes headerSlideUp {
+  3%,
+  52% {
+    opacity: 0;
+    transform: translateY(-9rem);
+  }
+
+  55%,
+  100%,
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descSlideUp {
+  3%,
+  52% {
+    opacity: 0;
+    transform: translateY(6rem);
+  }
+
+  55%,
+  100%,
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ctaSlideRight {
+  3%,
+  52% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(15rem);
+  }
+
+  55%,
+  100%,
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
