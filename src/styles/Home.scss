@@ -1,0 +1,231 @@
+@import 'constants';
+
+.Home {
+  min-height: 100vh;
+  min-width: 100%;
+  height: auto;
+  // @include debugger();
+
+  .splash-wrapper {
+    position: absolute;
+    z-index: 2;
+
+    * {
+      color: white;
+    }
+  }
+
+  .splash-links-container {
+    height: 95vh;
+    position: relative;
+    width: 18rem;
+    left: calc(50vw - 36rem);
+    padding: 0;
+
+    > * {
+      padding: 1.5rem;
+      position: absolute;
+      height: auto;
+      bottom: 0;
+      overflow: hidden;
+    }
+
+    &::before {
+      @include before-or-after-v2(
+        $w: 100%,
+        $h: 100%,
+        $bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2)
+      );
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 2rem 2rem;
+      transform: translateY(-100%);
+      animation: slideInTop 0.5s forwards ease 0.25s;
+    }
+  }
+
+  .splash-logo {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease 1s;
+
+    h5 {
+      font-size: 1.25rem;
+
+      color: white;
+      font-weight: bold;
+      position: relative;
+      width: auto;
+
+      &::before {
+        @include before-or-after-v2($h: 0.2rem, $w: 55%, $t: 110%, $br: 0.5rem);
+      }
+    }
+
+    img {
+      $size: 7rem;
+
+      height: $size;
+      width: $size;
+      margin-top: 30vh;
+      border-radius: 50%;
+      animation: rotateLogo 12s infinite forwards ease;
+    }
+  }
+
+  .social-media-links-wrapper {
+    margin-top: 8rem;
+    padding: 2rem 1rem 1rem;
+    opacity: 0;
+    border-top: 0.125rem solid rgba(190, 140, 90, 0.75);
+    animation: fadeIn 1s forwards ease 2s;
+
+    * {
+      color: $theme-primary-v9;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        [class*='Icon'] {
+          transform: scale(1.45);
+        }
+      }
+    }
+
+    [class*='Icon'] {
+      transition: 0.3s;
+    }
+  }
+
+  .description-wrapper {
+    position: relative;
+    height: 100vh;
+    background-color: $theme-primary-v4;
+    color: white;
+    z-index: 0;
+
+    &::before {
+      @include before-or-after-v2(
+        $w: 100%,
+        $h: 100%,
+        $bg: $theme-primary-v2,
+        $o: 0.65,
+        $zi: 1
+      );
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    [class*='col'] {
+      padding: 0;
+    }
+  }
+
+  .home-background-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    animation: backgroundSlideIn 12s infinite forwards ease;
+
+    &:nth-of-type(1) {
+      background-image: url('/images/switchgears.jpg');
+      z-index: 0;
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('/images/pipes-fittings.jpg');
+      animation-delay: 6s;
+      z-index: -1;
+    }
+  }
+
+  .description-container {
+    height: 100%;
+    text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
+    display: flex;
+
+    > * {
+      position: absolute;
+      align-self: center;
+      z-index: 2;
+    }
+
+    .company-desc-container {
+      margin-top: 2rem;
+
+      &:first-child {
+        animation: swapZIndex 12s infinite forwards ease;
+
+        h2 {
+          animation: headerSlideUp 12s infinite forwards ease;
+        }
+
+        .desc {
+          animation: descSlideUp 12s infinite forwards ease;
+        }
+
+        .cta-link {
+          animation: ctaSlideRight 12s infinite forwards ease;
+        }
+      }
+
+      &:last-child {
+        animation: swapZIndex 12s infinite forwards ease 6s;
+
+        h2 {
+          animation: headerSlideUp 12s infinite forwards ease 6s;
+        }
+
+        .desc {
+          animation: descSlideUp 12s infinite forwards ease 6s;
+        }
+
+        .cta-link {
+          animation: ctaSlideRight 12s infinite forwards ease 6s;
+        }
+      }
+    }
+
+    h2 {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      margin-bottom: 2rem;
+
+      &::before {
+        @include before-or-after-v2(
+          $h: 0.25rem,
+          $w: 80%,
+          $t: calc(100% + 1rem),
+          $br: 0.5rem,
+          $l: 20%,
+          $zi: 0
+        );
+      }
+    }
+
+    .cta-link {
+      display: inline-block;
+      margin-top: 1.5rem !important;
+      padding: 0.75rem 1.25rem;
+      border-radius: 2rem;
+      text-shadow: none;
+      position: relative;
+      text-decoration: none;
+      z-index: 2;
+      background: transparent;
+      color: $theme-primary-v9;
+      font-size: 1.1rem;
+      border: 0.125rem solid $theme-primary-v8;
+
+      &:hover,
+      &:focus {
+        color: $theme-primary-v2;
+        // border-color: transparent;
+        background: $theme-primary-v8;
+      }
+    }
+  }
+}
