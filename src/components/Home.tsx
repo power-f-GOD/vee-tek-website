@@ -11,7 +11,6 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 
 import { lorem } from './Companies/PipesAndFittings/Main';
-// import Slider from './crumbs/Slider';
 
 const Home = () => {
   React.useEffect(() => () => {
@@ -23,9 +22,6 @@ const Home = () => {
       <Col md={5} className='splash-wrapper'>
         <Container fluid className='splash-container'>
           <Row className='splash-links-container align-items-center text-center m-0'>
-            {/* <Col>
-              <Link to='/companies/switch-gears'>Switchgears</Link>
-            </Col> */}
             <Col>
               <Col md={12} className='splash-logo'>
                 <img src='/images/logos/logo-192.png' alt='Vee-Tek Group' />
@@ -95,11 +91,6 @@ const Home = () => {
           </Col>
         </Container>
       </Col>
-      {/* <Col md={6} className='pipes-col'></Col> */}
-      {/* <Slider />
-      <div className='Divider' />
-
-      <div className='Divider' /> */}
     </Row>
   );
 };
