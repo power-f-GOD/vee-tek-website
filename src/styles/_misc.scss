@@ -29,17 +29,18 @@ body {
     }
 
     &.custom-scroll-bar,
-    .custom-scroll-bar {
+    .custom-scroll-bar,
+    .MuiDrawer-paper {
       &::-webkit-scrollbar {
         width: 0.75em;
       }
 
       &::-webkit-scrollbar-track {
-        background: #eee;
+        background: transparent;
       }
 
       &::-webkit-scrollbar-thumb {
-        background: $theme-primary !important;
+        background: $theme-primary-v4 !important;
       }
     }
   }
