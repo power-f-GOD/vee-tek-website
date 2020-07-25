@@ -147,7 +147,32 @@
     font-size: 1.15rem;
   }
 
+  .include-page-header {
+    .page-title {
+      font-size: 2.25rem;
+      text-align: center;
+      display: block;
+      margin-top: 3rem;
+      margin-bottom: 12rem;
+
+      &::before,
+      &::after {
+        height: 25rem;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+      }
+    }
+  }
+
   //Nav styles
+  body.companies {
+    .for-home {
+      .nav-links-wrapper {
+        margin-top: unset;
+        background: transparent;
+      }
+    }
+  }
+
   .for-home {
     &.MuiAppBar-root {
       .logo {
@@ -318,26 +343,11 @@
   }
 
   // News component(s) styles
-
   .News {
     margin-top: 7.5rem;
 
     .Main {
       padding-right: 1rem;
-
-      .page-title {
-        font-size: 2.25rem;
-        text-align: center;
-        display: block;
-        margin-top: 3rem;
-        margin-bottom: 12rem;
-
-        &::before,
-        &::after {
-          height: 25rem;
-          clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
-        }
-      }
     }
 
     .NewsPost {

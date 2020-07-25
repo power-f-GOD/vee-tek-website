@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Box from '@material-ui/core/Box';
+
 import Main from './Main';
 import Products from './Products';
 import Order from './Order';
@@ -45,7 +47,7 @@ const PipesAndFittings = () => {
   });
 
   return (
-    <>
+    <Box className='PipesAndFittings'>
       <Switch>
         <Route path={main} exact component={Main} />
         <Route path={products} component={Products} />
@@ -54,7 +56,7 @@ const PipesAndFittings = () => {
       </Switch>
 
       <FooterNavigator pages={pagesData} />
-    </>
+    </Box>
   );
 };
 

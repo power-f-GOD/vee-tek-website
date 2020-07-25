@@ -86,19 +86,19 @@
   animation: slideIn 0.5s ease;
 }
 
+// home page animations
+
 @keyframes backgroundSlideIn {
   0% {
     transform: translateX(100%);
   }
-  5%, 50% {
+  4%, 50% {
     transform: translateX(0);
   }
-  55%, 100% {
+  54%, 100% {
     transform: translateX(-100%);
   }
 }
-
-// home page animations
 
 @keyframes rotateLogo {
   0% {

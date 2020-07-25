@@ -48,7 +48,7 @@ export function Main(props: any) {
   delete _props.pageTitle;
 
   return (
-    <Col className="Main" {..._props}>
+    <Col className="Main include-page-header" {..._props}>
       <Row as="h1" className="page-title">
         {pageTitle}
       </Row>

@@ -2,13 +2,29 @@
 
 $top-nav-box-height: 2.25rem;
 
+body.companies {
+  .for-home {
+    .logo {
+      display: block;
+    }
+
+    .breadcrumbs-container {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
 .for-home {
   &.MuiAppBar-root {
-    background: none;
     transition: 0s;
     width: 100%;
     left: 0;
     box-shadow: none;
+
+    &::before {
+      opacity: 0;
+    }
 
     .logo {
       display: none;
@@ -59,12 +75,15 @@ $top-nav-box-height: 2.25rem;
 }
 
 .MuiAppBar-root {
-  background-color: $theme-primary-v4;
-  background: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+  background: none;
   transition: 0.3s;
   width: 100%;
   left: 0;
   box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.35);
+
+  &::before {
+    @include before-or-after-v2($bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2))
+  }
 }
 
 .hide-mini-nav {
@@ -286,10 +305,14 @@ $top-nav-box-height: 2.25rem;
     display: inline-flex;
     justify-content: center;
     height: 3.25rem;
-    margin-left: 2rem;
+    margin: {
+      top: 0.4rem;
+      bottom: 0.4rem;
+      left: 2rem;
+    }
     padding: 1.25rem;
     min-width: 6rem;
-    border-radius: 0.45rem !important;
+    border-radius: 0.65rem !important;
     align-self: center;
 
     &.contained {
@@ -500,7 +523,7 @@ $top-nav-box-height: 2.25rem;
 
   .nav-link {
     width: 100%;
-    padding: 0.85rem;
+    padding: 0.7rem 0.85rem;
     margin: 0 0.5rem;
     margin-top: 0.5rem;
     border-radius: 0.75rem !important;
@@ -542,7 +565,7 @@ $top-nav-box-height: 2.25rem;
 
   .nav-menu {
     left: 15%;
-    width: calc(85% - 1rem);
+    width: calc(85% - 0.95rem);
     min-width: unset;
     max-width: 85%;
     top: calc(100% + 0.5rem);
@@ -579,11 +602,12 @@ $top-nav-box-height: 2.25rem;
     display: none;
     margin: 8rem 0 4rem 0;
     padding: 0.5rem 0;
+    background: none;
   }
 
   .top-nav-wrapper {
     display: block;
-    background: $theme-primary-v9;
+    background: rgba(65, 20, 0, 0.45);
     color: $theme-primary-v3;
     padding: 0.25rem 0 1rem 0;
 
@@ -604,11 +628,12 @@ $top-nav-box-height: 2.25rem;
     }
 
     a {
-      color: $theme-primary-v2;
+      color: white;
 
       &:hover,
       &:focus {
         transform: scale(1.05);
+        color: $theme-primary-v8;
       }
     }
   }

@@ -77,7 +77,7 @@ footer {
     }
 
     [class*='Icon'] {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -100,6 +100,11 @@ footer {
   color: #ffffff;
   text-align: left;
   background: linear-gradient(to left, $theme-primary-v3, $theme-primary-v1);
+
+  .devs {
+    color: $theme-primary-v5;
+    font-size: 0.8rem;
+  }
 }
 
 .Footer-Image {
