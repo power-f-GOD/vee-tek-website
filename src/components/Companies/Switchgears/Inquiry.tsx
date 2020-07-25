@@ -89,6 +89,9 @@ const Inquiry = () => {
               Let us know what you would like us to enlighten or inform you
               about as regards our products or services.
             </Typography>
+            <Typography component="h6" className=" small mb-3">
+              Fields marked with * are compulsory.
+            </Typography>
 
             <form className="contact-form" onSubmit={sendEmail}>
               <Row>

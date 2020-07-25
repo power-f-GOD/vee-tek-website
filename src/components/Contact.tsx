@@ -99,8 +99,15 @@ const Contact = (props: any) => {
               We look forward to getting feedback or enquiries on any of our
               projects, products and services.
             </Typography>
+            <Typography component="h6" className=" small mb-3">
+              Fields marked with * are compulsory.
+            </Typography>
 
-            <form className="contact-form" autoComplete="on" onSubmit={sendEmail}>
+            <form
+              className="contact-form"
+              autoComplete="on"
+              onSubmit={sendEmail}
+            >
               <Row>
                 <Col sm={6} className="my-2">
                   <TextField
@@ -160,6 +167,7 @@ const Contact = (props: any) => {
                     fullWidth
                   />
                 </Col>
+
                 <Col md={5} sm={7} className="my-2 mt-5">
                   <Button
                     className="major-button outlined"
@@ -193,8 +201,8 @@ const Contact = (props: any) => {
                     <LocationOnIcon fontSize="large" />
                   </Col>
                   <Col className="p-0">
-                    Commercial Plot 5-6, along Enugu/Onitsha Expressway, Golf
-                    Course Estate, Phase 1, GRA, Enugu State.
+                    Commercial Plot 5-6, Golf Course Estate, GRA, (behind SARS),
+                    New Market-9th Mile Expressway, Enugu.
                   </Col>
                 </Row>
                 <Row className="flex-column justify-items-center mb-4">
