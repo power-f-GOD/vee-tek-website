@@ -21,9 +21,10 @@ const WhoWeAre = () => (
           construction and manufacturing of medium-voltage switch gears and
           general electrical engineering services, particularly heavy power
           installations such as transmission lines and injection substations. We
-          maintain technical R&amp;D partnerships with Pronutec (insert link
-          www.pronutec.com) and Telergon (insert link www.telergon.es) whose
-          switchgear products we equally distribute. We later expanded into pipe
+          maintain technical R&D partnerships with{" "}
+          <a href="http://www.pronutec.com/">Pronutec</a> and{" "}
+          <a href="http://www.telergon.es/">Telergon</a> whose switchgear
+          products we equally distribute. We later expanded into pipe
           manufacturing in 2015, making top-quality PVC conduit, pressure, waste
           pipes and fittings at affordable prices. In the three decades since
           our inception, we have served clients in Federal and State

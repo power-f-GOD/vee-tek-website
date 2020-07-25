@@ -1,5 +1,10 @@
 const main = [
   {
+    title: "CEO/MD",
+    name: "Vita Abba",
+    image: "/images/team/executive/vita_a.jpg",
+  },
+  {
     title: "Project Manager",
     name: "Edwin Nwekenkwo",
     image: "/images/team/executive/edwin_n.jpg",
@@ -14,14 +19,14 @@ const main = [
     name: "Ojobo Ifeanyi",
     image: "/images/team/executive/ojobo_i.jpg",
   },
+];
+
+const others = [
   {
     title: "Site Electrical Engineer",
     name: "Miracle Otti",
     image: "/images/team/executive/miracle_o.jpg",
   },
-];
-
-const others = [
   {
     title: "Manager",
     name: "Reginald Azubuike Onyeocha",
@@ -129,7 +134,7 @@ const others = [
     image: "/images/team/godwin_a.jpg",
   },
   {
-    title: "Factory",
+    title: "Secretary",
     name: "Friday Nwabenu",
     image: "/images/team/friday_n.jpg",
   },

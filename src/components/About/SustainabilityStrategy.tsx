@@ -19,48 +19,165 @@ const SustainabilityStrategy = () => {
       </Parallax>
       <Container className="mb-5">
         <p className="text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere ac
-          ut consequat semper viverra. At in tellus integer feugiat scelerisque.
-          Ultricies leo integer malesuada nunc. Aliquam eleifend mi in nulla
-          posuere sollicitudin aliquam ultrices sagittis. Ut tortor pretium
-          viverra suspendisse potenti nullam. Et sollicitudin ac orci phasellus
-          egestas tellus rutrum tellus pellentesque. Sit amet nisl suscipit
-          adipiscing bibendum est ultricies. Enim tortor at auctor urna. Ornare
-          suspendisse sed nisi lacus sed viverra tellus. Bibendum neque egestas
-          congue quisque. Tellus molestie nunc non blandit massa. Egestas
-          pretium aenean pharetra magna ac placerat vestibulum lectus. Auctor eu
-          augue ut lectus arcu bibendum at. Feugiat in ante metus dictum at.
-          Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit.
-          Vestibulum lectus mauris ultrices eros in cursus turpis massa
-          tincidunt. Venenatis tellus in metus vulputate eu.
+          For us at Vee-Tek Group, sustainability is one of our key values. Our
+          understanding of sustainability encompasses responsible manufacturing
+          practices, welfare of our community members, and innovation to boost
+          Nigeria’s development capacity. One of the sustainability frameworks
+          undergirding our efforts is the UN SDGs, through which we commit to
+          tackling climate change, promoting responsible consumption and
+          production, enabling clean water and sanitation for all and sustaining
+          rural development and resilient infrastructure in Nigeria and beyond.{" "}
         </p>
         <p className="text-justify">
-          Ut morbi tincidunt augue interdum velit euismod in pellentesque massa.
-          Orci ac auctor augue mauris augue neque gravida in. Dui id ornare arcu
-          odio ut sem nulla pharetra. Aliquet nec ullamcorper sit amet risus
-          nullam eget. Consectetur lorem donec massa sapien faucibus et. Enim
-          sed faucibus turpis in eu mi bibendum. Risus at ultrices mi tempus
-          imperdiet nulla malesuada pellentesque. Non arcu risus quis varius
-          quam quisque id diam vel. Et tortor at risus viverra adipiscing at in
-          tellus. Nisi porta lorem mollis aliquam ut porttitor leo. Risus
-          commodo viverra maecenas accumsan lacus. Ultrices tincidunt arcu non
-          sodales neque sodales ut. Ac placerat vestibulum lectus mauris
-          ultrices eros in cursus. Fusce ut placerat orci nulla pellentesque
-          dignissim enim sit.
+          We utilise other industry-specific frameworks such as The Nigerian
+          Code of Corporate Governance and{" "}
+          <a
+            href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.458.6308&rep=rep1&type=pdf)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Natural Step (TNS) framework
+          </a>
+          which make practical recommendations for companies to navigate towards
+          sustainable development through incremental decisions. Under the TNS
+          recommendations, we work to increase our energy efficiency and use of
+          renewable energy sources, to adopt a{" "}
+          <a
+            href="https://www.nap.edu/read/4982/chapter/4#39"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            closed-loop system
+          </a>{" "}
+          of industry waste management, and to raise awareness about sustainable
+          development across both manufacturing and engineering service
+          industries.{" "}
         </p>
         <p className="text-justify">
-          Cras semper auctor neque vitae tempus quam pellentesque. Commodo
-          ullamcorper a lacus vestibulum sed arcu non odio euismod. Viverra
-          justo nec ultrices dui sapien eget mi proin sed. Nec ullamcorper sit
-          amet risus nullam eget felis eget nunc. Et pharetra pharetra massa
-          massa ultricies mi. Mattis aliquam faucibus purus in. Bibendum neque
-          egestas congue quisque egestas diam in arcu cursus. In cursus turpis
-          massa tincidunt dui ut ornare. Enim blandit volutpat maecenas volutpat
-          blandit aliquam etiam. Id donec ultrices tincidunt arcu. Duis
-          tristique sollicitudin nibh sit amet commodo nulla facilisi nullam.
-          Est velit egestas dui id ornare arcu. Ultrices gravida dictum fusce ut
-          placerat orci nulla pellentesque dignissim.
+          {" "}
+          While we have a duty to be profitable for our employees and the
+          Nigerian economy, we also take pride in our responsibility to building
+          a sustainable and resilient future. We fulfil this responsibility
+          through our considered impact on our customers, our employees, our
+          community and the environment.
+        </p>
+        <h3>Impact on our customers: water and Power distribution</h3>
+        <p className="text-justify">
+          Electricity, water and sanitation are at the core of sustainable
+          development needs and the range of services and products we offer
+          across our two companies contribute to improving livelihoods, poverty
+          reduction, economic growth and environmental sustainability.
+        </p>
+        <p className="text-justify">
+          We have been committed to delivering quality and innovation to our
+          clients and customers for 29 years and counting.
+        </p>
+        <h3>Impact on our employees: Welfare</h3>
+
+        <p className="text-justify">
+          We consider human resources to be the most valuable resource in our
+          business and so we are committed to developing our talents across both
+          our companies. Through the work we do and our supply chains, we create
+          decent jobs to enable workers make sustainable livelihoods for
+          themselves.
+        </p>
+        <p className="text-justify">
+          We listen to our employees on their personal, occupational and
+          developmental needs and work with them to source, design and implement
+          programs and utilities to see to their development and safety.
+        </p>
+
+        <h3>Impact on the community: Service</h3>
+
+        <p className="text-justify">
+          Industrialization is a driver of development as industry generates
+          jobs and income, thereby contributing to poverty eradication,
+          empowering communities and addressing other development goals. In line
+          with the 9th SDG, we work to build resilient electrical
+          infrastructure, foster innovation and promote sustainable
+          industrialization.
+        </p>
+        <p className="text-justify">
+          In a world where about{" "}
+          <a
+            href="https://sdgs.gov.ng/goals/infrastructure-industrialization/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2.6 billion people{" "}
+          </a>{" "}
+          in the developing world are facing difficulties in accessing
+          electricity full time and{" "}
+          <a
+            href="https://sdgs.gov.ng/goals/infrastructure-industrialization/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            800 million people{" "}
+          </a>
+          lack access to water, both of our companies are building capacity for
+          communities around Nigeria and beyond to live easier, safer and
+          healthier lives.
+        </p>
+
+        <p className="text-justify">
+          We take special pride in our various rural electrification projects
+          that have served over 80 communities across Nigeria. Sustainable
+          energy transforms lives and economies and we are doing our part to
+          drive this transformation.
+        </p>
+
+        <h3>Impact on the environment: Less Waste, More Innovation</h3>
+
+        <p className="text-justify">
+          Here at Vee-Tek we believe in the climate crisis and recognise the{" "}
+          <a
+            href="https://www.files.ethz.ch/isn/136704/PAPER220.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            disproportionate negative consequences climate change has on poorer
+            countries{" "}
+          </a>
+          of the world. We commit to doing our part to tackling the climate
+          crisis by reducing waste and environmental pollution in our production
+          cycle.
+        </p>
+
+        <p className="text-justify">
+          The issue of environmental pollution is particularly pertinent to our
+          plastics company due to the vicious connection polymers have with
+          global warming and environment pollution. However, we live in an
+          imperfect world where plastics also offer numerous durable and
+          affordable tools and solutions for sustainable and improved
+          livelihoods. Examples of plastic use for sustainable living can be
+          found in the waste, pressure and conduit pipes (and fittings) which we
+          manufacture to enable the every-day functioning of buildings we need
+          to live and work in.
+        </p>
+
+        <p className="text-justify">
+          PVC pipes’ quality of low-carbon content, exceptional durability and
+          corrosion resistance lead to better water conservation and energy
+          conservation and its environmental footprint is far smaller than
+          competing materials. PVC pipes are also easily recyclable and, in our
+          factory, we reuse and recycle all our materials that do not make it to
+          sales. We also use 100% recyclable cardboard for our fittings
+          packaging and no packaging for our pipes.
+        </p>
+
+        <p className="text-justify">
+          Beyond our plastics, our Research and Development department,
+          currently run by Dr Obiageli Abba as an extension of her doctoral
+          research, focuses on developing biogas as a renewable energy source
+          for power generation that could be used for our factory operations.
+        </p>
+        <br />
+
+        <p className="text-justify">
+          We believe that companies can make a positive impact in their
+          communities and society at large and commit to acting on that belief.
         </p>
       </Container>
     </div>
