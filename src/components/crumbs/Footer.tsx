@@ -93,8 +93,13 @@ const Footer = () => {
           </Row>
         </Container>
       </div>
-      <div className="Footer-Wrapper-Two">
-        <Container>&copy; {thisYear} Vee-Tek Group</Container>
+      <div className='Footer-Wrapper-Two'>
+        <Container>
+          <Row>
+            <Col sm={5}>&copy; {thisYear} Vee-Tek Group</Col>
+            <Col className='devs '>Site Developed by @Power'f-GOD &amp; @Nuel</Col>
+          </Row>
+        </Container>
       </div>
     </footer>
   );

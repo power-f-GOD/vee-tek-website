@@ -18,41 +18,8 @@
     padding-right: 1.75rem;
     position: unset;
 
-    .row {
-      margin: 0;
-    }
-
     .page-title {
-      margin: 3rem 0 10rem 0;
-      color: white;
-      text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
-
-      &::before,
-      &::after {
-        @include before-or-after-v2(
-          $w: 100vw,
-          $h: 23rem,
-          $bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2)
-        );
-        background-color: $theme-primary-v4;
-        clip-path: polygon(
-          0 0,
-          calc(50vw + 19rem) 0,
-          calc(50vw - 1rem) 30rem,
-          0 30rem
-        );
-      }
-
-      &::after {
-        opacity: 0.65;
-      }
-
-      &::before {
-        background: {
-          color: $theme-primary-v4;
-          image: url('/images/switch-gears-3.jpg');
-        }
-      }
+      margin-bottom: 10rem;
     }
   }
 
@@ -81,25 +48,26 @@
     }
 
     .link {
-      padding: 0.25rem 0.75rem;
+      padding: 0.25rem 0.85rem;
       position: relative;
       display: inline-block;
       text-decoration: none;
       font-weight: 500;
+      color: white;
 
       &::before {
-        @include before-or-after-v2($br: 0.3rem, $h: 0.125rem, $b: 0);
+        @include before-or-after-v2($bg: $theme-primary-v3, $br: 2rem, $h: 100%, $b: 0);
         top: unset;
       }
 
       &:hover,
       &:focus {
-        color: white;
+        color: $theme-primary-v3;
 
         &::before {
-          background: $theme-primary-v3;
+          background: $theme-primary-v8;
 
-          height: 100%;
+          height: 0.125rem;
         }
       }
     }

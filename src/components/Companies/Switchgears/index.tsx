@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Box from '@material-ui/core/Box';
+
 import Main from './Main';
 import Services from './Services';
 import Portfolio from './Portfolio';
@@ -54,7 +56,7 @@ const Switchgears = () => {
   });
 
   return (
-    <>
+    <Box className='Switchgears'>
       <Switch>
         <Route path={main} exact component={Main} />
         <Route path={services} exact component={Services} />
@@ -64,7 +66,7 @@ const Switchgears = () => {
       </Switch>
 
       <FooterNavigator pages={pagesData} />
-    </>
+    </Box>
   );
 };
 

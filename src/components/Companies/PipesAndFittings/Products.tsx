@@ -7,8 +7,11 @@ import productsData from '../../../constants/pipesProductsData';
 
 const Products = () => {
   return (
-    <Container as='main' className='fade-in mt-5 pt-1'>
+    <Container as='main' className='fade-in pt-3 include-page-header'>
       <div className='Main-Wrapper mt-5'>
+        <Row as='h1' className='page-title'>
+          Our Products
+        </Row>
         <Row>
           {productsData.map((item, _) => (
             <ProductTile

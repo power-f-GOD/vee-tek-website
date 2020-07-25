@@ -32,9 +32,11 @@ body.companies {
       max-height: $mh;
       text-align: center;
       color: white;
+      text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
+      
 
       &::before {
-        @include before-or-after-v2($zi: 0, $bg: $theme-primary-v1, $o: 0.35);
+        @include before-or-after-v2($zi: 0, $bg: $theme-primary-v1, $o: 0.85);
       }
 
       &::after {
@@ -42,8 +44,13 @@ body.companies {
         background: {
           position: center;
           size: cover;
-          image: url('/images/pvc-pipes-2.jpg');
+          image: url('/images/pipes-2.jpg');
         }
+      }
+
+      h1 {
+        font-size: 6rem;
+        font-weight: bold;
       }
     }
 
@@ -157,17 +164,18 @@ body.companies {
     }
 
     @keyframes circle-reveal {
-      0%, 3% {
+      0%,
+      8% {
         opacity: 0;
         transform: translateY(-10rem);
       }
-      5%,
-      30% {
+      10%,
+      40% {
         opacity: 1;
         transform: translateY(0);
       }
 
-      32%,
+      42%,
       100% {
         opacity: 0;
         transform: translateY(10rem);
@@ -196,6 +204,73 @@ body.companies {
 
       p {
         font-size: 0.95rem;
+      }
+    }
+  }
+
+  // Switchgears Services styles
+
+  .Slider-Wrapper {
+    height: 100% !important;
+    max-height: 100% !important;
+  }
+  .Slide-Item {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    object-fit: cover;
+  }
+  .Pad {
+    padding: 2rem;
+  }
+
+  .Divider {
+    height: 3rem;
+  }
+
+  .Text {
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .Circle {
+    $size: 7rem;
+
+    border-radius: 50%;
+    background: linear-gradient(to left, $theme-primary-v5, $theme-primary-v3);
+    height: $size;
+    width: $size;
+  }
+
+  .Service-Card {
+    padding: 3rem 1.5rem 1.5rem;
+    background-color: $white;
+    border-radius: 0.7rem;
+    transition: 0.35s;
+    height: 100%;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.15);
+  }
+
+  .Service-Card-Text {
+    text-align: center;
+  }
+
+  // Specific Companies' style(s)
+  .PipesAndFittings,
+  .Switchgears {
+    .page-title {
+      margin-top: 5rem;
+
+      &::before,
+      &::after {
+        clip-path: unset;
+      }
+    }
+  }
+
+  .PipesAndFittings {
+    .page-title {
+      &::before {
+        background-image: url('/images/pipes-2.jpg');
+        background-size: cover;
       }
     }
   }

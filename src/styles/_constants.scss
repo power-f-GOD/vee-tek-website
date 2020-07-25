@@ -196,3 +196,43 @@ $white: #fff;
     }
   }
 }
+
+@mixin page-header($bg: url('/images/switch-gears-3.jpg')) {
+  .row {
+    margin: 0;
+  }
+
+  .page-title {
+    margin: 4rem 0 13rem 0;
+    color: white;
+    justify-content: center;
+    text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
+
+    &::before,
+    &::after {
+      @include before-or-after-v2(
+        $w: 100vw,
+        $h: 25rem,
+        $bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2)
+      );
+      background-color: $theme-primary-v4;
+      clip-path: polygon(
+        0 0,
+        calc(50vw + 19rem) 0,
+        calc(50vw - 1rem) 30rem,
+        0 30rem
+      );
+    }
+
+    &::after {
+      opacity: 0.65;
+    }
+
+    &::before {
+      background: {
+        color: $theme-primary-v4;
+        image: $bg;
+      }
+    }
+  }
+}
