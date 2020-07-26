@@ -33,7 +33,6 @@ body.companies {
       text-align: center;
       color: white;
       text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
-      
 
       &::before {
         @include before-or-after-v2($zi: 0, $bg: $theme-primary-v1, $o: 0.85);
@@ -60,20 +59,15 @@ body.companies {
         bottom: 5rem !important;
       }
       margin: {
-        top: 4rem !important;
-        bottom: 4rem !important;
-      }
-
-      img {
-        border-radius: 50%;
-        margin-bottom: 1rem;
+        top: 7rem !important;
+        bottom: 1rem !important;
       }
     }
 
     .heading-container {
       h2 {
         color: $theme-primary-v3;
-        font-size: 6rem;
+        font-size: 5rem;
         line-height: 5rem;
         margin: {
           left: -0.5rem;
@@ -81,10 +75,14 @@ body.companies {
         }
       }
 
-      span {
+      .rider {
         color: $theme-primary-v3;
         font-weight: bold;
-        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        margin: {
+          top: 1rem;
+          bottom: 1rem;
+        }
       }
     }
 
@@ -257,7 +255,7 @@ body.companies {
   .PipesAndFittings,
   .Switchgears {
     .page-title {
-      margin-top: 5rem;
+      margin-top: 8.5rem;
 
       &::before,
       &::after {
@@ -272,6 +270,25 @@ body.companies {
         background-image: url('/images/pipes-2.jpg');
         background-size: cover;
       }
+    }
+
+    .pipes-icon-container {
+      display: inline-block;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      background-color: $theme-primary-v9;
+      margin-bottom: 2rem;
+    }
+
+    .pipes-icon {
+      $size: 5rem;
+
+      width: $size;
+      height: $size;
+    }
+
+    .desc {
+      text-transform: uppercase;
     }
   }
 }

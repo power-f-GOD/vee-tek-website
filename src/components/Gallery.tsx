@@ -7,11 +7,11 @@ const Gallery = (props: any) => {
   const { pathname } = location;
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     setNavState(pathname);
 
     return () => {
       setNavState('/');
-      window.scrollTo(0, 0);
     };
   }, [pathname, setNavState]);
 

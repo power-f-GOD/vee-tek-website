@@ -6,7 +6,7 @@ import servicesData from '../../../constants/switchgearsServicesData';
 
 const Services = () => {
   return (
-    <Container as='main' className='fade-in mt-5 pt-5 include-page-header'>
+    <Container as='main' className='fade-in include-page-header'>
       <Container className='fluid pt-5'>
         <Row as='h1' className='page-title'>
           Our Services
