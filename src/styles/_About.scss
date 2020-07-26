@@ -53,11 +53,17 @@
 }
 
 $clients: (
-  "enugu": "/images/clients/enugu.jpeg",
+  "enugu": "/images/clients/enugu.jpg",
   "nbp": "/images/clients/nbp.jpeg",
   "ndphc": "/images/clients/ndphc.jpeg",
   "nlng": "/images/clients/nlng.jpeg",
   "shell": "/images/clients/shell.jpeg",
+  "eedc": "/images/clients/eedc.jpg",
+  "nta": "/images/clients/nta.jpg",
+  "arda": "/images/clients/arda.jpg",
+  "unn": "/images/clients/unn.jpg",
+
+
 );
 
 @each $i, $image in $clients {
