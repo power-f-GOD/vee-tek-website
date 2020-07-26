@@ -127,7 +127,7 @@ body.companies {
   height: $top-nav-box-height;
   padding: 0.25rem 0;
   background: $theme-primary-v2;
-  color: #eee; //$theme-primary-v8;
+  color: $theme-primary-v7;
   display: flex;
   align-content: center;
   font-size: 0.85rem;
@@ -169,13 +169,13 @@ body.companies {
 
   a {
     display: inline-block;
-    color: white;
+    color: $theme-primary-v8;
     font-size: 0.85rem;
 
     &:hover,
     &:focus {
       transform: scale(1.05);
-      color: $theme-primary-v8;
+      // color: white;
     }
   }
 
@@ -628,12 +628,11 @@ body.companies {
     }
 
     a {
-      color: white;
+      color: $theme-primary-v8;
 
       &:hover,
       &:focus {
         transform: scale(1.05);
-        color: $theme-primary-v8;
       }
     }
   }

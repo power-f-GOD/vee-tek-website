@@ -397,14 +397,18 @@
   }
 
   //Companies style(s)
-  .Overview {
-    .last-section {
-      * {
-        text-align: left !important;
+  body.companies {
+    .Overview {
+      header {
+        h1 {
+          font-size: 4rem;
+        }
       }
 
-      .order-1 {
-        order: unset;
+      .heading-container {
+        h2 {
+          font-size: 3rem;
+        }
       }
     }
   }

@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 
 import Box from '@material-ui/core/Box';
 
-import Icons from '../../crumbs/Icons';
+import { PipesIcon, pipesIconsData } from '../../crumbs/Icons';
 
 export const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorum optio quo non suscipit accusantium ipsa excepturi totam! Libero repudiandae nemo similique, aspernatur reiciendis harum sunt distinctio quia dolore quas.';
@@ -33,7 +33,7 @@ const Main = () => {
               <Col as='h2' xs={12} className='p-0'>
                 PVC Pipes
               </Col>
-              <Col as='span' className='rider'>
+              <Col as='p' className='rider'>
                 Manufacturing of PVC Pipes
               </Col>
             </Row>
@@ -66,25 +66,19 @@ const Main = () => {
               <Col as='h2' xs={12} className='p-0'>
                 PVC Applications
               </Col>
-              <Col as='span' className='rider'>
+              <Col as='p' className='rider'>
                 Our PVC Pipes can be applied in the following:
               </Col>
             </Col>
             <Row className='my-5'>
-              {Array(6)
-                .fill('')
-                .map((_, i) => (
-                  <Col md={4} className='my-4 text-center' key={i}>
-                    <Col xs={12}>
-                      <Icons
-                        type='tap'
-                        color1='rgb(115, 70, 15)'
-                        color2='rgb(165, 115, 65)'
-                      />
-                    </Col>
-                    <Col as='p'>{lorem.slice(0, 20).toUpperCase()}</Col>
+              {pipesIconsData.map(({ url, desc }) => (
+                <Col sm={6} md={4} className='my-5 text-center' key={url}>
+                  <Col xs={12}>
+                    <PipesIcon url={url} />
                   </Col>
-                ))}
+                  <Col as='p' className='desc'>{desc}</Col>
+                </Col>
+              ))}
             </Row>
           </Row>
         </Container>

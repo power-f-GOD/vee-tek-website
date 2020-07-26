@@ -47,16 +47,16 @@ const pagesData: Page[] = [
 
 const Switchgears = () => {
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     document.body.classList.add('companies');
 
     return () => {
       document.body.classList.remove('companies');
-      window.scrollTo(0, 0);
     };
   });
 
   return (
-    <Box className='Switchgears'>
+    <Box className='Switchgears' position='relative'>
       <Switch>
         <Route path={main} exact component={Main} />
         <Route path={services} exact component={Services} />

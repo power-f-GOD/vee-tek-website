@@ -43,7 +43,7 @@ footer {
   font-size: 1rem;
 
   a {
-    color: white;
+    color: $theme-primary-v8;
     font-size: 0.95rem !important;
     display: inline-block;
 
@@ -138,6 +138,7 @@ footer {
       &:last-child {
         color: $theme-primary-v3;
         font-size: 2rem;
+        font-family: 'Google Sans';
         margin-top: 0.5rem;
       }
     }

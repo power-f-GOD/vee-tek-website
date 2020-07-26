@@ -38,13 +38,13 @@ const pagesData: Page[] = [
 
 const PipesAndFittings = () => {
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     document.body.classList.add('companies');
 
     return () => {
       document.body.classList.remove('companies');
-      window.scrollTo(0, 0);
     };
-  });
+  }, []);
 
   return (
     <Box className='PipesAndFittings'>
