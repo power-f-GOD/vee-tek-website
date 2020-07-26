@@ -6,7 +6,7 @@ import { Tooltip } from "@material-ui/core";
 const WhoWeAre = () => (
   <Container as="main" fluid className="fade-in p-0">
     <Parallax
-      bgImage="/images/switch-gears-2.jpg"
+      bgImage="/images/who-we-are-one.jpg"
       bgImageAlt="one"
       strength={100}
     >
@@ -36,7 +36,7 @@ const WhoWeAre = () => (
       </Container>
     </Parallax>
     <Parallax
-      bgImage="/images/switch-gears.jpg"
+      bgImage="/images/who-we-are-two.jpg"
       bgStyle={{ height: "700px !important", objectFit: "cover" }}
       bgImageAlt="the dog"
       strength={200}
@@ -53,6 +53,16 @@ const WhoWeAre = () => (
           { title: "Niger Delta Power Holding Company", image: "ndphc" },
           { title: "NNigeria LNG", image: "nlng" },
           { title: "Shell Petroleum Development Company", image: "shell" },
+          { title: "EEDC", image: "eedc" },
+          { title: "Nigerian Televison Authority", image: "nta" },
+          {
+            title: "Anambra-Imo River Basin Development Authority",
+            image: "arda",
+          },
+          {
+            title: "University of Nigeria, Nsukka",
+            image: "unn",
+          },
         ].map((client, _) => (
           <Tooltip title={client.title} key={_}>
             <div className={"m-2 Client-Image-" + client.image}></div>

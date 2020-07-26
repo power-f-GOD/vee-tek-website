@@ -6,7 +6,7 @@ import { Parallax } from "react-parallax";
 const SustainabilityStrategy = () => {
   return (
     <div className="fade-in">
-      <Parallax bgImage="/images/strategy.jpg" bgImageAlt="one" strength={200}>
+      <Parallax bgImage="/images/sustainablity.jpg" bgImageAlt="one" strength={200}>
         <div
           style={{ height: "500px" }}
           className="pt-5 text-center d-flex justify-content-center align-items-center"
@@ -61,7 +61,7 @@ const SustainabilityStrategy = () => {
           through our considered impact on our customers, our employees, our
           community and the environment.
         </p>
-        <h3>Impact on our customers: water and Power distribution</h3>
+        <h3>Impact on our customers: Water and Power distribution</h3>
         <p className="text-justify">
           Electricity, water and sanitation are at the core of sustainable
           development needs and the range of services and products we offer
