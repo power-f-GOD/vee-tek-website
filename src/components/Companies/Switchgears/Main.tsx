@@ -9,38 +9,47 @@ const Main = () => {
           <Carousel.Item>
             <img
               className="d-block w-100 Slide-Item"
-              src="/images/switch-gears-3.jpg"
+              src="/images/switchgears-main/two.jpg"
               alt="First slide"
             />
             <Carousel.Caption className="text-dark bg-white">
-              <h3>Label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h4>Vee-Tek Power Station</h4>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100 Slide-Item"
-              src="/images/switch-gears-2.jpg"
+              src="/images/switchgears-main/three.jpg"
               alt="Third slide"
             />
 
             <Carousel.Caption className="text-dark bg-white">
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h4>
+                Skeleton of a Vee-Tek distribution panel being coupled in the
+                factory
+              </h4>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100 Slide-Item"
-              src="/images/switch-gears.jpg"  
+              src="/images/switchgears-main/four.jpg"
               alt="Third slide"
             />
 
             <Carousel.Caption className="text-dark bg-white">
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h4>Vee-Tek Simple Distribution Board for Smaller Facilities</h4>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100 Slide-Item"
+              src="/images/switchgears-main/one.jpg"
+              alt="Third slide"
+            />
+
+            <Carousel.Caption className="text-dark bg-white">
+              <h4>Vee-Tek Simple Distribution Board for Smaller Facilities</h4>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
