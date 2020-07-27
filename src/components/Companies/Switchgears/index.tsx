@@ -9,11 +9,13 @@ import Portfolio from './Portfolio';
 import Inquiry from './Inquiry';
 import FooterNavigator, { Page } from '../../crumbs/FooterNavigator';
 import _404 from '../../_404';
+import TechnicalData from './TechnicalData';
 
 const main = '/companies/switch-gears';
-const [services, portfolio, inquiry] = [
+const [services, portfolio, technicalData, inquiry] = [
   `${main}/services`,
   `${main}/portfolio`,
+  `${main}/technical-data`,
   `${main}/inquiry`
 ];
 const pagesData: Page[] = [
@@ -33,6 +35,10 @@ const pagesData: Page[] = [
   {
     pathname: portfolio,
     name: 'Our Portfolio'
+  },
+  {
+    pathname: portfolio,
+    name: 'Technical Data'
   },
   {
     pathname: inquiry,
@@ -61,6 +67,7 @@ const Switchgears = () => {
         <Route path={main} exact component={Main} />
         <Route path={services} exact component={Services} />
         <Route path={portfolio} exact component={Portfolio} />
+        <Route path={technicalData} exact component={TechnicalData} />
         <Route path={inquiry} exact component={Inquiry} />
         <Route component={_404} />
       </Switch>
