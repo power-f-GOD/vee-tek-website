@@ -112,6 +112,8 @@ footer {
 }
 
 .FooterNavigator {
+  line-height: 225%;
+
   .navigator-link {
     display: inline-block;
     max-width: calc(50vw - 1.25rem);
@@ -138,7 +140,7 @@ footer {
       &:last-child {
         color: $theme-primary-v3;
         font-size: 2rem;
-        font-family: 'Google Sans';
+        font-family: 'Google Sans' !important;
         margin-top: 0.5rem;
       }
     }

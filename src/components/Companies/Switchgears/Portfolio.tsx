@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -89,13 +88,17 @@ const Portfolio = () => {
     }
   }, [activeProject, tabIndicator, switchgearLink, engineeringLink]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <Container as='main' fluid className='Portfolio fade-in pt-5'>
+    <Container as='main' fluid className='Portfolio fade-in'>
       <Container fluid className='header-image'></Container>
       <Container className='p-0'>
-        <Row as='header' className='mx-0'>
+        <Row as='header' className='mx-0 text-shadow'>
           <Col md={7} className='d-block'>
-            <Box component='h1' className='page-title'>
+            <Box component='h1' className='page-title text-bold'>
               Our Portfolio
             </Box>
             <Col className='rider-texts-wrapper p-0 d-inline-block'>
@@ -137,7 +140,7 @@ const Portfolio = () => {
               isActive={() => activeProject === 'switchgear'}
               onClick={handleProjectsLinkClick('switchgear')}
               ref={_switchgearLink}>
-              Switchgear
+              Switchgears
             </NavLink>
             <NavLink
               to='#'
@@ -295,12 +298,11 @@ function Work(props: any) {
       </Col>
       <Col md={6} className='work-desc-container align-self-center h-100 p-0'>
         <Col className='work-desc-wrapper'>
-          <Typography
+          <Box
             component='h3'
-            variant='h3'
             className='work-desc-header mb-2'>
             {header}
-          </Typography>
+          </Box>
           <Col className='work-desc p-0'>{description}</Col>
         </Col>
       </Col>

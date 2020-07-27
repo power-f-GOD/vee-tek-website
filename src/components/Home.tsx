@@ -92,7 +92,7 @@ const Home = () => {
                 Electrical Engineering services come with decades of experience,
                 training and scientific innovation.
               </Col>
-              <Link to='/companies/switch-gears' className='cta-link'>
+              <Link to='/companies/switchgears' className='cta-link'>
                 Goto Switchgears
               </Link>
             </Col>

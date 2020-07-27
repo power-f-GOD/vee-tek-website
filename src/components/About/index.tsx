@@ -33,7 +33,7 @@ const pagesData: Page[] = [
     name: 'Sustainability Strategy'
   },
   {
-    pathname: '/companies/switch-gears',
+    pathname: '/companies/switchgears',
     name: 'Our Companies',
     notRelative: true
   }

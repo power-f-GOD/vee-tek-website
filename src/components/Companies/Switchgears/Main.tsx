@@ -2,6 +2,10 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 
 const Main = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="fade-in">
       <div className="h-auto Slider-Wrapper text-black">

@@ -1,7 +1,7 @@
 @import 'constants';
 
 .News {
-  margin-top: 9rem;
+  position: relative;
   // @include debugger();
 
   h2,
@@ -20,6 +20,7 @@
 
     .page-title {
       margin-bottom: 10rem;
+      text-align: left;
     }
   }
 
@@ -78,7 +79,7 @@
   }
 
   .Aside {
-    margin-top: 2rem;
+    margin-top: 10rem;
     background-color: white;
     padding: 1rem;
     border-radius: 1rem;

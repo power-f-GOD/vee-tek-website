@@ -10,7 +10,7 @@ import Inquiry from './Inquiry';
 import FooterNavigator, { Page } from '../../crumbs/FooterNavigator';
 import _404 from '../../_404';
 
-const main = '/companies/switch-gears';
+const main = '/companies/switchgears';
 const [services, portfolio, inquiry] = [
   `${main}/services`,
   `${main}/portfolio`,

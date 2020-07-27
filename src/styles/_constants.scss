@@ -198,15 +198,18 @@ $white: #fff;
 }
 
 @mixin page-header($bg: url('/images/switch-gears-3.jpg')) {
+  padding-top: 0.01rem;
+
   .row {
     margin: 0;
   }
 
   .page-title {
-    margin: 4rem 0 13rem 0;
+    margin: 12rem 0 14rem 0;
     color: white;
     justify-content: center;
     text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 
     &::before,
     &::after {
