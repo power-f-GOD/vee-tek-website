@@ -11,9 +11,43 @@
       }
     }
   }
+
+  @media screen and (max-width: 1256px) {
+    // misc style(s)
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+      max-width: 95%;
+    }
+  }
 }
 
 @media screen and (max-width: 1023px) {
+  // Nav style(s)
+  body.companies {
+    // .drawer {
+    //   display: none;
+    // }
+    // Companies (Nav) style(s)
+    .for-home {
+      .nav-links-wrapper {
+        margin-top: unset;
+        background: transparent;
+      }
+    }
+
+    .nav-link-wrapper {
+      display: none;
+    }
+
+    .nav-link-wrapper {
+      &:last-child {
+        display: flex;
+      }
+    }
+  }
+
   // Home page style(s)
   .Home {
     .splash-links-container {
@@ -32,7 +66,7 @@
     }
   }
 
-  // misc styles(s)
+  // misc style(s)
   .container,
   .container-lg,
   .container-md,
@@ -49,19 +83,26 @@
   }
 }
 
-@media screen and (min-width: 992px) {
-  body.companies {
-    .drawer {
-      display: none;
-    }
+// @media screen and (min-width: 992px) {
+//   body.companies {
+//     .drawer {
+//       display: none;
+//     }
 
-    .nav-link-wrapper {
-      display: flex;
-    }
-  }
-}
+//     .nav-link-wrapper {
+//       display: flex;
+//     }
+//   }
+// }
 
 @media screen and (max-width: 991px) {
+  // News component(s) styles
+  .News {
+    .Aside {
+      margin-top: 3rem;
+    }
+  }
+
   //Contact style(s)
   .contact-info-col {
     padding: {
@@ -70,6 +111,7 @@
     }
   }
 
+  // Companies (Nav) style(s)
   body.companies {
     .nav-link-wrapper {
       &:last-child {
@@ -142,6 +184,23 @@
     }
   }
 
+  //Companies style(s)
+  body.companies {
+    .Overview {
+      header {
+        h1 {
+          font-size: 4rem;
+        }
+      }
+
+      .heading-container {
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
   // misc style(s)
   .logo {
     font-size: 1.15rem;
@@ -150,25 +209,14 @@
   .include-page-header {
     .page-title {
       font-size: 2.25rem;
-      text-align: center;
+      text-align: center !important;
       display: block;
-      margin-top: 3rem;
-      margin-bottom: 12rem;
+      margin-top: 11rem;
 
       &::before,
       &::after {
         height: 25rem;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
-      }
-    }
-  }
-
-  //Nav styles
-  body.companies {
-    .for-home {
-      .nav-links-wrapper {
-        margin-top: unset;
-        background: transparent;
       }
     }
   }
@@ -256,7 +304,8 @@
 
       &::before,
       &::after {
-        height: 38rem;
+        top: 0;
+        max-height: 100vh;
         clip-path: unset;
       }
     }
@@ -264,7 +313,6 @@
     header {
       > div {
         padding: 0;
-        margin-top: 10.5rem;
         margin-bottom: 7rem;
         text-align: center;
 
@@ -344,8 +392,6 @@
 
   // News component(s) styles
   .News {
-    margin-top: 7.5rem;
-
     .Main {
       padding-right: 1rem;
     }
@@ -393,23 +439,6 @@
 
     .work-desc-header {
       font-size: 1.5rem;
-    }
-  }
-
-  //Companies style(s)
-  body.companies {
-    .Overview {
-      header {
-        h1 {
-          font-size: 4rem;
-        }
-      }
-
-      .heading-container {
-        h2 {
-          font-size: 3rem;
-        }
-      }
     }
   }
 

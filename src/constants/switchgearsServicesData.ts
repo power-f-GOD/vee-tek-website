@@ -9,7 +9,7 @@ const servicesData = [
   },
   {
     image: '/images/injection.png',
-    title: 'Injection substation Building',
+    title: 'Injection Substation Building',
     desc: `We build and commission injection substation of various
     capacities, to suite varying needs.`
   },
@@ -35,7 +35,7 @@ const servicesData = [
   },
   {
     image: '/images/building.png',
-    title: 'Electrical Infrastructure Bulding',
+    title: 'Electrical Infrastructure Building',
     desc: `We build and commission Electrical Infrastructural 
     services, to meet different needs.`
   },

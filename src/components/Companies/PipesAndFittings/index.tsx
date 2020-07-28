@@ -13,7 +13,7 @@ const main = '/companies/pipes-and-fittings';
 const [products, order] = [`${main}/products`, `${main}/order`];
 const pagesData: Page[] = [
   {
-    pathname: '/companies/switch-gears/inquiry',
+    pathname: '/companies/switchgears/inquiry',
     name: 'Switchgears Company',
     notRelative: true
   },

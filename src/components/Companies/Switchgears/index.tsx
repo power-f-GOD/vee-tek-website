@@ -11,7 +11,7 @@ import FooterNavigator, { Page } from '../../crumbs/FooterNavigator';
 import _404 from '../../_404';
 import TechnicalData from './TechnicalData';
 
-const main = '/companies/switch-gears';
+const main = '/companies/switchgears';
 const [services, portfolio, technicalData, inquiry] = [
   `${main}/services`,
   `${main}/portfolio`,

@@ -1,27 +1,32 @@
 import React from 'react';
 
-import { Col, Image, Container, Row } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
 
 import servicesData from '../../../constants/switchgearsServicesData';
 
 const Services = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
-    <Container as='main' className='fade-in include-page-header'>
-      <Container className='fluid pt-5'>
-        <Row as='h1' className='page-title'>
-          Our Services
-        </Row>
-        <Row className='justify-content-center pt-5'>
-          {servicesData.map((item, key) => (
-            <ServiceCard
-              image={item.image}
-              title={item.title}
-              desc={item.desc}
-              key={key}
-            />
-          ))}
-        </Row>
-      </Container>
+    <Container as='main' className='fade-in include-page-header px-0'>
+      <Row as='h1' className='page-title'>
+        Our Services
+      </Row>
+      <Row className='justify-content-center pt-5'>
+        {servicesData.map((item, key) => (
+          <ServiceCard
+            image={item.image}
+            title={item.title}
+            desc={item.desc}
+            key={key}
+          />
+        ))}
+      </Row>
     </Container>
   );
 };

@@ -254,11 +254,14 @@ body.companies {
   // Specific Companies' style(s)
   .PipesAndFittings,
   .Switchgears {
+    position: relative;
+
     .page-title {
-      margin-top: 8.5rem;
+      margin-top: 14rem;
 
       &::before,
       &::after {
+        height: 27rem;
         clip-path: unset;
       }
     }
