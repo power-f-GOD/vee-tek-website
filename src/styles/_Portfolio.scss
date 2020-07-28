@@ -1,6 +1,7 @@
 @import 'constants';
 
 .Portfolio {
+  padding-top: 0.01rem;
   position: relative;
 
   .header-image {
@@ -44,21 +45,6 @@
       animation: swapBg 15s infinite ease;
     }
 
-    @keyframes swapBg {
-      0%,
-      30% {
-        background-image: url('/images/switch-gears.jpg');
-      }
-      33%,
-      63% {
-        background-image: url('/images/switch-gears-2.jpg');
-      }
-      66%,
-      97% {
-        background-image: url('/images/switch-gears-3.jpg');
-      }
-    }
-
     &::after {
       z-index: 1;
       background: linear-gradient(
@@ -75,22 +61,12 @@
     min-height: 15rem;
     padding: 0;
     margin-bottom: 0rem;
-    // border: 2px solid orange;
 
     > div {
-      margin: {
-        top: 12rem;
-        bottom: 0;
-      }
-
       &:nth-child(2) {
         text-align: right;
         margin-top: 14rem;
       }
-    }
-
-    .page-title {
-      font-weight: bold;
     }
 
     .rider-texts-wrapper {
@@ -133,20 +109,6 @@
 
       &:last-child {
         @include animate(10s);
-      }
-    }
-
-    @keyframes reveal {
-      3%,
-      30% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      32%,
-      100% {
-        opacity: 0;
-        transform: translateX(-20rem);
       }
     }
 

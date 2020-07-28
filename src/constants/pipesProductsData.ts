@@ -1,26 +1,28 @@
- const products = [
+export interface ProductProps {
+  imageUrl: string;
+  name: string;
+  desc: string;
+}
+
+const products: ProductProps[] = [
   {
-    key: "one",
-    product: "Pronutec",
+    name: 'Pronutec',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididuntut `,
-    images: ["/images/one.jpg", "/images/two.jpg", "/images/three.jpg"],
+    imageUrl: '/images/one.jpg'
   },
   {
-    key: "two",
-
-    product: "Telergon",
+    name: 'Telergon',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididuntut.`,
-    images: ["/images/two.jpg", "/images/three.jpg", "/images/one.jpg"],
+    imageUrl: '/images/two.jpg'
   },
   {
-    key: "three",
-    product: "TBC",
+    name: 'TBC',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididuntut.`,
-    images: ["/images/three.jpg", "/images/one.jpg", "/images/two.jpg"],
-  },
+    imageUrl: '/images/three.jpg'
+  }
 ];
 
 export default products;
