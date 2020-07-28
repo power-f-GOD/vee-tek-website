@@ -94,7 +94,7 @@
     }
 
     .rider-texts-wrapper {
-      width: 22rem;
+      width: 25rem;
       max-width: 100%;
       text-align: center;
       // font-style: italic;
@@ -106,8 +106,8 @@
     }
 
     .rider-text {
-      padding: 0 0.15rem;
-      font-size: 1.15rem;
+      padding: 0 0rem;
+      font-size: .8rem;
       width: 100%;
       color: $theme-primary-v9;
       border-radius: 0.5rem;
@@ -116,6 +116,7 @@
       text-align: left;
       opacity: 0;
       top: 0;
+      line-height: 1.5rem;
       transform: translateY(3rem);
 
       span {

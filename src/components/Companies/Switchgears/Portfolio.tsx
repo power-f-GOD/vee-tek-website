@@ -100,16 +100,31 @@ const Portfolio = () => {
             </Box>
             <Col className="rider-texts-wrapper p-0 d-inline-block">
               <Col as="p" className="rider-text">
-                <span>"Some nice rider text beneath!"</span>
-                <br />- Scott
+                <span>
+                  "... of all contracts awarded in preparation for the Nigeria
+                  ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
+                  terms of performance and high quality service."
+                </span>
+                <br />
+                <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
               <Col as="p" className="rider-text">
-                <span>"Another nice rider text beneath!"</span>
-                <br />- Smith
+                <span>
+                  "... of all contracts awarded in preparation for the Nigeria
+                  ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
+                  terms of performance and high quality service."
+                </span>
+                <br />
+                <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
               <Col as="p" className="rider-text">
-                <span>"And a third nice rider text beneath!"</span>
-                <br />- Jane
+                <span>
+                  "... of all contracts awarded in preparation for the Nigeria
+                  ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
+                  terms of performance and high quality service."
+                </span>
+                <br />
+                <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
             </Col>
           </Col>
