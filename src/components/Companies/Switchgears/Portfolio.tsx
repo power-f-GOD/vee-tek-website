@@ -101,18 +101,33 @@ const Portfolio = () => {
             <Box component='h1' className='page-title text-bold'>
               Our Portfolio
             </Box>
-            <Col className='rider-texts-wrapper p-0 d-inline-block'>
-              <Col as='p' className='rider-text'>
-                <span>"Some nice rider text beneath!"</span>
-                <br />- Scott
+            <Col className="rider-texts-wrapper p-0 d-inline-block">
+              <Col as="p" className="rider-text">
+                <span>
+                  "... of all contracts awarded in preparation for the Nigeria
+                  ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
+                  terms of performance and high quality service."
+                </span>
+                <br />
+                <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
-              <Col as='p' className='rider-text'>
-                <span>"Another nice rider text beneath!"</span>
-                <br />- Smith
+              <Col as="p" className="rider-text">
+                <span>
+                  "... of all contracts awarded in preparation for the Nigeria
+                  ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
+                  terms of performance and high quality service."
+                </span>
+                <br />
+                <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
-              <Col as='p' className='rider-text'>
-                <span>"And a third nice rider text beneath!"</span>
-                <br />- Jane
+              <Col as="p" className="rider-text">
+                <span>
+                  "... of all contracts awarded in preparation for the Nigeria
+                  ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
+                  terms of performance and high quality service."
+                </span>
+                <br />
+                <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
             </Col>
           </Col>
