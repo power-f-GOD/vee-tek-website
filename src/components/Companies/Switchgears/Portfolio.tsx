@@ -15,6 +15,7 @@ import {
   numOfSwitchgearWorks,
   numOfEngineeringWorks
 } from '../../../constants/switchgearsPortfolioData';
+import { transform } from '../../../index';
 
 export interface Data {
   header: string;
@@ -25,13 +26,6 @@ export interface Data {
 }
 
 const chunk = 8;
-
-export const transform = (el: any, val: string) => {
-  el.style.WebkitTransform = val;
-  el.style.MozTransform = val;
-  el.style.OTransform = val;
-  el.style.transform = val;
-};
 
 const Portfolio = () => {
   const [_switchgearLink, _engineeringLink, _tabIndicator] = [

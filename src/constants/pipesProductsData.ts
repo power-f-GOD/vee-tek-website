@@ -2,6 +2,7 @@ export interface ProductProps {
   imageUrl: string;
   name: string;
   desc: string;
+  modalOpenHandler?: Function;
 }
 
 const products: ProductProps[] = [

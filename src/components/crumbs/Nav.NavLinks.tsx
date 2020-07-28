@@ -56,13 +56,13 @@ function NavLinks({ toggleDrawerIsOpen }: { toggleDrawerIsOpen?: Function }) {
 
         <Row className='nav-menu flex-column m-0'>
           <NavLink
-            to='/companies/switchgears'
+            to={gears}
             className='nav-menu-link'
             onClick={handleSetDrawerIsOpen}>
             Switchgears &amp; Electrical Engineering
           </NavLink>
           <NavLink
-            to='/companies/pipes-and-fittings'
+            to={pipes}
             className='nav-menu-link'
             onClick={handleSetDrawerIsOpen}>
             Pipes and Fittings
@@ -135,13 +135,13 @@ function NavLinks({ toggleDrawerIsOpen }: { toggleDrawerIsOpen?: Function }) {
 
             <Row className='nav-menu flex-column m-0'>
               <NavLink
-                to='/companies/switchgears'
+                to={gears}
                 className='nav-menu-link'
                 onClick={handleSetDrawerIsOpen}>
                 Switchgears &amp; Electrical Engineering
               </NavLink>
               <NavLink
-                to='/companies/pipes-and-fittings'
+                to={pipes}
                 className='nav-menu-link'
                 onClick={handleSetDrawerIsOpen}>
                 Pipes and Fittings
@@ -149,31 +149,51 @@ function NavLinks({ toggleDrawerIsOpen }: { toggleDrawerIsOpen?: Function }) {
             </Row>
           </Col>
           {forPipes && (
-            <Col className='nav-link-wrapper p-0'>
-              <NavLink
-                to={`${pipes}/products`}
-                className='nav-link'
-                onClick={handleSetDrawerIsOpen}>
-                Products
-              </NavLink>
-            </Col>
+            <>
+              <Col className='nav-link-wrapper p-0'>
+                <NavLink
+                  to={pipes}
+                  className='nav-link'
+                  onClick={handleSetDrawerIsOpen}
+                  exact>
+                  Overview
+                </NavLink>
+              </Col>
+              <Col className='nav-link-wrapper p-0'>
+                <NavLink
+                  to={`${pipes}/products`}
+                  className='nav-link'
+                  onClick={handleSetDrawerIsOpen}>
+                  Products
+                </NavLink>
+              </Col>
+            </>
           )}
           {forGears && (
-            <Col className='nav-link-wrapper p-0'>
-              <NavLink to={`${gears}/services`} className='nav-link'>
-                Services
-              </NavLink>
-            </Col>
-          )}
-          {forGears && (
-            <Col className='nav-link-wrapper p-0'>
-              <NavLink
-                to={`${gears}/portfolio`}
-                className='nav-link'
-                onClick={handleSetDrawerIsOpen}>
-                Portfolio
-              </NavLink>
-            </Col>
+            <>
+              <Col className='nav-link-wrapper p-0'>
+                <NavLink
+                  to={gears}
+                  className='nav-link'
+                  onClick={handleSetDrawerIsOpen}
+                  exact>
+                  Overview
+                </NavLink>
+              </Col>
+              <Col className='nav-link-wrapper p-0'>
+                <NavLink to={`${gears}/services`} className='nav-link'>
+                  Services
+                </NavLink>
+              </Col>
+              <Col className='nav-link-wrapper p-0'>
+                <NavLink
+                  to={`${gears}/portfolio`}
+                  className='nav-link'
+                  onClick={handleSetDrawerIsOpen}>
+                  Portfolio
+                </NavLink>
+              </Col>
+            </>
           )}
           <Col className='nav-link-wrapper p-0'>
             {forGears ? (
