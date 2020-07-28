@@ -19,8 +19,9 @@
     left: 0;
     right: 0;
     z-index: -1;
-    height: 40rem;
-    max-height: 100vh;
+    max-height: 40rem;
+    min-height: 35rem;
+    height: 100vh;
     transition: 0.5s;
     animation: fromTop 0.75s ease;
   }
@@ -70,7 +71,7 @@
       }
 
       ~ .contact-form-container {
-        transform: translateY(8.5rem);
+        transform: translateY(7.5rem);
       }
 
       ~ .contact-page-title {
@@ -84,9 +85,9 @@
   }
 }
 
-.Inquiry .map-wrapper {
-  background-image: url('/images/google-map-placeholder-inquiry.png');
-}
+// .Inquiry .map-wrapper {
+//   background-image: url('/images/google-map-placeholder-inquiry.png');
+// }
 
 .contact-page-title {
   margin-bottom: 10rem;

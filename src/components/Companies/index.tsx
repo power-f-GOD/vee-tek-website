@@ -22,7 +22,7 @@ const Companies = (props: any) => {
 
   return (
     <Switch>
-      <Route path='/companies/switch-gears' component={SwitchGears} />
+      <Route path='/companies/switchgears' component={SwitchGears} />
       <Route
         path='/companies/pipes-and-fittings'
         component={PipesAndFittings}

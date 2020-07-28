@@ -1,5 +1,5 @@
 .fade-in {
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn {
@@ -169,5 +169,36 @@
   0% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+// Portfolio page animation(s)
+
+@keyframes reveal {
+  3%,
+  30% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  32%,
+  100% {
+    opacity: 0;
+    transform: translateX(-20rem);
+  }
+}
+
+@keyframes swapBg {
+  0%,
+  30% {
+    background-image: url('/images/switch-gears.jpg');
+  }
+  33%,
+  63% {
+    background-image: url('/images/switch-gears-2.jpg');
+  }
+  66%,
+  97% {
+    background-image: url('/images/switch-gears-3.jpg');
   }
 }

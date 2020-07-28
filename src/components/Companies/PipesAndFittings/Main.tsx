@@ -12,6 +12,10 @@ export const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolorum optio quo non suscipit accusantium ipsa excepturi totam! Libero repudiandae nemo similique, aspernatur reiciendis harum sunt distinctio quia dolore quas.';
 
 const Main = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box className='Overview fade-in'>
       <Row

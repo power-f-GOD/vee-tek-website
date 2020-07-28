@@ -8,9 +8,9 @@ body.companies {
       display: block;
     }
 
-    .breadcrumbs-container {
-      visibility: hidden;
-      opacity: 0;
+    .nav-links-wrapper,
+    .nav-menu a {
+      background: rgba(110, 65, 20, 0.7);
     }
   }
 }
@@ -65,11 +65,32 @@ body.companies {
 
     a {
       background: rgba(90, 45, 0, 0.7);
+      margin-bottom: 0.2rem;
+      border-radius: 0.5rem;
+
+      &:last-child {
+        margin-bottom: unset;
+      }
 
       &:hover,
       &:focus {
         background: rgba(90, 45, 0, 0.95) !important;
       }
+
+      &.active {
+        font-weight: bolder;
+        background: rgba(75, 30, 0, 0.95) !important;
+        border-radius: 0.5rem;
+        color: $theme-primary-v8;
+      }
+    }
+  }
+
+  .breadcrumbs-container {
+    &,
+    &:focus-within {
+      visibility: hidden;
+      opacity: 0;
     }
   }
 }
@@ -82,7 +103,9 @@ body.companies {
   box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.35);
 
   &::before {
-    @include before-or-after-v2($bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2))
+    @include before-or-after-v2(
+      $bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2)
+    );
   }
 }
 
@@ -90,6 +113,7 @@ body.companies {
   transform: translateY(-$top-nav-box-height);
 
   .top-nav-box {
+    opacity: 0;
     visibility: hidden;
   }
 
@@ -130,7 +154,6 @@ body.companies {
   color: $theme-primary-v7;
   display: flex;
   align-content: center;
-  font-size: 0.85rem;
   transition: 0.35s;
 
   > * {
@@ -170,7 +193,7 @@ body.companies {
   a {
     display: inline-block;
     color: $theme-primary-v8;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 
     &:hover,
     &:focus {
@@ -181,7 +204,7 @@ body.companies {
 
   [class*='Icon'] {
     color: inherit;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: 0.3s;
   }
 }
@@ -225,8 +248,8 @@ body.companies {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  margin: 0 1rem;
-  font-size: 0.95rem;
+  margin: 0 0.75rem;
+  font-size: 0.9rem;
   padding: 1.5rem 0.25rem;
   // color: $theme-primary-v9;
   color: #eee;
@@ -241,9 +264,9 @@ body.companies {
     content: ' ';
     width: 0.0625rem;
     max-width: 100%;
-    height: calc(60% - 0.5em);
+    height: calc(50% - 0.5em);
     right: 0;
-    bottom: calc(20% + 0.25em);
+    bottom: calc(25% + 0.25em);
     left: -1em;
     z-index: -1;
     background-color: $theme-primary-v4;
@@ -308,7 +331,7 @@ body.companies {
     margin: {
       top: 0.4rem;
       bottom: 0.4rem;
-      left: 2rem;
+      left: 1.5rem;
     }
     padding: 1.25rem;
     min-width: 6rem;
@@ -363,7 +386,7 @@ body.companies {
   text-align: left;
   position: absolute;
   width: max-content;
-  max-width: 22rem;
+  max-width: 24rem;
   min-width: 15rem;
   left: 0;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -392,7 +415,7 @@ body.companies {
     z-index: 50 !important;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
 
     &:hover,
     &:focus {
@@ -412,6 +435,11 @@ body.companies {
         transform: translateX(0);
         visibility: visible;
       }
+    }
+
+    &.active {
+      background: $theme-primary-v2 !important;
+      color: $theme-primary-v8;
     }
   }
 
@@ -448,7 +476,7 @@ body.companies {
 
 .breadcrumbs-wrapper {
   position: absolute;
-  top: 100%;
+  top: calc(100% - 0.0625rem);
   height: 0;
   width: 90vw;
   right: 5vw;
@@ -460,8 +488,7 @@ body.companies {
   border-radius: 0 0 0.75rem 0.75rem;
   background: #fff;
   opacity: 0.55;
-  padding: 0.25rem 0.65rem;
-  font-size: 0.85em !important;
+  padding: 0.15rem 0.65rem;
   transition: 0.4s;
   box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.2);
 
@@ -470,17 +497,17 @@ body.companies {
     opacity: 0;
   }
 
+  span {
+    font-size: 0.9rem !important;
+  }
+
   a {
     color: $theme-primary-v4;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     &:focus {
       text-decoration: underline;
     }
-  }
-
-  .current {
-    font-weight: bold;
   }
 
   &:hover,
@@ -600,7 +627,7 @@ body.companies {
 
   .top-nav-box {
     display: none;
-    margin: 8rem 0 4rem 0;
+    margin: 6rem 0 4rem 0;
     padding: 0.5rem 0;
     background: none;
   }
@@ -628,6 +655,7 @@ body.companies {
     }
 
     a {
+      margin: 0.25rem 0;
       color: $theme-primary-v8;
 
       &:hover,

@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import Box from '@material-ui/core/Box';
+
 import CompanyNews from "./CompanyNews";
 import FooterNavigator, { Page } from "../crumbs/FooterNavigator";
 
@@ -49,9 +51,9 @@ export function Main(props: any) {
 
   return (
     <Col className="Main include-page-header" {..._props}>
-      <Row as="h1" className="page-title">
+      <Box component="h1" className="page-title">
         {pageTitle}
-      </Row>
+      </Box>
       <NewsPost />
       <NewsPost />
       <NewsPost />
