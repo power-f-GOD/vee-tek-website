@@ -25,7 +25,7 @@ const Main = () => {
           <Col as='h1' className=''>
             Vee-Tek Pipes
           </Col>
-          <Col>...the best you can get!</Col>
+          <Col>...quality assured!</Col>
         </Container>
       </Row>
 
@@ -38,7 +38,7 @@ const Main = () => {
                 PVC Pipes
               </Col>
               <Col as='p' className='rider'>
-                Manufacturing of PVC Pipes
+                Manufacturers of PVC Pipes
               </Col>
             </Row>
             <Col as='p'>

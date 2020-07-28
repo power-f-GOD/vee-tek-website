@@ -1,0 +1,122 @@
+.Modal {
+  text-align: center;
+
+  &.animate-close {
+    animation: animateModalClose 0.35s forwards 0.55s;
+  }
+
+  @keyframes animateModalClose {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .MuiBackdrop-root {
+    display: flex;
+    align-content: center;
+    background: rgba($prim-r - 75, $prim-g - 75, $prim-b - 75, 0.95);
+    z-index: unset;
+  }
+
+  .close-modal-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    border: 0.125rem solid transparent;
+    transition: 0.3s;
+    z-index: 5;
+
+    &:hover,
+    &:focus {
+      border-color: white;
+    }
+  }
+}
+
+.ProductsModal {
+  @extend .text-shadow;
+  color: white;
+  width: auto;
+  align-self: center;
+
+  .content-wrapper {
+    // @include debugger($color: pink);
+    position: relative;
+    margin-top: -10vh !important;
+    max-height: 85vh;
+    max-width: 28rem;
+  }
+
+  .product-view {
+    // @include debugger();
+    overflow: visible;
+    height: auto;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+  }
+
+  .product-container {
+    // @include debugger($color: yellow);
+    min-width: 100%;
+    max-width: 95vw;
+    transform: scale(0.8);
+    transition: 0.3s;
+    opacity: 0.75;
+
+    .product-name,
+    .product-desc {
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .product-name {
+      transform: translateY(-100%);
+    }
+
+    &.active-prod {
+      opacity: 1;
+
+      .product-name {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .product-desc {
+        opacity: 1;
+      }
+    }
+  }
+
+  .product-name {
+    font-size: 1.75rem;
+  }
+
+  .product-image {
+    background: {
+      size: cover;
+      position: center;
+    }
+    height: 20rem;
+  }
+
+  .modal-controls-container {
+    position: absolute;
+    bottom: -4.25rem;
+
+    button {
+      border: 0.125rem solid white;
+      transition: 0.3s;
+
+      &:hover,
+      &:focus {
+        background: #111;
+      }
+    }
+  }
+}
