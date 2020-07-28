@@ -1,6 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import Container from 'react-bootstrap/Container';
+import { Container, Row } from "react-bootstrap";
+import { Parallax } from "react-parallax";
+
+import GalleryItem from "../components/crumbs/GalleryItem";
+
+import images from "../constants/galleryImages";
 
 const Gallery = (props: any) => {
   const { setNavState, location } = props;
@@ -11,15 +16,39 @@ const Gallery = (props: any) => {
     setNavState(pathname);
 
     return () => {
-      setNavState('/');
+      setNavState("/");
     };
   }, [pathname, setNavState]);
 
   return (
-    <Container className='fade-in my-5 py-5'>
-      <h1 className='mt-5'>This is the Gallery component!</h1>
-      <h1>Gallery content goes here!</h1>
-    </Container>
+    <div className="fade-in my-5 py-5">
+      <Parallax
+        bgImage="/images/sustainablity.jpg"
+        bgImageAlt="one"
+        strength={200}
+      >
+        <div
+          style={{ height: "500px" }}
+          className="pt-5 text-center d-flex justify-content-center align-items-center"
+        >
+          <h1 className="mt-5 text-white font-weight-bold">
+            {" "}
+            Gallery{" "}
+            <span role="img" aria-label="">
+              📷
+            </span>{" "}
+          </h1>
+        </div>
+      </Parallax>
+      <Container>
+        <Row className="justify-content-center">
+
+          {images.map((v, k) => (
+            <GalleryItem image={v} key={k} />
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 };
 

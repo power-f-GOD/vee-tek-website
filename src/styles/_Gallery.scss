@@ -1,0 +1,16 @@
+.Gallery-Image-Wrapper {
+  width: 100%;
+  height: 20em !important;
+  justify-content: center;
+}
+
+.Gallery-Image {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+
+.Gallery-Image:hover {
+  transform: scale(1.01);
+}

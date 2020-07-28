@@ -101,7 +101,6 @@ const Portfolio = () => {
             <Box component='h1' className='page-title text-bold'>
               Our Portfolio
             </Box>
-<<<<<<< HEAD
             <Col className="rider-texts-wrapper p-0 d-inline-block">
               <Col as="p" className="rider-text">
                 <span>
@@ -129,20 +128,6 @@ const Portfolio = () => {
                 </span>
                 <br />
                 <br />- John Nwodo, Minister of Information and Culture (1999)
-=======
-            <Col className='rider-texts-wrapper p-0 d-inline-block'>
-              <Col as='p' className='rider-text'>
-                <span>"Some nice rider text beneath!"</span>
-                <br />- Scott
-              </Col>
-              <Col as='p' className='rider-text'>
-                <span>"Another nice rider text beneath!"</span>
-                <br />- Smith
-              </Col>
-              <Col as='p' className='rider-text'>
-                <span>"And a third nice rider text beneath!"</span>
-                <br />- Jane
->>>>>>> 3902c81170bb37da6f7e33ff9cfa518d751a95a6
               </Col>
             </Col>
           </Col>
