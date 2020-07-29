@@ -38,7 +38,7 @@ const productsData: ProductProps[] = [
   {
     name: 'Pronutec',
     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididuntut `,
+    sed do eiusmod tempor incididuntut `,
     imageUrl: '/images/one.jpg'
   }
 ];
@@ -82,7 +82,7 @@ const Modal = (props: ModalProps) => {
       BackdropProps={{
         timeout: 500
       }}>
-      <>
+      <div className='d-flex justify-content-center align-content-center'>
         <IconButton
           edge='start'
           className='close-modal-button'
@@ -92,7 +92,7 @@ const Modal = (props: ModalProps) => {
           <CloseIcon fontSize='large' />
         </IconButton>
         <ProductsModal productsData={productsData} willClose={willClose} />
-      </>
+      </div>
     </MuiModal>
   );
 };
@@ -152,14 +152,14 @@ const ProductsModal = (props: {
                 } ${i} d-inline-block`}
                 ref={refs[i]}
                 key={i}>
-                <Box component='h5' className='product-name'>
+                <Box component='h5' className='product-name mx-2'>
                   {name}
                 </Box>
                 <Box
                   className='product-image my-3 mx-2'
                   style={{ backgroundImage: `url('${imageUrl}')` }}
                 />
-                <Box component='p' className='product-desc'>
+                <Box component='p' className='product-desc mx-2'>
                   {desc}
                 </Box>
               </div>
@@ -183,6 +183,9 @@ const ProductsModal = (props: {
             aria-label='view next product'>
             <NavigateNextIcon fontSize='large' />
           </IconButton>
+          <Box className='num-indicator d-inline-block'>{`${
+            activeProd + 1
+          } / ${prodsLen}`}</Box>
         </Col>
       </Row>
     </Container>

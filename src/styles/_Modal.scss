@@ -23,8 +23,8 @@
 
   .close-modal-button {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     color: white;
     border: 0.125rem solid transparent;
     transition: 0.3s;
@@ -46,8 +46,8 @@
   .content-wrapper {
     // @include debugger($color: pink);
     position: relative;
-    margin-top: -10vh !important;
-    max-height: 85vh;
+    margin-top: -11vh !important;
+    max-height: 83vh;
     max-width: 28rem;
   }
 
@@ -102,7 +102,8 @@
       size: cover;
       position: center;
     }
-    height: 20rem;
+    height: 22rem;
+    max-height: 50vh;
   }
 
   .modal-controls-container {
@@ -117,6 +118,13 @@
       &:focus {
         background: #111;
       }
+    }
+
+    .num-indicator {
+      position: absolute;
+      right: 1.5rem;
+      top: 65%;
+      font-size: 0.9rem;
     }
   }
 }

@@ -25,14 +25,14 @@ const Main = () => {
           <Col as='h1' className=''>
             Vee-Tek Pipes
           </Col>
-          <Col>...quality assured!</Col>
+          <Col>...quality reassured!</Col>
         </Container>
       </Row>
 
       {/* section 1 */}
       <Container as='section'>
         <Row>
-          <Col md={8} className='my-5'>
+          <Col lg={8} className='my-5'>
             <Row className='heading-container'>
               <Col as='h2' xs={12} className='p-0'>
                 PVC Pipes
@@ -52,7 +52,7 @@ const Main = () => {
               a 360-degree angle.
             </Col>
           </Col>
-          <Col md={4} className='my-5 text-center'>
+          <Col lg={4} className='my-5 text-center'>
             <Col className='animated-cirle'>
               <Col className='text-1'>Durability!</Col>
               <Col className='text-2'>Reliability!</Col>
