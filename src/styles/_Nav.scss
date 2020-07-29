@@ -10,7 +10,11 @@ body.companies {
 
     .nav-links-wrapper,
     .nav-menu a {
-      background: rgba(110, 65, 20, 0.7);
+      background: rgba(55, 10, 0, 0.7);
+    }
+
+    .nav-menu a:hover {
+      background: rgba(65, 20, 0, 0.95) !important;
     }
   }
 }
@@ -36,7 +40,10 @@ body.companies {
   }
 
   .nav-links-wrapper {
-    margin-top: 1.5rem;
+    margin: {
+      top: 1.5rem;
+      bottom: 1.5rem;
+    };
     background: rgba(90, 45, 0, 0.7);
     padding: {
       right: 0.75rem;
@@ -79,7 +86,7 @@ body.companies {
 
       &.active {
         font-weight: bolder;
-        background: rgba(75, 30, 0, 0.95) !important;
+        background: rgba(80, 35, 0, 0.95) !important;
         border-radius: 0.5rem;
         color: $theme-primary-v8;
       }

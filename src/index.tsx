@@ -8,6 +8,13 @@ import './styles/index.min.css';
 
 import App from './App';
 
+export const transform = (el: any, val: string) => {
+  el.style.WebkitTransform = val;
+  el.style.MozTransform = val;
+  el.style.OTransform = val;
+  el.style.transform = val;
+};
+
 export const userDeviceIsMobile = /(Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone)/i.test(
   window.navigator.userAgent
 );
