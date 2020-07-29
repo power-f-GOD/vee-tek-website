@@ -36,10 +36,10 @@ const pagesData: Page[] = [
     pathname: portfolio,
     name: 'Our Portfolio'
   },
-  {
-    pathname: portfolio,
-    name: 'Technical Data'
-  },
+  // {
+  //   pathname: technicalData,
+  //   name: 'Technical Data'
+  // },
   {
     pathname: inquiry,
     name: 'Make an Inquiry'
