@@ -7,17 +7,25 @@ import Col from 'react-bootstrap/Col';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 
-import Modal from '../../crumbs/Modal';
-import productsData, {
+import Modal, { ProductsModal } from '../../crumbs/Modal';
+import {
+  pipeProducts,
   ProductProps
 } from '../../../constants/pipesProductsData';
 
 const Products = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [currentData = pipeProducts[0].children, setCurrentData] = useState<
+    ProductProps['children']
+  >(pipeProducts[0].children);
 
-  const modalOpenHandler = React.useCallback((open: boolean) => () => {
-    setOpenModal(open);
-  }, []);
+  const modalOpenHandler = React.useCallback(
+    (open: boolean, data: ProductProps['children']) => () => {
+      setOpenModal(open);
+      setCurrentData(data);
+    },
+    []
+  );
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,28 +36,41 @@ const Products = () => {
       <Row as='h1' className='page-title'>
         Our Products
       </Row>
-      <Row>
-        {productsData.map(({ imageUrl, name, desc }, _) => (
+      <Row className='justify-content-around'>
+        <Col xs={12} as='h2' className='mb-5 text-center'>
+          Pipes:
+        </Col>
+        {pipeProducts.map(({ name, desc, bannerUrl, children }, _) => (
           <Product
-            imageUrl={imageUrl}
+            bannerUrl={bannerUrl}
             name={name}
             desc={desc}
-            modalOpenHandler={modalOpenHandler}
+            modalOpenHandler={modalOpenHandler(true, children)}
             key={_}
           />
         ))}
       </Row>
 
-      <Modal open={openModal} modalOpenHandler={modalOpenHandler} />
+      <Modal
+        contentComponent={ProductsModal}
+        contentData={currentData}
+        open={openModal}
+        modalOpenHandler={modalOpenHandler}
+      />
     </Container>
   );
 };
 
-const Product = ({ imageUrl, name, desc, modalOpenHandler }: ProductProps) => (
-  <Col sm={6} xs={12} md={4} lg={3} className='mb-4'>
+const Product = ({
+  bannerUrl,
+  name,
+  desc,
+  modalOpenHandler
+}: Omit<ProductProps, 'children'> & { modalOpenHandler: Function }) => (
+  <Col xs={12} sm={6} md={6} lg={4} className='mb-5'>
     <Box
       className='product'
-      style={{ backgroundImage: `url('${imageUrl}')` }}
+      style={{ backgroundImage: `url('${bannerUrl}')` }}
       tabIndex={0}>
       <Box className='product-details-wrapper'>
         <Box component='h5' className='product-name mb-2'>
@@ -61,8 +82,8 @@ const Product = ({ imageUrl, name, desc, modalOpenHandler }: ProductProps) => (
         <Button
           className='major-button outlined product-button'
           color='primary'
-          onClick={(modalOpenHandler as any)(true)}>
-          View Product
+          onClick={modalOpenHandler as any}>
+          View Product(s)
         </Button>
       </Box>
     </Box>

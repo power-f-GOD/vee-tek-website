@@ -16,47 +16,31 @@ import { ProductProps } from '../../constants/pipesProductsData';
 import { transform } from '../../index';
 import { delay } from '../../utils/timers';
 
-const productsData: ProductProps[] = [
-  {
-    name: 'Pronutec',
-    desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididuntut `,
-    imageUrl: '/images/one.jpg'
-  },
-  {
-    name: 'Pronutec',
-    desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididuntut `,
-    imageUrl: '/images/one.jpg'
-  },
-  {
-    name: 'Pronutec',
-    desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididuntut `,
-    imageUrl: '/images/one.jpg'
-  },
-  {
-    name: 'Pronutec',
-    desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididuntut `,
-    imageUrl: '/images/one.jpg'
-  }
-];
-
 interface ModalProps {
   open: boolean;
-  contentComponent?: React.FC<any>;
+  contentComponent: React.FC<ModalContentComponentProps>;
+  contentData?: any;
   modalOpenHandler: Function;
 }
 
+interface ModalContentComponentProps {
+  data: any;
+  willClose: boolean;
+}
+
 const Modal = (props: ModalProps) => {
-  const { open, modalOpenHandler } = props;
+  const {
+    open,
+    modalOpenHandler,
+    contentComponent: Content,
+    contentData: data
+  } = props;
   const [willClose, setWillClose] = useState(false);
 
   const handleClose = () => {
     setWillClose(true);
     delay(900).then(() => {
-      modalOpenHandler(false)();
+      modalOpenHandler(false, data)();
     });
   };
 
@@ -91,18 +75,18 @@ const Modal = (props: ModalProps) => {
           aria-label='close modal'>
           <CloseIcon fontSize='large' />
         </IconButton>
-        <ProductsModal productsData={productsData} willClose={willClose} />
+        <Content data={data} willClose={willClose} />
       </div>
     </MuiModal>
   );
 };
 
-const ProductsModal = (props: {
-  productsData: ProductProps[];
+export const ProductsModal = (props: {
+  data: ProductProps['children'];
   willClose: boolean;
 }) => {
-  const { productsData, willClose } = props;
-  const prodsLen = productsData.length;
+  const { data: children, willClose } = props;
+  const prodsLen = children.length;
   const [activeProd, setActiveProd] = React.useState<number>(0);
   const refs = Array(prodsLen)
     .fill(null)
@@ -120,7 +104,7 @@ const ProductsModal = (props: {
   );
 
   useEffect(() => {
-    const activeProdEl = refs[activeProd].current;
+    const activeProdEl = refs[activeProd]?.current;
 
     if (activeProdEl) {
       for (const ref of refs) {
@@ -129,7 +113,7 @@ const ProductsModal = (props: {
         } else {
           transform(
             ref.current,
-            `translateX(-${activeProd * 100}%) scale(0.8)`
+            `translateX(-${activeProd * 100}%) scale(0.7)`
           );
         }
       }
@@ -142,9 +126,9 @@ const ProductsModal = (props: {
 
   return (
     <Container className='ProductsModal m-0 p-0 d-inline-block'>
-      <Row className='content-wrapper flex-column align-items-center m-0'>
+      <Row className='content-wrapper d-block flex-column align-items-center m-0'>
         <Col className='product-view'>
-          {productsData.map(({ name, imageUrl, desc }, i) => {
+          {children.map(({ name, imageUrl, desc }, i) => {
             return (
               <div
                 className={`product-container ${
@@ -171,6 +155,7 @@ const ProductsModal = (props: {
             edge='start'
             className='prev-button mx-2'
             color='inherit'
+            disabled={activeProd === 0}
             onClick={handleProdSwitch('prev')}
             aria-label='view previous product'>
             <NavigateBeforeIcon fontSize='large' />
@@ -179,6 +164,7 @@ const ProductsModal = (props: {
             edge='start'
             className='next-button mx-2'
             color='inherit'
+            disabled={activeProd === prodsLen - 1}
             onClick={handleProdSwitch('next')}
             aria-label='view next product'>
             <NavigateNextIcon fontSize='large' />
