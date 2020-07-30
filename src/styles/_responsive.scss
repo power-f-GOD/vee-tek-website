@@ -472,6 +472,18 @@
       }
     }
   }
+
+  // Modal style(s)
+  .ProductsModal {
+    .content-wrapper {
+      max-height: 80vh;
+    }
+
+    .product-image {
+      height: 16rem;
+      max-height: 50vh;
+    }
+  }
 }
 
 @media screen and (max-width: 575px) {

@@ -21,11 +21,11 @@ const Main = () => {
       <Row
         as='header'
         className='align-content-center justify-content-center mx-0'>
-        <Container className='px-0'>
+        <Container className='px-0 align-self-center'>
           <Col as='h1' className=''>
             Vee-Tek Pipes
           </Col>
-          <Col>...quality reassured!</Col>
+          <Col>Quality makes us #1!</Col>
         </Container>
       </Row>
 
