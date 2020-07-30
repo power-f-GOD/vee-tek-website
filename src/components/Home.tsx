@@ -24,7 +24,7 @@ const Home = () => {
               <Col md={12} className="splash-logo">
                 <img src="/images/logos/logo-192.png" alt="Vee-Tek Group" />
                 <Col>
-                  <Col as="h5" className="d-inline-block mt-4 p-0">
+                  <Col as="h1" className="d-inline-block mt-4 p-0">
                     Vee-Tek Group
                   </Col>
                 </Col>

@@ -46,9 +46,10 @@
   .content-wrapper {
     // @include debugger($color: pink);
     position: relative;
-    margin-top: -11vh !important;
-    max-height: 83vh;
-    max-width: 28rem;
+    margin-top: -10vh !important;
+    max-height: 85vh;
+    width: 100vw;
+    max-width: 44rem;
   }
 
   .product-view {
@@ -65,9 +66,10 @@
     // @include debugger($color: yellow);
     min-width: 100%;
     max-width: 95vw;
-    transform: scale(0.8);
+    transform: translateX(0) scale(0.7);
     transition: 0.3s;
     opacity: 0.75;
+    filter: grayscale(1);
 
     .product-name,
     .product-desc {
@@ -81,6 +83,7 @@
 
     &.active-prod {
       opacity: 1;
+      filter: grayscale(0);
 
       .product-name {
         transform: translateY(0);
@@ -98,12 +101,14 @@
   }
 
   .product-image {
+    // @include debugger($color: red);
     background: {
-      size: cover;
+      size: contain;
       position: center;
+      repeat: no-repeat;
     }
-    height: 22rem;
-    max-height: 50vh;
+    height: 25rem;
+    max-height: 55vh;
   }
 
   .modal-controls-container {
