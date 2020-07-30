@@ -5,10 +5,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 
 import CompanyNews from "./CompanyNews";
 import FooterNavigator, { Page } from "../crumbs/FooterNavigator";
+
+import newsData from "./NewsData";
 
 const main = "/news";
 const pagesData: Page[] = [
@@ -54,34 +56,53 @@ export function Main(props: any) {
       <Box component="h1" className="page-title">
         {pageTitle}
       </Box>
-      <NewsPost />
-      <NewsPost />
-      <NewsPost />
+      {newsData.length === 0 ? (
+        <h5 className="m-5 p-5 text-secondary">No Posts yet</h5>
+      ) : (
+        newsData.map((value, key) => (
+          <NewsPost
+            title={value.title}
+            date={value.date}
+            author={value.author}
+            paragraph={value.paragraph}
+            link={value.link}
+            image={value.image}
+            key={key}
+          />
+        ))
+      )}
     </Col>
   );
 }
 
-function NewsPost() {
+function NewsPost(props: {
+  title: string;
+  date: string;
+  author: string;
+  paragraph: string;
+  link: string;
+  image: string;
+}) {
   return (
     <Row className="NewsPost">
       <Col as="h2" xs={12} className="title p-0">
-        <a href="#!">Title of the Medium Article</a>
+        <a href={props.link} target="_blank" rel="noopener noreferrer">
+          {props.title}
+        </a>
       </Col>
       <Col xs={12} className="author">
-        By Immaculata Abba | 2 February, 2020
+        {props.author} | {props.date}
       </Col>
       <Col sm={4} className="image-container py-3">
-        <img src="/images/switch-gears.jpg" alt="Switchgears" />
+        <img
+          src={props.image || "/images/switch-gears.jpg"}
+          alt="Switchgears"
+        />
       </Col>
       <Col sm={8} className="text-container py-3">
-        <Col className="desc p-0">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-          beatae accusamus totam molestias perspiciatis officiis, ipsum
-          laudantium, consectetur ipsam ipsa maiores vero aspernatur qui quas
-          est saepe, soluta eos dolores.
-        </Col>
+        <Col className="desc p-0">{props.paragraph}</Col>
         <Col className="p-0 mt-3">
-          <a href="#!" className="link">
+          <a href={props.link} className="link" rel="noopener noreferrer">
             Read article on Medium...
           </a>
         </Col>
@@ -94,47 +115,57 @@ export function Aside(props: any) {
   return (
     <Col className="Aside" {...props}>
       <Row className="mx-0">
-        <RecentPosts sm={6} lg={12} />
-        <Archive sm={6} lg={12} />
+        <RecentPosts recents={newsData.slice(0, 5)} />
+        <Archive
+          archive={
+            newsData.length > 5
+              ? newsData.slice(newsData.length - 5, newsData.length)
+              : []
+          }
+        />
       </Row>
     </Col>
   );
 }
 
-function RecentPosts(props: any) {
+function RecentPosts(props: { recents: { title: string; link: string }[] }) {
   return (
-    <Col className="RecentPosts mb-5" {...props}>
+    <Col className="RecentPosts mb-5" sm={6} lg={12}>
       <Row as="h2" className="mb-2">
         Recent Posts
       </Row>
-      {Array(5)
-        .fill("")
-        .map((_, id) => (
-          <AsidePost key={id} />
-        ))}
+      {props.recents.length === 0 ? (
+        <p className="text-secondary">No posts yet</p>
+      ) : (
+        props.recents.map((post, id) => (
+          <AsidePost key={id} title={post.title} link={post.link} />
+        ))
+      )}
     </Col>
   );
 }
 
-function Archive(props: any) {
+function Archive(props: { archive: { title: string; link: string }[] }) {
   return (
-    <Col className="Archive mb-5" {...props}>
+    <Col className="Archive mb-5" sm={6} lg={12}>
       <Row as="h2" className="mb-2">
         Archive
       </Row>
-      {Array(5)
-        .fill("")
-        .map((_, id) => (
-          <AsidePost key={id} />
-        ))}
+      {props.archive.length === 0 ? (
+        <p className="text-secondary">No posts in archive yet</p>
+      ) : (
+        props.archive.map((post, id) => (
+          <AsidePost key={id} title={post.title} link={post.link} />
+        ))
+      )}
     </Col>
   );
 }
 
-function AsidePost() {
+function AsidePost(props: { title: string; link: string }) {
   return (
     <Row className="AsidePost x-0">
-      <a href="#!">Lorem ipsum dolor sit amet consectetur.</a>
+      <a href={props.link}>{props.title}</a>
     </Row>
   );
 }

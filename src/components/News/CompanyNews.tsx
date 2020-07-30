@@ -8,7 +8,7 @@ const CompanyNews = () => {
   return (
     <Container className='CompanyNews fade-in px-0'>
       <Row className='mx-0'>
-        <Main as='main' lg={9} pageTitle='Company News' />
+        <Main as='main' lg={9} pageTitle='Our Blog' />
         <Aside as='aside' lg={3} />
       </Row>
     </Container>
