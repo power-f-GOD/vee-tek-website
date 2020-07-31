@@ -82,7 +82,7 @@ const Modal = (props: ModalProps) => {
 };
 
 export const ProductsModal = (props: {
-  data: ProductProps['children'];
+  data: ProductProps['siblings'];
   willClose: boolean;
 }) => {
   const { data: children, willClose } = props;

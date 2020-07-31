@@ -98,12 +98,12 @@ body.companies {
 
       &:hover,
       &:focus {
-        background: rgba(90, 45, 0, 0.95) !important;
+        background: rgba(80, 35, 0, 0.95) !important;
       }
 
       &.active {
         font-weight: bolder;
-        background: rgba(80, 35, 0, 0.95) !important;
+        background: rgba(70, 25, 0, 0.95) !important;
         border-radius: 0.5rem;
         color: $theme-primary-v8;
       }

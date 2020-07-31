@@ -92,10 +92,10 @@
   0% {
     transform: translateX(100%);
   }
-  4%, 50% {
+  3%, 50% {
     transform: translateX(0);
   }
-  54%, 100% {
+  53%, 100% {
     transform: translateX(-100%);
   }
 }
@@ -104,11 +104,11 @@
   0% {
     transform: rotateZ(0);
   }
-  5%,
-  50% {
+  2%,
+  51% {
     transform: rotateZ(720deg);
   }
-  55%,
+  53%,
   100% {
     transform: rotateZ(1440deg);
   }
@@ -127,13 +127,13 @@
 }
 
 @keyframes headerSlideUp {
-  3%,
-  52% {
+  2%,
+  51% {
     opacity: 0;
     transform: translateY(-9rem);
   }
 
-  55%,
+  53%,
   100%,
   0% {
     opacity: 1;
@@ -142,13 +142,13 @@
 }
 
 @keyframes descSlideUp {
-  3%,
-  52% {
+  2%,
+  51% {
     opacity: 0;
     transform: translateY(6rem);
   }
 
-  55%,
+  53%,
   100%,
   0% {
     opacity: 1;
@@ -157,14 +157,14 @@
 }
 
 @keyframes ctaSlideRight {
-  3%,
-  52% {
+  2%,
+  51% {
     visibility: hidden;
     opacity: 0;
     transform: translateY(15rem);
   }
 
-  55%,
+  53%,
   100%,
   0% {
     opacity: 1;
