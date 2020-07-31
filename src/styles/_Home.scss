@@ -1,6 +1,9 @@
 @import 'constants';
 
 .Home {
+  $anim-duration: 16s;
+  $anim-break: 8s;
+
   min-height: 100vh;
   min-width: 100%;
   height: auto;
@@ -33,7 +36,8 @@
       @include before-or-after-v2(
         $w: 100%,
         $h: 100%,
-        $bg: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2)
+        $zi: 0,
+        $bg: linear-gradient(to left, $theme-primary-v3, $theme-primary-v1)
       );
       box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
       border-radius: 0 0 2rem 2rem;
@@ -66,7 +70,7 @@
       width: $size;
       margin-top: 30vh;
       border-radius: 50%;
-      animation: rotateLogo 12s infinite forwards ease;
+      animation: rotateLogo $anim-duration infinite forwards ease;
     }
   }
 
@@ -127,7 +131,7 @@
     width: 100%;
     background-size: cover;
     background-position: right;
-    animation: backgroundSlideIn 12s infinite forwards ease;
+    animation: backgroundSlideIn $anim-duration infinite forwards ease;
 
     &:nth-of-type(1) {
       background-image: url('/images/switch-gears-4.jpg');
@@ -136,8 +140,9 @@
 
     &:nth-of-type(2) {
       background-image: url('/images/pipes-1.jpg');
-      animation-delay: 6s;
+      animation-delay: $anim-break;
       z-index: -1;
+      transform: translateX(100%);
     }
   }
 
@@ -156,34 +161,34 @@
       margin-top: 2rem;
 
       &:first-child {
-        animation: swapZIndex 12s infinite forwards ease;
+        animation: swapZIndex $anim-duration infinite forwards ease;
 
         h2 {
-          animation: headerSlideUp 12s infinite forwards ease;
+          animation: headerSlideUp $anim-duration infinite forwards ease;
         }
 
         .desc {
-          animation: descSlideUp 12s infinite forwards ease;
+          animation: descSlideUp $anim-duration infinite forwards ease;
         }
 
         .cta-link {
-          animation: ctaSlideRight 12s infinite forwards ease;
+          animation: ctaSlideRight $anim-duration infinite forwards ease;
         }
       }
 
       &:last-child {
-        animation: swapZIndex 12s infinite forwards ease 6s;
+        animation: swapZIndex $anim-duration infinite forwards ease $anim-break;
 
         h2 {
-          animation: headerSlideUp 12s infinite forwards ease 6s;
+          animation: headerSlideUp $anim-duration infinite forwards ease $anim-break;
         }
 
         .desc {
-          animation: descSlideUp 12s infinite forwards ease 6s;
+          animation: descSlideUp $anim-duration infinite forwards ease $anim-break;
         }
 
         .cta-link {
-          animation: ctaSlideRight 12s infinite forwards ease 6s;
+          animation: ctaSlideRight $anim-duration infinite forwards ease $anim-break;
         }
       }
     }

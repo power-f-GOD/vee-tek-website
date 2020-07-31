@@ -75,10 +75,12 @@
     .product-desc {
       opacity: 0;
       transition: 0.3s;
+      text-transform: capitalize;
     }
 
     .product-name {
       transform: translateY(-100%);
+      text-transform: capitalize;
     }
 
     &.active-prod {
