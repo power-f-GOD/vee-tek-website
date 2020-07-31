@@ -6,11 +6,11 @@
 
     position: relative;
     min-height: 20rem;
-    max-width: 19rem;
+    max-width: 19.75rem;
     height: 100%;
     overflow: hidden;
     background: {
-      size: contain;
+      size: cover;
       position: center;
       repeat: no-repeat;
     }
@@ -51,9 +51,14 @@
     transition: 0.25s;
     transform: translateY(80%);
 
+    .product-name {
+      text-transform: capitalize;
+    }
+
     .product-desc {
       opacity: 0;
       transition: 0.4s;
+      text-transform: capitalize;
     }
 
     .product-button {
