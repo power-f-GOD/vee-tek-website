@@ -43,7 +43,10 @@
     "sass": "node-sass -w --output-style=compressed src/styles/index.scss src/styles/index.min.css",
     "autoprefix": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -o src/styles/prefixed.min.css",
     "autoprefix:r": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -o src/styles/index.min.css",
-    "autoprefix:w": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -w -o src/styles/prefixed.min.css"
+    "autoprefix:w": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -w -o src/styles/prefixed.min.css",
+    "push": "git push origin HEAD",
+    "commit": "git add .; git commit;",
+    "commit:push": "git add .; git commit; git push origin HEAD"
   },
   "eslintConfig": {
     "extends": "vee-tek-website"

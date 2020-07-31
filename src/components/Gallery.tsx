@@ -21,7 +21,8 @@ const Gallery = (props: any) => {
   }, [pathname, setNavState]);
 
   return (
-    <div className="fade-in my-5 py-5">
+    <div className="fade-in my-5">
+
       <Parallax
         bgImage="/images/sustainablity.jpg"
         bgImageAlt="one"
@@ -42,7 +43,6 @@ const Gallery = (props: any) => {
       </Parallax>
       <Container>
         <Row className="justify-content-center">
-
           {images.map((v, k) => (
             <GalleryItem image={v} key={k} />
           ))}
