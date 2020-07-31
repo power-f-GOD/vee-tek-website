@@ -33,12 +33,24 @@
 
 const data: {
   title: string;
-  author: string;
+  author: any;
   date: string;
   paragraph: string;
   link: string;
   image: string;
 }[] = [
+  {
+    title: "Welcome to the Vee-Tek Blog",
+    author: "Vee-Tek Group",
+    date: "July 31, 2020",
+    paragraph: `Vee-Tek Nigeria Limited was registered in 1991 
+    as an indigenous electrical engineering company primarily engaged 
+    in the design, construction and manufacturing of medium-voltage switch gears and 
+    general electrical engineering services, particularly heavy power 
+    installations such as transmission lines and injection substations`,
+    link: "https://link.medium.com/Ijioo8h0y8",
+    image: "welcome_to_veetek.jpeg"
+  }
   // Your newest post comes right after this
 ];
 

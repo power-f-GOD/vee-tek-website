@@ -66,7 +66,7 @@ export function Main(props: any) {
             author={value.author}
             paragraph={value.paragraph}
             link={value.link}
-            image={value.image}
+            image={"/images/blog_images/" + value.image}
             key={key}
           />
         ))
