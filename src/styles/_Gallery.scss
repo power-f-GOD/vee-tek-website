@@ -11,6 +11,20 @@
   transition: all 0.5s ease-in-out;
 }
 
-.Gallery-Image:hover {
-  transform: scale(1.01);
+// .Gallery-Image:hover {
+//   transform: scale(1.01);
+// }
+
+.Gallery-Overlay {
+  height: 20% !important;
+  width: 100% !important;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  padding: 1rem;
+  text-overflow: ellipsis;
+  text-align: center;
+  // display: none;
+  // visibility: hidden;
+  background-color: #73410fe3;
 }

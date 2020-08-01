@@ -1,22 +1,31 @@
 import React from "react";
-import { Parallax } from "react-parallax";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
 const Certificates = () => {
   return (
     <div className="fade-in">
-      <Parallax bgImage="/images/assurance.jpg" bgImageAlt="one" strength={100}>
+      <div
+        style={{
+          height: "500px",
+          background: `url('/images/assurance.jpg')`,
+          backgroundPosition: "center",
+        }}
+        className=""
+      >
         <div
-          style={{ height: "500px" }}
-          className="pt-5 text-center d-flex justify-content-center align-items-center"
+          className="text-center d-flex justify-content-center align-items-center"
+          style={{
+            height: "500px",
+            width: "100%",
+            background: "#73410f70",
+            position: "absolute",
+            top: 0,
+          }}
         >
-          <h1 className="mt-5 text-white font-weight-bold">
-            {" "}
-            Quality Assurance{" "}
-          </h1>
+          <h1 className="mt-5 text-white font-weight-bold"> Certificate </h1>
         </div>
-      </Parallax>
-      <Container className="mb-5">
+      </div>
+      <Container className="mb-5 mt-5">
         <p className="m-3">
           Every product we make passes through a rigorous test of quality
           certification before leaving the factory. This process guarantees
