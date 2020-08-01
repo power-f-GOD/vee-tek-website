@@ -16,6 +16,7 @@ import {
   numOfEngineeringWorks
 } from '../../../constants/switchgearsPortfolioData';
 import { transform } from '../../../index';
+import { delay } from '../../../utils/timers';
 
 export interface Data {
   header: string;
@@ -55,6 +56,8 @@ const Portfolio = () => {
   );
 
   const handleShowMoreClick = useCallback(() => {
+    const initWindowScrollPos = window.scrollY - 200;
+
     if (activeProject === 'switchgear') {
       if (numOfSwitchgearWorksToShow < numOfSwitchgearWorks) {
         setNumOfSwitchgearWorksToShow((prevNum) => prevNum + chunk);
@@ -64,6 +67,10 @@ const Portfolio = () => {
         setNumOfEngineeringWorksToShow((prevNum) => prevNum + chunk);
       }
     }
+
+    delay(5).then(() => {
+      window.scrollTo(0, initWindowScrollPos);
+    });
   }, [activeProject, numOfSwitchgearWorksToShow, numOfEngineeringWorksToShow]);
 
   useEffect(() => {
@@ -95,8 +102,8 @@ const Portfolio = () => {
             <Box component='h1' className='page-title text-bold'>
               Our Portfolio
             </Box>
-            <Col className="rider-texts-wrapper p-0 d-inline-block">
-              <Col as="p" className="rider-text">
+            <Col className='rider-texts-wrapper p-0 d-inline-block'>
+              <Col as='p' className='rider-text'>
                 <span>
                   "... of all contracts awarded in preparation for the Nigeria
                   ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
@@ -105,7 +112,7 @@ const Portfolio = () => {
                 <br />
                 <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
-              <Col as="p" className="rider-text">
+              <Col as='p' className='rider-text'>
                 <span>
                   "... of all contracts awarded in preparation for the Nigeria
                   ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
@@ -114,7 +121,7 @@ const Portfolio = () => {
                 <br />
                 <br />- John Nwodo, Minister of Information and Culture (1999)
               </Col>
-              <Col as="p" className="rider-text">
+              <Col as='p' className='rider-text'>
                 <span>
                   "... of all contracts awarded in preparation for the Nigeria
                   ‘99 FIFA World Cup, [Vee-Tek] was the most outstanding in
@@ -262,7 +269,7 @@ function Work(props: any) {
 
   useEffect(() => {
     const work = _work.current;
-    const threshold = window.innerHeight + 100;
+    const threshold = window.innerHeight + 400;
 
     if (work) {
       const animate = () => {
@@ -281,7 +288,7 @@ function Work(props: any) {
       window.addEventListener('scroll', animate);
 
       // call function initiallly in case element passes threshold on page load
-      animate();
+      delay(50).then(() => animate());
     }
   }, [_work, show]);
 
