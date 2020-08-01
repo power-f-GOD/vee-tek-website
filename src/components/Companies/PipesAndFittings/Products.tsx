@@ -51,7 +51,7 @@ const Products = () => {
             key={_}
           />
         ))}
-        <Col xs={12} as='h2' className='mb-5 text-center'>
+        <Col xs={12} as='h2' className='my-5 text-center'>
           Fittings:
         </Col>
         {fittingProducts.map(({ name, desc, bannerUrl, siblings }, _) => (
@@ -83,7 +83,7 @@ const Product = ({
   siblings,
   modalOpenHandler
 }: ProductProps & { modalOpenHandler: Function }) => (
-  <Col xs={12} sm={6} md={6} lg={4} className='mb-5'>
+  <Col xs={12} sm={6} md={4} lg={3} className='mb-3 px-2'>
     <Box
       className='product'
       style={{ backgroundImage: `url('${bannerUrl}')` }}

@@ -51,7 +51,7 @@ const pagesData: Page[] = [
   }
 ];
 
-const Switchgears = () => {
+const Switchgears = (props: any) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.classList.add('companies');
@@ -72,7 +72,9 @@ const Switchgears = () => {
         <Route component={_404} />
       </Switch>
 
-      <FooterNavigator pages={pagesData} />
+      {!props.location.pathname.endsWith('companies/switchgears') && (
+        <FooterNavigator pages={pagesData} />
+      )}
     </Box>
   );
 };

@@ -155,7 +155,7 @@ function ElevationScroll(props: { children: React.ReactElement }) {
     threshold: 5,
     target: window
   });
-  const isLanding = /(fittings)$/.test(navState);
+  const isLanding = /(fittings|switchgears)$/.test(navState);
 
   const [atTop, setAtTop] = React.useState<boolean>(true);
 
