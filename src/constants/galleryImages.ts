@@ -1,29 +1,35 @@
-const general: string[] = [
-  "images/gallery/general/i1",
-  "images/gallery/general/i2",
-  "images/gallery/general/i3",
-  "images/gallery/general/i4",
+export interface GalleryImageProp {
+  title: string;
+  image: string;
+}
+
+const baseUrl: string = "/images/gallery";
+
+const general: GalleryImageProp[] = [
+  { image: `${baseUrl}/general/i1`, title: "Vee-Tek Pipes" },
+  { image: `${baseUrl}/general/i2`, title: "Vee-Tek Pipes" },
+  { image: `${baseUrl}/general/i3`, title: "Vee-Tek Pipes" },
+  { image: `${baseUrl}/general/i4`, title: "Vee-Tek Pipes" },
 ];
 
-const pipes: string[] = [
-  "images/gallery/pipes/i1",
-  "images/gallery/pipes/i2",
-  "images/gallery/pipes/i3",
-  "images/gallery/pipes/i4",
-  "images/gallery/pipes/i5",
-  "images/gallery/pipes/i6",
-  "images/gallery/pipes/i7",
-  "images/gallery/pipes/i8",
-  "images/gallery/pipes/i9",
-  "images/gallery/pipes/i10",
+const pipes: GalleryImageProp[] = [
+  { image: `${baseUrl}/pipes/i1`, title: "Extruder Panel Machine" },
+  { image: `${baseUrl}/pipes/i2`, title: "Injection packeting" },
+  { image: `${baseUrl}/pipes/i3`, title: "Mixer Machine Control" },
+  { image: `${baseUrl}/pipes/i4`, title: "Mixer Machine" },
+  { image: `${baseUrl}/pipes/i5`, title: "Printer Machine" },
+  { image: `${baseUrl}/pipes/i6`, title: "Vee-Tek Delivery Truck" },
+  { image: `${baseUrl}/pipes/i7`, title: "Vee-Tek Enugu Factory Office 3" },
+  { image: `${baseUrl}/pipes/i8`, title: "Vee-Tek Enugu Factory Office 3" },
+  { image: `${baseUrl}/pipes/i9`, title: "Fittings Packaging Process" },
+  { image: `${baseUrl}/pipes/i10`, title: "Vee-Tek Packaging" },
 ];
 
-const gears: string[] = [
-  "images/gallery/switch/i1",
-  "images/gallery/switch/i2",
-  "images/gallery/switch/i3",
-  // "images/gallery/switch/i4",
-  "images/gallery/switch/i5",
+const gears: GalleryImageProp[] = [
+  { image: `${baseUrl}/switch/i1`, title: "Switchgears" },
+  { image: `${baseUrl}/switch/i2`, title: "Switchgears engineers at work" },
+  { image: `${baseUrl}/switch/i3`, title: "Switchgears engineers at work" },
+  { image: `${baseUrl}/switch/i5`, title: "Switchgears engineers at work" },
 ];
 
 export default [...general, ...pipes, ...gears];
