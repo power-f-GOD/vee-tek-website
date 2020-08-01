@@ -209,14 +209,87 @@ body.companies {
   // Switchgears Services styles
 
   .Slider-Wrapper {
-    height: 100% !important;
-    max-height: 100% !important;
+    height: 100vh;
+
+    &::before {
+      @include before-or-after-v2(
+        $zi: 1,
+        $bg: rgba($prim-r - 100, $prim-g - 100, $prim-b - 100, 0.65)
+      );
+    }
   }
+
   .Slide-Item {
-    height: 100vh !important;
-    max-height: 100vh !important;
-    object-fit: cover;
+    height: 100vh;
+    max-height: 100vh;
+    background: {
+      position: center;
+      size: auto 100vh;
+      color: $theme-primary-v2;
+      repeat-y: no-repeat;
+    }
+
+    &.first {
+      background-image: url('/images/switchgears-main/two.jpg'),
+        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+    }
+
+    &.second {
+      background-image: url('/images/switchgears-main/three.jpg'),
+        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+    }
+
+    &.third {
+      background-image: url('/images/switchgears-main/four.jpg'),
+        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+    }
+
+    &.fourth {
+      background-image: url('/images/switchgears-main/one.jpg'),
+        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+    }
   }
+
+  .carousel-caption {
+    height: 100vh;
+
+    & > * {
+      height: 100%;
+    }
+
+    .row,
+    .container {
+      height: 100%;
+      padding: 0;
+    }
+
+    [class*='col'] {
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .caption-text-container > * {
+    $size: 24rem;
+
+    height: $size;
+    width: $size;
+    max-width: 100vw;
+    max-height: 100vw;
+    display: flex;
+    margin-top: 6rem;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 2rem;
+    box-shadow: -2rem 2rem 0
+      rgba($prim-r + 100, $prim-g + 100, $prim-b + 100, 0.65);
+    background: rgba($prim-r - 100, $prim-g - 100, $prim-b - 100, 0.75);
+    animation: slideInTop 2s;
+  }
+
   .Pad {
     padding: 2rem;
   }
