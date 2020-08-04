@@ -54,13 +54,7 @@ const Gallery = (props: any) => {
             top: 0,
           }}
         >
-          <h1 className="mt-5 text-white font-weight-bold">
-            {" "}
-            Gallery{" "}
-            <span role="img" aria-label="">
-              📷
-            </span>{" "}
-          </h1>
+          <h1 className="mt-5 text-white font-weight-bold"> Gallery </h1>
         </div>
       </div>
       <Container className="mt-5">

@@ -52,7 +52,7 @@ const Order = () => {
                 Message: \n ${messageRef.current.value}`;
         console.log(message);
         window.open(
-          `mailto:projectmanager@vee-tekgroup.com
+          `mailto:info@vee-tekgroup
               ?subject=VeeTek%20Contact&body=${message}`
         );
       }
