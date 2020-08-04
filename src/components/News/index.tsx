@@ -102,7 +102,12 @@ function NewsPost(props: {
       <Col sm={8} className="text-container py-3">
         <Col className="desc p-0">{props.paragraph}</Col>
         <Col className="p-0 mt-3">
-          <a href={props.link} className="link" rel="noopener noreferrer">
+          <a
+            href={props.link}
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Read article on Medium...
           </a>
         </Col>

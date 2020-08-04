@@ -96,7 +96,7 @@ const Home = () => {
                 We are transforming lives by building infrastructure to
                 distribute power across the federation. Our Switchgears and
                 Electrical Engineering services come with decades of experience,
-                training and scientific innovation.
+                training and engineering innovation.
               </Col>
               <Link to='/companies/switchgears' className='cta-link'>
                 Goto Switchgears

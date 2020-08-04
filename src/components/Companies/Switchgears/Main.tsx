@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Carousel from 'react-bootstrap/Carousel';
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Carousel from "react-bootstrap/Carousel";
 
 const Main = () => {
   React.useEffect(() => {
@@ -11,28 +11,28 @@ const Main = () => {
   }, []);
 
   return (
-    <div className='fade-in'>
-      <div className='Slider-Wrapper text-black'>
+    <div className="fade-in">
+      <div className="Slider-Wrapper text-black">
         <Carousel interval={7000}>
           <Carousel.Item>
-            <Col className='d-block w-100 Slide-Item first' />
+            <Col className="d-block w-100 Slide-Item first" />
 
             <Carousel.Caption>
-              <Container fluid='md'>
+              <Container fluid="md">
                 <Row>
-                  <Col md={8} className='caption-text-container ml-auto'>
-                    <h4>Vee-Tek Power Station</h4>
+                  <Col md={8} className="caption-text-container ml-auto">
+                    <h4>Vee-Tek Power Substation</h4>
                   </Col>
                 </Row>
               </Container>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <Col className='d-block w-100 Slide-Item second' />
+            <Col className="d-block w-100 Slide-Item second" />
             <Carousel.Caption>
-              <Container fluid='md'>
+              <Container fluid="md">
                 <Row>
-                  <Col md={8} className='caption-text-container ml-auto'>
+                  <Col md={8} className="caption-text-container ml-auto">
                     <h4>
                       Skeleton of a Vee-Tek distribution panel being coupled in
                       the factory
@@ -43,14 +43,14 @@ const Main = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <Col className='d-block w-100 Slide-Item third' />
+            <Col className="d-block w-100 Slide-Item third" />
 
             <Carousel.Caption>
-              <Container fluid='md'>
+              <Container fluid="md">
                 <Row>
-                  <Col md={8} className='caption-text-container ml-auto'>
+                  <Col md={8} className="caption-text-container ml-auto">
                     <h4>
-                      Vee-Tek Simple Distribution Board for Smaller Facilities
+                      Vee-Tek Simple Distribution Board for Bigger Facilities
                     </h4>
                   </Col>
                 </Row>
@@ -58,11 +58,11 @@ const Main = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <Col className='d-block w-100 Slide-Item fourth' />
+            <Col className="d-block w-100 Slide-Item fourth" />
             <Carousel.Caption>
               <Container fluid>
                 <Row>
-                  <Col md={8} className='caption-text-container ml-auto'>
+                  <Col md={8} className="caption-text-container ml-auto">
                     <h4>
                       Vee-Tek Simple Distribution Board for Smaller Facilities
                     </h4>
