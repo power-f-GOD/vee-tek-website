@@ -283,11 +283,13 @@ body.companies {
     align-self: center;
     justify-content: center;
     border-radius: 50%;
+    position: absolute;
+    right: -1.25rem;
     padding: 2rem;
     box-shadow: -2rem 2rem 0
       rgba($prim-r + 100, $prim-g + 100, $prim-b + 100, 0.65);
     background: rgba($prim-r - 100, $prim-g - 100, $prim-b - 100, 0.75);
-    animation: slideInTop 2s;
+    animation: slideInBottom 2.5s forwards;
   }
 
   .Pad {

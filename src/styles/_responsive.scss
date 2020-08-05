@@ -51,10 +51,6 @@
   body.companies {
     .for-home {
       .nav-links-wrapper {
-        margin: {
-          top: 0.5rem;
-          bottom: 0.5rem;
-        }
         background: transparent;
       }
     }
@@ -66,6 +62,15 @@
     .nav-link-wrapper {
       &:last-child {
         display: flex;
+      }
+    }
+  }
+
+  .for-home {
+    .nav-links-wrapper {
+      margin: {
+        top: 0.5rem;
+        bottom: 0.5rem;
       }
     }
   }
@@ -211,6 +216,17 @@
           font-size: 3rem;
         }
       }
+    }
+
+    .caption-text-container > * {
+      $size: 20rem;
+
+      height: $size;
+      width: $size;
+      max-width: 75vw;
+      max-height: 75vw;
+      padding: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 

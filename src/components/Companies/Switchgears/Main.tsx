@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <div className="fade-in">
       <div className="Slider-Wrapper text-black">
-        <Carousel interval={7000}>
+        <Carousel interval={6000} pause={false}>
           <Carousel.Item>
             <Col className="d-block w-100 Slide-Item first" />
 

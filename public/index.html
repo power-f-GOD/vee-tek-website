@@ -2,26 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="rgb(82, 38, 0)" />
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <style>
-      html{overflow:hidden;}._loader{height:100vh;width:100vw;position:fixed;right: 0;top:0;z-index:10000;left:0;min-height:100%;display:flex;background-color:rgb(82, 38, 0);background-image:linear-gradient(to bottom,rgb(132, 88, 40),rgb(82, 38, 0));color:white;justify-content:center;align-items:center;transition:0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335)}._loader._hide-right{visibility:hidden;transform:translateX(110%)}._loader._hide-left{visibility:hidden;transform:translateX(-110%)}._logo{display:block;font-size:1.25rem;border-radius:2rem}._logo-img{width:6rem;border-radius:50%;display:inline-block;transform:scale(1) translateY(calc(-500vh - 128px))}.centered{transform: translateY(-64px);}._logo-img._animate{animation:animate 1.1s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55)}@keyframes animate{0%{transform:scale(0.1) translateY(calc(-500vh - 128px))}50%{transform:scale(0.1) translateY(50vh)}100%{transform:scale(1) translateY(-64px)}}._ripple{animation:ripple 2.25s infinite forwards ease-out;transform:scale(1) translateY(-64px)}@keyframes ripple{from{box-shadow:0 0 0 0em #c8a565,0 0 0 0.75em rgba(200,165,101,0.5)}to{box-shadow:0 0 0em 3em rgba(0,0,0,0),0 0 0 3em rgba(0,0,0,0)}}
+      html{overflow:hidden}*{box-sizing:border-box}._loader{height:100%;width:100%;position:fixed;right:0;top:0;z-index:10000;left:0;min-height:100%;font-size:1rem;background-color:#522600;background-image:linear-gradient(to bottom, #845828, #522600);color:white;transition:0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335)}._loader>div{display:flex;height:100%;width:100%;position:relative;justify-content:center;align-items:center;text-align:center}._loader._hide-right{visibility:hidden;-webkit-transform:translateX(110%);transform:translateX(110%)}._loader._hide-left{visibility:hidden;-webkit-transform:translateX(-110%);transform:translateX(-110%)}._logo{display:block;font-size:1.25rem;border-radius:2rem}._logo-img{width:6rem;height:6rem;border-radius:50%;display:inline-block;-webkit-transform:scale(1) translateY(calc(-500vh - 128px));transform:scale(1) translateY(calc(-500vh - 128px))}._logo-img img{width:100%;border-radius:50%}._logo-img.centered{-webkit-transform:translateY(-64px);transform:translateY(-64px)}._logo-img._animate{-webkit-animation:logoAnimate 1.1s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);animation:logoAnimate 1.1s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55)}._logo-img._ripple::before,._logo-img._ripple::after{height:100%;width:100%;position:absolute;top:0;content:'';left:0;box-sizing:border-box;border:0.2em solid #e8bc8c;background:#341200;border-radius:50%;-webkit-transform:scale(0.75);transform:scale(0.75);-webkit-animation:loaderRipple 2.5s infinite ease-out 1s;animation:loaderRipple 2.5s infinite ease-out 1s;z-index:-1}._logo-img._ripple::after{-webkit-animation-delay:1.65s;animation-delay:1.65s}._load-status{-webkit-transform:translateY(-1.5rem);transform:translateY(-1.5rem);font-family:'Comfortaa', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align:center;opacity:0;transition:opacity 0.35s;color:#e8bc8c}._load-status.show{opacity:1}._logo-title{width:9rem;position:absolute;bottom:1rem;-webkit-transform:translateY(6rem);transform:translateY(6rem);transition:0.5s}._logo-title.show{-webkit-transform:translateY(0);transform:translateY(0)}@-webkit-keyframes logoAnimate{0%{-webkit-transform:scale(0.1) translateY(calc(-500vh - 128px));transform:scale(0.1) translateY(calc(-500vh - 128px))}50%{-webkit-transform:scale(0.1) translateY(50vh);transform:scale(0.1) translateY(50vh)}100%{-webkit-transform:scale(1) translateY(-64px);transform:scale(1) translateY(-64px)}}@keyframes logoAnimate{0%{-webkit-transform:scale(0.1) translateY(calc(-500vh - 128px));transform:scale(0.1) translateY(calc(-500vh - 128px))}50%{-webkit-transform:scale(0.1) translateY(50vh);transform:scale(0.1) translateY(50vh)}100%{-webkit-transform:scale(1) translateY(-64px);transform:scale(1) translateY(-64px)}}@-webkit-keyframes loaderRipple{from{opacity:0.85;-webkit-transform:scale(0.75);transform:scale(0.75)}to{opacity:0;-webkit-transform:scale(1.85);transform:scale(1.85)}}@keyframes loaderRipple{from{opacity:0.85;-webkit-transform:scale(0.75);transform:scale(0.75)}to{opacity:0;-webkit-transform:scale(1.85);transform:scale(1.85)}}
     </style>
     <script>
-      let rippleTimeout;function loadAnimScript(){const img=this;const wrapper=img.parentNode;img.className='_logo-img _animate';rippleTimeout=setTimeout(function(){img.className='_logo-img centered _ripple';},2500);window.addEventListener('load',function(){setTimeout(function(){clearTimeout(rippleTimeout);img.className='_logo-img centered';setTimeout(function(){wrapper.className='_loader _hide-right';document.querySelector('html').style.overflow='auto'},700);},1300)});}setTimeout(function(){document.head.insertAdjacentHTML('afterbegin','<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700,900|Google+Sans:300,400,500,700,900&display=swap"/>')},10);
+      var rippleTimeout,almostTimeout;function loadAnimScript(){var loader=document.querySelector("._loader"),logoImg=this.parentNode,loadStatus=document.querySelector("._load-status"),logoTitle=document.querySelector("._logo-title");logoImg.classList.add("_animate"),setTimeout((function(){logoTitle.classList.add("show"),rippleTimeout=setTimeout((function(){logoImg.className="_logo-img centered _ripple",loadStatus.textContent="Loading...",loadStatus.classList.add("show"),almostTimeout=setTimeout((function(){loadStatus.textContent="Slow network. Almost done..."}),18e3)}),2e3)}),2e3),window.addEventListener("load",(function(){setTimeout((function(){clearTimeout(almostTimeout),clearTimeout(rippleTimeout),logoImg.className="_logo-img centered",loadStatus.classList.remove("show"),setTimeout((function(){loadStatus.textContent="Welcome!",loadStatus.classList.add("show"),setTimeout((function(){loader.className="_loader _hide-right",document.querySelector("html").style.overflow="auto"}),1600)}),400)}),1400)}))}document.head.insertAdjacentHTML("afterbegin",'<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700,900|Google+Sans:300,400,500,700,900&display=swap"/>');
     </script>
     <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
+      Notice the use of  in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
@@ -30,17 +30,28 @@
 
   <body class="custom-scroll-bar">
     <section class="_loader">
-      <img
-        class="_logo-img"
-        width="3rem"
-        src="/images/logos/logo-192.png"
-        alt="Vee-Tek Group"
-        onload="loadAnimScript.bind(this)()"
-        onerror="loadAnimScript.bind(this)()"
-      />
+      <div>
+        <div>
+          <span class="_logo-img">
+            <img
+              src="/images/logos/logo-192.png"
+              alt="Vee-Tek Group"
+              onload="loadAnimScript.bind(this)()"
+              onerror="loadAnimScript.bind(this)()"
+            />
+          </span>
+
+          <div class="_load-status">Loading...</div>
+        </div>
+        <img
+          class="_logo-title"
+          width="5rem"
+          src="/images/logos/logo-title-trans.png"
+          alt="Vee-Tek Group"
+        />
+      </div>
     </section>
 
-    <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root" class="custom-scroll-bar"></div>
   </body>
