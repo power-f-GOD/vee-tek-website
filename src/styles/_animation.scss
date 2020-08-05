@@ -37,18 +37,20 @@
   }
 }
 
-.slide-in-top {
-  animation: slideInTop 0.75s ease;
-}
+// Switchgears landing page animation
 
-@keyframes slideInTop {
+@keyframes slideInBottom {
   from {
-    transform: translateY(-100%);
+    transform: translateY(150%);
     opacity: 0;
+    box-shadow: -1rem 25rem 0
+      rgba($prim-r + 100, $prim-g + 100, $prim-b + 100, 0.65);
   }
   to {
-    transform: translateY(0);
+    transform: translateY(10%);
     opacity: 1;
+    box-shadow: -2rem 2rem 0
+      rgba($prim-r + 100, $prim-g + 100, $prim-b + 100, 0.65);
   }
 }
 
@@ -98,6 +100,21 @@
 }
 
 // home page animations
+
+.slide-in-top {
+  animation: slideInTop 0.75s ease;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 @keyframes backgroundSlideIn {
   0% {
