@@ -180,7 +180,7 @@ const Contact = (props: any) => {
             <Row className='align-content-center text-center h-100 p-4 py-5'>
               <Col xs={12} className='p-0'>
                 <Box
-                  component='h5'
+                  component='h3'
                   className='font-weight-bold text-center my-4'>
                   CONTACT INFORMATION
                 </Box>
