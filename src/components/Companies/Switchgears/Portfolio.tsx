@@ -174,8 +174,7 @@ const Portfolio = () => {
                 component='h2'
                 className='projects-header d-block w-100'
                 fontWeight='bold'
-                margin='6rem 0'
-                fontSize='2.25rem'>
+                margin='6rem 0'>
                 Switchgear Projects Executed
               </Box>
               {switchgearServices.map((data: Data, key: number) => (
@@ -194,8 +193,7 @@ const Portfolio = () => {
                 component='h2'
                 className='projects-header d-block w-100'
                 fontWeight='bold'
-                margin='6rem 0'
-                fontSize='2.25rem'>
+                margin='6rem 0'>
                 Engineering Projects Executed
               </Box>
               {engineeringServices.map((data: Data, key: number) => (

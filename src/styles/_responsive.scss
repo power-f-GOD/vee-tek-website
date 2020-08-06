@@ -318,10 +318,6 @@
 
   .contact-page-title {
     margin-bottom: 9.75rem;
-
-    > h1 {
-      font-size: 2.25rem;
-    }
   }
 
   .contact-form-container {
@@ -453,10 +449,6 @@
 
 @media screen and (max-width: 599px) {
   //Contact Us style(s)
-  .contact-form-header {
-    font-size: 1.5rem;
-  }
-
   .contact-form-col {
     padding: 3.5rem 2rem;
   }
@@ -470,18 +462,10 @@
 
   //Portfolio page style(s)
   .Portfolio {
-    .page-title {
-      font-size: 2.5rem;
-    }
-
     .projects-link {
       font-size: 1rem;
       border-bottom: 0.125rem solid $theme-primary-v4;
       padding: 0.5rem 0.75rem;
-    }
-
-    .projects-header {
-      font-size: 2rem;
     }
 
     .work-desc-header {
