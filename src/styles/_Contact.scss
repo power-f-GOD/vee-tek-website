@@ -71,7 +71,7 @@
       }
 
       ~ .contact-form-container {
-        transform: translateY(7.5rem);
+        transform: translateY(7.75rem);
       }
 
       ~ .contact-page-title {
@@ -107,7 +107,7 @@
 }
 
 .contact-form-wrapper {
-  border-radius: 2.5rem;
+  border-radius: 3rem;
   overflow: hidden;
   max-width: 62rem;
   margin: auto;
@@ -129,6 +129,10 @@
     $theme-primary-v4,
     $theme-primary-v2
   );
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 
 @keyframes fromBottom {
