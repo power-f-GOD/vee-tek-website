@@ -1,3 +1,30 @@
+@import 'constants';
+
+.About {
+  padding-top: 0.01rem;
+
+  // @include debugger();
+  .WhoWeAre {
+    &.include-page-header,
+    .include-page-header {
+      .page-title::before {
+        background: {
+          image: url('/images/who-we-are-one.jpg');
+          size: cover;
+          position: center;
+        }
+      }
+
+      &.second {
+        .page-title::before {
+          background-image: url('/images/who-we-are-two.jpg');
+          background-position: center 70%;
+        }
+      }
+    }
+  }
+}
+
 .react-parallax-bgimage {
   height: 100% !important;
   width: 100% !important;
@@ -12,7 +39,7 @@
   height: 100px;
   width: 100px;
   filter: grayscale(1);
-  background-image: url("/images/portfolio/enugu_logo.jpg");
+  background-image: url('/images/portfolio/enugu_logo.jpg');
   transition: all 0.5s ease-in-out;
 }
 
@@ -39,49 +66,64 @@
 }
 
 .Certificate-One {
-  background: url("/images/document.jpg");
+  background: url('/images/document.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .Certificate-Two {
-  background: url("/images/document.jpg");
+  background: url('/images/document.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 $clients: (
-  "enugu": "/images/clients/enugu.jpg",
-  "nbp": "/images/clients/nbp.jpeg",
-  "ndphc": "/images/clients/ndphc.jpeg",
-  "nlng": "/images/clients/nlng.jpeg",
-  "shell": "/images/clients/shell.jpeg",
-  "eedc": "/images/clients/eedc.jpg",
-  "nta": "/images/clients/nta.jpg",
-  "arda": "/images/clients/arda.jpg",
-  "unn": "/images/clients/unn.jpg",
-
-
+  1 'enugu' '/images/clients/enugu.jpg',
+  2 'nbp' '/images/clients/nbp.jpeg',
+  3 'ndphc' '/images/clients/ndphc.jpeg',
+  4 'nlng' '/images/clients/nlng.jpeg',
+  5 'shell' '/images/clients/shell.jpeg',
+  6 'eedc' '/images/clients/eedc.jpg',
+  7 'nta' '/images/clients/nta.jpg',
+  8 'arda' '/images/clients/arda.jpg',
+  9 'unn' '/images/clients/unn.jpg'
 );
 
-@each $i, $image in $clients {
-  .Client-Image-#{$i} {
+$size: 6.25rem;
+
+@each $i, $key, $image in $clients {
+  .Client-Image-#{$key} {
     object-fit: cover;
-    border-radius: 100%;
-    background-color: grey;
+    background-repeat: repeat-y;
     background-position: center;
-    box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.02);
-    height: 100px;
-    width: 100px;
+    height: $size;
+    width: $size;
     filter: grayscale(1);
     background-image: url($image);
-    transition: all 0.5s ease-in-out;
+    transition: 0.4s;
+    cursor: pointer;
+    animation: swapFilter #{$i + 7}s infinite #{$i + 1}s;
   }
-  
-  .Client-Image-#{$i}:hover {
+
+  .Client-Image-#{$key}:hover {
     filter: none;
-    transform: scale(1.1);
+    background-position: center $size;
+    animation: unset;
+  }
+}
+
+@keyframes swapFilter {
+  0%, 5% {filter: grayscale(1);
+    background-position: center;
+  }
+  10%, 25% {
+    filter: none;
+    background-position: center $size;
+  }
+  30%, 100% {
+    filter: grayscale(1);
+    background-position: center;
   }
 }

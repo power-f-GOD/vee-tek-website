@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Box from '@material-ui/core/Box';
+
 import WhoWeAre from './WhoWeAre';
 import OurPeople from './OurPeople';
 import Certificates from './Certificates';
@@ -53,7 +55,7 @@ const About = (props: any) => {
   }, [pathname, setNavState]);
 
   return (
-    <>
+    <Box className='About' position='relative'>
       <Switch>
         <Route path={whoWeAre} component={WhoWeAre} />
         <Route path={ourPeople} component={OurPeople} />
@@ -66,7 +68,7 @@ const About = (props: any) => {
       </Switch>
 
       <FooterNavigator pages={pagesData} />
-    </>
+    </Box>
   );
 };
 
