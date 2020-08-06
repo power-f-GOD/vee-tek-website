@@ -44,7 +44,7 @@ footer {
 
   a {
     color: $theme-primary-v8;
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     display: inline-block;
 
     &:hover,
@@ -97,7 +97,7 @@ footer {
 
 .Footer-Wrapper-Two {
   padding: 0.75rem 0;
-  color: #ffffff;
+  color: $theme-primary-v6;
   text-align: left;
   background: linear-gradient(to left, $theme-primary-v3, $theme-primary-v1);
 

@@ -36,7 +36,6 @@ const Nav = () => {
             <Toolbar className='nav-toolbar d-flex flex-wrap'>
               <Box component='h5' className='logo font-weight-bold'>
                 <NavLink to='/' exact>
-                  {' '}
                   <img
                     src='/images/logos/logo-64.png'
                     alt='Vee-Tek Group logo'
@@ -68,8 +67,6 @@ const Nav = () => {
 function TemporaryDrawer(props: any) {
   const { children, toggleDrawerIsOpen } = props;
   const open = useContext(DrawerContext);
-
-  // const [open, setOpen] = React.useState(Boolean);
 
   const toggleDrawer = (open: boolean) => (
     event: React.KeyboardEvent | React.MouseEvent

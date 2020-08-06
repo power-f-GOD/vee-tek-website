@@ -19,6 +19,7 @@
 
   .splash-links-container {
     height: 95vh;
+    max-height: 65rem;
     position: relative;
     width: 18rem;
     left: calc(50vw - 36rem);
@@ -228,7 +229,6 @@
       &:hover,
       &:focus {
         color: $theme-primary-v2;
-        // border-color: transparent;
         background: $theme-primary-v8;
       }
     }

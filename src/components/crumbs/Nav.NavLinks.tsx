@@ -181,7 +181,10 @@ function NavLinks({ toggleDrawerIsOpen }: { toggleDrawerIsOpen?: Function }) {
                 </NavLink>
               </Col>
               <Col className='nav-link-wrapper p-0'>
-                <NavLink to={`${gears}/services`} className='nav-link'>
+                <NavLink
+                  to={`${gears}/services`}
+                  className='nav-link'
+                  onClick={handleSetDrawerIsOpen}>
                   Services
                 </NavLink>
               </Col>
