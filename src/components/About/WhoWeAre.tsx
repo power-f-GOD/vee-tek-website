@@ -18,7 +18,7 @@ const WhoWeAre = () => (
     </Row>
     <Container className='px-0 pt-4 pb-5'>
       <Row className='mx-0'>
-        <Col className='mb-4 px-0'>
+        <Col sm={12} className='mb-4 px-0'>
           <Col as='h2' className='mb-4'>
             Our History
           </Col>
@@ -84,8 +84,8 @@ const WhoWeAre = () => (
           }
         ].map((client, _) => (
           <Tooltip title={client.title} key={_}>
-            <Col sm={2}>
-              <div className={`m-2 my-4 Client-Image-${client.image}`}></div>
+            <Col xs={6} sm={3} md={2} className='text-center'>
+              <div className={`d-inline-block m-2 my-4 Client-Image-${client.image}`}></div>
             </Col>
           </Tooltip>
         ))}
