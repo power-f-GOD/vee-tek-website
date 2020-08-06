@@ -181,7 +181,7 @@ const others = [
   {
     title: "Accountant",
     name: "Albert Nwanguma",
-    image: "/images/team/chidinma_m.jpg",
+    image: "/images/team/albert_n.jpg",
   },
 ];
 export default { main, others };
