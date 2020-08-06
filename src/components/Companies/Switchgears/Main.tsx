@@ -50,7 +50,7 @@ const Main = () => {
                 <Row>
                   <Col md={8} className="caption-text-container ml-auto">
                     <h4>
-                      Vee-Tek Simple Distribution Board for Bigger Facilities
+                      Vee-Tek Simple Distribution Board for Smaller Facilities
                     </h4>
                   </Col>
                 </Row>
@@ -64,7 +64,7 @@ const Main = () => {
                 <Row>
                   <Col md={8} className="caption-text-container ml-auto">
                     <h4>
-                      Vee-Tek Simple Distribution Board for Smaller Facilities
+                      Vee-Tek Simple Distribution Board for Bigger Facilities
                     </h4>
                   </Col>
                 </Row>
