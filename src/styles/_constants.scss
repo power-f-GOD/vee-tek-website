@@ -214,12 +214,6 @@ $white: #fff;
     &::before,
     &::after {
       @include before-or-after-v2($w: 100vw, $h: 25rem, $bg: $theme-primary-v2);
-      clip-path: polygon(
-        0 0,
-        calc(50vw + 19rem) 0,
-        calc(50vw - 1rem) 30rem,
-        0 30rem
-      );
     }
 
     &::after {

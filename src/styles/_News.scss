@@ -21,6 +21,15 @@
     .page-title {
       margin-bottom: 10rem;
       text-align: left;
+
+      &::before {
+        clip-path: polygon(
+          0 0,
+          calc(50vw + 19rem) 0,
+          calc(50vw - 1rem) 30rem,
+          0 30rem
+        );
+      }
     }
   }
 
@@ -57,7 +66,12 @@
       color: white;
 
       &::before {
-        @include before-or-after-v2($bg: $theme-primary-v3, $br: 2rem, $h: 100%, $b: 0);
+        @include before-or-after-v2(
+          $bg: $theme-primary-v3,
+          $br: 2rem,
+          $h: 100%,
+          $b: 0
+        );
         top: unset;
       }
 
