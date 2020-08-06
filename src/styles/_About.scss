@@ -22,13 +22,11 @@
         }
       }
     }
-  }
-}
 
-.react-parallax-bgimage {
-  height: 100% !important;
-  width: 100% !important;
-  object-fit: cover;
+    .logo-img {
+      box-shadow: 0 2rem 3rem rgba(200, 165, 101, 0.85);
+    }
+  }
 }
 
 .Client-Image {
@@ -104,7 +102,7 @@ $size: 6.25rem;
     background-image: url($image);
     transition: 0.4s;
     cursor: pointer;
-    animation: swapFilter #{$i + 7}s infinite #{$i + 1}s;
+    animation: swapFilter #{$i + 6}s infinite #{$i + 1}s;
   }
 
   .Client-Image-#{$key}:hover {

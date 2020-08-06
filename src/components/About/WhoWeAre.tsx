@@ -18,7 +18,7 @@ const WhoWeAre = () => (
     </Row>
     <Container className='px-0 pt-4 pb-5'>
       <Row className='mx-0'>
-        <Col sm={12} className='mb-4 px-0'>
+        <Col sm={12} md={8} className='my-5 px-0 order-sm-1 order-md-0'>
           <Col as='h2' className='mb-4'>
             Our History
           </Col>
@@ -28,7 +28,7 @@ const WhoWeAre = () => (
             construction and manufacturing of medium-voltage switch gears and
             general electrical engineering services, particularly heavy power
             installations such as transmission lines and injection substations.
-            We maintain technical R&D partnerships with{' '}
+            We maintain technical R&amp;D partnerships with{' '}
             <a href='http://www.pronutec.com/'>Pronutec</a> and{' '}
             <a href='http://www.telergon.es/'>Telergon</a> whose switchgear
             products we equally distribute. We later expanded into pipe
@@ -41,9 +41,9 @@ const WhoWeAre = () => (
             are committed to Quality, Innovation and Service.
           </Col>
         </Col>
-        <Col as='p' md={4} className='align-self-center text-center py-5'>
+        <Col as='p' sm={12} md={4} className='align-self-center order-sm-0 order-md-1 text-center pt-4 pb-5'>
           <img
-            className='rounded-circle'
+            className='rounded-circle logo-img'
             src='/images/logos/logo-192.png'
             alt='Vee-Tek Group'
           />
@@ -56,7 +56,7 @@ const WhoWeAre = () => (
       </Row>
     </Box>
     <Container className='pt-4 pb-5'>
-      <Col as='h2' className='mb-4'>
+      <Col as='h3' className='mb-4'>
         We've Served
       </Col>
       <Col as='p'>

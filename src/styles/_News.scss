@@ -22,7 +22,7 @@
       margin-bottom: 10rem;
       text-align: left;
 
-      &::before {
+      &::before, &::after {
         clip-path: polygon(
           0 0,
           calc(50vw + 19rem) 0,

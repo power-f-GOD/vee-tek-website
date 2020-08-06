@@ -235,15 +235,35 @@
     font-size: 1.15rem;
   }
 
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
+  h5 {
+    font-size: 1.1rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+
   .include-page-header {
     .page-title {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       text-align: center !important;
       display: block;
 
       &::before,
       &::after {
         height: 24rem;
+        clip-path: unset !important;
       }
     }
   }
