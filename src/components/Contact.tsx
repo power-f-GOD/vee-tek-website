@@ -76,9 +76,7 @@ const Contact = (props: any) => {
       />
 
       <Container className='contact-page-title text-center fade-in'>
-        <Box component='h1'>
-          CONTACT US
-        </Box>
+        <Box component='h1'>CONTACT US</Box>
       </Container>
 
       <Container fluid='sm' className='contact-form-container'>
@@ -212,13 +210,8 @@ const Contact = (props: any) => {
                     <PhoneIcon fontSize='large' />
                   </Col>
                   <Col className='p-0 mb-4'>
-                    <a href='tel:+234(0)9032663166' className='text-reset'>
-                      +234(0)9032663166 (Plastic)
-                    </a>
-                  </Col>
-                  <Col className='p-0 mb-4'>
-                    <a href='tel:+234(0)8033244062' className='text-reset '>
-                      +234(0)8033244062 (Electrical)
+                    <a href='tel:+234(0)7030489434' className='text-reset'>
+                      +234(0)7030489434
                     </a>
                   </Col>
                 </Row>

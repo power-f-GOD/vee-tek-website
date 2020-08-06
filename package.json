@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "vee-tek-website",
   "version": "0.1.0",
   "private": true,
   "main": "dist/lemma-chain-react.es5.min.js",
@@ -46,14 +46,15 @@
     "autoprefix:w": "npx postcss src/styles/index.min.css --use autoprefixer --no-map -w -o src/styles/prefixed.min.css",
     "push": "git push origin HEAD",
     "commit": "git add .; git commit;",
-    "commit:push": "git add .; git commit; git push origin HEAD"
+    "commit:push": "git add .; git commit; git push origin HEAD",
+    "rebase:pipe": "git stash && git checkout master && git stash && git pull origin master && git stash && git checkout pipe-specific-changes-VTW-21 && git stash && git rebase master"
   },
   "eslintConfig": {
     "extends": "vee-tek-website"
   },
   "browserslist": {
     "production": [
-      ">0.01%",
+      ">0.2%",
       "not dead",
       "not op_mini all"
     ],
