@@ -267,7 +267,7 @@ function Work(props: any) {
 
   useEffect(() => {
     const work = _work.current;
-    const threshold = window.innerHeight + 400;
+    const threshold = window.innerHeight + 300;
 
     if (work) {
       const animate = () => {
