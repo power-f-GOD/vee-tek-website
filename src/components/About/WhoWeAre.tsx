@@ -16,7 +16,7 @@ const WhoWeAre = () => (
     <Row as='h1' className='page-title'>
       About Us
     </Row>
-    <Container className='px-0 pt-4 pb-5'>
+    <Container className='px-0 pt-2 pb-5'>
       <Row className='mx-0'>
         <Col sm={12} md={8} className='my-5 px-0 order-sm-1 order-md-0'>
           <Col as='h2' className='mb-4'>

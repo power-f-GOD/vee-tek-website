@@ -27,6 +27,37 @@
       box-shadow: 0 2rem 3rem rgba(200, 165, 101, 0.85);
     }
   }
+
+  .OurPeople {
+    &.include-page-header {
+      .page-title {
+        &::before,
+        &::after {
+          height: 32rem;
+        }
+
+        &::before {
+          background: {
+            image: url('/images/team/group.jpg');
+            size: cover;
+            position: center 12%;
+          }
+        }
+      }
+    }
+  }
+
+  .Certificate {
+    &.include-page-header {
+      .page-title::before {
+        background: {
+          image: url('/images/assurance.jpg');
+          size: cover;
+          position: center;
+        }
+      }
+    }
+  }
 }
 
 .Client-Image {
@@ -46,21 +77,14 @@
   transform: scale(1.1);
 }
 
-.Person-Image-Wrapper {
-  width: 100%;
-  height: 15em !important;
-  justify-content: center;
-}
-
 .Person-Image {
-  height: 100% !important;
-  width: 100% !important;
-  object-fit: cover;
+  border-radius: 1rem;
+  width: 20rem;
 }
 
 .Certificate {
   width: 100%;
-  height: 40em;
+  height: auto;
 }
 
 .Certificate-One {
@@ -113,14 +137,18 @@ $size: 6.25rem;
 }
 
 @keyframes swapFilter {
-  0%, 5% {filter: grayscale(1);
+  0%,
+  5% {
+    filter: grayscale(1);
     background-position: center;
   }
-  10%, 25% {
+  10%,
+  25% {
     filter: none;
     background-position: center $size;
   }
-  30%, 100% {
+  30%,
+  100% {
     filter: grayscale(1);
     background-position: center;
   }

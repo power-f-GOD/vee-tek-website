@@ -92,7 +92,6 @@ export const GalleryModal = (props: {
 }) => {
   const { data: children, index, willClose } = props;
   const prodsLen = children.length;
-  console.log(index);
   const [activeProd, setActiveProd] = React.useState<number>(index);
   const refs = Array(prodsLen)
     .fill(null)
