@@ -1,6 +1,8 @@
 import React, { useState, createContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import Box from '@material-ui/core/Box';
+
 import {
   Nav,
   Home,
@@ -21,7 +23,7 @@ const App = () => {
   const setNavState = (val: string) => _setNavState(val);
 
   return (
-    <div className='App fade-in'>
+    <Box className='App fade-in' position='relative'>
       <BrowserRouter>
         <NavContext.Provider value={navState}>
           <Nav />
@@ -65,7 +67,7 @@ const App = () => {
         {navState !== '/' && <Footer />}
         <GoUpFAB />
       </BrowserRouter>
-    </div>
+    </Box>
   );
 };
 

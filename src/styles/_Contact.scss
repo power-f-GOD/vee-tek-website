@@ -23,12 +23,12 @@
     min-height: 35rem;
     height: 100vh;
     transition: 0.5s;
-    animation: fromTop 0.75s ease;
+    animation: fromTop 1.25s;
   }
 
   @keyframes fromTop {
     from {
-      transform: translateY(-25%);
+      transform: translateY(-100%);
     }
     to {
       transform: translateY(0);
@@ -102,7 +102,7 @@
 }
 
 .contact-form-container {
-  animation: fromBottom 0.75s ease;
+  animation: fromBottom 2.5s ease;
   transition: 0.5s;
 }
 
@@ -137,7 +137,7 @@
 
 @keyframes fromBottom {
   from {
-    transform: translateY(25%);
+    transform: translateY(30%);
   }
   to {
     transform: translateY(0);

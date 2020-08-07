@@ -332,11 +332,11 @@ body.companies {
     position: relative;
 
     .page-title {
-      margin-top: 14rem;
+      // margin-top: 14rem;
 
       &::before,
       &::after {
-        height: 27rem;
+        // height: 27rem;
         clip-path: unset;
       }
     }

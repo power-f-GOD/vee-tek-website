@@ -35,29 +35,14 @@ const Gallery = (props: any) => {
   }, [pathname, setNavState]);
 
   return (
-    <div className='Gallery fade-in my-5'>
-      <div
-        style={{
-          height: '26rem',
-          background: `url('/images/sustainablity.jpg')`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          marginBottom: '6rem'
-        }}>
-        <div
-          className=' my-5 text-center d-flex justify-content-center align-items-center'
-          style={{
-            height: 'inherit',
-            width: '100%',
-            background: 'rgba(75, 25, 0, 0.5)',
-            position: 'absolute',
-            top: 0
-          }}>
-          <h1 className='mt-5 text-white font-weight-bold'> Gallery </h1>
-        </div>
-      </div>
-      <Container className='mt-5'>
-        <Row className='justify-content-center'>
+    <Container
+      fluid
+      className='Gallery include-page-header fade-in p-0 pt-1'>
+      <Row as='h1' className='page-title px-1'>
+        Gallery
+      </Row>
+      <Container className='p-0'>
+        <Row className='justify-content-center mb-5'>
           {images.map((v, k) => (
             <GalleryItem
               image={v.image}
@@ -67,15 +52,15 @@ const Gallery = (props: any) => {
             />
           ))}
         </Row>
+        <Modal
+          contentComponent={GalleryModal}
+          contentData={currentData}
+          open={openModal}
+          index={currentIndex}
+          modalOpenHandler={modalOpenHandler}
+        />
       </Container>
-      <Modal
-        contentComponent={GalleryModal}
-        contentData={currentData}
-        open={openModal}
-        index={currentIndex}
-        modalOpenHandler={modalOpenHandler}
-      />
-    </div>
+    </Container>
   );
 };
 
@@ -84,7 +69,7 @@ const GalleryItem = (props: {
   title: string;
   modalOpener: Function;
 }) => (
-  <Col xs={10} sm={6} md={4} lg={4} className='p-0'>
+  <Col xs={10} sm={6} md={4} className='p-1'>
     <div className='Gallery-Image-Wrapper' onClick={props.modalOpener as any}>
       <picture>
         <source
