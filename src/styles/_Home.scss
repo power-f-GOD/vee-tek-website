@@ -134,13 +134,24 @@
     background-position: right;
     animation: backgroundSlideIn $anim-duration infinite forwards ease;
 
+    picture {
+      height: inherit;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: right;
+      width: 100% !important;
+      height: inherit !important;
+    }
+
     &:nth-of-type(1) {
-      background-image: url('/images/switch-gears-4.jpg');
+      // background-image: url('/images/switch-gears-4.jpg');
       z-index: 0;
     }
 
     &:nth-of-type(2) {
-      background-image: url('/images/pipes-1.jpg');
+      // background-image: url('/images/pipes-1.jpg');
       animation-delay: $anim-break;
       z-index: -1;
       transform: translateX(100%);
@@ -181,15 +192,18 @@
         animation: swapZIndex $anim-duration infinite forwards ease $anim-break;
 
         h2 {
-          animation: headerSlideUp $anim-duration infinite forwards ease $anim-break;
+          animation: headerSlideUp $anim-duration infinite forwards ease
+            $anim-break;
         }
 
         .desc {
-          animation: descSlideUp $anim-duration infinite forwards ease $anim-break;
+          animation: descSlideUp $anim-duration infinite forwards ease
+            $anim-break;
         }
 
         .cta-link {
-          animation: ctaSlideRight $anim-duration infinite forwards ease $anim-break;
+          animation: ctaSlideRight $anim-duration infinite forwards ease
+            $anim-break;
         }
       }
     }
