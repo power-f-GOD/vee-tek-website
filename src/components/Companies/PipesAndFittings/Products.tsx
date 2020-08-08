@@ -48,32 +48,42 @@ const Products = () => {
         <Box className='after' />
       </Row>
       <Row className='mx-0'>
-        <Col xs={12} as='h2' className='mb-5 text-center'>
-          Pipes:
+        <Col md={12} lg={3} className='mb-5 p-0'>
+          <Row className='mx-0'>
+            <Col xs={12} as='h2' className='mb-5 text-center'>
+              Pipes:
+            </Col>
+            {pipeProducts.map(({ name, desc, bannerUrl, siblings }, _) => (
+              <Product
+                bannerUrl={bannerUrl}
+                name={name}
+                desc={desc}
+                siblings={siblings}
+                modalOpenHandler={modalOpenHandler(true, siblings)}
+                lg={12}
+                key={_}
+              />
+            ))}
+          </Row>
         </Col>
-        {pipeProducts.map(({ name, desc, bannerUrl, siblings }, _) => (
-          <Product
-            bannerUrl={bannerUrl}
-            name={name}
-            desc={desc}
-            siblings={siblings}
-            modalOpenHandler={modalOpenHandler(true, siblings)}
-            key={_}
-          />
-        ))}
-        <Col xs={12} as='h2' className='my-5 text-center'>
-          Fittings:
+        <Col md={12} lg={9} className='p-0 pl-lg-2'>
+          <Row className='mx-0'>
+            <Col xs={12} as='h2' className='mb-5 text-center'>
+              Fittings:
+            </Col>
+            {fittingProducts.map(({ name, desc, bannerUrl, siblings }, _) => (
+              <Product
+                bannerUrl={bannerUrl}
+                name={name}
+                desc={desc}
+                siblings={siblings}
+                modalOpenHandler={modalOpenHandler(true, siblings)}
+                lg={4}
+                key={_}
+              />
+            ))}
+          </Row>
         </Col>
-        {fittingProducts.map(({ name, desc, bannerUrl, siblings }, _) => (
-          <Product
-            bannerUrl={bannerUrl}
-            name={name}
-            desc={desc}
-            siblings={siblings}
-            modalOpenHandler={modalOpenHandler(true, siblings)}
-            key={_}
-          />
-        ))}
       </Row>
 
       <Modal
@@ -91,9 +101,10 @@ const Product = ({
   name,
   desc,
   siblings,
-  modalOpenHandler
-}: ProductProps & { modalOpenHandler: Function }) => (
-  <Col xs={12} sm={6} md={4} lg={3} className='mb-3 px-2'>
+  modalOpenHandler,
+  lg
+}: ProductProps & { modalOpenHandler: Function; lg: number; }) => (
+  <Col xs={12} sm={6} md={4} lg={lg} className='mb-3 px-2'>
     <Box className='product' tabIndex={0}>
       <picture>
         <source
