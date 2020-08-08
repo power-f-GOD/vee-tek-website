@@ -197,7 +197,7 @@ $white: #fff;
   }
 }
 
-@mixin page-header($bg: url('/images/switch-gears-3.jpg')) {
+@mixin page-header() {
   padding-top: 0.01rem;
 
   .row {
@@ -208,22 +208,33 @@ $white: #fff;
     margin: 14rem 0;
     color: white;
     justify-content: center;
-    text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.5);
     font-weight: bold;
 
-    &::before,
-    &::after {
+    .before,
+    .after {
       @include before-or-after-v2($w: 100vw, $h: 27rem, $bg: $theme-primary-v2);
+      overflow: hidden;
+
+      picture {
+        display: block;
+        height: inherit;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: inherit !important;
+        }
+      }
     }
 
-    &::after {
+    .after {
       opacity: 0.6;
     }
 
-    &::before {
+    .before {
       background: {
         color: $theme-primary-v4;
-        image: $bg;
       }
     }
   }

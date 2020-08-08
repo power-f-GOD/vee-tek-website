@@ -330,23 +330,12 @@ body.companies {
   .PipesAndFittings,
   .Switchgears {
     position: relative;
-
-    .page-title {
-      // margin-top: 14rem;
-
-      &::before,
-      &::after {
-        // height: 27rem;
-        clip-path: unset;
-      }
-    }
   }
 
   .PipesAndFittings {
     .page-title {
-      &::before {
-        background-image: url('/images/pipes-2.jpg');
-        background-size: cover;
+      .before {
+        object-fit: cover;
       }
     }
 

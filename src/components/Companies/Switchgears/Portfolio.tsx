@@ -56,7 +56,7 @@ const Portfolio = () => {
   );
 
   const handleShowMoreClick = useCallback(() => {
-    const initWindowScrollPos = window.scrollY - 200;
+    const initWindowScrollPos = window.scrollY;
 
     if (activeProject === 'switchgear') {
       if (numOfSwitchgearWorksToShow < numOfSwitchgearWorks) {
@@ -256,7 +256,7 @@ function Work(props: any) {
   const hideImageElementOnError = useCallback(
     (e: any) => {
       const img = e.target;
-      const noImg = e.target.nextElementSibling;
+      const noImg = e.target.parentNode.nextElementSibling;
 
       img.style.display = 'none';
       noImg.textContent = header[0].toUpperCase();
@@ -267,7 +267,7 @@ function Work(props: any) {
 
   useEffect(() => {
     const work = _work.current;
-    const threshold = window.innerHeight + 300;
+    const threshold = window.innerHeight + 200;
 
     if (work) {
       const animate = () => {
@@ -300,12 +300,18 @@ function Work(props: any) {
         {year}
       </Col>
       <Col md={6} className='work-image-wrapper'>
-        <img
-          src={`/images/portfolio/${imgUrl}`}
-          alt={imgAlt}
-          className='work-image'
-          onError={hideImageElementOnError}
-        />
+        <picture>
+          <source
+            srcSet={`/images/portfolio/${imgUrl}`.replace(/jpe?g|png/, 'webp')}
+            type='image/webp'
+          />
+          <img
+            src={`/images/portfolio/${imgUrl}`}
+            alt={imgAlt}
+            className='work-image'
+            onError={hideImageElementOnError}
+          />
+        </picture>
         <Col as='span' className='no-image-placeholder work-image' />
       </Col>
       <Col md={6} className='work-desc-container align-self-center h-100 p-0'>

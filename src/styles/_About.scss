@@ -5,24 +5,6 @@
 
   // @include debugger();
   .WhoWeAre {
-    &.include-page-header,
-    .include-page-header {
-      .page-title::before {
-        background: {
-          image: url('/images/who-we-are-one.jpg');
-          size: cover;
-          position: center;
-        }
-      }
-
-      &.second {
-        .page-title::before {
-          background-image: url('/images/who-we-are-two.jpg');
-          background-position: center 70%;
-        }
-      }
-    }
-
     .logo-img {
       box-shadow: 0 2rem 3rem rgba(200, 165, 101, 0.85);
     }
@@ -31,16 +13,12 @@
   .OurPeople {
     &.include-page-header {
       .page-title {
-        &::before,
-        &::after {
+        .before,
+        .after {
           height: 32rem;
-        }
 
-        &::before {
-          background: {
-            image: url('/images/team/group.jpg');
-            size: cover;
-            position: center 12%;
+          img {
+            margin-top: 3.5rem;
           }
         }
       }

@@ -19,6 +19,11 @@
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.25);
     transition: 0.3s;
 
+    .product-image {
+      object-fit: cover;
+      height: 18rem !important;
+    }
+
     &:hover,
     &:focus,
     &:focus-within {
@@ -27,6 +32,12 @@
 
       .product-details-wrapper {
         transform: translateY(0);
+
+        .product-name {
+          white-space: unset;
+          text-overflow: unset;
+          overflow: unset;
+        }
 
         .product-desc {
           opacity: 1;
@@ -44,15 +55,19 @@
     padding: 1rem;
     position: absolute;
     color: white;
+    top: 0;
     background: rgba($prim-r - 75, $prim-g - 75, $prim-b - 75, 0.9);
     width: 100%;
     height: 100%;
     font-size: 0.9rem;
     transition: 0.25s;
-    transform: translateY(80%);
+    transform: translateY(78%);
 
     .product-name {
       text-transform: capitalize;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     .product-desc {

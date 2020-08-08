@@ -104,13 +104,20 @@
 
   .product-image {
     // @include debugger($color: red);
-    background: {
-      size: contain;
-      position: center;
-      repeat: no-repeat;
-    }
     height: 32rem;
     max-height: 62vh;
+
+    picture {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      max-height: inherit;
+
+      img {
+        align-self: center;
+        max-height: inherit !important;
+      }
+    }
   }
 
   .modal-controls-container {

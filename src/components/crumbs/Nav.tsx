@@ -36,10 +36,13 @@ const Nav = () => {
             <Toolbar className='nav-toolbar d-flex flex-wrap'>
               <Box component='h5' className='logo font-weight-bold'>
                 <NavLink to='/' exact>
-                  <img
-                    src='/images/logos/logo-64.png'
-                    alt='Vee-Tek Group logo'
-                  />{' '}
+                  <picture>
+                    <source srcSet='/images/logos/logo-64.webp' />
+                    <img
+                      src='/images/logos/logo-64.png'
+                      alt='Vee-Tek Group logo'
+                    />
+                  </picture>{' '}
                   Vee-Tek Group
                 </NavLink>
               </Box>
