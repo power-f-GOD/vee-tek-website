@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import Box from '@material-ui/core/Box';
 
 import images, { GalleryImageProp } from '../constants/galleryImages';
 import Modal, { GalleryModal } from './crumbs/GalleryModal';
@@ -37,7 +41,17 @@ const Gallery = (props: any) => {
   return (
     <Container fluid className='Gallery include-page-header fade-in p-0 pt-1'>
       <Row as='h1' className='page-title px-1'>
+      <Box className='before'>
+          <picture>
+            <source srcSet='/images/sustainablity.webp' type='image/webp' />
+            <img
+              src='/images/sustainablity.jpg'
+              alt={'/images/sustainablity.jpg'.split('/').slice(-1)[0]}
+            />
+          </picture>
+        </Box>
         Gallery
+        <Box className='after' />
       </Row>
       <Container className='p-0'>
         <Row className='justify-content-center mb-5'>

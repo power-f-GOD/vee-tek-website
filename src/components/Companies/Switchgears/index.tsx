@@ -46,7 +46,7 @@ const pagesData: Page[] = [
   },
   {
     pathname: '/companies/pipes-and-fittings',
-    name: 'Pipes Company',
+    name: 'Pipes and Fittings',
     notRelative: true
   }
 ];

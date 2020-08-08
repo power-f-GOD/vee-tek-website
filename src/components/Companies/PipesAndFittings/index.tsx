@@ -14,7 +14,7 @@ const [products, order] = [`${main}/products`, `${main}/order`];
 const pagesData: Page[] = [
   {
     pathname: '/companies/switchgears/inquiry',
-    name: 'Switchgears Company',
+    name: 'Switchgears',
     notRelative: true
   },
   {
