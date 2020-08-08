@@ -22,7 +22,19 @@ const Home = () => {
           <Row className='splash-links-container align-items-center text-center m-0'>
             <Col>
               <Col md={12} className='splash-logo'>
-                <img src='/images/logos/logo-192.png' alt='Vee-Tek Group' />
+                <picture>
+                  <source
+                    srcSet='/images/logos/logo-192.webp'
+                    type='image/webp'
+                  />
+                  <img
+                    src='/images/logos/logo-192.png'
+                    alt={
+                      'Logo ' +
+                      '/images/logos/logo-192.png'.split('/').slice(-1)[0]
+                    }
+                  />
+                </picture>
                 <Col>
                   <Col as='h1' className='d-inline-block mt-4 p-0'>
                     Vee-Tek Group
@@ -64,8 +76,27 @@ const Home = () => {
       <Col
         md={12}
         className='description-wrapper align-items-center d-flex p-0'>
-        <Col className='home-background-img' />
-        <Col className='home-background-img' />
+        <Col className='home-background-img'>
+          <picture>
+            <source srcSet='/images/switch-gears-4.webp' type='image/webp' />
+            <img
+              src='/images/switch-gears-4.jpg'
+              alt={
+                'Background ' +
+                '/images/switch-gears-4.jpg'.split('/').slice(-1)[0]
+              }
+            />
+          </picture>
+        </Col>
+        <Col className='home-background-img'>
+          <picture>
+            <source srcSet='/images/pipes-1.webp' type='image/webp' />
+            <img
+              src='/images/pipes-1.jpg'
+              alt={'Background ' + '/images/pipes-1.jpg'.split('/').slice(-1)[0]}
+            />
+          </picture>
+        </Col>
 
         <Container>
           <Col

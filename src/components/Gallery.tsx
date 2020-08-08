@@ -41,7 +41,7 @@ const Gallery = (props: any) => {
   return (
     <Container fluid className='Gallery include-page-header fade-in p-0 pt-1'>
       <Row as='h1' className='page-title px-1'>
-      <Box className='before'>
+        <Box className='before'>
           <picture>
             <source srcSet='/images/sustainablity.webp' type='image/webp' />
             <img
@@ -88,11 +88,6 @@ const GalleryItem = (props: {
           className='Gallery-Image'
           srcSet={props.image + '.webp'}
           type='image/webp'
-        />
-        <source
-          className='Gallery-Image'
-          srcSet={props.image + '.jpg'}
-          type='image/jpeg'
         />
         <img
           src={props.image + '.jpg'}

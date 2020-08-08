@@ -3,13 +3,14 @@
 .Products {
   h2 {
     position: relative;
-    color: $theme-primary-v2;
+    color: white;
+    padding: 0.15rem;
 
     &::before {
       @include before-or-after-v2(
         $w: calc(100% - 1rem),
         $l: 0.5rem,
-        $bg: $theme-primary-v8,
+        $bg: rgba($prim-r - 75, $prim-g - 75, $prim-b - 75, 0.9),
         $br: 0.35rem
       );
     }
