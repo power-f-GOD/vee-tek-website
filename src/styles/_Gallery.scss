@@ -2,14 +2,6 @@
   &.include-page-header {
     .page-title {
       margin-bottom: 12rem;
-
-      &::before {
-        background: {
-          image: url('/images/sustainablity.jpg');
-          size: cover;
-          position: center;
-        }
-      }
     }
   }
 }

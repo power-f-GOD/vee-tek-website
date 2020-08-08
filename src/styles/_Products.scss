@@ -59,6 +59,7 @@
     background: rgba($prim-r - 75, $prim-g - 75, $prim-b - 75, 0.9);
     width: 100%;
     height: 100%;
+    border-radius: inherit;
     font-size: 0.9rem;
     transition: 0.25s;
     transform: translateY(78%);

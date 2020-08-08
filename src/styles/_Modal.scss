@@ -71,26 +71,15 @@
     opacity: 0.75;
     filter: grayscale(1);
 
-    .product-name,
     .product-desc {
       opacity: 0;
       transition: 0.3s;
       text-transform: capitalize;
     }
 
-    .product-name {
-      transform: translateY(-100%);
-      text-transform: capitalize;
-    }
-
     &.active-prod {
       opacity: 1;
       filter: grayscale(0);
-
-      .product-name {
-        transform: translateY(0);
-        opacity: 1;
-      }
 
       .product-desc {
         opacity: 1;
@@ -99,6 +88,7 @@
   }
 
   .product-name {
+    text-transform: capitalize;
     font-size: 1.75rem;
   }
 
