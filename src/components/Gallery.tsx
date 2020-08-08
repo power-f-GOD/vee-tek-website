@@ -35,9 +35,7 @@ const Gallery = (props: any) => {
   }, [pathname, setNavState]);
 
   return (
-    <Container
-      fluid
-      className='Gallery include-page-header fade-in p-0 pt-1'>
+    <Container fluid className='Gallery include-page-header fade-in p-0 pt-1'>
       <Row as='h1' className='page-title px-1'>
         Gallery
       </Row>
@@ -82,7 +80,6 @@ const GalleryItem = (props: {
           srcSet={props.image + '.jpg'}
           type='image/jpeg'
         />
-
         <img
           src={props.image + '.jpg'}
           className='Gallery-Image'

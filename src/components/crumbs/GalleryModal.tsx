@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-import Box from "@material-ui/core/Box";
-import IconButton from "@material-ui/core/IconButton";
-import MuiModal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import CloseIcon from "@material-ui/icons/Close";
+import Box from '@material-ui/core/Box';
+import IconButton from '@material-ui/core/IconButton';
+import MuiModal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import CloseIcon from '@material-ui/icons/Close';
 
-import { transform } from "../../index";
-import { delay } from "../../utils/timers";
-import { GalleryImageProp } from "../../constants/galleryImages";
+import { transform } from '../../index';
+import { delay } from '../../utils/timers';
+import { GalleryImageProp } from '../../constants/galleryImages';
 
 interface GalleryModalProps {
   open: boolean;
@@ -35,7 +35,7 @@ const Modal = (props: GalleryModalProps) => {
     open,
     modalOpenHandler,
     contentComponent: Content,
-    contentData: data,
+    contentData: data
   } = props;
   const [willClose, setWillClose] = useState(false);
 
@@ -49,16 +49,16 @@ const Modal = (props: GalleryModalProps) => {
   React.useEffect(() => {
     if (open) {
       setWillClose(false);
-      document.querySelector("html")!.style.overflow = "hidden";
-    } else document.querySelector("html")!.style.overflow = "auto";
+      document.querySelector('html')!.style.overflow = 'hidden';
+    } else document.querySelector('html')!.style.overflow = 'auto';
   }, [open]);
 
   return (
     <MuiModal
-      aria-labelledby="spring-modal-title"
-      aria-describedby="spring-modal-description"
+      aria-labelledby='spring-modal-title'
+      aria-describedby='spring-modal-description'
       className={`Modal ${
-        willClose ? "animate-close" : ""
+        willClose ? 'animate-close' : ''
       } d-flex justify-content-center align-content-center`}
       open={open}
       onClose={handleClose}
@@ -66,18 +66,16 @@ const Modal = (props: GalleryModalProps) => {
       disableScrollLock
       BackdropComponent={Backdrop}
       BackdropProps={{
-        timeout: 500,
-      }}
-    >
-      <div className="d-flex justify-content-center align-content-center">
+        timeout: 500
+      }}>
+      <div className='d-flex justify-content-center align-content-center'>
         <IconButton
-          edge="start"
-          className="close-modal-button"
-          color="inherit"
+          edge='start'
+          className='close-modal-button'
+          color='inherit'
           onClick={handleClose}
-          aria-label="close modal"
-        >
-          <CloseIcon fontSize="large" />
+          aria-label='close modal'>
+          <CloseIcon fontSize='large' />
         </IconButton>
         <Content index={props.index} data={data} willClose={willClose} />
       </div>
@@ -98,8 +96,8 @@ export const GalleryModal = (props: {
     .map(() => React.createRef<any>());
 
   const handleProdSwitch = React.useCallback(
-    (state: "next" | "prev") => () => {
-      if (state === "next") {
+    (state: 'next' | 'prev') => () => {
+      if (state === 'next') {
         setActiveProd((prev) => (prev < prodsLen - 1 ? prev + 1 : prev));
       } else {
         setActiveProd((prev) => (prev > 0 ? prev - 1 : prev));
@@ -130,54 +128,56 @@ export const GalleryModal = (props: {
   }, [activeProd, refs, willClose]);
 
   return (
-    <Container className="ProductsModal m-0 p-0 d-inline-block">
-      <Row className="content-wrapper d-block flex-column align-items-center m-0">
-        <Col className="product-view">
+    <Container className='ProductsModal m-0 p-0 d-inline-block'>
+      <Row className='content-wrapper d-block flex-column align-items-center m-0'>
+        <Box component='h5' className='product-name d-block mx-2'>
+          Gallery Photos
+        </Box>
+        <Col className='product-view'>
           {children.map(({ title, image }, i) => {
             return (
               <div
                 className={`product-container ${
-                  activeProd === i && !willClose ? "active-prod" : ""
+                  activeProd === i && !willClose ? 'active-prod' : ''
                 } ${i} d-inline-block`}
                 ref={refs[i]}
-                key={i}
-              >
-                <Box component="h5" className="product-name mx-2">
-                  Gallery
+                key={i}>
+                <Box className='product-image my-3 mx-2'>
+                  <picture>
+                    <source srcSet={image + '.webp'} type='image/webp' />
+                    <img
+                      src={image + '.jpg'}
+                      alt={image.split('/').slice(-1)[0] + '.jpg'}
+                    />
+                  </picture>
                 </Box>
-                <Box
-                  className="product-image my-3 mx-2"
-                  style={{ backgroundImage: `url('${image}.jpg')` }}
-                />
-                <Box component="p" className="product-desc mx-2">
+                <Box component='p' className='product-desc mx-2'>
                   {title}
                 </Box>
               </div>
             );
           })}
         </Col>
-        <Col className="modal-controls-container text-center">
+        <Col className='modal-controls-container text-center'>
           <IconButton
-            edge="start"
-            className="prev-button mx-2"
-            color="inherit"
+            edge='start'
+            className='prev-button mx-2'
+            color='inherit'
             disabled={activeProd === 0}
-            onClick={handleProdSwitch("prev")}
-            aria-label="view previous product"
-          >
-            <NavigateBeforeIcon fontSize="large" />
+            onClick={handleProdSwitch('prev')}
+            aria-label='view previous product'>
+            <NavigateBeforeIcon fontSize='large' />
           </IconButton>
           <IconButton
-            edge="start"
-            className="next-button mx-2"
-            color="inherit"
+            edge='start'
+            className='next-button mx-2'
+            color='inherit'
             disabled={activeProd === prodsLen - 1}
-            onClick={handleProdSwitch("next")}
-            aria-label="view next product"
-          >
-            <NavigateNextIcon fontSize="large" />
+            onClick={handleProdSwitch('next')}
+            aria-label='view next product'>
+            <NavigateNextIcon fontSize='large' />
           </IconButton>
-          <Box className="num-indicator d-inline-block">{`${
+          <Box className='num-indicator d-inline-block'>{`${
             activeProd + 1
           } / ${prodsLen}`}</Box>
         </Col>

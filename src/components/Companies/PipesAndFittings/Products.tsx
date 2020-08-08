@@ -35,7 +35,17 @@ const Products = () => {
   return (
     <Container as='main' className='Products fade-in include-page-header'>
       <Row as='h1' className='page-title'>
+        <Box className='before'>
+          <picture>
+            <source srcSet='/images/pipes-2.webp' type='image/webp' />
+            <img
+              src='/images/pipes-2.jpg'
+              alt={'/images/pipes-2.jpg'.split('/').slice(-1)[0]}
+            />
+          </picture>
+        </Box>
         Our Products
+        <Box className='after' />
       </Row>
       <Row className='mx-0'>
         <Col xs={12} as='h2' className='mb-5 text-center'>
@@ -84,10 +94,19 @@ const Product = ({
   modalOpenHandler
 }: ProductProps & { modalOpenHandler: Function }) => (
   <Col xs={12} sm={6} md={4} lg={3} className='mb-3 px-2'>
-    <Box
-      className='product'
-      style={{ backgroundImage: `url('${bannerUrl}')` }}
-      tabIndex={0}>
+    <Box className='product' tabIndex={0}>
+      <picture>
+        <source
+          srcSet={bannerUrl.replace(/jpe?g|png/, 'webp')}
+          type='image/webp'
+        />
+        <img
+          className='product-image'
+          src={bannerUrl}
+          alt={bannerUrl.split('/').slice(-1)[0]}
+        />
+      </picture>
+
       <Box className='product-details-wrapper'>
         <Box component='h5' className='product-name mb-2'>
           {name}

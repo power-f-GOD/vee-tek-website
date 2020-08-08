@@ -127,6 +127,9 @@ export const ProductsModal = (props: {
   return (
     <Container className='ProductsModal m-0 p-0 d-inline-block'>
       <Row className='content-wrapper d-block flex-column align-items-center m-0'>
+        <Box component='h5' className='product-name d-block mx-2'>
+          {children[0].name}
+        </Box>
         <Col className='product-view'>
           {children.map(({ name, imageUrl, desc }, i) => {
             return (
@@ -136,13 +139,15 @@ export const ProductsModal = (props: {
                 } ${i} d-inline-block`}
                 ref={refs[i]}
                 key={i}>
-                <Box component='h5' className='product-name mx-2'>
-                  {name}
+                <Box className='product-image my-3 mx-2'>
+                  <picture>
+                    <source srcSet={imageUrl.replace(/jpe?g|png/, 'webp')} />
+                    <img
+                      src={imageUrl}
+                      alt={imageUrl.split('/').slice(-1)[0]}
+                    />
+                  </picture>
                 </Box>
-                <Box
-                  className='product-image my-3 mx-2'
-                  style={{ backgroundImage: `url('${imageUrl}')` }}
-                />
                 <Box component='p' className='product-desc mx-2'>
                   {desc}
                 </Box>

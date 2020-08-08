@@ -69,6 +69,10 @@
       }
     }
 
+    .page-title {
+      margin-top: 14rem ;
+    }
+
     .rider-texts-wrapper {
       width: 25rem;
       max-width: 100%;
@@ -213,7 +217,7 @@
     min-height: 16rem;
     transform: translateY(20rem);
     opacity: 0;
-    transition: 1.5s;
+    transition: 1s;
     padding-bottom: 1rem;
 
     > * {

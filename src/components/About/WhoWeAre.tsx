@@ -14,7 +14,17 @@ const WhoWeAre = () => (
     fluid
     className='WhoWeAre fade-in include-page-header p-0'>
     <Row as='h1' className='page-title'>
+      <Box className='before'>
+        <picture>
+          <source srcSet='/images/who-we-are-one.webp' type='image/webp' />
+          <img
+            src='/images/who-we-are-one.jpg'
+            alt={'/images/who-we-are-one.jpg'.split('/').slice(-1)[0]}
+          />
+        </picture>
+      </Box>
       About Us
+      <Box className='after' />
     </Row>
     <Container className='px-0 pt-2 pb-5'>
       <Row className='mx-0'>
@@ -41,18 +51,38 @@ const WhoWeAre = () => (
             are committed to Quality, Innovation and Service.
           </Col>
         </Col>
-        <Col as='p' sm={12} md={4} className='align-self-center order-sm-0 order-md-1 text-center pt-4 pb-5'>
-          <img
-            className='rounded-circle logo-img'
-            src='/images/logos/logo-192.png'
-            alt='Vee-Tek Group'
-          />
+        <Col
+          as='p'
+          sm={12}
+          md={4}
+          className='align-self-center order-sm-0 order-md-1 text-center pt-4 pb-5'>
+          <picture>
+            <source srcSet='/images/logos/logo-192.webp' type='image/webp' />
+            <img
+              className='rounded-circle logo-img'
+              src='/images/logos/logo-192.png'
+              alt={
+                'Vee-Tek Group' +
+                '/images/logos/logo-192.png'.split('/').slice(-1)[0]
+              }
+            />
+          </picture>
         </Col>
       </Row>
     </Container>
     <Box className='my-5 include-page-header second' position='relative'>
       <Row as='h2' className='page-title'>
+        <Box className='before'>
+          <picture>
+            <source srcSet='/images/who-we-are-two.webp' type='image/webp' />
+            <img
+              src='/images/who-we-are-two.jpg'
+              alt={'/images/who-we-are-two.jpg'.split('/').slice(-1)[0]}
+            />
+          </picture>
+        </Box>
         Our Clients
+        <Box className='after' />
       </Row>
     </Box>
     <Container className='pt-4 pb-5'>
@@ -85,7 +115,8 @@ const WhoWeAre = () => (
         ].map((client, _) => (
           <Tooltip title={client.title} key={_}>
             <Col xs={6} sm={3} md={2} className='text-center'>
-              <div className={`d-inline-block m-2 my-4 Client-Image-${client.image}`}></div>
+              <div
+                className={`d-inline-block m-2 my-4 Client-Image-${client.image}`}></div>
             </Col>
           </Tooltip>
         ))}
