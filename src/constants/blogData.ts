@@ -1,5 +1,5 @@
 /**
- * Welcome to News Control Center 😎
+ * Welcome to Blog Control Center 😎
  * Alright to avoid stories, use the following format to add posts.
  * 
  * {
@@ -39,19 +39,19 @@ const data: {
   link: string;
   image: string;
 }[] = [
+  // Your newest post comes before this
   {
-    title: "Welcome to the Vee-Tek Blog",
-    author: "Vee-Tek Group",
-    date: "July 31, 2020",
+    title: 'Welcome to the Vee-Tek Blog',
+    author: 'Vee-Tek Group',
+    date: 'July 31, 2020',
     paragraph: `Vee-Tek Nigeria Limited was registered in 1991 
     as an indigenous electrical engineering company primarily engaged 
     in the design, construction and manufacturing of medium-voltage switch gears and 
     general electrical engineering services, particularly heavy power 
     installations such as transmission lines and injection substations`,
-    link: "https://link.medium.com/Ijioo8h0y8",
-    image: "welcome_to_veetek.jpeg"
+    link: 'https://link.medium.com/Ijioo8h0y8',
+    image: 'welcome_to_veetek.jpeg'
   }
-  // Your newest post comes right after this
 ];
 
 export default data;

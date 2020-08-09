@@ -146,12 +146,10 @@
     }
 
     &:nth-of-type(1) {
-      // background-image: url('/images/switch-gears-4.jpg');
       z-index: 0;
     }
 
     &:nth-of-type(2) {
-      // background-image: url('/images/pipes-1.jpg');
       animation-delay: $anim-break;
       z-index: -1;
       transform: translateX(100%);
@@ -218,7 +216,7 @@
         @include before-or-after-v2(
           $h: 0.25rem,
           $w: 80%,
-          $t: calc(100% + 1rem),
+          $t: calc(100% + 0.75rem),
           $br: 0.5rem,
           $l: 20%,
           $zi: 0

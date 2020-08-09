@@ -49,6 +49,7 @@ body.companies {
 
     .logo {
       display: none;
+      @extend .text-shadow;
     }
 
     .top-nav-box {

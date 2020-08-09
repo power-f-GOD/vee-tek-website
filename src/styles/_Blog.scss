@@ -1,6 +1,6 @@
 @import 'constants';
 
-.News {
+.Blog {
   position: relative;
   // @include debugger();
 
@@ -14,15 +14,16 @@
   }
 
   .Main {
-    padding: 1rem;
+    // padding: 1rem;
     padding-right: 1.75rem;
     position: unset;
 
     .page-title {
-      margin-bottom: 10rem;
+      // margin-bottom: 10rem;
       text-align: left;
 
-      &::before, &::after {
+      .before,
+      .after {
         clip-path: polygon(
           0 0,
           calc(50vw + 19rem) 0,
@@ -33,9 +34,13 @@
     }
   }
 
-  .NewsPost {
+  .BlogPost {
     padding: 2.5rem 0;
     border-bottom: 0.0625rem solid rgba(219, 175, 127, 0.35);
+
+    &:nth-of-type(1) {
+      padding-top: 0;
+    }
 
     .image-container {
       padding: 0;

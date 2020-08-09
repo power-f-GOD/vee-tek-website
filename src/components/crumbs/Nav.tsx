@@ -37,7 +37,10 @@ const Nav = () => {
               <Box component='h5' className='logo font-weight-bold'>
                 <NavLink to='/' exact>
                   <picture>
-                    <source srcSet='/images/logos/logo-64.webp' />
+                    <source
+                      srcSet='/images/logos/logo-64.webp'
+                      type='image/webp'
+                    />
                     <img
                       src='/images/logos/logo-64.png'
                       alt='Vee-Tek Group logo'
@@ -132,7 +135,7 @@ function BreadCrumbs() {
         <Breadcrumbs aria-label='breadcrumb'>
           {links
             .slice(0, -1)
-            .filter((link) => !/^(\/companies|\/about|\/news)$/.test(link.href))
+            .filter((link) => !/^(\/companies|\/about|\/blog)$/.test(link.href))
             .map(({ href, title }: BreadCrumbsData, key: number) => (
               <Link to={href} key={key}>
                 {title}

@@ -7,12 +7,12 @@ import {
   Nav,
   Home,
   Companies,
-  News,
+  Blog,
   Gallery,
   Contact,
   About,
   Footer,
-  _404
+  _404 as FourOhFour
 } from './components';
 import GoUpFAB from './components/crumbs/GoUpFAB';
 
@@ -38,9 +38,9 @@ const App = () => {
             )}
           />
           <Route
-            path='/news'
+            path='/blog'
             render={(props: any) => (
-              <News {...props} setNavState={setNavState} />
+              <Blog {...props} setNavState={setNavState} />
             )}
           />
           <Route
@@ -61,7 +61,11 @@ const App = () => {
               <About {...props} setNavState={setNavState} />
             )}
           />
-          <Route component={_404} />
+          <Route
+            render={(props: any) => (
+              <FourOhFour {...props} setNavState={setNavState} />
+            )}
+          />
         </Switch>
 
         {navState !== '/' && <Footer />}
