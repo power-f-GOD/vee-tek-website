@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 
 import Box from '@material-ui/core/Box';
 
-import us from './ourPeopleData';
+import us from '../../constants/ourPeopleData';
 
 const OurPeople = () => (
   <Container

@@ -114,8 +114,8 @@
 // }
 
 @media screen and (max-width: 991px) {
-  // News component(s) styles
-  .News {
+  // Blog component(s) styles
+  .Blog {
     .Aside {
       margin-top: 3rem;
     }
@@ -181,9 +181,9 @@
     }
   }
 
-  // News component(s) styles
+  // Blog component(s) styles
 
-  .News {
+  .Blog {
     .RecentPosts {
       padding-right: 1.5rem;
     }
@@ -260,8 +260,8 @@
       text-align: center !important;
       display: block;
 
-      &::before,
-      &::after {
+      .before,
+      .after {
         height: 24rem;
         clip-path: unset !important;
       }
@@ -433,13 +433,13 @@
     }
   }
 
-  // News component(s) styles
-  .News {
+  // Blog component(s) styles
+  .Blog {
     .Main {
       padding-right: 1rem;
     }
 
-    .NewsPost {
+    .BlogPost {
       .text-container {
         padding-left: 1rem;
       }
@@ -504,9 +504,9 @@
 }
 
 @media screen and (max-width: 575px) {
-  // News component(s) styles
-  .News {
-    .NewsPost {
+  // Blog component(s) styles
+  .Blog {
+    .BlogPost {
       .text-container {
         padding: 0;
       }

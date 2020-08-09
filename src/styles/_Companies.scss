@@ -91,7 +91,7 @@ body.companies {
     }
 
     @mixin revealer($delay) {
-      animation: circle-reveal 15s infinite forwards;
+      animation: circle-reveal 9s infinite forwards;
       animation-delay: $delay;
     }
 
@@ -126,11 +126,11 @@ body.companies {
       }
 
       .text-2 {
-        @include revealer(5s);
+        @include revealer(3s);
       }
 
       .text-3 {
-        @include revealer(10s);
+        @include revealer(6s);
       }
     }
 
@@ -163,7 +163,7 @@ body.companies {
 
     @keyframes circle-reveal {
       0%,
-      8% {
+      5% {
         opacity: 0;
         transform: translateY(-10rem);
       }
@@ -173,7 +173,7 @@ body.companies {
         transform: translateY(0);
       }
 
-      42%,
+      45%,
       100% {
         opacity: 0;
         transform: translateY(10rem);
@@ -214,7 +214,7 @@ body.companies {
     &::before {
       @include before-or-after-v2(
         $zi: 1,
-        $bg: rgba($prim-r - 100, $prim-g - 100, $prim-b - 100, 0.65)
+        $bg: rgba($prim-r - 75, $prim-g - 75, $prim-b - 75, 0.5)
       );
     }
   }
@@ -288,7 +288,7 @@ body.companies {
     padding: 2rem;
     box-shadow: -2rem 2rem 0
       rgba($prim-r + 100, $prim-g + 100, $prim-b + 100, 0.65);
-    background: rgba($prim-r - 100, $prim-g - 100, $prim-b - 100, 0.75);
+    background: rgba($prim-r - 75, $prim-g - 75, $prim-b - 75, 0.8);
     animation: slideInBottom 2.5s forwards;
   }
 

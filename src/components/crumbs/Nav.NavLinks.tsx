@@ -72,10 +72,10 @@ function NavLinks({ toggleDrawerIsOpen }: { toggleDrawerIsOpen?: Function }) {
 
       <Col className='nav-link-wrapper p-0'>
         <NavLink
-          to='/news'
+          to='/blog'
           className='nav-link'
           onClick={handleSetDrawerIsOpen}>
-          News
+          Blog
         </NavLink>
       </Col>
       <Col className='nav-link-wrapper p-0'>

@@ -141,7 +141,10 @@ export const ProductsModal = (props: {
                 key={i}>
                 <Box className='product-image my-3 mx-2'>
                   <picture>
-                    <source srcSet={imageUrl.replace(/jpe?g|png/, 'webp')} />
+                    <source
+                      srcSet={imageUrl.replace(/jpe?g|png/, 'webp')}
+                      type='image/webp'
+                    />
                     <img
                       src={imageUrl}
                       alt={imageUrl.split('/').slice(-1)[0]}

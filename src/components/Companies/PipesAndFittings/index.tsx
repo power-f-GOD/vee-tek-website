@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Box from '@material-ui/core/Box';
 
-import Main from './Main';
+import Main from './Overview';
 import Products from './Products';
 import Order from './Order';
 import FooterNavigator, { Page } from '../../crumbs/FooterNavigator';
@@ -30,8 +30,8 @@ const pagesData: Page[] = [
     name: 'Place an Order'
   },
   {
-    pathname: '/news/company-news',
-    name: 'News',
+    pathname: '/blog',
+    name: 'Blog',
     notRelative: true
   }
 ];

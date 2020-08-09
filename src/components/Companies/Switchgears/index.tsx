@@ -3,19 +3,19 @@ import { Switch, Route } from 'react-router-dom';
 
 import Box from '@material-ui/core/Box';
 
-import Main from './Main';
+import Main from './Overview';
 import Services from './Services';
 import Portfolio from './Portfolio';
 import Inquiry from './Inquiry';
 import FooterNavigator, { Page } from '../../crumbs/FooterNavigator';
 import _404 from '../../_404';
-import TechnicalData from './TechnicalData';
+// import TechnicalData from './TechnicalData';
 
 const main = '/companies/switchgears';
-const [services, portfolio, technicalData, inquiry] = [
+const [services, portfolio, /*technicalData,*/ inquiry] = [
   `${main}/services`,
   `${main}/portfolio`,
-  `${main}/technical-data`,
+  // `${main}/technical-data`,
   `${main}/inquiry`
 ];
 const pagesData: Page[] = [
@@ -67,7 +67,7 @@ const Switchgears = (props: any) => {
         <Route path={main} exact component={Main} />
         <Route path={services} exact component={Services} />
         <Route path={portfolio} exact component={Portfolio} />
-        <Route path={technicalData} exact component={TechnicalData} />
+        {/* <Route path={technicalData} exact component={TechnicalData} /> */}
         <Route path={inquiry} exact component={Inquiry} />
         <Route component={_404} />
       </Switch>

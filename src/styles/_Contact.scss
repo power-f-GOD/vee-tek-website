@@ -1,6 +1,7 @@
 @import 'constants';
 
-.Contact, .Inquiry {
+.Contact,
+.Inquiry {
   position: relative;
   padding-top: 16.5rem;
   background: {
@@ -102,7 +103,7 @@
 }
 
 .contact-form-container {
-  animation: fromBottom 2.5s ease;
+  animation: fromBottom 2s ease;
   transition: 0.5s;
 }
 
