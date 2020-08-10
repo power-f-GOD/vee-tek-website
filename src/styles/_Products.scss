@@ -3,14 +3,14 @@
 .Products {
   h2 {
     position: relative;
-    color: white;
+    color: $theme-primary-v3;
     padding: 0.15rem;
 
     &::before {
       @include before-or-after-v2(
         $w: calc(100% - 1rem),
         $l: 0.5rem,
-        $bg: rgba($prim-r - 75, $prim-g - 75, $prim-b - 75, 0.9),
+        $bg: rgb($prim-r + 75, $prim-g + 75, $prim-b + 75),
         $br: 0.35rem
       );
     }
@@ -28,7 +28,9 @@
       size: cover;
       position: center;
       repeat: no-repeat;
+      image: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
     }
+    color: white;
     margin: auto;
     border-radius: 0.75rem;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.25);
