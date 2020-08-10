@@ -24,7 +24,7 @@ const SustainabilityStrategy = () => {
       </Row>
       <Container className='mb-5'>
         <Row className='flex-column mx-0'>
-          <Col className='d-flex p-0'>
+          <Col className='d-block p-0'>
             <Col as='p' className='text-justify p-0'>
               For us at Vee-Tek Group, sustainability is one of our key values.
               Our understanding of sustainability encompasses responsible
@@ -39,7 +39,7 @@ const SustainabilityStrategy = () => {
           </Col>
           {/* <Col className='d-flex'></Col> */}
         </Row>
-        <Row className='flex-column mx-0'>
+        {/* <Row className='flex-column mx-0'>
           <Col md={7} className='d-flex p-0'></Col>
           <Col md={5} className='d-flex'></Col>
         </Row>
@@ -54,7 +54,7 @@ const SustainabilityStrategy = () => {
         <Row className='flex-column mx-0'>
           <Col md={7} className='d-flex p-0'></Col>
           <Col md={5} className='d-flex'></Col>
-        </Row>
+        </Row> */}
 
         <p className='text-justify'>
           We utilise other industry-specific frameworks such as The Nigerian
