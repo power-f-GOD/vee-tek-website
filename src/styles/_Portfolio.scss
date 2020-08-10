@@ -7,6 +7,7 @@ body.companies.webp {
         background: {
           image: url('/images/switch-gears.webp');
         }
+        animation: swapBgWebp 15s infinite ease;
       }
     }
   }
@@ -19,6 +20,7 @@ body.companies.no-webp {
         background: {
           image: url('/images/switch-gears.jpg');
         }
+        animation: swapBg 15s infinite ease;
       }
     }
   }
@@ -65,7 +67,6 @@ body.companies.no-webp {
         size: auto;
         position: bottom left;
       }
-      animation: swapBg 15s infinite ease;
     }
 
     &::after {
