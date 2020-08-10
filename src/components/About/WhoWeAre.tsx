@@ -55,7 +55,7 @@ const WhoWeAre = () => (
           as='p'
           sm={12}
           md={4}
-          className='align-self-center text-center pb-5'>
+          className='align-self-center text-center py-5'>
           <picture>
             <source srcSet='/images/logos/logo-192.webp' type='image/webp' />
             <img
