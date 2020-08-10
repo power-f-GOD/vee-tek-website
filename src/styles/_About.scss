@@ -6,7 +6,7 @@
   // @include debugger();
   .WhoWeAre {
     .logo-img {
-      box-shadow: 0 2rem 3rem rgba(200, 165, 101, 0.85);
+      box-shadow: 0 0 3rem rgb($prim-r + 100, $prim-g + 100, $prim-b + 100);
     }
   }
 

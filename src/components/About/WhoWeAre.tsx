@@ -28,7 +28,7 @@ const WhoWeAre = () => (
     </Row>
     <Container className='px-0 pt-2 pb-5'>
       <Row className='mx-0'>
-        <Col sm={12} md={8} className='my-5 px-0 order-sm-1 order-md-0'>
+        <Col sm={12} md={8} className='history-container mb-4 px-0'>
           <Col as='h2' className='mb-4'>
             Our History
           </Col>
@@ -55,16 +55,13 @@ const WhoWeAre = () => (
           as='p'
           sm={12}
           md={4}
-          className='align-self-center order-sm-0 order-md-1 text-center pt-4 pb-5'>
+          className='align-self-center text-center pb-5'>
           <picture>
             <source srcSet='/images/logos/logo-192.webp' type='image/webp' />
             <img
-              className='rounded-circle logo-img'
+              className='rounded-circle logo-img mb-5'
               src='/images/logos/logo-192.png'
-              alt={
-                'Vee-Tek Group' +
-                '/images/logos/logo-192.png'.split('/').slice(-1)[0]
-              }
+              alt='Vee-Tek Group logo'
             />
           </picture>
         </Col>
