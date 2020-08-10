@@ -3,7 +3,14 @@ import React from 'react';
 export const PipesIcon = ({ url }: { url: string }) => {
   return (
     <div className='pipes-icon-container'>
-      <img src={`/images/icons/${url}.png`} className='pipes-icon' alt={url} />
+      <picture>
+        <source srcSet={`/images/icons/${url}.webp`} type='image/webp' />
+        <img
+          src={`/images/icons/${url}.png`}
+          className='pipes-icon'
+          alt={url}
+        />
+      </picture>
     </div>
   );
 };

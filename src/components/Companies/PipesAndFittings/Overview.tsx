@@ -21,6 +21,13 @@ const Main = () => {
       <Row
         as='header'
         className='align-content-center justify-content-center mx-0'>
+        <Box className='before' />
+        <Box className='after'>
+          <picture>
+            <source srcSet='/images/pipes-2.webp' type='image/webp' />
+            <img src='/images/pipes-2.jpg' alt='Background - Vee-Tek pipes' />
+          </picture>
+        </Box>
         <Container className='px-0 align-self-center'>
           <Col as='h1' className=''>
             Vee-Tek Pipes
@@ -80,7 +87,9 @@ const Main = () => {
                   <Col xs={12}>
                     <PipesIcon url={url} />
                   </Col>
-                  <Col as='p' className='desc'>{desc}</Col>
+                  <Col as='p' className='desc'>
+                    {desc}
+                  </Col>
                 </Col>
               ))}
             </Row>
