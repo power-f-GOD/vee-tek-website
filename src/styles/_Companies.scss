@@ -34,16 +34,27 @@ body.companies {
       color: white;
       text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
 
-      &::before {
+      .before {
         @include before-or-after-v2($zi: 0, $bg: $theme-primary-v1, $o: 0.85);
       }
 
-      &::after {
+      .after {
         @include before-or-after-v2($zi: -1, $bg: $theme-secondary-v2);
         background: {
           position: center;
           size: cover;
-          image: url('/images/pipes-2.jpg');
+          // image: url('/images/pipes-2.jpg');
+        }
+
+        picture {
+          display: block;
+          height: inherit;
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: inherit !important;
+          }
         }
       }
 

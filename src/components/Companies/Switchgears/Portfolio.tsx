@@ -302,7 +302,7 @@ function Work(props: any) {
       <Col md={6} className='work-image-wrapper'>
         <picture>
           <source
-            srcSet={`/images/portfolio/${imgUrl}`.replace(/jpe?g|png/, 'webp')}
+            srcSet={`/images/portfolio/${imgUrl}`.replace(/jpe?g|gif|png/, 'webp')}
             type='image/webp'
           />
           <img
