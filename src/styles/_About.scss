@@ -58,6 +58,10 @@
 .Person-Image {
   border-radius: 1rem;
   width: 20rem;
+  min-height: 14rem;
+  min-width: 14rem;
+  color: white;
+  background-image: linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
 }
 
 .Certificate {

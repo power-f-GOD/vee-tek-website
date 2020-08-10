@@ -11,6 +11,12 @@
   height: 20em !important;
   justify-content: center;
   overflow: hidden;
+  color: white;
+  background-image: linear-gradient(
+    to left,
+    $theme-primary-v4,
+    $theme-primary-v2
+  );
 }
 
 .Gallery-Image {

@@ -140,7 +140,7 @@ export const ProductsModal = (props: {
                 ref={refs[i]}
                 key={i}>
                 <Box className='product-image my-3 mx-2'>
-                  <picture>
+                  <picture style={{ opacity: '0' }}>
                     <source
                       srcSet={imageUrl.replace(/jpe?g|png/, 'webp')}
                       type='image/webp'
@@ -148,6 +148,9 @@ export const ProductsModal = (props: {
                     <img
                       src={imageUrl}
                       alt={imageUrl.split('/').slice(-1)[0]}
+                      onLoad={(e: any) => {
+                        e.target.parentNode.style.opacity = '1';
+                      }}
                     />
                   </picture>
                 </Box>
