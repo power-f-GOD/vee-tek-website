@@ -44,10 +44,9 @@
                 type='image/webp'
               />
               <img
+                id='_loader-img-main'
                 src="/images/logos/logo-192.png"
                 alt="Vee-Tek Group"
-                onload="loadAnimScript.bind(this)()"
-                onerror="loadAnimScript.bind(this)()"
               />
             </picture>
           </span>
@@ -69,7 +68,7 @@
     </section>
 
     <script>
-      var rippleTimeout,almostTimeout;function loadAnimScript(){var loader=document.querySelector("._loader"),logoImg=this.parentNode.parentNode,loadStatus=document.querySelector("._load-status"),logoTitle=document.querySelector("._logo-title");logoImg.classList.add("_animate"),setTimeout((function(){logoTitle.classList.add("show"),rippleTimeout=setTimeout((function(){logoImg.className="_logo-img centered _ripple",loadStatus.textContent="Loading...",loadStatus.classList.add("show"),almostTimeout=setTimeout((function(){loadStatus.textContent="Slow network. Almost done..."}),18e3)}),2e3)}),2e3),window.addEventListener("load",(function(){setTimeout((function(){clearTimeout(almostTimeout),clearTimeout(rippleTimeout),logoImg.className="_logo-img centered",loadStatus.classList.remove("show"),setTimeout((function(){loadStatus.textContent="Welcome!",loadStatus.classList.add("show"),setTimeout((function(){loader.className="_loader _hide-right",document.querySelector("html").style.overflow="auto"}),1600)}),400)}),1600)}))}document.head.insertAdjacentHTML("afterbegin",'<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700,900|Google+Sans:300,400,500,700,900&display=swap"/>');
+      var rippleTimeout,almostTimeout;var img=document.getElementById('_loader-img-main');img.onload=loadAnimScript.bind(img);img.onerror=loadAnimScript.bind(img);function loadAnimScript(){var loader=document.querySelector("._loader"),logoImg=this.parentNode.parentNode,loadStatus=document.querySelector("._load-status"),logoTitle=document.querySelector("._logo-title");logoImg.classList.add("_animate"),setTimeout((function(){logoTitle.classList.add("show"),rippleTimeout=setTimeout((function(){logoImg.className="_logo-img centered _ripple",loadStatus.textContent="Loading...",loadStatus.classList.add("show"),almostTimeout=setTimeout((function(){loadStatus.textContent="Slow network. Almost done..."}),18e3)}),2e3)}),2e3),window.addEventListener("load",(function(){setTimeout((function(){clearTimeout(almostTimeout),clearTimeout(rippleTimeout),logoImg.className="_logo-img centered",loadStatus.classList.remove("show"),setTimeout((function(){loadStatus.textContent="Welcome!",loadStatus.classList.add("show"),setTimeout((function(){loader.className="_loader _hide-right",document.querySelector("html").style.overflow="auto"}),1600)}),400)}),1600)}))}document.head.insertAdjacentHTML("afterbegin",'<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700,900|Google+Sans:300,400,500,700,900&display=swap"/>');
     </script>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
