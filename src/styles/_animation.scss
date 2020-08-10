@@ -120,10 +120,12 @@
   0% {
     transform: translateX(100%);
   }
-  3%, 50% {
+  3%,
+  50% {
     transform: translateX(0);
   }
-  53%, 100% {
+  53%,
+  100% {
     transform: translateX(-100%);
   }
 }
@@ -216,17 +218,36 @@
   }
 }
 
-@keyframes swapBg {
-  0%,
-  30% {
-    background-image: url('/images/switch-gears.jpg');
+body.companies.no-webp {
+  @keyframes swapBg {
+    0%,
+    30% {
+      background-image: url('/images/switch-gears.jpg');
+    }
+    33%,
+    63% {
+      background-image: url('/images/switch-gears-2.jpg');
+    }
+    66%,
+    97% {
+      background-image: url('/images/switch-gears-3.jpg');
+    }
   }
-  33%,
-  63% {
-    background-image: url('/images/switch-gears-2.jpg');
-  }
-  66%,
-  97% {
-    background-image: url('/images/switch-gears-3.jpg');
+}
+
+body.companies.webp {
+  @keyframes swapBg {
+    0%,
+    30% {
+      background-image: url('/images/switch-gears.webp');
+    }
+    33%,
+    63% {
+      background-image: url('/images/switch-gears-2.webp');
+    }
+    66%,
+    97% {
+      background-image: url('/images/switch-gears-3.webp');
+    }
   }
 }

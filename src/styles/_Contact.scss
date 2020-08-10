@@ -1,5 +1,27 @@
 @import 'constants';
 
+body.no-webp {
+  .Contact,
+  .Inquiry {
+    background-image: url('/images/pattern-bg.png');
+    
+    .map-wrapper {
+      background-image: url('/images/google-map-placeholder-inquiry.png');
+    }
+  }
+}
+
+body.webp {
+  .Contact,
+  .Inquiry {
+    background-image: url('/images/pattern-bg.webp');
+    
+    .map-wrapper {
+      background-image: url('/images/google-map-placeholder-inquiry.webp');
+    }
+  }
+}
+
 .Contact,
 .Inquiry {
   position: relative;
@@ -7,7 +29,6 @@
   background: {
     position: bottom;
     color: #eee;
-    image: url('/images/pattern-bg.png');
   }
   z-index: 1;
   padding-bottom: 8rem;
@@ -47,7 +68,6 @@
     box-shadow: 0 0.15rem 0.35rem rgba(0, 0, 0, 0.5);
     background: {
       color: $theme-primary-v5;
-      image: url('/images/google-map-placeholder.png');
       size: 55rem;
       position: bottom center;
     }
@@ -85,10 +105,6 @@
     }
   }
 }
-
-// .Inquiry .map-wrapper {
-//   background-image: url('/images/google-map-placeholder-inquiry.png');
-// }
 
 .contact-page-title {
   margin-bottom: 10rem;

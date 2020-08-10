@@ -1,5 +1,29 @@
 @import 'constants';
 
+body.companies.webp {
+  .Portfolio {
+    .header-image {
+      &::before {
+        background: {
+          image: url('/images/switch-gears.webp');
+        }
+      }
+    }
+  }
+}
+
+body.companies.no-webp {
+  .Portfolio {
+    .header-image {
+      &::before {
+        background: {
+          image: url('/images/switch-gears.jpg');
+        }
+      }
+    }
+  }
+}
+
 .Portfolio {
   padding-top: 0.01rem;
   position: relative;
@@ -38,7 +62,6 @@
 
     &::before {
       background: {
-        image: url('/images/switch-gears.jpg');
         size: auto;
         position: bottom left;
       }
@@ -70,7 +93,7 @@
     }
 
     .page-title {
-      margin-top: 14rem ;
+      margin-top: 14rem;
     }
 
     .rider-texts-wrapper {
@@ -87,7 +110,7 @@
 
     .rider-text {
       padding: 0 0rem;
-      font-size: .8rem;
+      font-size: 0.8rem;
       width: 100%;
       color: $theme-primary-v9;
       border-radius: 0.5rem;

@@ -40,11 +40,7 @@ body.companies {
 
       .after {
         @include before-or-after-v2($zi: -1, $bg: $theme-secondary-v2);
-        background: {
-          position: center;
-          size: cover;
-          // image: url('/images/pipes-2.jpg');
-        }
+
 
         picture {
           display: block;
@@ -190,31 +186,6 @@ body.companies {
         transform: translateY(10rem);
       }
     }
-
-    .section-with-bg {
-      margin: {
-        top: 0;
-        bottom: 0;
-      }
-      // @include debugger();
-      background: {
-        color: $theme-primary-v2;
-        position: center;
-        size: cover;
-        image: url('/images/pvc-pipes-2.jpg');
-      }
-      color: white;
-
-      .heading-container {
-        h2 {
-          color: white;
-        }
-      }
-
-      p {
-        font-size: 0.95rem;
-      }
-    }
   }
 
   // Switchgears Services styles
@@ -238,26 +209,6 @@ body.companies {
       size: auto 100vh;
       color: $theme-primary-v2;
       repeat-y: no-repeat;
-    }
-
-    &.first {
-      background-image: url('/images/switchgears-main/two.jpg'),
-        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
-    }
-
-    &.second {
-      background-image: url('/images/switchgears-main/three.jpg'),
-        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
-    }
-
-    &.third {
-      background-image: url('/images/switchgears-main/four.jpg'),
-        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
-    }
-
-    &.fourth {
-      background-image: url('/images/switchgears-main/one.jpg'),
-        linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
     }
   }
 
@@ -367,6 +318,54 @@ body.companies {
 
     .desc {
       text-transform: uppercase;
+    }
+  }
+
+  &.no-webp {
+    .Slide-Item {
+      &.first {
+        background-image: url('/images/switchgears-main/two.jpg'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
+
+      &.second {
+        background-image: url('/images/switchgears-main/three.jpg'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
+
+      &.third {
+        background-image: url('/images/switchgears-main/four.jpg'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
+
+      &.fourth {
+        background-image: url('/images/switchgears-main/one.jpg'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
+    }
+  }
+
+  &.webp {
+    .Slide-Item {
+      &.first {
+        background-image: url('/images/switchgears-main/two.webp'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
+
+      &.second {
+        background-image: url('/images/switchgears-main/three.webp'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
+
+      &.third {
+        background-image: url('/images/switchgears-main/four.webp'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
+
+      &.fourth {
+        background-image: url('/images/switchgears-main/one.webp'),
+          linear-gradient(to left, $theme-primary-v4, $theme-primary-v2);
+      }
     }
   }
 }
